@@ -156,6 +156,6 @@
     <orderEntry type="library" name="jfreechart-1.0" level="project" />
     <orderEntry type="library" name="adaptive" level="project" />
     <orderEntry type="library" name="sqljdbc4" level="project" />
-    <orderEntry type="library" name="jfree:jfreechart:1.0.13" level="project" />
+    <orderEntry type="library" name="org.jfree:jfreechart:1.0.19" level="project" />
   </component>
 </module>

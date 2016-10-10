@@ -90,52 +90,52 @@ public class LogInScreenGUI implements  ActionListener
 		
         else if(e.getSource() == logInButton)
         {
-        	
+
 			//declare variables for username and password
 			String userName = userNameTextField.getText();
 			String password = passwordTextField.getText();
-			
+
 			//Random JOptionPane that shows username and password.
 			//JOptionPane.showMessageDialog(null, userName + " " + password);
-			
+
 			//check if username and password exist
 			try
 			{
-				//Connect to database		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");  
+				//Connect to database		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 /*    			String connectionUrl = "jdbc:sqlserver://localhost;database=Creationary;integratedSecurity=true;"  ;
-    			Connection con = DriverManager.getConnection(connectionUrl);  
-    			
+    			Connection con = DriverManager.getConnection(connectionUrl);
+
 */
-    		   Connect con = new Connect(); 
+    		   Connect con = new Connect();
     		   Connection mycon =  con.getconnection();
     		   Statement mystat = mycon.createStatement();
-    		   
-    		   
+
+
     			//Get ID for user
     			String sql = "select * from creationary..users WHERE username = '" + userName + "'";
     			ResultSet myRe = mystat.executeQuery(sql);
-    			
+
     			String dbUser = "";
     			String dbPass = "";
     			String[] line = new String [2];
-    			
+
     			//get db data
     			while (myRe.next()){
     				dbUser = myRe.getString(2);
     				dbPass = myRe.getString(4);
-    				
+
     				line[0] = myRe.getString(2);
     				line[1] = myRe.getString(3);
     			}
-    			
+
     			//If user/pass match, log in.
     			if (dbPass.equals(password)){
     				frame.setVisible(false);
     				DisplayGUI.main(line);
-    				
+
     			}
 			}
-			
+
 			catch(Exception exc)
 			{
 				System.out.println("Exception");

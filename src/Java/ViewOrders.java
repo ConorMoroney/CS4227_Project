@@ -78,7 +78,7 @@ public class ViewOrders implements  ActionListener
 			//get db data
 			while (myRe.next())
 			{							
-				name = "Java.Product Name: " + myRe.getString(1) + ", ";
+				name = "Product Name: " + myRe.getString(1) + ", ";
 				qty = "Quantity:  " +  myRe.getInt(2) + ", ";
 				customer = "Customer:  " +  myRe.getString(3) + ", ";
 													

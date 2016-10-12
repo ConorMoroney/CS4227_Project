@@ -12,7 +12,7 @@ import javax.swing.*;
 
 public class RegisterEmployeeGUI implements  ActionListener
 {
-	String [] employeeTypes = {"manager", "Java.logisticsStaff" , "Java.wareHouseStaff"};
+	String [] employeeTypes = {"manager", "logisticsStaff" , "wareHouseStaff"};
     
 	JPanel buttonPanel;
     JButton cancelButton, registerUserButton;

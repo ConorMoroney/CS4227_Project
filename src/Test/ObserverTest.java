@@ -1,4 +1,7 @@
-package Java;
+package Test;
+
+import Java.QtyGrabber;
+import Java.customer;
 
 public class ObserverTest {
 	public static void main(String [] args){

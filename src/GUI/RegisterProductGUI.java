@@ -22,7 +22,7 @@ public class RegisterProductGUI implements  ActionListener
     JButton cancelButton, registerProductButton;
 	JLabel TypeLabel,idLabel, nameLabel, weightLabel, priceLabel, quantityLabel, descriptionLabel;
 	JTextField typeField,idField, nameField, weightField, priceField, quantityField, descriptionField;
-	static JFrame frame = new JFrame("Register Java.Product Screen");
+	static JFrame frame = new JFrame("Register Product Screen");
 
     public JPanel createContentPane()
 	{
@@ -136,10 +136,10 @@ public class RegisterProductGUI implements  ActionListener
         	}
         	
         	String type = typeField.getText();
-        	if(!(type.equalsIgnoreCase("pen") ||type.equalsIgnoreCase("Java.pencil") ||type.equalsIgnoreCase("folder")
+        	if(!(type.equalsIgnoreCase("pen") ||type.equalsIgnoreCase("pencil") ||type.equalsIgnoreCase("folder")
         			||type.equalsIgnoreCase("paperclip") ||type.equalsIgnoreCase("copy") ||type.equalsIgnoreCase("envelope") 
         			||type.equalsIgnoreCase("ruler")||type.equalsIgnoreCase("paper"))){
-        		JOptionPane.showMessageDialog(null,"this is not a product type \n product types include: \n pen \n Java.pencil \n folder \n copy \n paperclip \n ruler \n envelope \n paper" );
+        		JOptionPane.showMessageDialog(null,"this is not a product type \n product types include: \n pen \n pencil \n folder \n copy \n paperclip \n ruler \n envelope \n paper" );
         			return;
         	}
         	

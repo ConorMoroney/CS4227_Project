@@ -12,7 +12,7 @@ public class ViewStaffDetails implements  ActionListener
 	JLabel quantityLabel, nameLabel;
 	JPanel totalGUI = new JPanel();
 	JTextField itemNameTextField, quantityTextField;
-	static JFrame frame = new JFrame("View Java.Staff Details");
+	static JFrame frame = new JFrame("View Staff Details");
 
 	public JPanel createContentPane()
 	{
@@ -72,9 +72,9 @@ public class ViewStaffDetails implements  ActionListener
 			{
 				int accesslvl = myRe.getInt(3);
 				if (accesslvl == 2)
-					occupancy = "Employee Type: WareHouse Java.Staff, \n";
+					occupancy = "Employee Type: WareHouse Staff, \n";
 				else
-					occupancy = "Employee Type: Logistics Java.Staff, \n";
+					occupancy = "Employee Type: Logistics Staff, \n";
 
 
 				name = " UserName: " + myRe.getString(2) + ", \n";

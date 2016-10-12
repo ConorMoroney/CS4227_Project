@@ -10,7 +10,7 @@ public class ProductFactory {
 		else if("pen".equalsIgnoreCase(productType)){
 			return new Pen();
 		}
-		else if("Java.pencil".equalsIgnoreCase(productType)){
+		else if("pencil".equalsIgnoreCase(productType)){
 			return new pencil();
 		}
 		else if("paper".equalsIgnoreCase(productType)){

@@ -7,7 +7,7 @@ public class UserFactory {
 		if(userType == null){
 			return null;
 		}
-		else if("Java.customer".equalsIgnoreCase(userType)){
+		else if("customer".equalsIgnoreCase(userType)){
 			return new customer();
 		}
 		else if("LogisticsStaff".equalsIgnoreCase(userType)){

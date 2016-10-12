@@ -130,7 +130,7 @@ public class updateDatabase implements  ActionListener{
 		buttonPanel.add(updateButton);
 		
 		//make Labels
-		nameLabel = new JLabel("Java.Product Name:");
+		nameLabel = new JLabel("Product Name:");
 		nameLabel.setLocation(130, 0);
 		nameLabel.setSize(120, 30);
 		buttonPanel.add(nameLabel);

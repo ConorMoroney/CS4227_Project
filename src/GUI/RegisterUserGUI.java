@@ -22,7 +22,7 @@ public class RegisterUserGUI implements  ActionListener
     JButton cancelButton, registerUserButton;
 	JLabel userLabel,passLabel, emailLabel, addressLabel;
 	JTextField userField,passField, emailField, addressField;
-	static JFrame frame = new JFrame("Register Java.Product Screen");
+	static JFrame frame = new JFrame("Register Product Screen");
 
     public JPanel createContentPane()
 	{
@@ -119,7 +119,7 @@ public class RegisterUserGUI implements  ActionListener
     		
     		UserFactory userFactory = new UserFactory();
     		
-    		I_User user = userFactory.createUser("Java.customer");
+    		I_User user = userFactory.createUser("customer");
     		
     		int id = 1;
     		int accesslvl =1;

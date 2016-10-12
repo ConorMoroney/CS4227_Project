@@ -48,7 +48,7 @@ public class QtyGrabber implements Subject {
 	public void removeObserver(customer deleteObserver) {
 		// Get the index of the observer to delete
 		int observerIndex = observers.indexOf(deleteObserver);
-		System.out.println("Java.Observer " + (observerIndex+1) + " deleted");
+		System.out.println("Observer " + (observerIndex+1) + " deleted");
 		observers.remove(observerIndex);
 	}
 

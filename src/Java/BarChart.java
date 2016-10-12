@@ -34,7 +34,7 @@ public class BarChart extends ApplicationFrame
 	}
 	private CategoryDataset createDataset( )
 	{
-		String [] Types = {"pen","Java.pencil","paper","folder","copy","paperclip","ruler","evelope"};
+		String [] Types = {"pen","pencil","paper","folder","copy","paperclip","ruler","evelope"};
 		int[] quantities = new int[7];
 		
 		try
@@ -79,7 +79,7 @@ public class BarChart extends ApplicationFrame
 	}
 	public static void reports()
 	{
-		BarChart chart = new BarChart("Manger Reports", "Java.Manager reports:");
+		BarChart chart = new BarChart("Manger Reports", "Manager reports:");
 		chart.pack( );        
 		RefineryUtilities.centerFrameOnScreen( chart );        
 		chart.setVisible( true ); 

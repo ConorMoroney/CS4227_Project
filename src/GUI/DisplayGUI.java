@@ -42,7 +42,7 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 		}
 		if (accessLevel == 2)
 		{
-			JFrame frame = new JFrame("Warehouse Java.Staff GUI");
+			JFrame frame = new JFrame("Warehouse Staff GUI");
 
 			//Create and set up the content pane.
 			DisplayGUI window = new DisplayGUI();
@@ -55,7 +55,7 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 		}
 		if (accessLevel == 3)
 		{
-			JFrame frame = new JFrame("Logistics Java.Staff GUI");
+			JFrame frame = new JFrame("Logistics Staff GUI");
 
 			//Create and set up the content pane.
 			DisplayGUI window = new DisplayGUI();
@@ -68,7 +68,7 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 		}
 		if (accessLevel == 4)
 		{
-			JFrame frame = new JFrame("Java.Manager GUI");
+			JFrame frame = new JFrame("Manager GUI");
 
 			//Create and set up the content pane.
 			DisplayGUI window = new DisplayGUI();
@@ -139,7 +139,7 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 				
 				//Do action for Java.customer viewing product
 				break;
-			case "Update Java.Product Stock":
+			case "Update Product Stock":
 				updateDatabase.main2();
 				break;
 			}
@@ -150,11 +150,11 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 			String command = ((JButton) e.getSource()).getActionCommand();
 			System.out.println(command);
 			switch (command) {
-			case "View Java.Staff Details":
+			case "View Staff Details":
 				ViewStaffDetails.main2();
 		
 				break;
-			case "Buy Java.Product":
+			case "Buy Product":
 				ViewItems.main(line2);
 				break;
 			case "Register a product":
@@ -181,20 +181,20 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 		switch(accesslvl){
 		case 1:// Java.customer
 			button1 = "View Account Details";
-			button2 = "Buy Java.Product";
+			button2 = "Buy Product";
 			break;
 		case 2:// wareHouse Java.Staff
-			button1 = "Update Java.Product Stock";
+			button1 = "Update Product Stock";
 			button2 = "Register a product";
 			break;
 		case 3://Logistics Java.Staff
-			button1 = "Update Java.Product Stock";
+			button1 = "Update Product Stock";
 			button2 = "View Orders";
 			break;
 		case 4://manager
 			button1 = "Generate Reports";
 			//button1.addActionListener(this);
-			button2 = "View Java.Staff Details";
+			button2 = "View Staff Details";
 			break;
 		default:
 			System.out.println("Error no accesslvl found");

@@ -1,6 +1,7 @@
 package GUI;
 
 import Java.Connect;
+import SQL.Select;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
@@ -102,11 +103,7 @@ public class LogInScreenGUI implements  ActionListener
 			//check if username and password exist
 			try
 			{
-				//Java.Connect to database		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-/*    			String connectionUrl = "jdbc:sqlserver://localhost;database=Creationary;integratedSecurity=true;"  ;
-    			Connection con = DriverManager.getConnection(connectionUrl);
-
-*/
+/*
     		   Connect con = new Connect();
     		   Connection mycon =  con.getconnection();
     		   Statement mystat = mycon.createStatement();
@@ -115,14 +112,22 @@ public class LogInScreenGUI implements  ActionListener
     			//Get ID for Java.user
     			String sql = "select * from creationary..users WHERE username = '" + userName + "'";
     			ResultSet myRe = mystat.executeQuery(sql);
-
+*/
     			String dbUser = "";
     			String dbPass = "";
+//uncomment after testing
+
+                Select s = new Select("*","users","username",userName);
+                ResultSet myRe = s.getResultset();
+                System.out.print(myRe);
+
+
+
     			String[] line = new String [2];
 
     			//get db data
     			while (myRe.next()){
-    				dbUser = myRe.getString(2);
+    			    dbUser = myRe.getString(2);
     				dbPass = myRe.getString(4);
 
     				line[0] = myRe.getString(2);

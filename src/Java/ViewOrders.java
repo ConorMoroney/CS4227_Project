@@ -42,7 +42,10 @@ public class ViewOrders implements  ActionListener
     		   Connection mycon =  con.getconnection();
     		   Statement mystat = mycon.createStatement();
 			ResultSet myRe = mystat.executeQuery("select * from items");
-				
+
+
+
+
 			//get db data
 			while (myRe.next())
 				i++;

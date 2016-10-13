@@ -1,5 +1,7 @@
 package Java;
 
+import SQL.Select;
+
 import javax.swing.*;
 
 import java.awt.event.ActionListener;
@@ -19,7 +21,7 @@ public class ViewItems implements  ActionListener
 	JPanel totalGUI = new JPanel();
 	
 	JTextField itemNameTextField, quantityTextField;
-	static JFrame frame = new JFrame("Log In Screen");
+	static JFrame frame = new JFrame("View items");
 
 	public static QtyGrabber  getQtyGrabber(){
 		return G;
@@ -72,8 +74,11 @@ public class ViewItems implements  ActionListener
 
 			String sql = "select * from items";
 			System.out.println(sql);
-			ResultSet myRe = mystat.executeQuery(sql);
-			
+
+
+			Select s = new Select("*","items");
+			ResultSet myRe = s.getResultset();
+
 			String name = "";
 			int quantity = 0;
 				

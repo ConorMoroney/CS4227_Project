@@ -3,10 +3,13 @@ package GUI;
 import Java.Connect;
 import Java.I_User;
 import Java.UserFactory;
+import SQL.Select;
+import SQL.Insert;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -22,7 +25,7 @@ public class RegisterUserGUI implements  ActionListener
     JButton cancelButton, registerUserButton;
 	JLabel userLabel,passLabel, emailLabel, addressLabel;
 	JTextField userField,passField, emailField, addressField;
-	static JFrame frame = new JFrame("Register Product Screen");
+	static JFrame frame = new JFrame("Register new User Screen");
 
     public JPanel createContentPane()
 	{
@@ -128,23 +131,33 @@ public class RegisterUserGUI implements  ActionListener
     			
     			
     			//Java.Connect to database
-    			   Connect con = new Connect();
-        		   Connection mycon =  con.getconnection();
-        		   Statement mystat = mycon.createStatement();
-        		   
-    			//Get ID for Java.user
-    			ResultSet myRe = mystat.executeQuery("select * from users");
+
+                Select s = new Select("*","users");
+    			ResultSet myRe = s.getResultset();
     			while (myRe.next()){
     				id++;
     			}
-    			
+
+                Insert i = new Insert("users");
+                ArrayList<String> values = new ArrayList<>();
+                values.add(Integer.toString(id));
+                values.add(userName);
+                values.add(Integer.toString(accesslvl));
+                values.add(pass);
+                values.add(email);
+                values.add(address);
+                i.addValue(values);
+/*
+                Connect con = new Connect();
+                Connection mycon =  con.getconnection();
+                Statement mystat = mycon.createStatement();
     			//Insert into table
-    			String sql = "INSERT into users (idusers ,username,accesslvl ,password,email,address) VALUES('" 
-    					 + id  + "','" + userName + "','" + accesslvl+ "','" + pass + "','" + email + "','" + address 
+    			String sql = "INSERT into users (idusers ,username,accesslvl ,password,email,address) VALUES('"
+    					 + id  + "','" + userName + "','" + accesslvl+ "','" + pass + "','" + email + "','" + address
     						+ "');" ;
-    			mystat.executeUpdate(sql);
+    			//mystat.executeUpdate(sql);
     			
-    			//ResultSet myRe = mystat.executeQuery("select * from creationary.users");
+    			//ResultSet myRe = mystat.executeQuery("select * from creationary.users");*/
     			
     		}
     		catch(Exception exc){

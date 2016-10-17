@@ -4,16 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/src/Java/BarChart.java" line="8" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ad9ac67-4d6f-436c-9cfa-90edc9e0b980" name="Default" comment="Now we have three packages. GUI is separated into a specific package. However the code for the GUI's can still be condensed further. I have also created a third package for test classes in which I have generated several test classes. The test classes are just skeleton code so far but will be easy to populate with conditions once we're done . Shane out *mic drop*">
+    <list default="true" id="4ad9ac67-4d6f-436c-9cfa-90edc9e0b980" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/DisplayGUI.java" afterPath="$PROJECT_DIR$/src/GUI/DisplayGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/LogInScreenGUI.java" afterPath="$PROJECT_DIR$/src/GUI/LogInScreenGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/RegisterEmployeeGUI.java" afterPath="$PROJECT_DIR$/src/GUI/RegisterEmployeeGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/RegisterUserGUI.java" afterPath="$PROJECT_DIR$/src/GUI/RegisterUserGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQL/Connect.java" afterPath="$PROJECT_DIR$/src/SQL/Connect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQL/Insert.java" afterPath="$PROJECT_DIR$/src/SQL/Insert.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQL/Select.java" afterPath="$PROJECT_DIR$/src/SQL/Select.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQL/Test.java" afterPath="$PROJECT_DIR$/src/SQL/Test.java" />
     </list>
     <ignored path="CS4227_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -770,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476223456280</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated the SQL Package again , Almost have the inserts fully working , just need to finish that and will intergrate the system with the other packages">
+      <created>1476694109306</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1476694109306</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -907,7 +906,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working on IntelliJ" />
     <MESSAGE value="Now we have three packages. GUI is separated into a specific package. However the code for the GUI's can still be condensed further. I have also created a third package for test classes in which I have generated several test classes. The test classes are just skeleton code so far but will be easy to populate with conditions once we're done . Shane out *mic drop*" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now we have three packages. GUI is separated into a specific package. However the code for the GUI's can still be condensed further. I have also created a third package for test classes in which I have generated several test classes. The test classes are just skeleton code so far but will be easy to populate with conditions once we're done . Shane out *mic drop*" />
+    <MESSAGE value="Updated the SQL Package again , Almost have the inserts fully working , just need to finish that and will intergrate the system with the other packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the SQL Package again , Almost have the inserts fully working , just need to finish that and will intergrate the system with the other packages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

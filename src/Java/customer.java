@@ -1,6 +1,6 @@
 package Java;
 
-public class customer extends user implements Observer{
+public class customer implements Observer, I_User{
 	
 	private String name;
 	private int id;
@@ -39,6 +39,8 @@ public class customer extends user implements Observer{
 		// TODO Auto-generated method stub
 		this.address = address;
 	}
+
+
 	@Override
 	public int getaccesslvl() {
 		// TODO Auto-generated method stub

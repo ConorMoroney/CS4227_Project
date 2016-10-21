@@ -1,6 +1,6 @@
 package Java;
 
-public class Manager extends Staff{
+public class Manager implements I_User{
 
 
 	private int accesslvl = 4;
@@ -46,7 +46,4 @@ public class Manager extends Staff{
 		// TODO Auto-generated method stub
 		return accesslvl;
 	}
-
-
-
 }

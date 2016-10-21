@@ -3,7 +3,7 @@ package Java;
 public class UserFactory {
 
 	public I_User createUser(String userType){
-		
+
 		if(userType == null){
 			return null;
 		}
@@ -23,3 +23,27 @@ public class UserFactory {
 		return null;
 	}
 }
+
+/*package Java;
+
+public class UserFactory {
+
+	public I_User createUser(String userType){
+		String [] concreteUserTypes = {"warehouse","logistics","manager","customer"};
+		for(String s:concreteUserTypes){
+			if (s.equalsIgnoreCase(userType)) {
+				return new ConcreteUser();
+			}
+		}
+		if(userType==null){
+			return null;
+		}
+		else{
+			System.out.println("This is not a valid user type.");
+			return null;
+		}
+	}
+}*/
+
+
+

@@ -180,9 +180,9 @@ public class RegisterEmployeeGUI implements  ActionListener
 
     public static void main(String[] args)
 	{
-        SwingUtilities.invokeLater(new Runnable() 
+        SwingUtilities.invokeLater(new Runnable()
 		{
-            public void run() 
+            public void run()
 			{
                 createAndShowGUI();
             }

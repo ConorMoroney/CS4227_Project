@@ -5,10 +5,11 @@ import Java.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class DisplayGUI implements ActionListener// extends JFrame implements ActionListener
+public class DisplayGUI extends Panel implements ActionListener// extends JFrame implements ActionListener
 {
-
+	private PanelManager pm;
 	JPanel buttonPanel;
+	JPanel totalGUI = new JPanel();
 	JButton remaingModulesButton, viewResultsButton, exitButton;
 
 	static String[] line2 = new String[2];
@@ -17,30 +18,28 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 	 * make method to create a button and have it increment the location of the buttons
 	 * and have some way of defining what to do with them  
 	 *  */
-	public static void main(String[] line)
+	public DisplayGUI()
 	{
-		line2[0] = line[0];
-		line2[1] = line[1];
-		createAndShowGUI(line);
+		createAndShowGUI();
 	}
 
-	private static void createAndShowGUI(String[] line)
+	private void createAndShowGUI()
 	{
-		int accessLevel = Integer.parseInt(line[1]);
-		if (accessLevel == 1)
-		{
+		//int accessLevel = Integer.parseInt(line[1]);
+		//if (accessLevel == 1)
+		//{
 			JFrame frame = new JFrame("Customer GUI");
 
 			//Create and set up the content pane.
-			DisplayGUI window = new DisplayGUI();
-			frame.setContentPane(window.createContentPane(accessLevel));
+			frame.setContentPane(this.createContentPane());
 
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setLocationRelativeTo(null);
 			frame.setSize(405, 130);
 			frame.setVisible(true);
-		}
-		if (accessLevel == 2)
+		//}
+		/*if (accessLevel == 2)
+		 * 
 		{
 			JFrame frame = new JFrame("Warehouse Staff GUI");
 
@@ -78,17 +77,16 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 			frame.setLocationRelativeTo(null);
 			frame.setSize(405, 130);
 			frame.setVisible(true);
-		}
+		}*/
 	}
 
-	public JPanel createContentPane (int accessLevel)
+	public JPanel createContentPane ()
 	{
 
 		// get the title strings 
-		String[] titles =  getTitles(accessLevel);
+		String[] titles =  getTitles(1);
 
 		//Make bottom JPanel to place buttonPanel on
-		JPanel totalGUI = new JPanel();
 		totalGUI.setLayout(null);
 
 		//Make Button Panel
@@ -202,6 +200,18 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 		String [] output = {button1,button2};
 		return output;		
 	}
+	
+    @Override
+    public JPanel sendToWindow()
+    { 
+        return this.totalGUI;
+    }
+	
+    @Override
+    public void setPanelManager(PanelManager pm)
+    {
+	this.pm = pm;
+    }
 
 
 

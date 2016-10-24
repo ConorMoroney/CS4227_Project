@@ -7,9 +7,12 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
+import Database.DatabaseAccess;
 
-public class LogInScreenGUI implements  ActionListener
+public class LogInScreenGUI extends Panel implements  ActionListener 
 {
+	private PanelManager pm;
+	private DatabaseAccess dba = DatabaseAccess.getInstance();
     JPanel buttonPanel;
     JButton exitButton, logInButton, registerButton;
 	JLabel userNameLabel, passwordLabel;
@@ -18,6 +21,9 @@ public class LogInScreenGUI implements  ActionListener
 	JPanel totalGUI = new JPanel();
 	static JFrame frame = new JFrame("Log In Screen");
 
+	public LogInScreenGUI(){
+		createAndShowGUI();
+	}
     public JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
@@ -117,7 +123,7 @@ public class LogInScreenGUI implements  ActionListener
     			String dbPass = "";
 //uncomment after testing
 
-                Select s = new Select("*","users","username",userName);
+                /*Select s = new Select("*","users","username",userName);
                 ResultSet myRe = s.getResultset();
                 System.out.print(myRe);
 
@@ -139,23 +145,26 @@ public class LogInScreenGUI implements  ActionListener
     				frame.setVisible(false);
     				DisplayGUI.main(line);
 
+    			}*/
+    			if(dba.canUserLogin(userName, password)){
+    				frame.setVisible(false);
+    				pm.getPanelFromFactory(2);
+    				}
     			}
-			}
 
 			catch(Exception exc)
 			{
-				System.out.println("Exception");
+				System.out.println(exc.toString());
 				System.exit(0);
 			}
 		}
         
     }
 
-    private static void createAndShowGUI()
+    private void createAndShowGUI()
 	{
         //Create and set up the content pane.
-        LogInScreenGUI window = new LogInScreenGUI();
-        frame.setContentPane(window.createContentPane());
+        frame.setContentPane(this.createContentPane());
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(305, 165);
@@ -163,16 +172,18 @@ public class LogInScreenGUI implements  ActionListener
         frame.setVisible(true);
     }
 
-    public static void main(String[] args)
-	{
-        SwingUtilities.invokeLater(new Runnable() 
-		{
-            public void run() 
-			{
-                createAndShowGUI();
-            }
-        });
-    }
     
     private void register(){}//Decorator Pattern to be implemented here
+    
+    @Override
+    public JPanel sendToWindow()
+    { 
+        return this.totalGUI;
+    }
+	
+    @Override
+    public void setPanelManager(PanelManager pm)
+    {
+	this.pm = pm;
+    }
 }

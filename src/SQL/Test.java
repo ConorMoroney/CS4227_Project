@@ -9,7 +9,7 @@ public class Test {
 
     public static void main (String [] args){
 
-        Select s = new Select("username","users","username","Customer");
+        /*Select s = new Select("username","users","username","Customer");
         ResultSet r = s.getResultset();
         s.printSQL(r);
 
@@ -26,7 +26,7 @@ public class Test {
         i.addValue("weight","0.2");
         i.addValue("quantity","100");
 
-        i.executeStatement(i.constructStatement());
+        i.executeStatement(i.constructStatement());*/
 
     }
 

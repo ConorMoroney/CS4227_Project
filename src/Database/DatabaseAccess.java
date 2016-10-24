@@ -1,5 +1,6 @@
 package Database;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import Java.I_Product;
@@ -20,8 +21,18 @@ public class DatabaseAccess implements I_Database {
     	dbconn = dbc;
     }
     
-    public DatabaseAccess getInstance(){
+    public static DatabaseAccess getInstance(){
     	return dba;
+    }
+    
+    @Override
+    public boolean connect(String host, int port, String user, String password) {
+    	return dbconn.connect(host, port, user, password);
+    }
+    
+    @Override
+    public boolean connect(String connectionURL) throws ClassNotFoundException{
+    	return dbconn.connect(connectionURL);
     }
     
     @Override
@@ -35,7 +46,7 @@ public class DatabaseAccess implements I_Database {
     }
     
     @Override
-    public boolean canUserLogin(String user, String password){
+    public boolean canUserLogin(String user, String password) throws SQLException{
     	return dbconn.canUserLogin(user, password);
     }
 }

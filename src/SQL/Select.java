@@ -9,25 +9,25 @@ import java.sql.*;
  */
 public class Select {
 
-    Connect con;
-    Connection mycon;
+    ///Connect con;
+    //Connection mycon;
     Statement mystat;
     ResultSet myRe;
 
-    public Select(String result, String From , String Where , String Variable) {
+    public Select(String result, String From , String Where , String Variable, Connection mycon) {
         // Get Connection to database when created
             String sql = "select "+ result +" from " + From + " WHERE " + Where + " = '" + Variable + "'";
-            executeStatement(sql);
+            executeStatement(sql, mycon);
     }
-    public Select(String result, String From ) {
+    public Select(String result, String From, Connection mycon) {
         // Get Connection to database when created
         String sql = "select "+ result +" from " + From ;
-        executeStatement(sql);
+        executeStatement(sql, mycon);
     }
 
-    public void executeStatement(String SQL){try {
-        con = new Connect();
-        mycon =  con.getconnection();
+    public void executeStatement(String SQL, Connection mycon){try {
+        //con = new Connect();
+        //mycon =  con.getconnection();
         mystat = mycon.createStatement();
     }
     catch (Exception exc) {
@@ -38,6 +38,7 @@ public class Select {
             myRe = mystat.executeQuery(SQL);
         }
         catch (Exception exc) {
+        	System.out.println(exc.toString());
             System.out.println("Select Statement Failed");
             System.exit(0);
         }

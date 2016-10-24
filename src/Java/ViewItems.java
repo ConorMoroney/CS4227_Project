@@ -76,7 +76,7 @@ public class ViewItems implements  ActionListener
 			System.out.println(sql);
 
 
-			Select s = new Select("*","items");
+			Select s = new Select("*","items"); 
 			ResultSet myRe = s.getResultset();
 
 			String name = "";

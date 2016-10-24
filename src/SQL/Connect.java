@@ -13,7 +13,7 @@ public Connect() throws ClassNotFoundException {
 		try {
 
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			String connectionUrl = "jdbc:sqlserver://localhost;database=Creationary;integratedSecurity=true;"  ;
+			String connectionUrl = "jdbc:sqlserver://localhost;database=Master;integratedSecurity=true;"  ;
 			con = DriverManager.getConnection(connectionUrl);
 			con.setAutoCommit(false);
 			System.out.println("you are Connected");

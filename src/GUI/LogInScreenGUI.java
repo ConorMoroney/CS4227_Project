@@ -1,6 +1,5 @@
 package GUI;
 
-import Java.Connect;
 import SQL.Select;
 
 import javax.swing.*;

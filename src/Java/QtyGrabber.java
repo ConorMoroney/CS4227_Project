@@ -1,5 +1,7 @@
 package Java;
 
+import SQL.Connect;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -30,7 +32,7 @@ public class QtyGrabber implements Subject {
 		
 		
 		try{
-			   Connect con = new Connect(); 
+			   Connect con = new Connect();
     		   Connection mycon =  con.getconnection();
     		   Statement mystat = mycon.createStatement();
     		   

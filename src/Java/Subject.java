@@ -1,7 +1,7 @@
 package Java;
 
 public interface Subject {
-	public void registerObserver(customer Customer );
-	public void removeObserver(customer Customer );
-	public void notifyObservers();		
+	void registerObserver(customer Customer);
+	void removeObserver(customer Customer);
+	void notifyObservers();
 }

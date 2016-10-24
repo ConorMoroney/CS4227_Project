@@ -3,6 +3,8 @@ package Java;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import SQL.Connect;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart; 
@@ -40,7 +42,7 @@ public class BarChart extends ApplicationFrame
 		try
 		{	
 			//Java.Connect to database
-			   Connect con = new Connect(); 
+			   Connect con = new Connect();
     		   Connection mycon =  con.getconnection();
     		   Statement mystat = mycon.createStatement();
     		   

@@ -17,6 +17,11 @@ public class customer implements Observer, I_User{
 	}
 
 	@Override
+	public void setType(String type) {
+
+	}
+
+	@Override
 	public void setID(int id) {
 		// TODO Auto-generated method stub
 		this.id = id;

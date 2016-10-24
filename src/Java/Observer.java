@@ -1,6 +1,5 @@
 package Java;
 
 public interface Observer {
-	public void update(int qty , String item );
-
+	void update(int qty, String item);
 }

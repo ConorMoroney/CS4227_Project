@@ -1,5 +1,6 @@
 package Java;
 
+import SQL.Connect;
 import SQL.Select;
 
 import javax.swing.*;
@@ -188,7 +189,7 @@ public class ViewItems implements  ActionListener
 			try
 			{
 				//Java.Connect to database
-				  Connect con = new Connect(); 
+				  Connect con = new Connect();
 	    		   Connection mycon =  con.getconnection();
 	    		   Statement mystat = mycon.createStatement();
 				String sql = "select * from items WHERE name = '" + itemName + "'";

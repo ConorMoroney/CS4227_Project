@@ -1,8 +1,8 @@
 package GUI;
 
-import Java.Connect;
 import Java.I_User;
 import Java.UserFactory;
+import SQL.Connect;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

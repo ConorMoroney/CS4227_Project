@@ -1,5 +1,5 @@
 package Java;
-
+/*
 public class wareHouseStaff implements I_User{
 
 
@@ -47,3 +47,4 @@ public class wareHouseStaff implements I_User{
 		return accesslvl;
 	}
 }
+*/

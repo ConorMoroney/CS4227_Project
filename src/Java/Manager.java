@@ -1,6 +1,6 @@
 package Java;
 
-public class Manager implements I_User{
+/*public class Manager implements I_User{
 
 
 	private int accesslvl = 4;
@@ -46,4 +46,4 @@ public class Manager implements I_User{
 		// TODO Auto-generated method stub
 		return accesslvl;
 	}
-}
+}*/

@@ -1,8 +1,8 @@
 package GUI;
 
-import Java.Connect;
 import Java.I_Product;
 import Java.ProductFactory;
+import SQL.Connect;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

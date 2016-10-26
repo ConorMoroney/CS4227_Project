@@ -1,5 +1,7 @@
 package Java;
 
+import SQL.Connect;
+
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -55,7 +57,7 @@ public class ViewStaffDetails implements  ActionListener
 		{
 			//get array of names/quantities
 			//Java.Connect to database
-			   Connect con = new Connect(); 
+			   Connect con = new Connect();
     		   Connection mycon =  con.getconnection();
     		   Statement mystat = mycon.createStatement();			
 			String sql = "select * from users WHERE accesslvl = 2 OR accesslvl = 3";

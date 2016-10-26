@@ -1,6 +1,6 @@
 package Java;
-
-public class wareHouseStaff extends Staff{
+/*
+public class wareHouseStaff implements I_User{
 
 
 
@@ -47,3 +47,4 @@ public class wareHouseStaff extends Staff{
 		return accesslvl;
 	}
 }
+*/

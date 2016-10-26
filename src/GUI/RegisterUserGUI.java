@@ -5,6 +5,7 @@ import Java.I_User;
 import Java.UserFactory;
 import SQL.Select;
 import SQL.Insert;
+import SQL.Connect;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -131,33 +132,23 @@ public class RegisterUserGUI implements  ActionListener
     			
     			
     			//Java.Connect to database
-
-                Select s = new Select("*","users");
-    			ResultSet myRe = s.getResultset();
+    			   Connect con = new Connect();
+        		   Connection mycon =  con.getconnection();
+        		   Statement mystat = mycon.createStatement();
+        		   
+    			//Get ID for Java.user
+    			ResultSet myRe = mystat.executeQuery("select * from users");
     			while (myRe.next()){
     				id++;
     			}
-
-                Insert i = new Insert("users");
-                ArrayList<String> values = new ArrayList<>();
-                values.add(Integer.toString(id));
-                values.add(userName);
-                values.add(Integer.toString(accesslvl));
-                values.add(pass);
-                values.add(email);
-                values.add(address);
-                i.addValue(values);
-/*
-                Connect con = new Connect();
-                Connection mycon =  con.getconnection();
-                Statement mystat = mycon.createStatement();
-    			//Insert into table
-    			String sql = "INSERT into users (idusers ,username,accesslvl ,password,email,address) VALUES('"
-    					 + id  + "','" + userName + "','" + accesslvl+ "','" + pass + "','" + email + "','" + address
-    						+ "');" ;
-    			//mystat.executeUpdate(sql);
     			
-    			//ResultSet myRe = mystat.executeQuery("select * from creationary.users");*/
+    			//Insert into table
+    			String sql = "INSERT into users (idusers ,username,accesslvl ,password,email,address) VALUES('" 
+    					 + id  + "','" + userName + "','" + accesslvl+ "','" + pass + "','" + email + "','" + address 
+    						+ "');" ;
+    			mystat.executeUpdate(sql);
+    			
+    			//ResultSet myRe = mystat.executeQuery("select * from creationary.users");
     			
     		}
     		catch(Exception exc){

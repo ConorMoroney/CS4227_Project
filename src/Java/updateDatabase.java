@@ -1,5 +1,7 @@
 package Java;
 
+import SQL.Connect;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -53,7 +55,7 @@ public class updateDatabase implements  ActionListener{
 		try
 		{
 			//Java.Connect to database
-			   Connect con = new Connect(); 
+			   Connect con = new Connect();
     		   Connection mycon =  con.getconnection();
     		   Statement mystat = mycon.createStatement();
 			ResultSet myRe = mystat.executeQuery("select * from creationary.items");

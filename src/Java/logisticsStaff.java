@@ -1,6 +1,6 @@
 package Java;
 
-public class logisticsStaff extends Staff{
+/*public class logisticsStaff implements I_User{
 
 	private int accesslvl = 3;
 	private String name;
@@ -45,4 +45,4 @@ public class logisticsStaff extends Staff{
 		// TODO Auto-generated method stub
 		return accesslvl;
 	}
-}
+}*/

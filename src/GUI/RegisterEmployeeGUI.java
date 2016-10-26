@@ -1,6 +1,5 @@
 package GUI;
 
-import Java.Connect;
 import Java.I_User;
 import Java.UserFactory;
 
@@ -8,12 +7,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import SQL.Select;
 import java.sql.*;
+import SQL.*;
 
 import javax.swing.*;
 
 public class RegisterEmployeeGUI implements  ActionListener
 {
-	String [] employeeTypes = {"manager", "logisticsStaff" , "wareHouseStaff"};
+	String [] employeeTypes = {"manager", "logistics" , "warehouse"};
     
 	JPanel buttonPanel;
     JButton cancelButton, registerUserButton;
@@ -188,9 +188,9 @@ public class RegisterEmployeeGUI implements  ActionListener
 
     public static void main(String[] args)
 	{
-        SwingUtilities.invokeLater(new Runnable() 
+        SwingUtilities.invokeLater(new Runnable()
 		{
-            public void run() 
+            public void run()
 			{
                 createAndShowGUI();
             }

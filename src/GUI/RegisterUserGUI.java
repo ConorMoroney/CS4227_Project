@@ -1,6 +1,6 @@
 package GUI;
 
-import Java.Connect;
+import SQL.Connect;
 import Java.I_User;
 import Java.UserFactory;
 import SQL.Select;

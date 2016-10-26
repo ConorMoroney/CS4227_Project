@@ -1,8 +1,6 @@
 package SQL;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -11,80 +9,68 @@ import java.util.ArrayList;
 public class Insert {
 
 
-    Connect con;
-    Connection mycon;
-    Statement mystat;
-    ResultSet myRe;
     String SQL;
     ArrayList <String> Values = new ArrayList<String>() ;
-    ArrayList <String> Types = new ArrayList<String>();
-    String first;
-    String second;
-
+    ArrayList <String> columntypes = new ArrayList<String>();
+    String tablenames;
+    ResultSetMetaData rsmd;
 
     public Insert(String table){
 
-        SQL = "insert into " + table + " (";
-
-    }
-
-    public void addValue(String value , String type){
-
-
-        System.out.println(first);
-        System.out.println(second);
-
-
-            Values.add(value);
-            Types.add(type);
-
-        int i = 0;
-        for(String s : Values){
-            if(i < 1 ){
-                first = s;
-                second = Types.get(i);
-            }
-            else {
-                first = first + " ," + s;
-                second = second + " ," + Types.get(i);
-            }
-            i++;
-        }
-
-        System.out.println(first);
-        System.out.println(second);
-
-        constructStatement();
-    }
-
-    public String constructStatement(){
-
-
-        String Result = SQL +  first + ") Values (" + second + ")";
-        System.out.println(Result);
-        return Result;
-    }
-
-    public void executeStatement(String SQL){
-
-
-
+        Select s = new Select("*",table);
+        ResultSet r = s.getResultset();
 
         try {
-        con = new Connect();
-        mycon =  con.getconnection();
-        mystat = mycon.createStatement();
+            rsmd = r.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+           // while (r.next()) {
+                for (int i = 1; i <= columnsNumber; i++) {
+                    if (i > 1) tablenames += ",";
+                    if (i == 1 )  tablenames = rsmd.getColumnName(i);
+                    else tablenames += rsmd.getColumnName(i);
+                    columntypes.add(rsmd.getColumnTypeName(i));
+                }
+
+            //}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        SQL = "INSERT into " + table + " (" + tablenames + ") VALUES(";
+
+        System.out.println(SQL);
+
+
+    }
+
+    public void addValue(ArrayList <String> values){
+            Values = values;
+        for (int i =0;i< Values.size();i++){
+            if (i >= 1) SQL += ",";
+
+            SQL += "'" + Values.get(i) + "'";
+        }
+        SQL += ");";
+        System.out.println(SQL);
+
+        executeStatement(SQL);
+
+    }
+
+
+    public void executeStatement(String SQL){
+        Statement mystat;
+        try {
+            Connect con = new Connect();
+            Connection mycon =  con.getconnection();
+            mystat = mycon.createStatement();
+            mystat.executeUpdate(SQL);
+            mystat.close();
+            mycon.close();
     }
     catch (Exception exc) {
         System.out.println("Insert Couldn't Connect to Database!");
         System.exit(0);
     }
-        try{
-            myRe = mystat.executeQuery(SQL);
-        }
-        catch (Exception exc) {
-            System.out.println("Insert Statement Failed");
-            System.exit(0);
-        }
+
     }
 }

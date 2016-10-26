@@ -1,12 +1,16 @@
 package GUI;
 
+import SQL.Connect;
 import Java.I_User;
 import Java.UserFactory;
+import SQL.Select;
+import SQL.Insert;
 import SQL.Connect;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -22,7 +26,7 @@ public class RegisterUserGUI implements  ActionListener
     JButton cancelButton, registerUserButton;
 	JLabel userLabel,passLabel, emailLabel, addressLabel;
 	JTextField userField,passField, emailField, addressField;
-	static JFrame frame = new JFrame("Register Product Screen");
+	static JFrame frame = new JFrame("Register new User Screen");
 
     public JPanel createContentPane()
 	{

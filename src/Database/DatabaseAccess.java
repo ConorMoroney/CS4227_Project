@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import Java.I_Product;
+import Java.I_User;
 
 /*
  * Singleton that is used to call the concrete implementation of the database communication class
@@ -48,5 +49,10 @@ public class DatabaseAccess implements I_Database {
     @Override
     public boolean canUserLogin(String user, String password) throws SQLException{
     	return dbconn.canUserLogin(user, password);
+    }
+    
+    @Override
+    public I_User getUserDetails(String username)throws SQLException{
+    	return dbconn.getUserDetails(username);
     }
 }

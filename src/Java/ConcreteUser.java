@@ -6,14 +6,21 @@ package Java;
 public class ConcreteUser implements I_User{
 
     private String name;
-    private int id;
+    private String id;
     private String password;
     private String email;
     private String address;
-    private int accesslvl;
+    private String accesslvl;
 
 
-
+    public ConcreteUser(String ID, String user, String access, String pass, String mail, String add){
+    	id = ID;
+    	name = user;
+    	accesslvl = access;
+    	password = pass;
+    	email = mail;
+    	address = add;
+    }
     public void setName(String name) {
         // TODO Auto-generated method stub
         this.name = name;
@@ -21,7 +28,7 @@ public class ConcreteUser implements I_User{
     }
 
     @Override
-    public void setID(int id) {
+    public void setID(String id) {
         // TODO Auto-generated method stub
         this.id = id;
     }
@@ -45,9 +52,33 @@ public class ConcreteUser implements I_User{
     }
 
     @Override
-    public int getaccesslvl() {
-        return 0;
+    public String getaccesslvl() {
+        return accesslvl;
     }
+    
+    @Override
+    public String getName() {
+        return name;
+    }
+    
+    @Override
+    public String getEmail() {
+        return email;
+    }
+    
+    @Override
+    public String getAddress() {
+        return address;
+    }
+    
+    @Override
+    public String getPassword() {
+        return password;
+    }
+	@Override
+	public String getID() {
+		return id;
+	}
 
 
 

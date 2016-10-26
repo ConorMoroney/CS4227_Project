@@ -12,30 +12,30 @@ import Database.DatabaseAccess;
 public class LogInScreenGUI extends Panel implements  ActionListener 
 {
 	private PanelManager pm;
-	private DatabaseAccess dba = DatabaseAccess.getInstance();
+	Helper help = Helper.getInstance();
     JPanel buttonPanel;
     JButton exitButton, logInButton, registerButton;
 	JLabel userNameLabel, passwordLabel;
 	JTextField userNameTextField;
 	JPasswordField passwordTextField;
-	JPanel totalGUI = new JPanel();
 	static JFrame frame = new JFrame("Log In Screen");
 
 	public LogInScreenGUI(){
+		this.panel = new JPanel();
 		createAndShowGUI();
 	}
     public JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
         //JPanel totalGUI = new JPanel();
-        totalGUI.setLayout(null);
+        panel.setLayout(null);
 
         //Make Button Panel
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(10, 10);
         buttonPanel.setSize(295, 185);
-        totalGUI.add(buttonPanel);
+        panel.add(buttonPanel);
 
 		//Make Labels
 		userNameLabel = new JLabel("Username:");
@@ -79,8 +79,8 @@ public class LogInScreenGUI extends Panel implements  ActionListener
         registerButton.addActionListener(this);
         buttonPanel.add(registerButton);
         
-        totalGUI.setVisible(true);
-        return totalGUI;
+        panel.setVisible(true);
+        return panel;
     }
 
     public void actionPerformed(ActionEvent e)
@@ -103,50 +103,10 @@ public class LogInScreenGUI extends Panel implements  ActionListener
 			String userName = userNameTextField.getText();
 			String password = passwordTextField.getText();
 
-			//Random JOptionPane that shows username and password.
-			//JOptionPane.showMessageDialog(null, userName + " " + password);
-
-			//check if username and password exist
 			try
 			{
-/*
-    		   Connect con = new Connect();
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
-
-
-    			//Get ID for Java.user
-    			String sql = "select * from creationary..users WHERE username = '" + userName + "'";
-    			ResultSet myRe = mystat.executeQuery(sql);
-*/
-    			String dbUser = "";
-    			String dbPass = "";
-//uncomment after testing
-
-                /*Select s = new Select("*","users","username",userName);
-                ResultSet myRe = s.getResultset();
-                System.out.print(myRe);
-
-
-
-    			String[] line = new String [2];
-
-    			//get db data
-    			while (myRe.next()){
-    			    dbUser = myRe.getString(2);
-    				dbPass = myRe.getString(4);
-
-    				line[0] = myRe.getString(2);
-    				line[1] = myRe.getString(3);
-    			}
-
-    			//If Java.user/pass match, log in.
-    			if (dbPass.equals(password)){
-    				frame.setVisible(false);
-    				DisplayGUI.main(line);
-
-    			}*/
-    			if(dba.canUserLogin(userName, password)){
+    			if(help.canUserLogin(userName, password)){
+    				help.getUserDetails(userName);
     				frame.setVisible(false);
     				pm.getPanelFromFactory(2);
     				}
@@ -178,7 +138,7 @@ public class LogInScreenGUI extends Panel implements  ActionListener
     @Override
     public JPanel sendToWindow()
     { 
-        return this.totalGUI;
+        return this.panel;
     }
 	
     @Override

@@ -33,11 +33,9 @@ public class MainWindow extends JFrame implements Observer
 	{
 		/* Removes panel on window and applys new panel */
 		removeCurrentPanelFromWindow();
-                Panel currentPanel = s.getCurrentPanel();
-		
-		//this.add(p);
-                viewCurrentPanel = currentPanel.sendToWindow();
-                this.add(viewCurrentPanel);
+        Panel currentPanel = s.getCurrentPanel();
+        viewCurrentPanel = currentPanel.sendToWindow();
+        this.add(viewCurrentPanel);
 		this.setVisible(true);
 	}
 	

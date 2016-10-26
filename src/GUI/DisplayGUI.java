@@ -8,8 +8,8 @@ import javax.swing.*;
 public class DisplayGUI extends Panel implements ActionListener// extends JFrame implements ActionListener
 {
 	private PanelManager pm;
+	private Helper help = Helper.getInstance();
 	JPanel buttonPanel;
-	JPanel totalGUI = new JPanel();
 	JButton remaingModulesButton, viewResultsButton, exitButton;
 
 	static String[] line2 = new String[2];
@@ -20,14 +20,14 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 	 *  */
 	public DisplayGUI()
 	{
+		this.panel = new JPanel();
 		createAndShowGUI();
 	}
 
 	private void createAndShowGUI()
 	{
-		//int accessLevel = Integer.parseInt(line[1]);
-		//if (accessLevel == 1)
-		//{
+		
+		if(help.getUser().getaccesslvl().equals("1")){
 			JFrame frame = new JFrame("Customer GUI");
 
 			//Create and set up the content pane.
@@ -37,9 +37,9 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 			frame.setLocationRelativeTo(null);
 			frame.setSize(405, 130);
 			frame.setVisible(true);
-		//}
-		/*if (accessLevel == 2)
-		 * 
+		}
+		/*
+		if(help.getUser().getaccesslvl().equals("2"))
 		{
 			JFrame frame = new JFrame("Warehouse Staff GUI");
 
@@ -52,6 +52,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 			frame.setSize(405, 130);
 			frame.setVisible(true);
 		}
+		
 		if (accessLevel == 3)
 		{
 			JFrame frame = new JFrame("Logistics Staff GUI");
@@ -87,14 +88,14 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 		String[] titles =  getTitles(1);
 
 		//Make bottom JPanel to place buttonPanel on
-		totalGUI.setLayout(null);
+		this.panel.setLayout(null);
 
 		//Make Button Panel
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setLocation(10, 10);
 		buttonPanel.setSize(380, 190);
-		totalGUI.add(buttonPanel);
+		this.panel.add(buttonPanel);
 
 		//Make Buttons
 		remaingModulesButton = new JButton(titles[0]);
@@ -117,8 +118,8 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 		exitButton.addActionListener(this);
 		buttonPanel.add(exitButton);
 
-		totalGUI.setVisible(true);
-		return totalGUI;
+		this.panel.setVisible(true);
+		return this.panel;
 	}
 	public void actionPerformed(ActionEvent e) {
 		// this makes sure the button you are pressing is the button variable
@@ -204,7 +205,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
     @Override
     public JPanel sendToWindow()
     { 
-        return this.totalGUI;
+        return this.panel;
     }
 	
     @Override

@@ -3,6 +3,7 @@ package Database;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import Java.I_Product;
+import Java.I_User;
 
 
 /*
@@ -14,4 +15,5 @@ public interface I_Database {
 	public ArrayList<I_Product> getItems();
 	public ArrayList<I_Product> getItems(String identifier);
 	public boolean canUserLogin(String user, String password) throws SQLException;
+	public I_User getUserDetails(String username) throws SQLException;
 }

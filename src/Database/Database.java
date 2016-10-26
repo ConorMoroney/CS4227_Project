@@ -8,12 +8,15 @@ import java.util.ArrayList;
 import SQL.*;
 
 import Java.I_Product;
+import Java.I_User;
+import Java.ConcreteUser;
 
 /*Concrete database class using Microsoft SQL Server for testing and out of the box functionality
  */
 
 public class Database implements I_Database {
 	Connection con;	
+	
 	@Override
 	public ArrayList<I_Product> getItems() {
 		return null;
@@ -37,8 +40,6 @@ public class Database implements I_Database {
 		return false;
 		
 	}
-
-	//If Java.user/pass match, log in.
 	
 	@Override
     public boolean connect(String host, int port, String user, String password) {
@@ -49,7 +50,6 @@ public class Database implements I_Database {
     public boolean connect(String connectionURL) throws ClassNotFoundException {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			//String connectionUrl = "jdbc:sqlserver://localhost:49799;database=creationary;integratedSecurity=true;"  ;
 			con = DriverManager.getConnection(connectionURL);  
 			
 			System.out.println("you are Connected");
@@ -58,9 +58,18 @@ public class Database implements I_Database {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e.getMessage());
-			System.out.println("HERE");
 			return false;
 		
 		}
     }
+	
+	@Override
+	public I_User getUserDetails(String username) throws SQLException{
+		Select s = new Select("*","users","username",username, con);
+        ResultSet myRe = s.getResultset();
+        if(myRe.next()){
+        	return new ConcreteUser(myRe.getString(1),myRe.getString(2), myRe.getString(3), myRe.getString(4), myRe.getString(5), myRe.getString(6));
+        }
+        return null;
+	}
 }

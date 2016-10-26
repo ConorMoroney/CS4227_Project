@@ -39,6 +39,7 @@ public class PanelManager implements Subject
 	
 	public void getPanelFromFactory(int panelID)
 	{
+		System.out.println(panelID);
 		this.currentPanel = panelFac.getPanel(panelID,this);
 		notifyObserver();
 	}
@@ -52,4 +53,5 @@ public class PanelManager implements Subject
 	{
 		this.currentPanel = panel;
 	}
+	
 }

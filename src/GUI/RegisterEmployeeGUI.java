@@ -148,6 +148,10 @@ public class RegisterEmployeeGUI implements  ActionListener
             }
 
             try {
+
+                Insert i =new Insert();
+                i.CreateUserInsert(id,userName,accesslvl,pass,email,address,i.getConnection());
+                /*
                 Connect con = new Connect();
                 Connection mycon = con.getconnection();
                 Statement mystat = mycon.createStatement();
@@ -157,7 +161,7 @@ public class RegisterEmployeeGUI implements  ActionListener
                         + "');";
 
                 mystat.executeUpdate(sql);
-                System.out.println("object added to database");
+                System.out.println("object added to database");*/
                 //ResultSet myRe = mystat.executeQuery("select * from creationary.users");
             }
             catch(Exception exc){

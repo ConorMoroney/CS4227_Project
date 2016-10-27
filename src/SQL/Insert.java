@@ -8,69 +8,79 @@ import java.util.ArrayList;
  */
 public class Insert {
 
+    Connection con;
 
-    String SQL;
-    ArrayList <String> Values = new ArrayList<String>() ;
-    ArrayList <String> columntypes = new ArrayList<String>();
-    String tablenames;
-    ResultSetMetaData rsmd;
+    public Insert() throws ClassNotFoundException {
+        Connect c = new Connect();
+        con = c.getconnection();
+    }
 
-    public Insert(String table){
 
-        Select s = new Select("*",table);
-        ResultSet r = s.getResultset();
+    /**************
+     * Adding Creation methods for insert
+     *
+     * *************/
+
+    public void CreateUserInsert(int iduser , String username , int accesslvl , String password , String email , String address , Connection con)
+    {
 
         try {
-            rsmd = r.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
-           // while (r.next()) {
-                for (int i = 1; i <= columnsNumber; i++) {
-                    if (i > 1) tablenames += ",";
-                    if (i == 1 )  tablenames = rsmd.getColumnName(i);
-                    else tablenames += rsmd.getColumnName(i);
-                    columntypes.add(rsmd.getColumnTypeName(i));
-                }
 
-            //}
+
+            String SQL ="INSERT INTO [dbo].[users]([idusers],[username],[accesslvl],[password],[email],[address])VALUES"
+                    + "(?,?,?,?,?,?)";
+            PreparedStatement preparedStmt = con.prepareStatement(SQL);
+            preparedStmt.setInt (1, iduser);
+            preparedStmt.setString (2, username);
+            preparedStmt.setInt (3, accesslvl);
+            preparedStmt.setString (4, password);
+            preparedStmt.setString (5, email);
+            preparedStmt.setString (6, address);
+            System.out.print(SQL);
+            preparedStmt.executeUpdate();
+
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            // TODO Auto-generated catch block
+            System.out.println("Connection failed");
+            System.out.println(e.getMessage());
         }
-        SQL = "INSERT into " + table + " (" + tablenames + ") VALUES(";
-
-        System.out.println(SQL);
-
 
     }
 
-    public void addValue(ArrayList <String> values){
-            Values = values;
-        for (int i =0;i< Values.size();i++){
-            if (i >= 1) SQL += ",";
+    public void CreateProductInsert(int iditem , String type , String name , String description, float price, float weight,int quanitiy , Connection con)
+    {
 
-            SQL += "'" + Values.get(i) + "'";
-        }
-        SQL += ");";
-        System.out.println(SQL);
-
-        executeStatement(SQL);
-
-    }
-
-
-    public void executeStatement(String SQL){
-        Statement mystat;
         try {
-            Connect con = new Connect();
-            Connection mycon =  con.getconnection();
-            mystat = mycon.createStatement();
-            mystat.executeUpdate(SQL);
-            mystat.close();
-            mycon.close();
-    }
-    catch (Exception exc) {
-        System.out.println("Insert Couldn't Connect to Database!");
-        System.exit(0);
-    }
+
+
+            String SQL ="INSERT INTO [dbo].[items]([iditems],[type],[name],[description],[price],[weight],[quantity])VALUES"
+                    + "(?,?,?,?,?,?,?)";
+            PreparedStatement preparedStmt = con.prepareStatement(SQL);
+            preparedStmt.setInt (1, iditem);
+            preparedStmt.setString (2, type);
+            preparedStmt.setString (3, name);
+            preparedStmt.setString (4, description);
+            preparedStmt.setFloat (5, price);
+            preparedStmt.setFloat (6, weight);
+            preparedStmt.setFloat (7, quanitiy);
+            System.out.print(SQL);
+            preparedStmt.executeUpdate();
+
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            System.out.println("Connection failed");
+            System.out.println(e.getMessage());
+        }
 
     }
+
+
+    public Connection getConnection()
+    {
+        return con;
+    }
+
+
 }

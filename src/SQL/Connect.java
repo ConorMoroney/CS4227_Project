@@ -20,7 +20,6 @@ public Connect() throws ClassNotFoundException {
 		 
 		} catch (SQLException e) {
 
-			// TODO Auto-generated catch block
 			System.out.println("Connection failed");
 			System.out.println(e.getMessage());
 		
@@ -31,6 +30,5 @@ public Connect() throws ClassNotFoundException {
  {
 	return con; 
  }
-
 
 }

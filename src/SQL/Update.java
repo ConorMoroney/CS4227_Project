@@ -1,50 +1,34 @@
 package SQL;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * Created by Conor on 12-Oct-16.
  */
 public class Update {
 
-    Connect con;
-    Connection mycon;
-    Statement mystat;
-    ResultSet myRe;
+    Connection con;
 
-
-    public Update(String table, String Set , String newAmount ,String Where , String Variable)
-    {
-
-      /*  String sql = "UPDATE [dbo].["+table+"]\n" +
-                "   SET ["+Set+"] = "+newAmount+"\n" +
-                " WHERE "+Where+" = "+ Variable ;*/
-
-      String sql = "update items set quantity = 390 where iditems = 1";
-        executeStatement(sql);
+    public Update() throws ClassNotFoundException {
+        Connect c = new Connect();
+        con = c.getconnection();
     }
 
 
-    public void executeStatement(String SQL){try {
-        con = new Connect();
-        mycon =  con.getconnection();
-        mystat = mycon.createStatement();
-    }
-    catch (Exception exc) {
-        System.out.println("Update Couldn't Connect to Database!");
-        System.exit(0);
-    }
-        try{
-          mystat.execute(SQL);
-            System.out.print("Updated\n");
-        }
-        catch (Exception exc) {
-            System.out.println("Update Statement Failed");
-            System.exit(0);
+    public void UpdateItems(int newAmount , int itemId ) {
+        try {
+
+
+            String SQL = "UPDATE [dbo].[items] SET [quantity] = ? WHERE iditems = ?";
+
+            PreparedStatement preparedStmt = con.prepareStatement(SQL);
+            preparedStmt.setInt(1, newAmount);
+            preparedStmt.setInt(2, itemId);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
+
 }
 
 

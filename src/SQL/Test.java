@@ -16,12 +16,16 @@ public class Test {
 
 
 
-        Insert i =new Insert();
+        /*Insert i =new Insert();
         i.CreateUserInsert(57,"mike",2,"pass","email","address",i.getConnection());
 
         i.CreateProductInsert(6,"pen","pencil","pencil",1,1,20,i.getConnection());
+*/
 
 
+
+        Update u = new Update();
+        u.UpdateItems(50,15);
     }
 
 

@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ad9ac67-4d6f-436c-9cfa-90edc9e0b980" name="Default" comment="Added a new Package called sample1_implemantation.  &#10;&#10;I move the main method here and created an exmple class of what it will kind of look like once finished &#10;This package is going to be what calls every method and specifies every hard coded varible like GUI element Locations and what happens when specific buttons are pressed &#10;&#10;Also Added in some basic skeleton Code for the Interceptor Design Pattern &#10;&#10;I will be continuing implementation on this tonight &#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Java/ConcreteInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Java/Context.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Java/Dispacher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Java/I_Interceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SAMPLE1/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SAMPLE1/Sample1_Implementation.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Java/Main.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/LogInScreenGUI.java" afterPath="$PROJECT_DIR$/src/GUI/LogInScreenGUI.java" />
     </list>
     <ignored path="CS4227_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -878,7 +870,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477081706349</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added a new Package called sample1_implemantation.  &#10;&#10;I move the main method here and created an exmple class of what it will kind of look like once finished &#10;This package is going to be what calls every method and specifies every hard coded varible like GUI element Locations and what happens when specific buttons are pressed &#10;&#10;Also Added in some basic skeleton Code for the Interceptor Design Pattern &#10;&#10;I will be continuing implementation on this tonight &#10;">
+      <created>1477669356315</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1477669356315</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">

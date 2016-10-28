@@ -6,6 +6,8 @@ package Java;
 public class ConcreteInterceptor  implements I_Interceptor{
     @Override
     public void InterceptorMethod1(Context context) {
-        // Put implementation here
+        /* Put implementation here */
     }
+
+
 }

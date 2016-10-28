@@ -17,27 +17,6 @@ public class LogInScreenGUI implements  ActionListener
 	JPanel totalGUI = new JPanel();
 	static JFrame frame = new JFrame("Log In Screen");
 
-    public JLabel addLabel(String labelText, int xLocation, int yLocation, int xSize, int ySize)
-    {
-        JLabel label = new JLabel(labelText);
-        label.setLocation(xLocation, yLocation);
-        label.setSize(xSize, ySize);
-        buttonPanel.add(label);
-
-        return label;
-    }
-    public JPanel addButtonPanel(int xLocation, int yLocation, int xSize, int ySize)
-    {
-        JPanel buttonPanel;
-        buttonPanel = new JPanel();
-        buttonPanel.setLayout(null);
-        buttonPanel.setLocation(xLocation, yLocation);
-        buttonPanel.setSize(xSize, ySize);
-        totalGUI.add(buttonPanel);
-
-        return buttonPanel;
-    }
-
     public JButton addButton(String text, int xLocation, int yLocation, int xSize, int ySize)
     {
         JButton button;
@@ -50,41 +29,23 @@ public class LogInScreenGUI implements  ActionListener
         return button;
     }
 
-    public JTextField addTextField(int xLocation, int yLocation,int xSize, int ySize)
-    {
-        JTextField textField;
-        textField = new JTextField();
-        textField.setLocation(xLocation, yLocation);
-        textField.setSize(xSize, ySize);
-        buttonPanel.add(textField);
-
-        return textField;
-    }
-
-    public JPasswordField addPasswordField(int xLocation, int yLocation,int xSize, int ySize)
-    {
-        JPasswordField passwordField;
-        passwordField = new JPasswordField();
-        passwordField.setLocation(xLocation, yLocation);
-        passwordField.setSize(xSize, ySize);
-        buttonPanel.add(passwordField);
-
-        return passwordField;
-    }
-
     public JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
         //JPanel totalGUI = new JPanel();
         totalGUI.setLayout(null);
 
-        buttonPanel = addButtonPanel(10,10,295,185);
+        buttonPanel = GUIFactory.addButtonPanel(10,10,295,185);
+        userNameLabel = GUIFactory.addLabel("Username:",0,0,80,30);
+        passwordLabel = GUIFactory.addLabel("Password:",0,40,80,30);
+        userNameTextField = GUIFactory.addTextField(90,0,180,30);
+        passwordTextField = GUIFactory.addPasswordField(90,40,180,30);
 
-        userNameLabel = addLabel("Username:",0,0,80,30);
-        passwordLabel = addLabel("Password:",0,40,80,30);
-
-        userNameTextField = addTextField(90,0,180,30);
-        passwordTextField = addPasswordField(90,40,180,30);
+        totalGUI.add(buttonPanel);
+        buttonPanel.add(userNameLabel);
+        buttonPanel.add(passwordLabel);
+        buttonPanel.add(userNameTextField);
+        buttonPanel.add(passwordTextField);
 
         exitButton = addButton("Exit",0,80,85,30);
         logInButton = addButton("Log In",93,80,85,30);
@@ -113,6 +74,11 @@ public class LogInScreenGUI implements  ActionListener
 			//declare variables for username and password
 			String userName = userNameTextField.getText();
 			String password = passwordTextField.getText();
+
+            /*
+                TODO
+                Change code below to not have any SQL, use function calls.
+             */
 
 			//Random JOptionPane that shows username and password.
 			//JOptionPane.showMessageDialog(null, userName + " " + password);
@@ -169,7 +135,7 @@ public class LogInScreenGUI implements  ActionListener
         
     }
 
-    private static void createAndShowGUI()
+    public static void createAndShowGUI()
 	{
         //Create and set up the content pane.
         LogInScreenGUI window = new LogInScreenGUI();

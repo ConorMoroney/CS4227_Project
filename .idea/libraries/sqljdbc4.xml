@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="sqljdbc4">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/Microsoft JDBC Driver 6.0 for SQL Server/sqljdbc_6.0/enu/sqljdbc4.jar!/" />
+      <root url="jar://$USER_HOME$/Desktop/sqljdbc_4.0/enu/sqljdbc4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

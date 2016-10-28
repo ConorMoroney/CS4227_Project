@@ -41,46 +41,26 @@ public class RegisterUserGUI implements  ActionListener
         buttonPanel.setSize(295, 485);
         totalGUI.add(buttonPanel);
 
-		//Make Labels
-        userLabel = new JLabel("Username:");
-        userLabel.setLocation(0, 0);
-        userLabel.setSize(80, 30);
+        //Make Labels
+        userLabel = GUIFactory.addLabel("Username:",0,0,80,30);
+        passLabel = GUIFactory.addLabel("Password:",0,40,80,30);
+        emailLabel = GUIFactory.addLabel("email:",0,80,80,30);
+        addressLabel = GUIFactory.addLabel("Address:",0,120,80,30);
+
         buttonPanel.add(userLabel);
-        
-		passLabel = new JLabel("Password:");
-		passLabel.setLocation(0, 40);
-        passLabel.setSize(80, 30);
         buttonPanel.add(passLabel);
-		
-		emailLabel = new JLabel("email:");
-		emailLabel.setLocation(0, 80);
-        emailLabel.setSize(80, 30);
         buttonPanel.add(emailLabel);
-        
-        addressLabel = new JLabel("Address:");
-		addressLabel.setLocation(0,120);
-        addressLabel.setSize(80, 30);
         buttonPanel.add(addressLabel);
 
-		//Make texts fields
-        userField= new JTextField();
-        userField.setLocation(90, 0);
-        userField.setSize(180, 30);
+        //Make texts fields
+        userField = GUIFactory.addTextField(110,0,180,30);
+        passField = GUIFactory.addPasswordField(110,40,180,30);
+        emailField = GUIFactory.addTextField(110,80,180,30);
+        addressField = GUIFactory.addTextField(110,120,180,30);
+
         buttonPanel.add(userField);
-        
-        passField = new JTextField();
-        passField.setLocation(90, 40);
-        passField.setSize(180, 30);
         buttonPanel.add(passField);
-
-        emailField = new JTextField();
-        emailField.setLocation(90, 80);
-        emailField.setSize(180, 30);
         buttonPanel.add(emailField);
-
-        addressField = new JTextField();
-        addressField.setLocation(90, 120);
-        addressField.setSize(180, 30);
         buttonPanel.add(addressField);
 
 		//Make Buttons
@@ -172,7 +152,7 @@ public class RegisterUserGUI implements  ActionListener
         frame.setContentPane(window.createContentPane());
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(305, 250);
+        frame.setSize(325, 250);
 		frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }

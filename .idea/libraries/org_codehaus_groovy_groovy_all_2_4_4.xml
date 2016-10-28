@@ -3,7 +3,6 @@
     <properties maven-id="org.codehaus.groovy:groovy-all:2.4.4" />
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/groovy-all-2.4.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/groovy-all-2.4.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

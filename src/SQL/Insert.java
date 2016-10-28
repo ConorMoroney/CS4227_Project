@@ -21,43 +21,47 @@ public class Insert {
      *
      * *************/
 
-    public void CreateUserInsert(int iduser , String username , int accesslvl , String password , String email , String address , Connection con)
+    public void CreateUserInsert( String username , int accesslvl , String password , String email , String address , Connection con)
     {
-
-        try {
-
-
-            String SQL ="INSERT INTO [dbo].[users]([idusers],[username],[accesslvl],[password],[email],[address])VALUES"
-                    + "(?,?,?,?,?,?)";
-            PreparedStatement preparedStmt = con.prepareStatement(SQL);
-            preparedStmt.setInt (1, iduser);
-            preparedStmt.setString (2, username);
-            preparedStmt.setInt (3, accesslvl);
-            preparedStmt.setString (4, password);
-            preparedStmt.setString (5, email);
-            preparedStmt.setString (6, address);
-            System.out.print(SQL);
-            preparedStmt.executeUpdate();
+        String table = "users";
+        int id = getMaxId(table);
+        if (id > 0) {
+            try {
 
 
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            System.out.println("Connection failed");
-            System.out.println(e.getMessage());
+                String SQL = "INSERT INTO [dbo].[users]([idusers],[username],[accesslvl],[password],[email],[address])VALUES"
+                        + "(?,?,?,?,?,?)";
+                PreparedStatement preparedStmt = con.prepareStatement(SQL);
+                preparedStmt.setInt(1, id);
+                preparedStmt.setString(2, username);
+                preparedStmt.setInt(3, accesslvl);
+                preparedStmt.setString(4, password);
+                preparedStmt.setString(5, email);
+                preparedStmt.setString(6, address);
+                System.out.print(SQL);
+                preparedStmt.executeUpdate();
+
+
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                System.out.println("Connection failed");
+                System.out.println(e.getMessage());
+            }
         }
-
     }
 
-    public void CreateProductInsert(int iditem , String type , String name , String description, float price, float weight,int quanitiy , Connection con)
+    public void CreateProductInsert( String type , String name , String description, float price, float weight,int quanitiy , Connection con)
     {
-
+        String table = "items";
+        int id = getMaxId(table);
+        if (id > 0) {
         try {
 
 
             String SQL ="INSERT INTO [dbo].[items]([iditems],[type],[name],[description],[price],[weight],[quantity])VALUES"
                     + "(?,?,?,?,?,?,?)";
             PreparedStatement preparedStmt = con.prepareStatement(SQL);
-            preparedStmt.setInt (1, iditem);
+            preparedStmt.setInt (1, id);
             preparedStmt.setString (2, type);
             preparedStmt.setString (3, name);
             preparedStmt.setString (4, description);
@@ -74,6 +78,7 @@ public class Insert {
             System.out.println(e.getMessage());
         }
 
+        }
     }
 
 
@@ -82,5 +87,22 @@ public class Insert {
         return con;
     }
 
+    private int getMaxId(String table)
+    {
+        String coloumn;
+        if( table.equalsIgnoreCase("users"))
+        coloumn = "idusers";
+        else
+            coloumn = "iditems";
+
+      SelectMax s = new SelectMax(coloumn,table);
+      ResultSet r = s.getResultset();
+        try {
+            return r.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 
 }

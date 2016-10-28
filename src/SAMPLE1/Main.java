@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String [] args){
 		
 		// register || log in
-		LogInScreenGUI.createAndShowGUI();
+		LogInScreenGUI.main(null);
 		
 		
 		

@@ -31,55 +31,31 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 		int accessLevel = Integer.parseInt(line[1]);
 		if (accessLevel == 1)
 		{
-			JFrame frame = new JFrame("Customer GUI");
-
 			//Create and set up the content pane.
 			DisplayGUI window = new DisplayGUI();
+			JFrame frame = GUIFactory.makeFrame("Customer GUI", 405, 130);
 			frame.setContentPane(window.createContentPane(accessLevel));
-
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setLocationRelativeTo(null);
-			frame.setSize(405, 130);
-			frame.setVisible(true);
 		}
 		if (accessLevel == 2)
 		{
-			JFrame frame = new JFrame("Warehouse Staff GUI");
-
 			//Create and set up the content pane.
 			DisplayGUI window = new DisplayGUI();
+			JFrame frame = GUIFactory.makeFrame("Warehouse Staff GUI", 405, 130);
 			frame.setContentPane(window.createContentPane(accessLevel));
-
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setLocationRelativeTo(null);
-			frame.setSize(405, 130);
-			frame.setVisible(true);
 		}
 		if (accessLevel == 3)
 		{
-			JFrame frame = new JFrame("Logistics Staff GUI");
-
 			//Create and set up the content pane.
 			DisplayGUI window = new DisplayGUI();
+			JFrame frame = GUIFactory.makeFrame("Logistsics Staff GUI", 405, 130);
 			frame.setContentPane(window.createContentPane(accessLevel));
-
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setLocationRelativeTo(null);
-			frame.setSize(405, 130);
-			frame.setVisible(true);
 		}
 		if (accessLevel == 4)
 		{
-			JFrame frame = new JFrame("Manager GUI");
-
 			//Create and set up the content pane.
 			DisplayGUI window = new DisplayGUI();
+			JFrame frame = GUIFactory.makeFrame("Manager GUI", 405, 130);
 			frame.setContentPane(window.createContentPane(accessLevel));
-
-			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.setLocationRelativeTo(null);
-			frame.setSize(405, 130);
-			frame.setVisible(true);
 		}
 	}
 
@@ -94,10 +70,7 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 		totalGUI.setLayout(null);
 
 		//Make Button Panel
-		buttonPanel = new JPanel();
-		buttonPanel.setLayout(null);
-		buttonPanel.setLocation(10, 10);
-		buttonPanel.setSize(380, 190);
+		buttonPanel = GUIFactory.addButtonPanel(10,10,380,190);
 		totalGUI.add(buttonPanel);
 
 		//Make Buttons

@@ -7,6 +7,21 @@ import javax.swing.*;
  */
 public class GUIFactory
 {
+    public static JFrame makeFrame(String title, int xSize, int ySize)
+    {
+        JFrame frame = new JFrame(title);
+
+        //Create and set up the content pane.
+        DisplayGUI window = new DisplayGUI();
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        frame.setSize(xSize, ySize);
+        frame.setVisible(true);
+
+        return frame;
+    }
+
     public static JLabel addLabel(String labelText, int xLocation, int yLocation, int xSize, int ySize)
     {
         JLabel label = new JLabel(labelText);

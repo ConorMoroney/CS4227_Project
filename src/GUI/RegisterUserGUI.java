@@ -109,8 +109,6 @@ public class RegisterUserGUI implements  ActionListener
     		int accesslvl =1;
     		
     		try{
-    			
-    			
     			//Java.Connect to database
     			   Connect con = new Connect();
         		   Connection mycon =  con.getconnection();
@@ -149,12 +147,9 @@ public class RegisterUserGUI implements  ActionListener
 	{
         //Create and set up the content pane.
     	RegisterUserGUI window = new RegisterUserGUI();
+        frame = GUIFactory.makeFrame("Register User", 325, 250);
         frame.setContentPane(window.createContentPane());
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(325, 250);
-		frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
     }
 
     public static void start()

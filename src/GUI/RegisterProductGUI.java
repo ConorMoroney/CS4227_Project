@@ -24,75 +24,38 @@ public class RegisterProductGUI implements ActionListener {
         totalGUI.setLayout(null);
 
         //Make Button Panel
-        buttonPanel = new JPanel();
-        buttonPanel.setLayout(null);
-        buttonPanel.setLocation(10, 10);
-        buttonPanel.setSize(295, 485);
+        buttonPanel = GUIFactory.addButtonPanel(10,10,295,485);
         totalGUI.add(buttonPanel);
 
         //Make Labels
-        TypeLabel = new JLabel("Type:");
-        TypeLabel.setLocation(0, 0);
-        TypeLabel.setSize(80, 30);
+        TypeLabel = GUIFactory.addLabel("Type",0,0,80,30);
+        nameLabel = GUIFactory.addLabel("Name:",0,40,80,30);
+        weightLabel = GUIFactory.addLabel("Weight:", 0,80,80,30);
+        priceLabel = GUIFactory.addLabel("Price:", 0,120,80,30);
+        quantityLabel = GUIFactory.addLabel("Quantity:",0,160,80,30);
+        descriptionLabel = GUIFactory.addLabel("Description",0,200,80,30);
+
         buttonPanel.add(TypeLabel);
-
-        nameLabel = new JLabel("Name:");
-        nameLabel.setLocation(0, 40);
-        nameLabel.setSize(80, 30);
         buttonPanel.add(nameLabel);
-
-        weightLabel = new JLabel("Weight:");
-        weightLabel.setLocation(0, 80);
-        weightLabel.setSize(80, 30);
         buttonPanel.add(weightLabel);
-
-        priceLabel = new JLabel("Price:");
-        priceLabel.setLocation(0, 120);
-        priceLabel.setSize(80, 30);
         buttonPanel.add(priceLabel);
-
-        quantityLabel = new JLabel("Quantity:");
-        quantityLabel.setLocation(0, 160);
-        quantityLabel.setSize(80, 30);
         buttonPanel.add(quantityLabel);
-
-        descriptionLabel = new JLabel("Description:");
-        descriptionLabel.setLocation(0, 200);
-        descriptionLabel.setSize(80, 30);
         buttonPanel.add(descriptionLabel);
 
-
         //Make texts fields
-        typeField = new JTextField();
-        typeField.setLocation(90, 0);
-        typeField.setSize(180, 30);
+        typeField = GUIFactory.addTextField(90,0,180,30);
+        nameField = GUIFactory.addTextField(90,40,180,30);
+        weightField = GUIFactory.addTextField(90,80,180,30);
+        priceField = GUIFactory.addTextField(90,120,180,30);
+        quantityField = GUIFactory.addTextField(90,160,180,30);
+        descriptionField = GUIFactory.addTextField(90,200,180,30);
+
         buttonPanel.add(typeField);
-
-        nameField = new JTextField();
-        nameField.setLocation(90, 40);
-        nameField.setSize(180, 30);
         buttonPanel.add(nameField);
-
-        weightField = new JTextField();
-        weightField.setLocation(90, 80);
-        weightField.setSize(180, 30);
         buttonPanel.add(weightField);
-
-        priceField = new JTextField();
-        priceField.setLocation(90, 120);
-        priceField.setSize(180, 30);
         buttonPanel.add(priceField);
-
-        quantityField = new JTextField();
-        quantityField.setLocation(90, 160);
-        quantityField.setSize(180, 30);
         buttonPanel.add(quantityField);
-
-        descriptionField = new JTextField();
-        descriptionField.setLocation(90, 200);
-        descriptionField.setSize(180, 30);
         buttonPanel.add(descriptionField);
-
 
         //Make Buttons
         cancelButton = new JButton("Cancel");
@@ -190,12 +153,8 @@ public class RegisterProductGUI implements ActionListener {
     private static void createAndShowGUI() {
         //Create and set up the content pane.
         RegisterProductGUI window = new RegisterProductGUI();
+        frame = GUIFactory.makeFrame("Register Product", 305, 365);
         frame.setContentPane(window.createContentPane());
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(305, 365);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
     }
 
     public static void registerItem() {

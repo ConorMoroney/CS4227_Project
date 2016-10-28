@@ -97,8 +97,7 @@ public class RegisterEmployeeGUI implements  ActionListener
         	String pass = passField.getText();
         	String email = emailField.getText();
         	String address = addressField.getText();
-        		
-    		
+
     		UserFactory userFactory = new UserFactory();
     		
     		I_User user = userFactory.createUser(employeeTypes[userType.getSelectedIndex()]);
@@ -155,12 +154,8 @@ public class RegisterEmployeeGUI implements  ActionListener
 	{
         //Create and set up the content pane.
     	RegisterEmployeeGUI window = new RegisterEmployeeGUI();
+        frame = GUIFactory.makeFrame("Register Employee", 345, 290);
         frame.setContentPane(window.createContentPane());
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(345, 290);
-		frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
     }
 
     public static void main(String[] args)

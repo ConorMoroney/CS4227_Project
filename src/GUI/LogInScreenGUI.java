@@ -139,12 +139,8 @@ public class LogInScreenGUI implements  ActionListener
 	{
         //Create and set up the content pane.
         LogInScreenGUI window = new LogInScreenGUI();
+        frame = GUIFactory.makeFrame("Log In Screen", 305, 165);
         frame.setContentPane(window.createContentPane());
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(305, 165);
-		frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
     }
 
     public static void main(String[] args)

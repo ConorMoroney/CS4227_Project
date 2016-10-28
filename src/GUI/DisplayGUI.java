@@ -74,23 +74,15 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 		totalGUI.add(buttonPanel);
 
 		//Make Buttons
-		remaingModulesButton = new JButton(titles[0]);
-		System.out.println(titles[0]);
-		remaingModulesButton.setLocation(0, 0);
-		remaingModulesButton.setSize(180, 30);
+		remaingModulesButton = GUIFactory.addButton(titles[0],0,0,180,30);
 		remaingModulesButton.addActionListener(this);
 		buttonPanel.add(remaingModulesButton);
 
-		viewResultsButton = new JButton(titles[1]);
-		System.out.println(titles[1]);
-		viewResultsButton.setLocation(190, 0);
-		viewResultsButton.setSize(180, 30);
+		viewResultsButton = GUIFactory.addButton(titles[1],190,0,180,30);
 		viewResultsButton.addActionListener(this);
 		buttonPanel.add(viewResultsButton);
 
-		exitButton = new JButton("Exit");
-		exitButton.setLocation(00, 40);
-		exitButton.setSize(370, 30);
+		exitButton = GUIFactory.addButton("Exit",0,40,370,30);
 		exitButton.addActionListener(this);
 		buttonPanel.add(exitButton);
 

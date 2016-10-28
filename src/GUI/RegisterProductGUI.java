@@ -58,15 +58,11 @@ public class RegisterProductGUI implements ActionListener {
         buttonPanel.add(descriptionField);
 
         //Make Buttons
-        cancelButton = new JButton("Cancel");
-        cancelButton.setLocation(0, 280);
-        cancelButton.setSize(135, 30);
+        cancelButton = GUIFactory.addButton("Cancel",0,280,135,30);
         cancelButton.addActionListener(this);
         buttonPanel.add(cancelButton);
 
-        registerProductButton = new JButton("Register");
-        registerProductButton.setLocation(140, 280);
-        registerProductButton.setSize(135, 30);
+        registerProductButton = GUIFactory.addButton("Register",140,280,135,30);
         registerProductButton.addActionListener(this);
         buttonPanel.add(registerProductButton);
 

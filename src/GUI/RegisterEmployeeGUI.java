@@ -62,15 +62,11 @@ public class RegisterEmployeeGUI implements  ActionListener
         buttonPanel.add(userType);
 
 		//Make Buttons
-		cancelButton = new JButton("Cancel");
-        cancelButton.setLocation(0, 200);
-        cancelButton.setSize(135, 30);
+        cancelButton = GUIFactory.addButton("Cancel",0,200,135,30);
         cancelButton.addActionListener(this);
         buttonPanel.add(cancelButton);
-		
-        registerUserButton = new JButton("Register");
-        registerUserButton.setLocation(160, 200);
-        registerUserButton.setSize(135, 30);
+
+        registerUserButton = GUIFactory.addButton("Register",160,200,135,30);
         registerUserButton.addActionListener(this);
         buttonPanel.add(registerUserButton);
         

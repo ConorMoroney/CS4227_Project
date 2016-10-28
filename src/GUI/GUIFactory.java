@@ -7,6 +7,16 @@ import javax.swing.*;
  */
 public class GUIFactory
 {
+    public static JButton addButton(String title, int xLocation, int yLocation, int xSize, int ySize)
+    {
+        JButton button;
+        button = new JButton(title);
+        button.setLocation(xLocation, yLocation);
+        button.setSize(xSize, ySize);
+
+        return button;
+    }
+
     public static JFrame makeFrame(String title, int xSize, int ySize)
     {
         JFrame frame = new JFrame(title);

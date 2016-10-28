@@ -17,18 +17,6 @@ public class LogInScreenGUI implements  ActionListener
 	JPanel totalGUI = new JPanel();
 	static JFrame frame = new JFrame("Log In Screen");
 
-    public JButton addButton(String text, int xLocation, int yLocation, int xSize, int ySize)
-    {
-        JButton button;
-        button = new JButton(text);
-        button.setLocation(xLocation, yLocation);
-        button.setSize(xSize, ySize);
-        button.addActionListener(this);
-        buttonPanel.add(button);
-
-        return button;
-    }
-
     public JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
@@ -47,9 +35,18 @@ public class LogInScreenGUI implements  ActionListener
         buttonPanel.add(userNameTextField);
         buttonPanel.add(passwordTextField);
 
-        exitButton = addButton("Exit",0,80,85,30);
-        logInButton = addButton("Log In",93,80,85,30);
-        registerButton = addButton("Register",185,80,90,30);
+        //buttons
+        exitButton = GUIFactory.addButton("Exit",0,80,85,30);
+        exitButton.addActionListener(this);
+        buttonPanel.add(exitButton);
+
+        logInButton = GUIFactory.addButton("Log In",93,80,85,30);
+        logInButton.addActionListener(this);
+        buttonPanel.add(logInButton);
+
+        registerButton = GUIFactory.addButton("Register",185,80,90,30);
+        registerButton.addActionListener(this);
+        buttonPanel.add(registerButton);
         
         totalGUI.setVisible(true);
         return totalGUI;

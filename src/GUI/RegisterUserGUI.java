@@ -64,15 +64,11 @@ public class RegisterUserGUI implements  ActionListener
         buttonPanel.add(addressField);
 
 		//Make Buttons
-		cancelButton = new JButton("Cancel");
-        cancelButton.setLocation(0, 160);
-        cancelButton.setSize(135, 30);
+        cancelButton = GUIFactory.addButton("Cancel",0,160,135,30);
         cancelButton.addActionListener(this);
         buttonPanel.add(cancelButton);
-		
-        registerUserButton = new JButton("Register");
-        registerUserButton.setLocation(140, 160);
-        registerUserButton.setSize(135, 30);
+
+        registerUserButton = GUIFactory.addButton("Register", 140,160,135,30);
         registerUserButton.addActionListener(this);
         buttonPanel.add(registerUserButton);
         

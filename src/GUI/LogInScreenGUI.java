@@ -17,67 +17,85 @@ public class LogInScreenGUI implements  ActionListener
 	JPanel totalGUI = new JPanel();
 	static JFrame frame = new JFrame("Log In Screen");
 
+    public JLabel addLabel(String labelText, int xLocation, int yLocation, int xSize, int ySize)
+    {
+        JLabel label = new JLabel(labelText);
+        label.setLocation(xLocation, yLocation);
+        label.setSize(xSize, ySize);
+        buttonPanel.add(label);
+
+        return label;
+    }
+    public JPanel addButtonPanel(int xLocation, int yLocation, int xSize, int ySize)
+    {
+        JPanel buttonPanel;
+        buttonPanel = new JPanel();
+        buttonPanel.setLayout(null);
+        buttonPanel.setLocation(xLocation, yLocation);
+        buttonPanel.setSize(xSize, ySize);
+        totalGUI.add(buttonPanel);
+
+        return buttonPanel;
+    }
+
+    public JButton addButton(String text, int xLocation, int yLocation, int xSize, int ySize)
+    {
+        JButton button;
+        button = new JButton(text);
+        button.setLocation(xLocation, yLocation);
+        button.setSize(xSize, ySize);
+        button.addActionListener(this);
+        buttonPanel.add(button);
+
+        return button;
+    }
+
+    public JTextField addTextField(int xLocation, int yLocation,int xSize, int ySize)
+    {
+        JTextField textField;
+        textField = new JTextField();
+        textField.setLocation(xLocation, yLocation);
+        textField.setSize(xSize, ySize);
+        buttonPanel.add(textField);
+
+        return textField;
+    }
+
+    public JPasswordField addPasswordField(int xLocation, int yLocation,int xSize, int ySize)
+    {
+        JPasswordField passwordField;
+        passwordField = new JPasswordField();
+        passwordField.setLocation(xLocation, yLocation);
+        passwordField.setSize(xSize, ySize);
+        buttonPanel.add(passwordField);
+
+        return passwordField;
+    }
+
     public JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
         //JPanel totalGUI = new JPanel();
         totalGUI.setLayout(null);
 
-        //Make Button Panel
-        buttonPanel = new JPanel();
-        buttonPanel.setLayout(null);
-        buttonPanel.setLocation(10, 10);
-        buttonPanel.setSize(295, 185);
-        totalGUI.add(buttonPanel);
+        buttonPanel = addButtonPanel(10,10,295,185);
 
-		//Make Labels
-		userNameLabel = new JLabel("Username:");
-		userNameLabel.setLocation(0, 0);
-        userNameLabel.setSize(80, 30);
-        buttonPanel.add(userNameLabel);
-		
-		passwordLabel = new JLabel("Password:");
-		passwordLabel.setLocation(0, 40);
-        passwordLabel.setSize(80, 30);
-        buttonPanel.add(passwordLabel);
-		
-		//Username and Password Fields
-		userNameTextField = new JTextField();
-		userNameTextField.setLocation(90, 0);
-        userNameTextField.setSize(180, 30);
-        buttonPanel.add(userNameTextField);
-		
-		passwordTextField = new JPasswordField();
-		passwordTextField.setLocation(90, 40);
-        passwordTextField.setSize(180, 30);
-        buttonPanel.add(passwordTextField);
-		
-		//Make Buttons
-		exitButton = new JButton("Exit");
-        exitButton.setLocation(0, 80);
-        exitButton.setSize(85, 30);
-        exitButton.addActionListener(this);
-        buttonPanel.add(exitButton);
-		
-        logInButton = new JButton("Log In");
-        logInButton.setLocation(93, 80);
-        logInButton.setSize(85, 30);
-        logInButton.addActionListener(this);
-        buttonPanel.add(logInButton);
-        
-        
-        registerButton = new JButton("Register");
-        registerButton.setLocation(185, 80);
-        registerButton.setSize(90, 30);
-        registerButton.addActionListener(this);
-        buttonPanel.add(registerButton);
+        userNameLabel = addLabel("Username:",0,0,80,30);
+        passwordLabel = addLabel("Password:",0,40,80,30);
+
+        userNameTextField = addTextField(90,0,180,30);
+        passwordTextField = addPasswordField(90,40,180,30);
+
+        exitButton = addButton("Exit",0,80,85,30);
+        logInButton = addButton("Log In",93,80,85,30);
+        registerButton = addButton("Register",185,80,90,30);
         
         totalGUI.setVisible(true);
         return totalGUI;
     }
 
     public void actionPerformed(ActionEvent e)
-	{
+    {
         if(e.getSource() == exitButton)
         {
 			System.exit(0);
@@ -96,17 +114,30 @@ public class LogInScreenGUI implements  ActionListener
 			String userName = userNameTextField.getText();
 			String password = passwordTextField.getText();
 
+			//Random JOptionPane that shows username and password.
+			//JOptionPane.showMessageDialog(null, userName + " " + password);
 
+			//check if username and password exist
 			try
 			{
+                /*
+    		   Connect con = new Connect();
+    		   Connection mycon =  con.getconnection();
+    		   Statement mystat = mycon.createStatement();
+
+
+    			//Get ID for Java.user
+    			String sql = "select * from creationary..users WHERE username = '" + userName + "'";
+    			ResultSet myRe = mystat.executeQuery(sql);
+                */
 
     			String dbUser = "";
     			String dbPass = "";
-//uncomment after testing
+                //uncomment after testing
 
                 Select s = new Select("*","users","username",userName);
                 ResultSet myRe = s.getResultset();
-
+                System.out.print(myRe);
 
 
 
@@ -114,6 +145,7 @@ public class LogInScreenGUI implements  ActionListener
 
     			//get db data
     			while (myRe.next()){
+    			    dbUser = myRe.getString(2);
     				dbPass = myRe.getString(4);
 
     				line[0] = myRe.getString(2);
@@ -137,7 +169,7 @@ public class LogInScreenGUI implements  ActionListener
         
     }
 
-    public static void createAndShowGUI()
+    private static void createAndShowGUI()
 	{
         //Create and set up the content pane.
         LogInScreenGUI window = new LogInScreenGUI();
@@ -149,7 +181,7 @@ public class LogInScreenGUI implements  ActionListener
         frame.setVisible(true);
     }
 
-    /*public static void main(String[] args)
+    public static void main(String[] args)
 	{
         SwingUtilities.invokeLater(new Runnable() 
 		{
@@ -160,5 +192,5 @@ public class LogInScreenGUI implements  ActionListener
         });
     }
     
-    private void register(){}//Decorator Pattern to be implemented here*/
+    private void register(){}//Decorator Pattern to be implemented here
 }

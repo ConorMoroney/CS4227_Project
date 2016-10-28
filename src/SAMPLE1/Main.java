@@ -1,4 +1,4 @@
-package Java;
+package SAMPLE1;
 
 import GUI.LogInScreenGUI;
 
@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String [] args){
 		
 		// register || log in
-		LogInScreenGUI.main(null);
+		LogInScreenGUI.createAndShowGUI();
 		
 		
 		

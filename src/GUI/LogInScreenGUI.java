@@ -137,7 +137,7 @@ public class LogInScreenGUI implements  ActionListener
         
     }
 
-    private static void createAndShowGUI()
+    public static void createAndShowGUI()
 	{
         //Create and set up the content pane.
         LogInScreenGUI window = new LogInScreenGUI();
@@ -149,7 +149,7 @@ public class LogInScreenGUI implements  ActionListener
         frame.setVisible(true);
     }
 
-    public static void main(String[] args)
+    /*public static void main(String[] args)
 	{
         SwingUtilities.invokeLater(new Runnable() 
 		{
@@ -160,5 +160,5 @@ public class LogInScreenGUI implements  ActionListener
         });
     }
     
-    private void register(){}//Decorator Pattern to be implemented here
+    private void register(){}//Decorator Pattern to be implemented here*/
 }

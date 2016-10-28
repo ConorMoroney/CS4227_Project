@@ -2,44 +2,34 @@ package SQL;
 
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
-import java.sql.ResultSet;
+import java.sql.*;
+import java.sql.Connection;
+
 
 /**
  * Created by Conor on 12-Oct-16.
  */
 public class Test {
 
-    public static void main (String [] args) {
-/*
-        Select s = new Select("username", "users", "username", "Customer");
-        ResultSet r = s.getResultset();
-        s.printSQL(r);
+    public static void main (String [] args) throws ClassNotFoundException {
 
-        s = new Select("*", "items");
-        r = s.getResultset();
-        s.printSQL(r);
 
-        Insert i = new Insert("items");
-        i.addValue("iditems", "15");
-        i.addValue("type", "'pen'");
-        i.addValue("name", "'pen'");
-        i.addValue("description", "'pen'");
-        i.addValue("price", "0.45");
-        i.addValue("weight", "0.2");
-        i.addValue("quantity", "100");
 
-        i.executeStatement(i.constructStatement());
+
+        /*Insert i =new Insert();
+        i.CreateUserInsert(57,"mike",2,"pass","email","address",i.getConnection());
+
+        i.CreateProductInsert(6,"pen","pencil","pencil",1,1,20,i.getConnection());
 */
 
-        Select s2 = new Select("*", "users");
-        Select s1 = new Select("*", "users", "username", "manager");
-        ResultSet r = s2.getResultset();
-        ResultSet r1 = s1.getResultset();
-        s2.printSQL(r);
-        System.out.println("\n\n\n\n\brake;wsuioahaw");
 
-        s1.printSQL(r1);
+
+        Update u = new Update();
+        u.UpdateItems(50,15);
     }
+
+
+
 }
 
 

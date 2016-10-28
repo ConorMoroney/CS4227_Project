@@ -13,6 +13,7 @@ public class Select {
     Connection mycon;
     Statement mystat;
     ResultSet myRe;
+    ResultSetMetaData rsmd;
 
     public Select(String result, String From , String Where , String Variable) {
         // Get Connection to database when created
@@ -43,9 +44,9 @@ public class Select {
         }
     }
 
-    public static void printSQL(ResultSet r){
+    public void printSQL(ResultSet r){
         try {
-            ResultSetMetaData rsmd = r.getMetaData();
+            rsmd = r.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
             while (r.next()) {
                 for (int i = 1; i <= columnsNumber; i++) {
@@ -60,4 +61,5 @@ public class Select {
         }
     }
     public ResultSet getResultset(){return myRe;}
+
 }

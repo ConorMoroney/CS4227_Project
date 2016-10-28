@@ -5,6 +5,7 @@ import Java.UserFactory;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import SQL.Select;
 import java.sql.*;
 import SQL.*;
 
@@ -132,30 +133,41 @@ public class RegisterEmployeeGUI implements  ActionListener
     		int id = 1;
     		int accesslvl = user.getaccesslvl();
     		
-    		try{
-    			   Connect con = new Connect();
-        		   Connection mycon =  con.getconnection();
-        		   Statement mystat = mycon.createStatement();
-    			//Get ID for Java.user
-    			ResultSet myRe = mystat.executeQuery("select * from users");
-    			while (myRe.next()){
-    				id++;
-    			}
-    			
-    			//Insert into table
-    			String sql = "INSERT into users (idusers ,username,accesslvl ,password,email,address) VALUES('" 
-    					 + id  + "','" + userName + "','" + accesslvl+ "','" + pass + "','" + email + "','" + address 
-    						+ "');" ;
-    			
-    			mystat.executeUpdate(sql);
-    			System.out.println("object added to database");
-    			//ResultSet myRe = mystat.executeQuery("select * from creationary.users");
-    			
-    		}
-    		catch(Exception exc){
-    			System.out.println("Error cant connect to database");
-    		}
-    		
+    		try {
+
+
+                Select s = new Select("*", "users");
+                ResultSet myRe = s.getResultset();
+
+                while (myRe.next()) {
+                    id++;
+                }
+            }
+            catch(Exception exc){
+                System.out.println("Error cant connect to database");
+            }
+
+            try {
+
+                Insert i =new Insert();
+                i.CreateUserInsert(id,userName,accesslvl,pass,email,address,i.getConnection());
+                /*
+                Connect con = new Connect();
+                Connection mycon = con.getconnection();
+                Statement mystat = mycon.createStatement();
+                //Insert into table
+                String sql = "INSERT into users (idusers ,username,accesslvl ,password,email,address) VALUES('"
+                        + id + "','" + userName + "','" + accesslvl + "','" + pass + "','" + email + "','" + address
+                        + "');";
+
+                mystat.executeUpdate(sql);
+                System.out.println("object added to database");*/
+                //ResultSet myRe = mystat.executeQuery("select * from creationary.users");
+            }
+            catch(Exception exc){
+                System.out.println("Error Insert Failed ??? ");
+            }
+
     		user.setName(userName);;
     		user.setPassword(pass);
     		user.setEmail(email);

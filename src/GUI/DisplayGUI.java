@@ -5,6 +5,8 @@ import Java.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/*  No SQL Connection in here */
+
 public class DisplayGUI implements ActionListener// extends JFrame implements ActionListener
 {
 

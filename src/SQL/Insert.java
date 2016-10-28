@@ -1,8 +1,6 @@
 package SQL;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -10,81 +8,79 @@ import java.util.ArrayList;
  */
 public class Insert {
 
+    Connection con;
 
-    Connect con;
-    Connection mycon;
-    Statement mystat;
-    ResultSet myRe;
-    String SQL;
-    ArrayList <String> Values = new ArrayList<String>() ;
-    ArrayList <String> Types = new ArrayList<String>();
-    String first;
-    String second;
-
-
-    public Insert(String table){
-
-        SQL = "insert into " + table + " (";
-
+    public Insert() throws ClassNotFoundException {
+        Connect c = new Connect();
+        con = c.getconnection();
     }
 
-    public void addValue(String value , String type){
 
+    /**************
+     * Adding Creation methods for insert
+     *
+     * *************/
 
-        System.out.println(first);
-        System.out.println(second);
-
-
-            Values.add(value);
-            Types.add(type);
-
-        int i = 0;
-        for(String s : Values){
-            if(i < 1 ){
-                first = s;
-                second = Types.get(i);
-            }
-            else {
-                first = first + " ," + s;
-                second = second + " ," + Types.get(i);
-            }
-            i++;
-        }
-
-        System.out.println(first);
-        System.out.println(second);
-
-        constructStatement();
-    }
-
-    public String constructStatement(){
-
-
-        String Result = SQL +  first + ") Values (" + second + ")";
-        System.out.println(Result);
-        return Result;
-    }
-
-    public void executeStatement(String SQL){
-
-
-
+    public void CreateUserInsert(int iduser , String username , int accesslvl , String password , String email , String address , Connection con)
+    {
 
         try {
-        con = new Connect();
-        mycon =  con.getconnection();
-        mystat = mycon.createStatement();
-    }
-    catch (Exception exc) {
-        System.out.println("Insert Couldn't Connect to Database!");
-        System.exit(0);
-    }
-        try{
-            myRe = mystat.executeQuery(SQL);
+
+
+            String SQL ="INSERT INTO [dbo].[users]([idusers],[username],[accesslvl],[password],[email],[address])VALUES"
+                    + "(?,?,?,?,?,?)";
+            PreparedStatement preparedStmt = con.prepareStatement(SQL);
+            preparedStmt.setInt (1, iduser);
+            preparedStmt.setString (2, username);
+            preparedStmt.setInt (3, accesslvl);
+            preparedStmt.setString (4, password);
+            preparedStmt.setString (5, email);
+            preparedStmt.setString (6, address);
+            System.out.print(SQL);
+            preparedStmt.executeUpdate();
+
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            System.out.println("Connection failed");
+            System.out.println(e.getMessage());
         }
-        catch (Exception exc) {
-            System.out.println("Insert Statement Failed");
-            System.exit(0);
-        }
+
     }
+
+    public void CreateProductInsert(int iditem , String type , String name , String description, float price, float weight,int quanitiy , Connection con)
+    {
+
+        try {
+
+
+            String SQL ="INSERT INTO [dbo].[items]([iditems],[type],[name],[description],[price],[weight],[quantity])VALUES"
+                    + "(?,?,?,?,?,?,?)";
+            PreparedStatement preparedStmt = con.prepareStatement(SQL);
+            preparedStmt.setInt (1, iditem);
+            preparedStmt.setString (2, type);
+            preparedStmt.setString (3, name);
+            preparedStmt.setString (4, description);
+            preparedStmt.setFloat (5, price);
+            preparedStmt.setFloat (6, weight);
+            preparedStmt.setFloat (7, quanitiy);
+            System.out.print(SQL);
+            preparedStmt.executeUpdate();
+
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            System.out.println("Connection failed");
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+
+    public Connection getConnection()
+    {
+        return con;
+    }
+
+
 }

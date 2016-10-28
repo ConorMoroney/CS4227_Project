@@ -96,29 +96,17 @@ public class LogInScreenGUI implements  ActionListener
 			String userName = userNameTextField.getText();
 			String password = passwordTextField.getText();
 
-			//Random JOptionPane that shows username and password.
-			//JOptionPane.showMessageDialog(null, userName + " " + password);
 
-			//check if username and password exist
 			try
 			{
-/*
-    		   Connect con = new Connect();
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
 
-
-    			//Get ID for Java.user
-    			String sql = "select * from creationary..users WHERE username = '" + userName + "'";
-    			ResultSet myRe = mystat.executeQuery(sql);
-*/
     			String dbUser = "";
     			String dbPass = "";
 //uncomment after testing
 
                 Select s = new Select("*","users","username",userName);
                 ResultSet myRe = s.getResultset();
-                System.out.print(myRe);
+
 
 
 
@@ -126,7 +114,6 @@ public class LogInScreenGUI implements  ActionListener
 
     			//get db data
     			while (myRe.next()){
-    			    dbUser = myRe.getString(2);
     				dbPass = myRe.getString(4);
 
     				line[0] = myRe.getString(2);

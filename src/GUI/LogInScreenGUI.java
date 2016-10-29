@@ -35,12 +35,39 @@ public class LogInScreenGUI implements  ActionListener
         buttonPanel.add(userNameTextField);
         buttonPanel.add(passwordTextField);
 
+        /****
+         *  Below shows the 3 different ways of making buttons.
+         *  The exit button uses a builder to create a blank button and fills in the details.
+         *  The LogInButton creates the button from the LogInButtonBuilder
+         *  and the Register Button uses a regular Creation Method.
+         */
+        //Builder for LogInButton
+        I_ButtonBuilder button = new LogInButtonBuilder();
+        ButtonEngineer buttonEngineer = new ButtonEngineer(button);
+        buttonEngineer.makeButton();
+
+        //Builder for other 2 Buttons
+        I_ButtonBuilder button2 = new EmptyButtonBuilder();
+        ButtonEngineer buttonEngineer2 = new ButtonEngineer(button2);
+        buttonEngineer2.makeButton();
+
+        Button bLogInButton = buttonEngineer.getButton();
+
+        //Make Buttons and set parameters
+        Button bExitButton = buttonEngineer2.getButton();
+
+        bExitButton.setButtonTitle("Exit");
+        bExitButton.setButtonXLocation(0);
+        bExitButton.setButtonYLocation(80);
+        bExitButton.setButtonXSize(85);
+        bExitButton.setButtonYSize(30);
+
         //buttons
-        exitButton = GUIFactory.addButton("Exit",0,80,85,30);
+        exitButton = GUIFactory.addButtonFromBuilder(bExitButton);
         exitButton.addActionListener(this);
         buttonPanel.add(exitButton);
 
-        logInButton = GUIFactory.addButton("Log In",93,80,85,30);
+        logInButton = GUIFactory.addButtonFromBuilder(bLogInButton);
         logInButton.addActionListener(this);
         buttonPanel.add(logInButton);
 

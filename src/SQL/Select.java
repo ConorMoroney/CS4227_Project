@@ -7,7 +7,7 @@ import java.sql.*;
 /**
  * Created by Conor on 12-Oct-16.
  */
-public class Select {
+public class Select implements  SQLInterface{
 
     Connect con;
     Connection mycon;
@@ -15,14 +15,14 @@ public class Select {
     ResultSet myRe;
     ResultSetMetaData rsmd;
 
-    public Select(String result, String From , String Where , String Variable) {
+    public Select(String table, String From , String Where , String Variable) {
         // Get Connection to database when created
-            String sql = "select "+ result +" from " + From + " WHERE " + Where + " = '" + Variable + "'";
+            String sql = "select "+ table +" from " + From + " WHERE " + Where + " = '" + Variable + "'";
             executeStatement(sql);
     }
-    public Select(String result, String From ) {
+    public Select(String table, String From ) {
         // Get Connection to database when created
-        String sql = "select "+ result +" from " + From ;
+        String sql = "select "+ table +" from " + From ;
         executeStatement(sql);
     }
 

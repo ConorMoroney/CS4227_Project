@@ -35,4 +35,16 @@ public class Helper {
 		user = null;
 	}
 	
+	public void getItems() throws SQLException{
+		dba.getItems();
+	}
+	
+	public int getLastID() throws SQLException{
+		return dba.getLastID();
+	}
+	
+	public void registerUser(int id, String userName, int accesslvl, String pass, String email, String address) throws SQLException{
+		dba.registerUser(id, userName, accesslvl, pass, email, address);
+	}
+	
 }

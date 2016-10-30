@@ -92,7 +92,7 @@ public class LogInScreenGUI extends Panel implements  ActionListener
         
         else if(e.getSource() == registerButton)
         {
-			RegisterUserGUI.start();
+			panelMgr.getPanelFromFactory(3);
         }
 		
         else if(e.getSource() == logInButton)

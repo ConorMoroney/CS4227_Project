@@ -25,6 +25,10 @@ public class ConcreteUser implements I_User{
     	address = add;
     }
     
+    public ConcreteUser(){
+    	
+    }
+    
     public void setName(String name) {
         // TODO Auto-generated method stub
         this.name = name;

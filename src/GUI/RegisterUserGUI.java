@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-public class RegisterUserGUI implements  ActionListener
+public class RegisterUserGUI extends Panel implements  ActionListener
 {
     JPanel buttonPanel;
     JButton cancelButton, registerUserButton;
@@ -28,18 +28,21 @@ public class RegisterUserGUI implements  ActionListener
 	JTextField userField,passField, emailField, addressField;
 	static JFrame frame = new JFrame("Register new User Screen");
 
+	public RegisterUserGUI(){
+		this.panel = new JPanel();
+		createAndShowGUI();
+	}
     public JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
-        JPanel totalGUI = new JPanel();
-        totalGUI.setLayout(null);
+        this.panel.setLayout(null);
 
         //Make Button Panel
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(10, 10);
         buttonPanel.setSize(295, 485);
-        totalGUI.add(buttonPanel);
+        this.panel.add(buttonPanel);
 
         //Make Labels
         userLabel = GUIFactory.addLabel("Username:",0,0,80,30);
@@ -72,8 +75,8 @@ public class RegisterUserGUI implements  ActionListener
         registerUserButton.addActionListener(this);
         buttonPanel.add(registerUserButton);
         
-        totalGUI.setVisible(true);
-        return totalGUI;
+        this.panel.setVisible(true);
+        return this.panel;
     }
 
     public void actionPerformed(ActionEvent e)
@@ -101,28 +104,12 @@ public class RegisterUserGUI implements  ActionListener
     		
     		I_User user = userFactory.createUser("customer");
     		
-    		int id = 1;
     		int accesslvl =1;
+    		int id = 0;
     		
     		try{
-    			//Java.Connect to database
-    			   Connect con = new Connect();
-        		   Connection mycon =  con.getconnection();
-        		   Statement mystat = mycon.createStatement();
-        		   
-    			//Get ID for Java.user
-    			ResultSet myRe = mystat.executeQuery("select * from users");
-    			while (myRe.next()){
-    				id++;
-    			}
-    			
-    			//Insert into table
-    			String sql = "INSERT into users (idusers ,username,accesslvl ,password,email,address) VALUES('" 
-    					 + id  + "','" + userName + "','" + accesslvl+ "','" + pass + "','" + email + "','" + address 
-    						+ "');" ;
-    			mystat.executeUpdate(sql);
-    			
-    			//ResultSet myRe = mystat.executeQuery("select * from creationary.users");
+    			id = help.getLastID();
+    			help.registerUser(id, userName, accesslvl, pass, email, address);
     			
     		}
     		catch(Exception exc){
@@ -139,24 +126,24 @@ public class RegisterUserGUI implements  ActionListener
         
     }
 
-    private static void createAndShowGUI()
+    private void createAndShowGUI()
 	{
         //Create and set up the content pane.
-    	RegisterUserGUI window = new RegisterUserGUI();
         frame = GUIFactory.makeFrame("Register User", 325, 250);
-        frame.setContentPane(window.createContentPane());
+        frame.setContentPane(this.createContentPane());
 
     }
-
-    public static void start()
-	{
-        SwingUtilities.invokeLater(new Runnable() 
-		{
-            public void run() 
-			{
-                createAndShowGUI();
-            }
-        });
+    
+    @Override
+    public JPanel sendToWindow()
+    { 
+        return this.panel;
+    }
+	
+    @Override
+    public void setPanelManager(PanelManager pm)
+    {
+	this.panelMgr = pm;
     }
     
    

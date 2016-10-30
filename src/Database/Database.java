@@ -4,6 +4,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import SQL.*;
 
@@ -18,8 +19,14 @@ public class Database implements I_Database {
 	Connection con;	
 	
 	@Override
-	public ArrayList<I_Product> getItems() {
-		return null;
+	public void getItems() throws SQLException {
+		Statement mystat = con.createStatement();
+		ResultSet myRe = mystat.executeQuery("select * from items");
+		while (myRe.next())
+		{
+			System.out.println(myRe.getString(3));
+		}
+		
 	}
 
 	@Override
@@ -73,15 +80,23 @@ public class Database implements I_Database {
         return null;
 	}
 	
-	public boolean registerUser(String userName, String accesslvl, String pass, String email, String address) throws SQLException{
-		/*Insert in = new Insert("users");
-		in.addValue(userName, "String");
-		in.addValue(accesslvl, "String");
-		in.addValue(pass, "String");
-		in.addValue(email, "String");
-		in.addValue(address, "String");
-		//in.executeStatement(SQL, con);
-		 */
+	public boolean registerUser(int id, String userName, int accesslvl, String pass, String email, String address) throws SQLException{
+		Statement mystat = con.createStatement();
+		String sql = "INSERT into users (idusers ,username,accesslvl ,password,email,address) VALUES('" 
+				 + id  + "','" + userName + "','" + accesslvl+ "','" + pass + "','" + email + "','" + address 
+					+ "');" ;
+		mystat.executeUpdate(sql);
 		return true; 
+	}
+	
+	public int getLastID() throws SQLException{
+		Statement mystat = con.createStatement();
+		int id = 1;
+		//Get ID for Java.user
+		ResultSet myRe = mystat.executeQuery("select * from users");
+		while (myRe.next()){
+			id++;
+		}
+		return id;
 	}
 }

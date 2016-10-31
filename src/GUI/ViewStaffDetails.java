@@ -1,18 +1,16 @@
-package Java;
+package GUI;
 
-import SQL.Connect;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
-public class ViewStaffDetails implements  ActionListener
+public class ViewStaffDetails extends Panel implements  ActionListener
 {
 
 	JPanel buttonPanel;
 	JButton exitButton;	
 	JLabel quantityLabel, nameLabel;
-	JPanel totalGUI = new JPanel();
 	JTextField itemNameTextField, quantityTextField;
 	static JFrame frame = new JFrame("View Staff Details");
 
@@ -20,33 +18,14 @@ public class ViewStaffDetails implements  ActionListener
 	{
 		//Make bottom JPanel to place buttonPanel on
 		//JPanel totalGUI = new JPanel();
-		totalGUI.setLayout(null);
+		this.panel.setLayout(null);
 
 		//Make Button Panel
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setLocation(10, 10);
 		buttonPanel.setSize(295, 185);
-		totalGUI.add(buttonPanel);
-		int i = 0;
-
-		//get number of rows returned
-		try
-		{
-			//Java.Connect to database
-			   Connect con = new Connect(); 
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
-			ResultSet myRe = mystat.executeQuery("select * from items");
-
-			//get db data
-			while (myRe.next())
-				i++;
-		}
-		catch(Exception exc)
-		{
-			System.out.println("Database error");
-		}
+		this.panel.add(buttonPanel);
 
 
 		//Assign values to listData based on DB values.
@@ -125,34 +104,10 @@ public class ViewStaffDetails implements  ActionListener
 
 
 
-		totalGUI.setVisible(true);
+		this.panel.setVisible(true);
 
 
-		try
-		{	
-			//Java.Connect to database
-			   Connect con = new Connect(); 
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
-
-			String sql = "select * from users";
-			ResultSet myRe = mystat.executeQuery(sql);
-
-			//get db data
-			while (myRe.next())
-			{
-				System.out.println(myRe.getString(2));
-				System.out.println(myRe.getString(4));
-				System.out.println(myRe.getString(6));
-			}
-		}
-
-		catch(Exception exc)
-		{
-			System.out.println("Error");
-		}
-
-		return totalGUI;
+		return this.panel;
 	}
 
 	public void actionPerformed(ActionEvent e)
@@ -164,11 +119,10 @@ public class ViewStaffDetails implements  ActionListener
 
 	}
 
-	private static void createAndShowGUI()
+	private void createAndShowGUI()
 	{
 		//Create and set up the content pane.
-		ViewStaffDetails window = new ViewStaffDetails();
-		frame.setContentPane(window.createContentPane());
+		frame.setContentPane(this.createContentPane());
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(305, 240);
@@ -176,17 +130,18 @@ public class ViewStaffDetails implements  ActionListener
 		frame.setVisible(true);
 	}
 
-	public static void main2()
-	{		
-
-		SwingUtilities.invokeLater(new Runnable() 
-		{
-			public void run() 
-			{
-				createAndShowGUI();
-			}
-		});
-	}
+	
+    @Override
+    public JPanel sendToWindow()
+    { 
+        return this.panel;
+    }
+	
+    @Override
+    public void setPanelManager(PanelManager pm)
+    {
+	this.panelMgr = pm;
+    }
 
 
 }

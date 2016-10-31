@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 
 public class QtyGrabber implements Subject {
+	private final ArrayList<Observer> observers;
 	private int Qty;
 	private String item;
-	private ArrayList<Observer> observers;
 	public QtyGrabber(){
 		observers = new ArrayList<Observer>();
 	}

@@ -11,18 +11,18 @@ class SelectMax implements SQLInterface {
     private ResultSet myRe;
 
 
-    public SelectMax(String column ,String table){
+    public SelectMax(String column ,String table, Connection mycon){
 
         String SQL = "select Max("+column+") from "+table;
 
-        executeStatement(SQL);
+        executeStatement(SQL, mycon);
     }
 
     @Override
-    public void executeStatement(String SQL) {
+    public void executeStatement(String SQL, Connection mycon) {
         try{
-            Connect con = new Connect();
-            Connection mycon =  con.getconnection();
+            //Connect con = new Connect();
+            //Connection mycon =  con.getconnection();
             Statement mystat = mycon.createStatement();
             myRe = mystat.executeQuery(SQL);
         }

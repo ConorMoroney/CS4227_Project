@@ -1,4 +1,4 @@
-package Java;
+package GUI;
 
 import SQL.Connect;
 import SQL.Select;
@@ -6,25 +6,29 @@ import User.ConcreteCustomer;
 
 import javax.swing.*;
 
+import Java.QtyGrabber;
+import User.ConcreteCustomer;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 
-public class ViewItems implements  ActionListener
+public class ViewItems extends Panel implements  ActionListener
 {
 	
 	static QtyGrabber G = new QtyGrabber();
 	static String username = "";
+	static JFrame frame = new JFrame("View items");
 	JPanel buttonPanel;
 	JButton exitButton, purchaseButton;
-	
 	JLabel quantityLabel, nameLabel;
-
-	JPanel totalGUI = new JPanel();
-	
 	JTextField itemNameTextField, quantityTextField;
-	static JFrame frame = new JFrame("View items");
 
+	public ViewItems(){
+		this.panel = new JPanel();
+		createAndShowGUI();
+	}
+	
 	public static QtyGrabber  getQtyGrabber(){
 		return G;
 	}
@@ -33,14 +37,14 @@ public class ViewItems implements  ActionListener
 	{
 		//Make bottom JPanel to place buttonPanel on
 		//JPanel totalGUI = new JPanel();
-		totalGUI.setLayout(null);
+		this.panel.setLayout(null);
 
 		//Make Button Panel
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setLocation(10, 10);
 		buttonPanel.setSize(295, 185);
-		totalGUI.add(buttonPanel);
+		this.panel.add(buttonPanel);
 		int i = 0;
 		
 		//get number of rows returned
@@ -149,23 +153,12 @@ public class ViewItems implements  ActionListener
         buttonPanel.add(quantityTextField);
 		
 
-		totalGUI.setVisible(true);
+		this.panel.setVisible(true);
 
 
 		try
 		{	
-			//Java.Connect to database
-			  Connect con = new Connect(); 
-   		   Connection mycon =  con.getconnection();
-   		   Statement mystat = mycon.createStatement();
-			String sql = "select * from items";
-			ResultSet myRe = mystat.executeQuery(sql);
-
-			//get db data
-			while (myRe.next())
-			{
-				System.out.println(myRe.getString(3));
-			}
+			help.getItems();
 		}
 
 		catch(Exception exc)
@@ -173,7 +166,7 @@ public class ViewItems implements  ActionListener
 			System.out.println("Error");
 		}
 
-		return totalGUI;
+		return this.panel;
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -252,11 +245,10 @@ public class ViewItems implements  ActionListener
 
 	}
 
-	private static void createAndShowGUI()
+	private void createAndShowGUI()
 	{
 		//Create and set up the content pane.
-		ViewItems window = new ViewItems();
-		frame.setContentPane(window.createContentPane());
+		frame.setContentPane(this.createContentPane());
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(305, 240);
@@ -264,18 +256,17 @@ public class ViewItems implements  ActionListener
 		frame.setVisible(true);
 	}
 
-	public static void main(String[] args)
-	{
-		System.out.println(args[0] + "    "+ args[1]);
-		username = args[0];
-		SwingUtilities.invokeLater(new Runnable() 
-		{
-			public void run() 
-			{
-				createAndShowGUI();
-			}
-		});
-	}
+    @Override
+    public JPanel sendToWindow()
+    { 
+        return this.panel;
+    }
+	
+    @Override
+    public void setPanelManager(PanelManager pm)
+    {
+	this.panelMgr = pm;
+    }
 
 
 }

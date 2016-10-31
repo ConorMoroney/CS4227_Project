@@ -1,7 +1,7 @@
 package GUI;
 
-import Java.I_User;
-import Java.UserFactory;
+import User.I_Customer;
+import User.UserFactory;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,15 +13,32 @@ import javax.swing.*;
 
 public class RegisterEmployeeGUI implements  ActionListener
 {
+	static JFrame frame = new JFrame("Register Employee Screen");
 	String [] employeeTypes = {"manager", "logistics" , "warehouse"};
-    
 	JPanel buttonPanel;
     JButton cancelButton, registerUserButton;
 	JLabel TypeLabel,userLabel,passLabel, emailLabel, addressLabel;
 	JComboBox userType = new JComboBox(employeeTypes);
 	JTextField userField,passField, emailField, addressField;
-	static JFrame frame = new JFrame("Register Employee Screen");
 	
+    private static void createAndShowGUI()
+	{
+        //Create and set up the content pane.
+    	RegisterEmployeeGUI window = new RegisterEmployeeGUI();
+        frame = GUIFactory.makeFrame("Register Employee", 345, 290);
+        frame.setContentPane(window.createContentPane());
+    }
+
+    public static void main(String[] args)
+	{
+        SwingUtilities.invokeLater(new Runnable()
+		{
+            public void run()
+			{
+                createAndShowGUI();
+            }
+        });
+    }
 
     public JPanel createContentPane()
 	{
@@ -56,7 +73,7 @@ public class RegisterEmployeeGUI implements  ActionListener
         buttonPanel.add(passField);
         buttonPanel.add(emailField);
         buttonPanel.add(addressField);
-        
+
         userType.setLocation(110, 160);
         userType.setSize(180, 30);
         buttonPanel.add(userType);
@@ -69,7 +86,7 @@ public class RegisterEmployeeGUI implements  ActionListener
         registerUserButton = GUIFactory.addButton("Register",160,200,135,30);
         registerUserButton.addActionListener(this);
         buttonPanel.add(registerUserButton);
-        
+
         totalGUI.setVisible(true);
         return totalGUI;
     }
@@ -80,7 +97,7 @@ public class RegisterEmployeeGUI implements  ActionListener
         {
         	frame.dispose();
         }
-        
+
         else if(e.getSource() == registerUserButton)
         {
 			//do shit in here
@@ -88,19 +105,19 @@ public class RegisterEmployeeGUI implements  ActionListener
         		JOptionPane.showMessageDialog(null,"There is a null field" );
         		return;
         	}
-        	
+
         	String userName = userField.getText();
         	String pass = passField.getText();
         	String email = emailField.getText();
         	String address = addressField.getText();
 
     		UserFactory userFactory = new UserFactory();
-    		
-    		I_User user = userFactory.createUser(employeeTypes[userType.getSelectedIndex()]);
-    		
+
+    		I_Customer user = userFactory.createUser(employeeTypes[userType.getSelectedIndex()]);
+
     		int id = 1;
     		int accesslvl = user.getaccesslvl();
-    		
+
     		try {
 
 
@@ -141,28 +158,9 @@ public class RegisterEmployeeGUI implements  ActionListener
     		user.setEmail(email);
     		user.setAddress(address);
     		user.setID(id);
-    		
+
         }
-        
-    }
 
-    private static void createAndShowGUI()
-	{
-        //Create and set up the content pane.
-    	RegisterEmployeeGUI window = new RegisterEmployeeGUI();
-        frame = GUIFactory.makeFrame("Register Employee", 345, 290);
-        frame.setContentPane(window.createContentPane());
-    }
-
-    public static void main(String[] args)
-	{
-        SwingUtilities.invokeLater(new Runnable()
-		{
-            public void run()
-			{
-                createAndShowGUI();
-            }
-        });
     }
     
    

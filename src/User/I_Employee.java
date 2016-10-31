@@ -1,6 +1,6 @@
-package Java;
+package User;
 
-public interface I_User{
+public interface I_Employee{
 
 
 	void setName(String name);
@@ -10,8 +10,5 @@ public interface I_User{
 	void setEmail(String email);
 	void setAddress(String address);
 	int getaccesslvl();
-	String getName();
-	String getEmail();
-	String getAddress();
 
 }

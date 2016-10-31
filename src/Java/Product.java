@@ -1,5 +1,7 @@
 package Java;
 
+import User.ConcreteCustomer;
+
 import java.util.ArrayList;
 
 public class Product implements Subject {
@@ -55,12 +57,12 @@ public class Product implements Subject {
 		}
 	}
 	@Override
-	public void registerObserver(customer Customer) {
+	public void registerObserver(ConcreteCustomer Customer) {
 		// TODO Auto-generated method stub
 		listOfObservers.add(Customer);
 	}
 	@Override
-	public void removeObserver(customer Customer) {
+	public void removeObserver(ConcreteCustomer Customer) {
 		// TODO Auto-generated method stub
 		listOfObservers.remove(Customer);
 		

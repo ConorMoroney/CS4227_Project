@@ -1,29 +1,28 @@
 package Database;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import Java.I_Product;
-import Java.I_User;
+import User.I_Customer;
 
 /*
  * Singleton that is used to call the concrete implementation of the database communication class
  */
 
 public class DatabaseAccess implements I_Database {
-    private I_Database dbconn;
     private static DatabaseAccess dba = new DatabaseAccess();
+    private I_Database dbconn;
     
     private DatabaseAccess(){
     	
     }
     
-    public void setDbConn(I_Database dbc){
-    	dbconn = dbc;
-    }
-    
     public static DatabaseAccess getInstance(){
     	return dba;
+    }
+    
+    public void setDbConn(I_Database dbc){
+    	dbconn = dbc;
     }
     
     @Override
@@ -52,7 +51,7 @@ public class DatabaseAccess implements I_Database {
     }
     
     @Override
-    public I_User getUserDetails(String username){
+    public I_Customer getUserDetails(String username){
     	return dbconn.getUserDetails(username);
     }
     

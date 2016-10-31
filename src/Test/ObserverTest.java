@@ -1,13 +1,12 @@
-package Test;
-
+/*
 import Java.QtyGrabber;
-import Java.customer;
+import User.ConcreteCustomer;
 
 public class ObserverTest {
 	public static void main(String [] args){
 		QtyGrabber G = new QtyGrabber();
 		
-		customer c = new customer();
+		ConcreteCustomer c = new ConcreteCustomer();
 		
 		G.registerObserver(c);
 		
@@ -16,4 +15,4 @@ public class ObserverTest {
 		
 		G.removeObserver(c);
 	}
-}
+}*/

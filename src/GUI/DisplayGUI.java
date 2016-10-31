@@ -98,7 +98,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 				break;
 				//ViewAccountDetails.display(line2);
 				
-				//Do action for Java.customer viewing product
+				//Do action for User.customer viewing product
 			case "Update Product Stock":
 				updateDatabase.main2();
 				break;
@@ -140,7 +140,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 
 
 		switch(accesslvl){
-		case 1:// Java.customer
+		case 1:// User.customer
 			button1 = "View Account Details";
 			button2 = "Buy Product";
 			break;

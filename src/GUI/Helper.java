@@ -1,6 +1,6 @@
 package GUI;
 
-import Java.I_User;
+import User.I_Customer;
 
 import java.sql.SQLException;
 
@@ -9,7 +9,7 @@ import Database.DatabaseAccess;
 public class Helper {
 	private static DatabaseAccess dba = DatabaseAccess.getInstance();
 	private static Helper help = new Helper();
-	private I_User user;
+	private I_Customer user;
 	
 	private Helper(){
 		
@@ -27,7 +27,7 @@ public class Helper {
 		user = dba.getUserDetails(username);
 	}
 	
-	public I_User getUser(){
+	public I_Customer getUser(){
 		return user;
 	}
 	

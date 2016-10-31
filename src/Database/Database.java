@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import SQL.*;
 
 import Java.I_Product;
-import Java.I_User;
-import Java.ConcreteUser;
+import User.I_Customer;
+import User.ConcreteCustomer;
 
 /*Concrete database class using Microsoft SQL Server for testing and out of the box functionality
  */
@@ -80,12 +80,12 @@ public class Database implements I_Database {
     }
 	
 	@Override
-	public I_User getUserDetails(String username){
+	public I_Customer getUserDetails(String username){
 		try{
 			Select s = new Select("*","users","username",username, con);
 			ResultSet myRe = s.getResultset();
 			if(myRe.next()){
-				return new ConcreteUser(Integer.parseInt(myRe.getString(1)),myRe.getString(2), Integer.parseInt(myRe.getString(3)), myRe.getString(4), myRe.getString(5), myRe.getString(6));
+				return new ConcreteCustomer(Integer.parseInt(myRe.getString(1)),myRe.getString(2), Integer.parseInt(myRe.getString(3)), myRe.getString(4), myRe.getString(5), myRe.getString(6));
 			}
 		}
 		catch(SQLException e){

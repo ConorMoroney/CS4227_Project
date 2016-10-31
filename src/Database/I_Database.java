@@ -1,9 +1,8 @@
 package Database;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import Java.I_Product;
-import Java.I_User;
+import User.I_Customer;
 
 
 /*
@@ -15,7 +14,7 @@ public interface I_Database {
 	public void getItems();
 	public ArrayList<I_Product> getItems(String identifier);
 	public boolean canUserLogin(String user, String password);
-	public I_User getUserDetails(String username);
+	public I_Customer getUserDetails(String username);
 	public boolean registerUser(int id, String userName, int accesslvl, String pass, String email, String address);
 	public int getLastID();
 	public Object[] getOrders();

@@ -1,9 +1,9 @@
-package Java;
+package User;
 
 /**
  * Created by shane on 21-Oct-16.
  */
-public class ConcreteUser implements I_User{
+class ConcreteEmployee implements I_Employee{
 
     private String name;
     private int id;
@@ -15,25 +15,6 @@ public class ConcreteUser implements I_User{
     private int warehouse = 2;
     private int logistics = 3;
     private int manager = 4;
-
-    public ConcreteUser(int ID, String user, int access, String pass, String mail, String add){
-    	id = ID;
-    	name = user;
-    	accesslvl = access;
-    	password = pass;
-    	email = mail;
-    	address = add;
-    }
-    
-    public ConcreteUser(){
-    	
-    }
-    
-    public void setName(String name) {
-        // TODO Auto-generated method stub
-        this.name = name;
-
-    }
 
     @Override
     public void setType(String type) {
@@ -69,30 +50,22 @@ public class ConcreteUser implements I_User{
 
     @Override
     public int getaccesslvl() {
-        return accesslvl;
+        return 0;
     }
 
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return name;
-	}
+    public int getId() {
+        return id;
+    }
 
-	@Override
-	public String getEmail() {
-		// TODO Auto-generated method stub
-		return email;
-	}
+    public String getName() {
+        return name;
+    }
 
-	@Override
-	public String getAddress() {
-		// TODO Auto-generated method stub
-		return address;
-	}
+    public void setName(String name) {
+        // TODO Auto-generated method stub
+        this.name = name;
 
-
-
-
+    }
 
 
 }

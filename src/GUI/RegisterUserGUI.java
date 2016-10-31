@@ -1,16 +1,10 @@
 package GUI;
 
-import SQL.Connect;
-import Java.I_User;
-import Java.UserFactory;
-import SQL.Select;
-import SQL.Insert;
-import SQL.Connect;
+import User.I_Customer;
+import User.UserFactory;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
-import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,15 +12,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 
 public class RegisterUserGUI extends Panel implements  ActionListener
 {
+	static JFrame frame = new JFrame("Register new User Screen");
     JPanel buttonPanel;
     JButton cancelButton, registerUserButton;
 	JLabel userLabel,passLabel, emailLabel, addressLabel;
 	JTextField userField,passField, emailField, addressField;
-	static JFrame frame = new JFrame("Register new User Screen");
 
 	public RegisterUserGUI(){
 		this.panel = new JPanel();
@@ -102,7 +95,7 @@ public class RegisterUserGUI extends Panel implements  ActionListener
     		
     		UserFactory userFactory = new UserFactory();
     		
-    		I_User user = userFactory.createUser("customer");
+    		I_Customer user = userFactory.createUser("customer");
     		
     		int accesslvl =1;
     		int id = 0;

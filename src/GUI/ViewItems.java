@@ -6,7 +6,7 @@ import SQL.Select;
 import javax.swing.*;
 
 import Java.QtyGrabber;
-import Java.customer;
+import User.ConcreteCustomer;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -17,22 +17,19 @@ public class ViewItems extends Panel implements  ActionListener
 	
 	static QtyGrabber G = new QtyGrabber();
 	static String username = "";
+	static JFrame frame = new JFrame("View items");
 	JPanel buttonPanel;
 	JButton exitButton, purchaseButton;
-	
 	JLabel quantityLabel, nameLabel;
-
-	
 	JTextField itemNameTextField, quantityTextField;
-	static JFrame frame = new JFrame("View items");
 
-	public static QtyGrabber  getQtyGrabber(){
-		return G;
-	}
-	
 	public ViewItems(){
 		this.panel = new JPanel();
 		createAndShowGUI();
+	}
+	
+	public static QtyGrabber  getQtyGrabber(){
+		return G;
 	}
 	
 	public JPanel createContentPane()
@@ -214,7 +211,7 @@ public class ViewItems extends Panel implements  ActionListener
 					System.out.println(sql1);
 					ResultSet myRe1 = mystat.executeQuery(sql1);
 					myRe1.next();
-					customer c = new customer(); 
+					ConcreteCustomer c = new ConcreteCustomer();
 					int newCustId = myRe1.getInt(1) ;
 					String newCustName = myRe1.getString(2) ;
 					String newCustPassword = myRe1.getString(4) ;

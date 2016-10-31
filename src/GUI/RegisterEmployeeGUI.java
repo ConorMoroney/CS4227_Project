@@ -1,13 +1,11 @@
 package GUI;
 
-import Java.I_User;
-import Java.UserFactory;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import SQL.Select;
 import java.sql.*;
 import SQL.*;
+import User.*;
 
 import javax.swing.*;
 
@@ -94,12 +92,14 @@ public class RegisterEmployeeGUI implements  ActionListener
         	String email = emailField.getText();
         	String address = addressField.getText();
 
-    		UserFactory userFactory = new UserFactory();
+            AbstractUserFactory empFactory = FactoryProducer.getFactory("Employee");
+            I_Employee emp1 = (I_Employee) empFactory.createUser("Warehouse");
+            //ConcreteEmployee emp1 = empFactory.
     		
-    		I_User user = userFactory.createUser(employeeTypes[userType.getSelectedIndex()]);
+
     		
     		int id = 1;
-    		int accesslvl = user.getaccesslvl();
+    		int accesslvl = emp1.getaccesslvl();
     		
     		try {
 
@@ -118,7 +118,7 @@ public class RegisterEmployeeGUI implements  ActionListener
             try {
 
                 Insert i =new Insert();
-                i.CreateUserInsert(id,userName,accesslvl,pass,email,address,i.getConnection());
+                i.CreateUserInsert(/*id,*/userName,accesslvl,pass,email,address,i.getConnection());
                 /*
                 Connect con = new Connect();
                 Connection mycon = con.getconnection();
@@ -136,11 +136,11 @@ public class RegisterEmployeeGUI implements  ActionListener
                 System.out.println("Error Insert Failed ??? ");
             }
 
-    		user.setName(userName);;
-    		user.setPassword(pass);
-    		user.setEmail(email);
-    		user.setAddress(address);
-    		user.setID(id);
+    		emp1.setName(userName);;
+            emp1.setPassword(pass);
+            emp1.setEmail(email);
+            emp1.setAddress(address);
+            emp1.setID(id);
     		
         }
         

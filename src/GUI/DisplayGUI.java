@@ -104,7 +104,7 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 			case "View Account Details":
 				ViewAccountDetails.display(line2);
 				
-				//Do action for Java.customer viewing product
+				//Do action for User.customer viewing product
 				break;
 			case "Update Product Stock":
 				updateDatabase.main2();
@@ -146,7 +146,7 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 
 
 		switch(accesslvl){
-		case 1:// Java.customer
+		case 1:// User.customer
 			button1 = "View Account Details";
 			button2 = "Buy Product";
 			break;

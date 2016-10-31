@@ -1,9 +1,9 @@
-package Java;
+package User;
 
 /**
  * Created by shane on 21-Oct-16.
  */
-public class ConcreteUser implements I_User{
+public class ConcreteEmployee implements I_Employee{
 
     private String name;
     private int id;
@@ -60,8 +60,13 @@ public class ConcreteUser implements I_User{
     }
 
 
+    public int getId() {
+        return id;
+    }
 
-
+    public String getName() {
+        return name;
+    }
 
 
 }

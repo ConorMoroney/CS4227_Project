@@ -2,6 +2,7 @@ package Java;
 
 import SQL.Connect;
 import SQL.Select;
+import User.ConcreteCustomer;
 
 import javax.swing.*;
 
@@ -218,7 +219,7 @@ public class ViewItems implements  ActionListener
 					System.out.println(sql1);
 					ResultSet myRe1 = mystat.executeQuery(sql1);
 					myRe1.next();
-					customer c = new customer(); 
+					ConcreteCustomer c = new ConcreteCustomer();
 					int newCustId = myRe1.getInt(1) ;
 					String newCustName = myRe1.getString(2) ;
 					String newCustPassword = myRe1.getString(4) ;

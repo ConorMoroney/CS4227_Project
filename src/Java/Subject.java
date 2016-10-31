@@ -1,7 +1,9 @@
 package Java;
 
+import User.ConcreteCustomer;
+
 public interface Subject {
-	void registerObserver(customer Customer);
-	void removeObserver(customer Customer);
+	void registerObserver(ConcreteCustomer Customer);
+	void removeObserver(ConcreteCustomer Customer);
 	void notifyObservers();
 }

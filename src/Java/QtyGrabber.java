@@ -1,6 +1,7 @@
 package Java;
 
 import SQL.Connect;
+import User.ConcreteCustomer;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,7 +20,7 @@ public class QtyGrabber implements Subject {
 	}
 
 	@Override
-	public void registerObserver(customer newObserver) {
+	public void registerObserver(ConcreteCustomer newObserver) {
 		// TODO Auto-generated method stub
 	
 		int id = newObserver.getID();
@@ -47,7 +48,7 @@ public class QtyGrabber implements Subject {
 	}
 
 	@Override
-	public void removeObserver(customer deleteObserver) {
+	public void removeObserver(ConcreteCustomer deleteObserver) {
 		// Get the index of the observer to delete
 		int observerIndex = observers.indexOf(deleteObserver);
 		System.out.println("Observer " + (observerIndex+1) + " deleted");
@@ -57,7 +58,7 @@ public class QtyGrabber implements Subject {
 	@Override
 	public void notifyObservers() {
 			
-		customer arrayLine = new customer();
+		ConcreteCustomer arrayLine = new ConcreteCustomer();
 		try{
 			Connection myConn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/creationary", "root", "");
 			Statement mystat = myConn.createStatement();

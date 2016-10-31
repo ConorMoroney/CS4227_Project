@@ -1,24 +1,14 @@
 package GUI;
 
 import SQL.Connect;
-import Java.I_User;
-import Java.UserFactory;
-import SQL.Select;
-import SQL.Insert;
-import SQL.Connect;
+import User.*;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
-import java.util.ArrayList;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class RegisterUserGUI implements  ActionListener
 {
@@ -95,11 +85,9 @@ public class RegisterUserGUI implements  ActionListener
         	String pass = passField.getText();
         	String email = emailField.getText();
         	String address = addressField.getText();
-        		
-    		
-    		UserFactory userFactory = new UserFactory();
-    		
-    		I_User user = userFactory.createUser("customer");
+
+            AbstractUserFactory custFactory = FactoryProducer.getFactory("Customer");
+            I_Customer cust1 = (I_Customer) custFactory.createUser("Customer");
     		
     		int id = 1;
     		int accesslvl =1;
@@ -128,12 +116,12 @@ public class RegisterUserGUI implements  ActionListener
     		catch(Exception exc){
     			System.out.println("Error cant connect to database");
     		}
-    		
-    		user.setName(userName);;
-    		user.setPassword(pass);
-    		user.setEmail(email);
-    		user.setAddress(address);
-    		user.setID(id);
+
+            cust1.setName(userName);;
+            cust1.setPassword(pass);
+            cust1.setEmail(email);
+            cust1.setAddress(address);
+            cust1.setID(id);
     		
         }
         

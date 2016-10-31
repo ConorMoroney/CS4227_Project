@@ -94,10 +94,11 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 				BarChart.reports();
 				break;
 			case "View Account Details":
+				panelMgr.getPanelFromFactory(5);
+				break;
 				//ViewAccountDetails.display(line2);
 				
 				//Do action for Java.customer viewing product
-				break;
 			case "Update Product Stock":
 				updateDatabase.main2();
 				break;
@@ -110,7 +111,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 			System.out.println(command);
 			switch (command) {
 			case "View Staff Details":
-				ViewStaffDetails.main2();
+				//ViewStaffDetails.main2();
 		
 				break;
 			case "Buy Product":
@@ -120,7 +121,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 				RegisterProductGUI.registerItem();				
 				break;
 			case "View Orders":
-				ViewOrders.view();
+				//ViewOrders.view();
 				
 
 				break;
@@ -128,7 +129,8 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 			}
 		}
 		else if(e.getSource() == exitButton) {
-			System.exit(0);
+			help.logoutUser();
+			panelMgr.getPanelFromFactory(1);
 		}
 	}
 

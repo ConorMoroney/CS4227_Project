@@ -72,6 +72,24 @@ public class ConcreteUser implements I_User{
         return accesslvl;
     }
 
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+
+	@Override
+	public String getEmail() {
+		// TODO Auto-generated method stub
+		return email;
+	}
+
+	@Override
+	public String getAddress() {
+		// TODO Auto-generated method stub
+		return address;
+	}
+
 
 
 

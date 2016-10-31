@@ -7,33 +7,34 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 
-public class ViewOrders implements  ActionListener
+public class ViewOrders extends Panel implements ActionListener
 {
 	
 	JPanel buttonPanel;
 	JButton exitButton;
 	
 	JLabel quantityLabel, nameLabel;
-
-	JPanel totalGUI = new JPanel();
 	
 	JTextField itemNameTextField, quantityTextField;
 	static JFrame frame = new JFrame("View Order Queue");
 
-
+	public ViewOrders(){
+		this.panel = new JPanel();
+		createAndShowGUI();
+	}
 	
 	public JPanel createContentPane()
 	{
 		//Make bottom JPanel to place buttonPanel on
 		//JPanel totalGUI = new JPanel();
-		totalGUI.setLayout(null);
+		this.panel.setLayout(null);
 
 		//Make Button Panel
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setLocation(10, 10);
 		buttonPanel.setSize(295, 185);
-		totalGUI.add(buttonPanel);
+		this.panel.add(buttonPanel);
 		int i = 0;
 		
 		//get number of rows returned
@@ -59,52 +60,20 @@ public class ViewOrders implements  ActionListener
 		
 		
 		//Assign values to listData based on DB values.
-		Object[] listData = new Object[i];
-		
-		i = 0;
-		try
-		{
-			//get array of names/quantities
-			//Java.Connect to database
-			 Connect con = new Connect(); 
-  		   Connection mycon =  con.getconnection();
-  		   Statement mystat = mycon.createStatement();		
-			String sql = "select * from orderqueue";
-			System.out.println(sql);
-			ResultSet myRe = mystat.executeQuery(sql);
+		try{
+			Object[] listData = help.getOrders();
+			JList items = new JList(listData);
 			
-			String name = "";
-			String qty = "";
-			String customer = "";
-				
-			//get db data
-			while (myRe.next())
-			{							
-				name = "Product Name: " + myRe.getString(1) + ", ";
-				qty = "Quantity:  " +  myRe.getInt(2) + ", ";
-				customer = "Customer:  " +  myRe.getString(3) + ", ";
-													
-				listData[i] =name + qty + customer;
-				
-				i++;
-			}
+		    JScrollPane scrollPane = new JScrollPane();
+		    scrollPane.setViewportView(items);
+		    scrollPane.setLocation(0,0);
+		    scrollPane.setSize(270, 150);
+		    
+		    buttonPanel.add(scrollPane);
 		}
-		catch(Exception exc)
-		{
-			System.out.println("Database error");
+		catch(Exception e){
+			System.out.println("error getting orders");
 		}
-		
-
-		
-		//Make List and scroll pane for items
-		JList items = new JList(listData);
-		
-	    JScrollPane scrollPane = new JScrollPane();
-	    scrollPane.setViewportView(items);
-	    scrollPane.setLocation(0,0);
-	    scrollPane.setSize(270, 150);
-	    
-	    buttonPanel.add(scrollPane);
 
 		
 	    //Make buttons
@@ -113,16 +82,10 @@ public class ViewOrders implements  ActionListener
 		exitButton.setSize(85, 30);
 		exitButton.addActionListener(this);
 		buttonPanel.add(exitButton);
-		
 
-		
-		
-		
-		
+		this.panel.setVisible(true);
 
-		totalGUI.setVisible(true);
-
-
+		/*
 		try
 		{	
 			//Java.Connect to database
@@ -145,9 +108,9 @@ public class ViewOrders implements  ActionListener
 		catch(Exception exc)
 		{
 			System.out.println("Error");
-		}
+		} */
 
-		return totalGUI;
+		return this.panel;
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -159,11 +122,10 @@ public class ViewOrders implements  ActionListener
 		
 	}
 
-	private static void createAndShowGUI()
+	private void createAndShowGUI()
 	{
 		//Create and set up the content pane.
-		ViewOrders window = new ViewOrders();
-		frame.setContentPane(window.createContentPane());
+		frame.setContentPane(this.createContentPane());
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(305, 240);
@@ -171,17 +133,16 @@ public class ViewOrders implements  ActionListener
 		frame.setVisible(true);
 	}
 
-	public static void view()
-	{		
-		
-		SwingUtilities.invokeLater(new Runnable() 
-		{
-			public void run() 
-			{
-				createAndShowGUI();
-			}
-		});
-	}
-
+    @Override
+    public JPanel sendToWindow()
+    { 
+        return this.panel;
+    }
+	
+    @Override
+    public void setPanelManager(PanelManager pm)
+    {
+	this.panelMgr = pm;
+    }
 
 }

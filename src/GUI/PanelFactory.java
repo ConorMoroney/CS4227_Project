@@ -25,6 +25,14 @@ public class PanelFactory {
                 panel = new RegisterUserGUI();
                 panel.setPanelManager(pm);
                 break; 
+            case 4:
+                panel = new ViewOrders();
+                panel.setPanelManager(pm);
+                break; 
+            case 5:
+            	panel = new ViewAccountDetails();
+            	panel.setPanelManager(pm);
+            	break;
         }
         return panel;
     }

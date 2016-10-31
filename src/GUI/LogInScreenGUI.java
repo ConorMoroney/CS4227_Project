@@ -116,6 +116,7 @@ public class LogInScreenGUI extends Panel implements  ActionListener
 			{
     			if(help.canUserLogin(userName, password)){
     				help.getUserDetails(userName);
+    				help.getUser().setUserState(help.getUser().getaccesslvl());
     				frame.setVisible(false);
     				frame.dispose();
     				panelMgr.getPanelFromFactory(2);

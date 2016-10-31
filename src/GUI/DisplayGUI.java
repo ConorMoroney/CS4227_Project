@@ -32,33 +32,33 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 		{
 			//Create and set up the content pane.
 			frame = GUIFactory.makeFrame("Customer GUI", 405, 130);
-			frame.setContentPane(this.createContentPane(accessLevel));
+			frame.setContentPane(this.createContentPane());
 		}
 		if (accessLevel == 2)
 		{
 			//Create and set up the content pane.
 			frame = GUIFactory.makeFrame("Warehouse Staff GUI", 405, 130);
-			frame.setContentPane(this.createContentPane(accessLevel));
+			frame.setContentPane(this.createContentPane());
 		}
 		if (accessLevel == 3)
 		{
 			//Create and set up the content pane.
 			frame = GUIFactory.makeFrame("Logistsics Staff GUI", 405, 130);
-			frame.setContentPane(this.createContentPane(accessLevel));
+			frame.setContentPane(this.createContentPane());
 		}
 		if (accessLevel == 4)
 		{
 			//Create and set up the content pane.
 			frame = GUIFactory.makeFrame("Manager GUI", 405, 130);
-			frame.setContentPane(this.createContentPane(accessLevel));
+			frame.setContentPane(this.createContentPane());
 		}
 	}
 
-	public JPanel createContentPane (int accessLevel)
+	public JPanel createContentPane ()
 	{
 
 		// get the title strings 
-		String[] titles =  getTitles(accessLevel);
+		String[] titles =  help.getUser().getUserState().getButtonTitles();
 
 		//Make bottom JPanel to place buttonPanel on
 		this.panel.setLayout(null);
@@ -135,36 +135,6 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 			frame.dispose();
 			panelMgr.getPanelFromFactory(1);
 		}
-	}
-
-	private String[] getTitles(int accesslvl) {
-		String button1 = null;
-		String button2 = null;
-
-
-		switch(accesslvl){
-		case 1:// Java.customer
-			button1 = "View Account Details";
-			button2 = "Buy Product";
-			break;
-		case 2:// wareHouse Java.Staff
-			button1 = "Update Product Stock";
-			button2 = "Register a product";
-			break;
-		case 3://Logistics Java.Staff
-			button1 = "Update Product Stock";
-			button2 = "View Orders";
-			break;
-		case 4://manager
-			button1 = "Generate Reports";
-			//button1.addActionListener(this);
-			button2 = "View Staff Details";
-			break;
-		default:
-			System.out.println("Error no accesslvl found");
-		}
-		String [] output = {button1,button2};
-		return output;		
 	}
 
     @Override

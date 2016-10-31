@@ -13,5 +13,7 @@ public interface I_User{
 	String getName();
 	String getEmail();
 	String getAddress();
+	void setUserState(int s);
+	UserState getUserState();
 
 }

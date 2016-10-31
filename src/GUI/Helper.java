@@ -2,6 +2,7 @@ package GUI;
 
 import Java.I_User;
 import java.util.ArrayList;
+import Java.UserState;
 
 import java.sql.SQLException;
 
@@ -51,5 +52,4 @@ public class Helper {
 	public Object[] getOrders(){
 		return dba.getOrders();
 	}
-	
 }

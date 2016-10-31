@@ -99,4 +99,52 @@ public class Database implements I_Database {
 		}
 		return id;
 	}
+	
+	public Object[] getOrders() throws SQLException{
+		Object[] listData;
+		int i = 0;
+		try
+		{
+    		Statement mystat = con.createStatement();
+			ResultSet myRe = mystat.executeQuery("select * from items");
+			//get db data
+			while (myRe.next()){
+				i++;
+			}
+			
+		}
+		catch(Exception exc)
+		{
+			System.out.println("Database error");
+		}
+		listData = new Object[i];
+		
+		i = 0;
+		try
+		{
+  		   Statement mystat = con.createStatement();		
+			ResultSet myRe = mystat.executeQuery("select * from orderqueue");
+			
+			String name = "";
+			String qty = "";
+			String customer = "";
+				
+			//get db data
+			while (myRe.next())
+			{							
+				name = "Product Name: " + myRe.getString(1) + ", ";
+				qty = "Quantity:  " +  myRe.getInt(2) + ", ";
+				customer = "Customer:  " +  myRe.getString(3) + ", ";
+													
+				listData[i] =name + qty + customer;
+				
+				i++;
+			}
+		}
+		catch(Exception exc)
+		{
+			System.out.println("Database error");
+		}
+		return listData;
+	}
 }

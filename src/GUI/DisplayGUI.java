@@ -94,10 +94,11 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 				BarChart.reports();
 				break;
 			case "View Account Details":
+				panelMgr.getPanelFromFactory(5);
+				break;
 				//ViewAccountDetails.display(line2);
 				
 				//Do action for Java.customer viewing product
-				break;
 			case "Update Product Stock":
 				updateDatabase.main2();
 				break;
@@ -120,7 +121,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 				RegisterProductGUI.registerItem();				
 				break;
 			case "View Orders":
-				ViewOrders.view();
+				//ViewOrders.view();
 				
 
 				break;

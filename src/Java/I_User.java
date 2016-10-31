@@ -10,5 +10,8 @@ public interface I_User{
 	void setEmail(String email);
 	void setAddress(String address);
 	int getaccesslvl();
+	String getName();
+	String getEmail();
+	String getAddress();
 
 }

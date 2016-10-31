@@ -47,4 +47,8 @@ public class Helper {
 		dba.registerUser(id, userName, accesslvl, pass, email, address);
 	}
 	
+	public Object[] getOrders() throws SQLException{
+		return dba.getOrders();
+	}
+	
 }

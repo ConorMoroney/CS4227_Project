@@ -18,4 +18,5 @@ public interface I_Database {
 	public I_User getUserDetails(String username) throws SQLException;
 	public boolean registerUser(int id, String userName, int accesslvl, String pass, String email, String address) throws SQLException;
 	public int getLastID() throws SQLException;
+	public Object[] getOrders() throws SQLException;
 }

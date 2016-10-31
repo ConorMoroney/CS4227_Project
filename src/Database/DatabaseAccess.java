@@ -65,4 +65,9 @@ public class DatabaseAccess implements I_Database {
     public int getLastID() throws SQLException{
     	return dbconn.getLastID();
     }
+    
+    @Override
+    public Object[] getOrders() throws SQLException{
+    	return dbconn.getOrders();
+    }
 }

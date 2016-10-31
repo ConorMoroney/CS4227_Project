@@ -7,21 +7,24 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 
-public class LogInScreenGUI implements  ActionListener
+public class LogInScreenGUI extends Panel implements  ActionListener
 {
     JPanel buttonPanel;
     JButton exitButton, logInButton, registerButton;
 	JLabel userNameLabel, passwordLabel;
 	JTextField userNameTextField;
 	JPasswordField passwordTextField;
-	JPanel totalGUI = new JPanel();
 	static JFrame frame = new JFrame("Log In Screen");
 
+	public LogInScreenGUI(){
+		this.panel = new JPanel();
+		createAndShowGUI();
+	}
     public JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
         //JPanel totalGUI = new JPanel();
-        totalGUI.setLayout(null);
+        this.panel.setLayout(null);
 
         buttonPanel = GUIFactory.addButtonPanel(10,10,295,185);
         userNameLabel = GUIFactory.addLabel("Username:",0,0,80,30);
@@ -29,7 +32,7 @@ public class LogInScreenGUI implements  ActionListener
         userNameTextField = GUIFactory.addTextField(90,0,180,30);
         passwordTextField = GUIFactory.addPasswordField(90,40,180,30);
 
-        totalGUI.add(buttonPanel);
+        this.panel.add(buttonPanel);
         buttonPanel.add(userNameLabel);
         buttonPanel.add(passwordLabel);
         buttonPanel.add(userNameTextField);
@@ -75,8 +78,8 @@ public class LogInScreenGUI implements  ActionListener
         registerButton.addActionListener(this);
         buttonPanel.add(registerButton);
         
-        totalGUI.setVisible(true);
-        return totalGUI;
+        this.panel.setVisible(true);
+        return this.panel;
     }
 
     public void actionPerformed(ActionEvent e)
@@ -89,7 +92,7 @@ public class LogInScreenGUI implements  ActionListener
         
         else if(e.getSource() == registerButton)
         {
-			RegisterUserGUI.start();
+			panelMgr.getPanelFromFactory(3);
         }
 		
         else if(e.getSource() == logInButton)
@@ -110,73 +113,40 @@ public class LogInScreenGUI implements  ActionListener
 			//check if username and password exist
 			try
 			{
-                /*
-    		   Connect con = new Connect();
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
-
-
-    			//Get ID for Java.user
-    			String sql = "select * from creationary..users WHERE username = '" + userName + "'";
-    			ResultSet myRe = mystat.executeQuery(sql);
-                */
-
-    			String dbUser = "";
-    			String dbPass = "";
-                //uncomment after testing
-
-                Select s = new Select("*","users","username",userName);
-                ResultSet myRe = s.getResultset();
-                System.out.print(myRe);
-
-
-
-    			String[] line = new String [2];
-
-    			//get db data
-    			while (myRe.next()){
-    			    dbUser = myRe.getString(2);
-    				dbPass = myRe.getString(4);
-
-    				line[0] = myRe.getString(2);
-    				line[1] = myRe.getString(3);
-    			}
-
-    			//If Java.user/pass match, log in.
-    			if (dbPass.equals(password)){
+    			if(help.canUserLogin(userName, password)){
+    				help.getUserDetails(userName);
     				frame.setVisible(false);
-    				DisplayGUI.main(line);
-
-    			}
+    				panelMgr.getPanelFromFactory(2);
+    				}
 			}
 
 			catch(Exception exc)
 			{
-				System.out.println("Exception");
+				System.out.println(exc.fillInStackTrace());
 				System.exit(0);
 			}
 		}
         
     }
 
-    public static void createAndShowGUI()
+    public void createAndShowGUI()
 	{
         //Create and set up the content pane.
-        LogInScreenGUI window = new LogInScreenGUI();
         frame = GUIFactory.makeFrame("Log In Screen", 305, 165);
-        frame.setContentPane(window.createContentPane());
-    }
-
-    public static void main(String[] args)
-	{
-        SwingUtilities.invokeLater(new Runnable() 
-		{
-            public void run() 
-			{
-                createAndShowGUI();
-            }
-        });
+        frame.setContentPane(this.createContentPane());
     }
     
     private void register(){}//Decorator Pattern to be implemented here
+    
+    @Override
+    public JPanel sendToWindow()
+    { 
+        return this.panel;
+    }
+	
+    @Override
+    public void setPanelManager(PanelManager pm)
+    {
+	this.panelMgr = pm;
+    }
 }

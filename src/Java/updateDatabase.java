@@ -18,6 +18,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import GUI.ViewItems;
+
 public class updateDatabase implements  ActionListener{ 
 	
 	static String username = "";

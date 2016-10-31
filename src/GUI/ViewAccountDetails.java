@@ -1,4 +1,4 @@
-package Java;
+package GUI;
 
 import SQL.Connect;
 

@@ -8,11 +8,11 @@ import java.util.ArrayList;
  */
 public class Insert {
 
-    Connection con;
+    Connection mycon;
 
-    public Insert() throws ClassNotFoundException {
-        Connect c = new Connect();
-        con = c.getconnection();
+    public Insert(Connection mycon) throws ClassNotFoundException {
+        //Connect c = new Connect();
+        this.mycon = mycon;
     }
 
 
@@ -84,7 +84,7 @@ public class Insert {
 
     public Connection getConnection()
     {
-        return con;
+        return mycon;
     }
 
     private int getMaxId(String table)
@@ -95,7 +95,7 @@ public class Insert {
         else
             coloumn = "iditems";
 
-      SelectMax s = new SelectMax(coloumn,table);
+      SelectMax s = new SelectMax(coloumn,table, mycon);
       ResultSet r = s.getResultset();
         try {
             return r.getInt(1);

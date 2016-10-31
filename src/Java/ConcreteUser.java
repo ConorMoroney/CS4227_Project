@@ -16,6 +16,19 @@ public class ConcreteUser implements I_User{
     private int logistics = 3;
     private int manager = 4;
 
+    public ConcreteUser(int ID, String user, int access, String pass, String mail, String add){
+    	id = ID;
+    	name = user;
+    	accesslvl = access;
+    	password = pass;
+    	email = mail;
+    	address = add;
+    }
+    
+    public ConcreteUser(){
+    	
+    }
+    
     public void setName(String name) {
         // TODO Auto-generated method stub
         this.name = name;
@@ -56,7 +69,7 @@ public class ConcreteUser implements I_User{
 
     @Override
     public int getaccesslvl() {
-        return 0;
+        return accesslvl;
     }
 
 

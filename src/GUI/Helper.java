@@ -19,11 +19,11 @@ public class Helper {
 		return help;
 	}
 	
-	public boolean canUserLogin(String user, String password) throws SQLException{
+	public boolean canUserLogin(String user, String password){
 		return dba.canUserLogin(user, password);
 	}
 	
-	public void getUserDetails(String username) throws SQLException{
+	public void getUserDetails(String username){
 		user = dba.getUserDetails(username);
 	}
 	
@@ -39,15 +39,15 @@ public class Helper {
 		dba.getItems();
 	}
 	
-	public int getLastID() throws SQLException{
+	public int getLastID(){
 		return dba.getLastID();
 	}
 	
-	public void registerUser(int id, String userName, int accesslvl, String pass, String email, String address) throws SQLException{
+	public void registerUser(int id, String userName, int accesslvl, String pass, String email, String address){
 		dba.registerUser(id, userName, accesslvl, pass, email, address);
 	}
 	
-	public Object[] getOrders() throws SQLException{
+	public Object[] getOrders(){
 		return dba.getOrders();
 	}
 	

@@ -37,7 +37,7 @@ public class DatabaseAccess implements I_Database {
     }
     
     @Override
-    public void getItems()throws SQLException{
+    public void getItems(){
     	dbconn.getItems();
     }
    
@@ -47,27 +47,27 @@ public class DatabaseAccess implements I_Database {
     }
     
     @Override
-    public boolean canUserLogin(String user, String password) throws SQLException{
+    public boolean canUserLogin(String user, String password){
     	return dbconn.canUserLogin(user, password);
     }
     
     @Override
-    public I_User getUserDetails(String username)throws SQLException{
+    public I_User getUserDetails(String username){
     	return dbconn.getUserDetails(username);
     }
     
     @Override
-    public boolean registerUser(int id, String userName, int accesslvl, String pass, String email, String address) throws SQLException {
+    public boolean registerUser(int id, String userName, int accesslvl, String pass, String email, String address){
     	return dbconn.registerUser(id, userName, accesslvl, pass, email, address);
     }
     
     @Override
-    public int getLastID() throws SQLException{
+    public int getLastID(){
     	return dbconn.getLastID();
     }
     
     @Override
-    public Object[] getOrders() throws SQLException{
+    public Object[] getOrders(){
     	return dbconn.getOrders();
     }
 }

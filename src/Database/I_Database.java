@@ -12,11 +12,11 @@ import Java.I_User;
 public interface I_Database {
 	public boolean connect(String connectionUrl) throws ClassNotFoundException;
 	public boolean connect(String host, int port, String user, String password);
-	public void getItems() throws SQLException;
+	public void getItems();
 	public ArrayList<I_Product> getItems(String identifier);
-	public boolean canUserLogin(String user, String password) throws SQLException;
-	public I_User getUserDetails(String username) throws SQLException;
-	public boolean registerUser(int id, String userName, int accesslvl, String pass, String email, String address) throws SQLException;
-	public int getLastID() throws SQLException;
-	public Object[] getOrders() throws SQLException;
+	public boolean canUserLogin(String user, String password);
+	public I_User getUserDetails(String username);
+	public boolean registerUser(int id, String userName, int accesslvl, String pass, String email, String address);
+	public int getLastID();
+	public Object[] getOrders();
 }

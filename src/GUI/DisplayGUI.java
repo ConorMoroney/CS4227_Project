@@ -111,7 +111,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 			System.out.println(command);
 			switch (command) {
 			case "View Staff Details":
-				ViewStaffDetails.main2();
+				//ViewStaffDetails.main2();
 		
 				break;
 			case "Buy Product":
@@ -129,7 +129,8 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 			}
 		}
 		else if(e.getSource() == exitButton) {
-			System.exit(0);
+			help.logoutUser();
+			panelMgr.getPanelFromFactory(1);
 		}
 	}
 

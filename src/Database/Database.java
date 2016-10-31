@@ -19,13 +19,18 @@ public class Database implements I_Database {
 	Connection con;	
 	
 	@Override
-	public void getItems() throws SQLException {
-		Statement mystat = con.createStatement();
-		ResultSet myRe = mystat.executeQuery("select * from items");
-		while (myRe.next())
-		{
-			System.out.println(myRe.getString(3));
+	public void getItems() {
+		try{
+			Statement mystat = con.createStatement();
+			ResultSet myRe = mystat.executeQuery("select * from items");
+			while (myRe.next())
+			{
+				System.out.println(myRe.getString(3));
+			}
 		}
+			catch(SQLException e){
+				System.out.println("Error retrieving items from database");
+			}
 		
 	}
 
@@ -35,18 +40,22 @@ public class Database implements I_Database {
 	}
 	
 	@Override
-	public boolean canUserLogin(String user, String password) throws SQLException{
-		Select s = new Select("*","users","username",user, con);
-        ResultSet myRe = s.getResultset();
-        if(myRe.next()){
-    		String dbPass = myRe.getString(4);
-    		if (dbPass.equals(password)){
-    			return true;
-    		} 	
-        }
+	public boolean canUserLogin(String user, String password){
+		try{
+			Select s = new Select("*","users","username",user, con);
+			ResultSet myRe = s.getResultset();
+			if(myRe.next()){
+				String dbPass = myRe.getString(4);
+				if (dbPass.equals(password)){
+					return true;
+				} 	
+			}
+		}
+			catch(SQLException e){
+				System.out.println("Error logging user in");
+			}
 		return false;
-		
-	}
+		}
 	
 	@Override
     public boolean connect(String host, int port, String user, String password) {
@@ -71,36 +80,53 @@ public class Database implements I_Database {
     }
 	
 	@Override
-	public I_User getUserDetails(String username) throws SQLException{
-		Select s = new Select("*","users","username",username, con);
-        ResultSet myRe = s.getResultset();
-        if(myRe.next()){
-        	return new ConcreteUser(Integer.parseInt(myRe.getString(1)),myRe.getString(2), Integer.parseInt(myRe.getString(3)), myRe.getString(4), myRe.getString(5), myRe.getString(6));
-        }
-        return null;
-	}
+	public I_User getUserDetails(String username){
+		try{
+			Select s = new Select("*","users","username",username, con);
+			ResultSet myRe = s.getResultset();
+			if(myRe.next()){
+				return new ConcreteUser(Integer.parseInt(myRe.getString(1)),myRe.getString(2), Integer.parseInt(myRe.getString(3)), myRe.getString(4), myRe.getString(5), myRe.getString(6));
+			}
+		}
+		catch(SQLException e){
+			System.out.println("Error getting user object from database");
+		}
+			return null;
+		}
 	
-	public boolean registerUser(int id, String userName, int accesslvl, String pass, String email, String address) throws SQLException{
-		Statement mystat = con.createStatement();
-		String sql = "INSERT into users (idusers ,username,accesslvl ,password,email,address) VALUES('" 
+	public boolean registerUser(int id, String userName, int accesslvl, String pass, String email, String address){
+		try{
+			Statement mystat = con.createStatement();
+			String sql = "INSERT into users (idusers ,username,accesslvl ,password,email,address) VALUES('" 
 				 + id  + "','" + userName + "','" + accesslvl+ "','" + pass + "','" + email + "','" + address 
 					+ "');" ;
-		mystat.executeUpdate(sql);
-		return true; 
-	}
-	
-	public int getLastID() throws SQLException{
-		Statement mystat = con.createStatement();
-		int id = 1;
-		//Get ID for Java.user
-		ResultSet myRe = mystat.executeQuery("select * from users");
-		while (myRe.next()){
-			id++;
+			mystat.executeUpdate(sql);
+			return true; 
 		}
-		return id;
+		catch(SQLException e){
+			System.out.println("Error registering user");
+		}
+		return false;
 	}
 	
-	public Object[] getOrders() throws SQLException{
+	public int getLastID(){
+		try{
+			Statement mystat = con.createStatement();
+			int id = 1;
+			//Get ID for Java.user
+			ResultSet myRe = mystat.executeQuery("select * from users");
+			while (myRe.next()){
+				id++;
+			}
+			return id;
+		}
+		catch(SQLException e){
+			System.out.println("Error retrieving last id from database");
+		}
+		return -1;
+	}
+	
+	public Object[] getOrders(){
 		Object[] listData;
 		int i = 0;
 		try

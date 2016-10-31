@@ -37,8 +37,8 @@ public class DatabaseAccess implements I_Database {
     }
     
     @Override
-    public void getItems(){
-    	dbconn.getItems();
+    public ArrayList<String> getItems(){
+    	return dbconn.getItems();
     }
    
     @Override

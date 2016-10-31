@@ -11,12 +11,12 @@ import Java.customer;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class ViewItems extends Panel implements  ActionListener
 {
 	
 	static QtyGrabber G = new QtyGrabber();
-	static String username = "";
 	JPanel buttonPanel;
 	JButton exitButton, purchaseButton;
 	
@@ -37,6 +37,7 @@ public class ViewItems extends Panel implements  ActionListener
 	
 	public JPanel createContentPane()
 	{
+
 		//Make bottom JPanel to place buttonPanel on
 		//JPanel totalGUI = new JPanel();
 		this.panel.setLayout(null);
@@ -47,69 +48,11 @@ public class ViewItems extends Panel implements  ActionListener
 		buttonPanel.setLocation(10, 10);
 		buttonPanel.setSize(295, 185);
 		this.panel.add(buttonPanel);
-		int i = 0;
-		
-		//get number of rows returned
-		try
-		{
-			//Java.Connect to database
-			  Connect con = new Connect(); 
-   		   Connection mycon =  con.getconnection();
-   		   Statement mystat = mycon.createStatement();
-			ResultSet myRe = mystat.executeQuery("select * from items");
-				
-			//get db data
-			while (myRe.next())
-				i++;
-		}
-		catch(Exception exc)
-		{
-			System.out.println("Database error");
-		}
-		
-		
-		//Assign values to listData based on DB values.
-		Object[] listData = new Object[i];
-		int[] quantities = new int[i];
-		i = 0;
-		try
-		{
-			//get array of names/quantities
-			//Java.Connect to database
-			  Connect con = new Connect(); 
-   		   Connection mycon =  con.getconnection();
-   		   Statement mystat = mycon.createStatement();
-
-			String sql = "select * from items";
-			System.out.println(sql);
-
-
-			Select s = new Select("*","items");
-			ResultSet myRe = s.getResultset();
-
-			String name = "";
-			int quantity = 0;
-				
-			//get db data
-			while (myRe.next())
-			{
-				name = myRe.getString(3);
-				quantity = myRe.getInt(7);
-				
-				listData[i] = name;
-				quantities[i] = quantity;
-				i++;
-			}
-		}
-		catch(Exception exc)
-		{
-			System.out.println("Database error");
-		}
 		
 
-		
+		ArrayList<String> itemList = help.getItems();
 		//Make List and scroll pane for items
-		JList items = new JList(listData);
+		JList items = new JList(itemList.toArray());
 		
 	    JScrollPane scrollPane = new JScrollPane();
 	    scrollPane.setViewportView(items);
@@ -157,17 +100,6 @@ public class ViewItems extends Panel implements  ActionListener
 
 		this.panel.setVisible(true);
 
-
-		try
-		{	
-			help.getItems();
-		}
-
-		catch(Exception exc)
-		{
-			System.out.println("Error");
-		}
-
 		return this.panel;
 	}
 	
@@ -176,7 +108,9 @@ public class ViewItems extends Panel implements  ActionListener
 		if(e.getSource() == exitButton)
 		{
 			frame.dispose();
+			panelMgr.getPanelFromFactory(1);
 		}
+		/*//Not implemented yet
 		if (e.getSource() == purchaseButton)
 		{
 			String itemName = itemNameTextField.getText();
@@ -244,6 +178,7 @@ public class ViewItems extends Panel implements  ActionListener
 				System.out.println(" couldnt connect to DB 1234 ");
 			}
 		}
+		*/
 
 	}
 

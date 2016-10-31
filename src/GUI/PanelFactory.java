@@ -10,7 +10,6 @@ public class PanelFactory {
     
     public Panel getPanel(int panelID, PanelManager pm) {
         Panel panel = null;
-
         switch (panelID) {
             /* Login Menu */
             case 1:
@@ -31,6 +30,10 @@ public class PanelFactory {
                 break; 
             case 5:
             	panel = new ViewAccountDetails();
+            	panel.setPanelManager(pm);
+            	break;
+            case 6:
+            	panel = new ViewItems();
             	panel.setPanelManager(pm);
             	break;
         }

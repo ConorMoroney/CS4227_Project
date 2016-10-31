@@ -83,7 +83,7 @@ public class RegisterUserGUI extends Panel implements  ActionListener
 	{
         if(e.getSource() == cancelButton)
         {
-        	frame.dispose();
+        	panelMgr.getPanelFromFactory(1);
         }
         
         else if(e.getSource() == registerUserButton)

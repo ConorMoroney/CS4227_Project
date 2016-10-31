@@ -19,18 +19,21 @@ public class Database implements I_Database {
 	Connection con;	
 	
 	@Override
-	public void getItems() {
+	public ArrayList<String> getItems() {
+		ArrayList<String> items = new ArrayList<String>();
 		try{
 			Statement mystat = con.createStatement();
 			ResultSet myRe = mystat.executeQuery("select * from items");
 			while (myRe.next())
 			{
-				System.out.println(myRe.getString(3));
+				items.add(myRe.getString(3) + ": " + myRe.getString(5));
+				
 			}
 		}
 			catch(SQLException e){
 				System.out.println("Error retrieving items from database");
 			}
+		return items;
 		
 	}
 

@@ -12,7 +12,7 @@ import Java.I_User;
 public interface I_Database {
 	public boolean connect(String connectionUrl) throws ClassNotFoundException;
 	public boolean connect(String host, int port, String user, String password);
-	public void getItems();
+	public ArrayList<String> getItems();
 	public ArrayList<I_Product> getItems(String identifier);
 	public boolean canUserLogin(String user, String password);
 	public I_User getUserDetails(String username);

@@ -1,11 +1,8 @@
 package GUI;
 
-import SQL.Connect;
-
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.sql.*;
 
 public class ViewOrders extends Panel implements ActionListener
 {
@@ -35,29 +32,6 @@ public class ViewOrders extends Panel implements ActionListener
 		buttonPanel.setLocation(10, 10);
 		buttonPanel.setSize(295, 185);
 		this.panel.add(buttonPanel);
-		int i = 0;
-		
-		//get number of rows returned
-		try
-		{
-			//Java.Connect to database
-			   Connect con = new Connect(); 
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
-			ResultSet myRe = mystat.executeQuery("select * from items");
-
-
-
-
-			//get db data
-			while (myRe.next())
-				i++;
-		}
-		catch(Exception exc)
-		{
-			System.out.println("Database error");
-		}
-		
 		
 		//Assign values to listData based on DB values.
 		try{
@@ -85,30 +59,6 @@ public class ViewOrders extends Panel implements ActionListener
 
 		this.panel.setVisible(true);
 
-		/*
-		try
-		{	
-			//Java.Connect to database
-			   Connect con = new Connect();
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
-			
-			String sql = "select * from users";
-			ResultSet myRe = mystat.executeQuery(sql);
-
-			//get db data
-			while (myRe.next())
-			{
-				System.out.println(myRe.getString(2));
-				System.out.println(myRe.getString(4));
-				System.out.println(myRe.getString(6));
-			}
-		}
-
-		catch(Exception exc)
-		{
-			System.out.println("Error");
-		} */
 
 		return this.panel;
 	}
@@ -118,6 +68,7 @@ public class ViewOrders extends Panel implements ActionListener
 		if(e.getSource() == exitButton)
 		{
 			frame.dispose();
+			panelMgr.getPanelFromFactory(2);
 		}
 		
 	}

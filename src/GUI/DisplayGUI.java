@@ -11,6 +11,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 {
 
 	JPanel buttonPanel;
+	JFrame frame;
 	JButton remaingModulesButton, viewResultsButton, exitButton;
 
 	
@@ -30,25 +31,25 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 		if (accessLevel == 1)
 		{
 			//Create and set up the content pane.
-			JFrame frame = GUIFactory.makeFrame("Customer GUI", 405, 130);
+			frame = GUIFactory.makeFrame("Customer GUI", 405, 130);
 			frame.setContentPane(this.createContentPane(accessLevel));
 		}
 		if (accessLevel == 2)
 		{
 			//Create and set up the content pane.
-			JFrame frame = GUIFactory.makeFrame("Warehouse Staff GUI", 405, 130);
+			frame = GUIFactory.makeFrame("Warehouse Staff GUI", 405, 130);
 			frame.setContentPane(this.createContentPane(accessLevel));
 		}
 		if (accessLevel == 3)
 		{
 			//Create and set up the content pane.
-			JFrame frame = GUIFactory.makeFrame("Logistsics Staff GUI", 405, 130);
+			frame = GUIFactory.makeFrame("Logistsics Staff GUI", 405, 130);
 			frame.setContentPane(this.createContentPane(accessLevel));
 		}
 		if (accessLevel == 4)
 		{
 			//Create and set up the content pane.
-			JFrame frame = GUIFactory.makeFrame("Manager GUI", 405, 130);
+			frame = GUIFactory.makeFrame("Manager GUI", 405, 130);
 			frame.setContentPane(this.createContentPane(accessLevel));
 		}
 	}
@@ -94,13 +95,13 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 				BarChart.reports();
 				break;
 			case "View Account Details":
+				frame.dispose();
 				panelMgr.getPanelFromFactory(5);
 				break;
 				//ViewAccountDetails.display(line2);
 				
 				//Do action for Java.customer viewing product
 			case "Update Product Stock":
-				updateDatabase.main2();
 				break;
 			}
 
@@ -115,7 +116,8 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 		
 				break;
 			case "Buy Product":
-				//ViewItems.main(line2);
+				frame.dispose();
+				panelMgr.getPanelFromFactory(6);
 				break;
 			case "Register a product":
 				RegisterProductGUI.registerItem();				
@@ -130,6 +132,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 		}
 		else if(e.getSource() == exitButton) {
 			help.logoutUser();
+			frame.dispose();
 			panelMgr.getPanelFromFactory(1);
 		}
 	}

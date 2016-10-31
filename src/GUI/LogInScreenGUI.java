@@ -92,6 +92,7 @@ public class LogInScreenGUI extends Panel implements  ActionListener
         
         else if(e.getSource() == registerButton)
         {
+        	frame.dispose();
 			panelMgr.getPanelFromFactory(3);
         }
 		
@@ -116,6 +117,7 @@ public class LogInScreenGUI extends Panel implements  ActionListener
     			if(help.canUserLogin(userName, password)){
     				help.getUserDetails(userName);
     				frame.setVisible(false);
+    				frame.dispose();
     				panelMgr.getPanelFromFactory(2);
     				}
 			}

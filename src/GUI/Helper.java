@@ -1,6 +1,7 @@
 package GUI;
 
 import Java.I_User;
+import java.util.ArrayList;
 
 import java.sql.SQLException;
 
@@ -35,8 +36,8 @@ public class Helper {
 		user = null;
 	}
 	
-	public void getItems() throws SQLException{
-		dba.getItems();
+	public ArrayList<String> getItems(){
+		return dba.getItems();
 	}
 	
 	public int getLastID(){

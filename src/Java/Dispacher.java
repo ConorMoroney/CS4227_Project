@@ -29,6 +29,13 @@ public class Dispacher {
 
     }
 
-    public void iteratelist(){}
+    public void iteratelist(){
 
+        for(int i = 0;i < listofInterceptors.size();i++){
+            //listofInterceptors.get(i).InterceptorMethod1();
+        }
+
+    }
+
+    //public Context getContext(){}
 }

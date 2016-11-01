@@ -10,4 +10,9 @@ public class ConcreteInterceptor  implements I_Interceptor{
     }
 
 
+    public void event_callback()
+    {
+
+    }
+
 }

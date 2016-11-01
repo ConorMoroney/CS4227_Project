@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 
-public class LogInScreenGUI implements  ActionListener
+public class LogInScreenGUI extends GUI.ActionListenerSuper
 {
     JPanel buttonPanel;
     JButton exitButton, logInButton, registerButton;
@@ -81,6 +81,7 @@ public class LogInScreenGUI implements  ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
+        super.actionPerformed(e);
         if(e.getSource() == exitButton)
         {
 			System.exit(0);
@@ -89,7 +90,8 @@ public class LogInScreenGUI implements  ActionListener
         
         else if(e.getSource() == registerButton)
         {
-			RegisterUserGUI.start();
+			//RegisterUserGUI.start();
+            RegisterEmployeeGUI.main(null);
         }
 		
         else if(e.getSource() == logInButton)

@@ -9,7 +9,7 @@ import User.*;
 
 import javax.swing.*;
 
-public class RegisterEmployeeGUI implements  ActionListener
+public class RegisterEmployeeGUI extends  ActionListenerSuper
 {
 	String [] employeeTypes = {"manager", "logistics" , "warehouse"};
     
@@ -74,6 +74,7 @@ public class RegisterEmployeeGUI implements  ActionListener
 
     public void actionPerformed(ActionEvent e)
 	{
+        super.actionPerformed(e);
         if(e.getSource() == cancelButton)
         {
         	frame.dispose();

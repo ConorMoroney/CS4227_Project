@@ -8,6 +8,6 @@ import java.awt.event.ActionEvent;
 public interface I_Framework {
 
     void service();
-    void event(ActionEvent event);
-    void access_internals();
+    void event(ActionEvent event, String user);
+    String access_internals();
 }

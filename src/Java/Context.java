@@ -1,5 +1,7 @@
 package Java;
 
+import SAMPLE1.Main;
+
 import java.awt.event.ActionEvent;
 
 /**
@@ -15,8 +17,8 @@ public class Context {
 
     public void setValue(ActionEvent event){ this.event = event;}
 
-    public void consumeService()
+    public String consumeService()
     {
-
+        return Main.c.access_internals();
     }
 }

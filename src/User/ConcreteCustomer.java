@@ -9,7 +9,6 @@ public class ConcreteCustomer implements Observer, I_Customer {
     private String password;
     private String email;
     private String address;
-    private int accesslvl =1;
 
     public ConcreteCustomer(int i, String string, int i1, String string1, String string2, String string3) {
     }
@@ -58,6 +57,7 @@ public class ConcreteCustomer implements Observer, I_Customer {
     @Override
     public int getaccesslvl() {
         // TODO Auto-generated method stub
+        int accesslvl = 1;
         return accesslvl;
     }
     public String getName() {

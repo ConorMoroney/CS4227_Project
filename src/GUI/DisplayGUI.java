@@ -7,13 +7,15 @@ import javax.swing.*;
 
 /*  No SQL Connection in here */
 
-public class DisplayGUI implements ActionListener// extends JFrame implements ActionListener
+class DisplayGUI implements ActionListener// extends JFrame implements ActionListener
 {
 
-	JPanel buttonPanel;
-	JButton remaingModulesButton, viewResultsButton, exitButton;
+	private JPanel buttonPanel;
+	private JButton remaingModulesButton;
+	private JButton viewResultsButton;
+	private JButton exitButton;
 
-	static String[] line2 = new String[2];
+	private static final String[] line2 = new String[2];
 	
 	/*TODO :
 	 * make method to create a button and have it increment the location of the buttons
@@ -59,7 +61,7 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 		}
 	}
 
-	public JPanel createContentPane (int accessLevel)
+	private JPanel createContentPane(int accessLevel)
 	{
 
 		// get the title strings 
@@ -166,8 +168,7 @@ public class DisplayGUI implements ActionListener// extends JFrame implements Ac
 		default:
 			System.out.println("Error no accesslvl found");
 		}
-		String [] output = {button1,button2};
-		return output;		
+		return new String[]{button1,button2};
 	}
 
 

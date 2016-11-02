@@ -10,15 +10,18 @@ import java.sql.*;
 
 public class LogInScreenGUI implements ActionListener
 {
-    JPanel buttonPanel;
-    JButton exitButton, logInButton, registerButton;
-	JLabel userNameLabel, passwordLabel;
-	JTextField userNameTextField;
-	JPasswordField passwordTextField;
-	JPanel totalGUI = new JPanel();
-	static JFrame frame = new JFrame("Log In Screen");
+    private JPanel buttonPanel;
+    private JButton exitButton;
+    private JButton logInButton;
+    private JButton registerButton;
+	private JLabel userNameLabel;
+    private JLabel passwordLabel;
+	private JTextField userNameTextField;
+	private JPasswordField passwordTextField;
+	private final JPanel totalGUI = new JPanel();
+	private static JFrame frame = new JFrame("Log In Screen");
 
-    public JPanel createContentPane()
+    private JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
         //JPanel totalGUI = new JPanel();
@@ -36,11 +39,11 @@ public class LogInScreenGUI implements ActionListener
         buttonPanel.add(userNameTextField);
         buttonPanel.add(passwordTextField);
 
-        /****
-         *  Below shows the 3 different ways of making buttons.
-         *  The exit button uses a builder to create a blank button and fills in the details.
-         *  The LogInButton creates the button from the LogInButtonBuilder
-         *  and the Register Button uses a regular Creation Method.
+        /***
+         Below shows the 3 different ways of making buttons.
+         The exit button uses a builder to create a blank button and fills in the details.
+         The LogInButton creates the button from the LogInButtonBuilder
+         and the Register Button uses a regular Creation Method.
          */
         //Builder for LogInButton
         I_ButtonBuilder button = new LogInButtonBuilder();
@@ -101,7 +104,8 @@ public class LogInScreenGUI implements ActionListener
 
 			//declare variables for username and password
 			String userName = userNameTextField.getText();
-			String password = passwordTextField.getText();
+            //noinspection deprecation
+            String password = passwordTextField.getText();
 
             /*
                 TODO
@@ -166,7 +170,7 @@ public class LogInScreenGUI implements ActionListener
 
     }
 
-    public static void createAndShowGUI()
+    private static void createAndShowGUI()
 	{
         //Create and set up the content pane.
         LogInScreenGUI window = new LogInScreenGUI();

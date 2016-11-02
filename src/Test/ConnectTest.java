@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
  */
 public class ConnectTest {
     //public Java.Connect conTest;
-    public Boolean name = true;
+    private final Boolean name = true;
     @Before
     public void setUp() throws Exception {
       //  Java.Connect conTest = new Java.Connect();

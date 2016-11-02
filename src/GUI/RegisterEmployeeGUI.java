@@ -4,25 +4,33 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import SAMPLE1.Main;
-import SQL.Select;
+
 import java.sql.*;
 import SQL.*;
 import User.*;
 
 import javax.swing.*;
 
-public class RegisterEmployeeGUI implements  ActionListener
+class RegisterEmployeeGUI implements  ActionListener
 {
-	String [] employeeTypes = {"manager", "logistics" , "warehouse"};
-	JPanel buttonPanel;
-    JButton cancelButton, registerUserButton;
-	JLabel TypeLabel,userLabel,passLabel, emailLabel, addressLabel;
-	JComboBox userType = new JComboBox(employeeTypes);
-	JTextField userField,passField, emailField, addressField;
-	static JFrame frame = new JFrame("Register Employee Screen");
+	private final String [] employeeTypes = {"manager", "logistics" , "warehouse"};
+	private JPanel buttonPanel;
+    private JButton cancelButton;
+    private JButton registerUserButton;
+	private JLabel TypeLabel;
+    private JLabel userLabel;
+    private JLabel passLabel;
+    private JLabel emailLabel;
+    private JLabel addressLabel;
+	private final JComboBox userType = new JComboBox(employeeTypes);
+	private JTextField userField;
+    private JTextField passField;
+    private JTextField emailField;
+    private JTextField addressField;
+	private static JFrame frame = new JFrame("Register Employee Screen");
 	
 
-    public JPanel createContentPane()
+    private JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
         JPanel totalGUI = new JPanel();
@@ -95,6 +103,7 @@ public class RegisterEmployeeGUI implements  ActionListener
         	String address = addressField.getText();
 
             AbstractUserFactory empFactory = FactoryProducer.getFactory("Employee");
+            assert empFactory != null;
             I_Employee emp1 = (I_Employee) empFactory.createUser("Warehouse");
             //ConcreteEmployee emp1 = empFactory.
     		

@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
  */
 public class Context {
 
-    ActionEvent event;
+    private ActionEvent event;
 
     public Context(ActionEvent event){ this.event = event;}
 

@@ -7,9 +7,9 @@ import java.awt.event.ActionEvent;
  */
 public class ConcreteFramework implements I_Framework {
 
-    Context context;
-    String user;
-    Dispacher d;
+    private Context context;
+    private String user;
+    private final Dispacher d;
 
     public ConcreteFramework(){
         d = new Dispacher();

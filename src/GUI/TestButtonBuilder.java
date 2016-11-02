@@ -3,7 +3,7 @@ package GUI;
 /**
  * Created by colmm on 29/10/2016.
  */
-public class TestButtonBuilder
+class TestButtonBuilder
 {
     public static void main(String[] args)
     {

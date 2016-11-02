@@ -1,17 +1,12 @@
 package Java;
 
-import SQL.Insert;
-import com.sun.xml.internal.bind.v2.TODO;
-
-import javax.swing.*;
-
 import java.awt.event.ActionEvent;
 
 /**
  * Created by Conor on 28-Oct-16.
  */
 public class ConcreteInterceptor  implements I_Interceptor{
-    String user;
+    private String user;
 
     @Override
     public void InterceptorMethod1(Context context) {
@@ -44,16 +39,16 @@ public class ConcreteInterceptor  implements I_Interceptor{
      *
      * finally if correct continue onto normal functionality */
 
-    public void addLogToFile()
+    private void addLogToFile()
     {
 
     }
 
-    public void addLogToDB()
+    private void addLogToDB()
     {
 
     }
-    public boolean compareFileToDB()
+    private boolean compareFileToDB()
     {
 
         return false;

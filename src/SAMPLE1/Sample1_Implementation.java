@@ -1,15 +1,9 @@
 package SAMPLE1;
 
-import GUI.DisplayGUI;
-import GUI.RegisterUserGUI;
-import SQL.Select;
-
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.ResultSet;
 
-public class Sample1_Implementation implements  ActionListener {
+class Sample1_Implementation implements  ActionListener {
 
     public void createContentPane() {
 
@@ -27,18 +21,18 @@ public class Sample1_Implementation implements  ActionListener {
     public void actionPerformed(ActionEvent e)
 
 
-    /****
-     * Wait for command design pattern to be implemented to do work here
-     *
-     *
-     *
-     *  EXAMPLE
-     *
-     *      Command command = e.getsource();
-     *      command.execute();
-     *
+    /***
+     Wait for command design pattern to be implemented to do work here
 
-     * *****/
+
+
+     EXAMPLE
+
+     Command command = e.getsource();
+     command.execute();
+
+
+     *****/
 
     {
 

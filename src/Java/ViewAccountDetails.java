@@ -10,20 +10,20 @@ import java.sql.*;
 public class ViewAccountDetails implements  ActionListener
 {
 	
-	JPanel buttonPanel;
-	JButton exitButton;
+	private JPanel buttonPanel;
+	private JButton exitButton;
 	
 	JLabel quantityLabel, nameLabel;
 
-	JPanel totalGUI = new JPanel();
+	private final JPanel totalGUI = new JPanel();
 	
 	JTextField itemNameTextField, quantityTextField;
-	static JFrame frame = new JFrame("View Account Details");
-	static int id;
+	private static final JFrame frame = new JFrame("View Account Details");
+	private static int id;
 
 
 	
-	public JPanel createContentPane()
+	private JPanel createContentPane()
 	{
 		//Make bottom JPanel to place buttonPanel on
 		//JPanel totalGUI = new JPanel();
@@ -73,10 +73,10 @@ public class ViewAccountDetails implements  ActionListener
 			System.out.println(sql);
 			ResultSet myRe = mystat.executeQuery(sql);
 			
-			String name = new String();
-			String email = new String();
-			String address = new String();
-			String password =new String();
+			String name = "";
+			String email = "";
+			String address = "";
+			String password = "";
 		
 			//get db data
 			while (myRe.next())

@@ -1,6 +1,5 @@
 package GUI;
 
-import Java.ConcreteFramework;
 import SAMPLE1.Main;
 
 import java.awt.event.ActionEvent;
@@ -11,7 +10,7 @@ import java.awt.event.ActionListener;
  */
 public class ActionListenerSuper implements ActionListener{
 
-    String userName = "No User";
+    private String userName = "No User";
 
     @Override
     public void actionPerformed(ActionEvent e) {

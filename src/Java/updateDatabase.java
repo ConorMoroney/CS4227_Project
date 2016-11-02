@@ -21,23 +21,26 @@ import javax.swing.SwingUtilities;
 public class updateDatabase implements  ActionListener{ 
 	
 	static String username = "";
-	JPanel buttonPanel;
-	JButton exitButton, updateButton;
+	private JPanel buttonPanel;
+	private JButton exitButton;
+    private JButton updateButton;
 	
-	JLabel quantityLabel, nameLabel;
+	private JLabel quantityLabel;
+    private JLabel nameLabel;
 
-	JPanel totalGUI = new JPanel();
+	private final JPanel totalGUI = new JPanel();
 	
-	JTextField itemNameTextField, quantityTextField;
-	static JFrame frame = new JFrame("Update Stock");
+	private JTextField itemNameTextField;
+    private JTextField quantityTextField;
+	private static final JFrame frame = new JFrame("Update Stock");
 	
 	
-	public void updateProducts(String itemName , int quantity){
+	private void updateProducts(String itemName, int quantity){
 		QtyGrabber G = ViewItems.getQtyGrabber();
 		G.setQty(itemName , quantity);
 	}
 
-	public JPanel createContentPane()
+	private JPanel createContentPane()
 	{
 		//Make bottom JPanel to place buttonPanel on
 		//JPanel totalGUI = new JPanel();

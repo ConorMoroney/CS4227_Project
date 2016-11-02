@@ -1,5 +1,6 @@
 package GUI;
 
+import SAMPLE1.Main;
 import SQL.Select;
 
 import javax.swing.*;
@@ -7,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 
-public class LogInScreenGUI extends GUI.ActionListenerSuper
+public class LogInScreenGUI implements ActionListener
 {
     JPanel buttonPanel;
     JButton exitButton, logInButton, registerButton;
@@ -81,7 +82,8 @@ public class LogInScreenGUI extends GUI.ActionListenerSuper
 
     public void actionPerformed(ActionEvent e)
     {
-        super.actionPerformed(e);
+
+
         if(e.getSource() == exitButton)
         {
 			System.exit(0);
@@ -146,19 +148,22 @@ public class LogInScreenGUI extends GUI.ActionListenerSuper
 
     			//If Java.user/pass match, log in.
     			if (dbPass.equals(password)){
+                    Main.actionListener.setUserName(dbUser);
     				frame.setVisible(false);
     				DisplayGUI.main(line);
 
     			}
-			}
+
+            }
 
 			catch(Exception exc)
 			{
-				System.out.println("Exception");
-				System.exit(0);
-			}
-		}
-        
+                System.out.println("Exception");
+                System.exit(0);
+            }
+        }
+        Main.actionListener.actionPerformed(e);
+
     }
 
     public static void createAndShowGUI()

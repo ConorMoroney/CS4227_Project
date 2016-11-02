@@ -1,8 +1,6 @@
 package SQL;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 /**
  * Created by Conor on 28-Oct-16.
@@ -27,12 +25,25 @@ class SelectMax implements SQLInterface {
             myRe = mystat.executeQuery(SQL);
         }
         catch (Exception exc) {
-            System.out.println("Select Statement Failed");
+            System.out.println("Max Select Statement Failed");
             System.exit(0);
         }
     }
 
-   
+
+    public int getMax(ResultSet r) {
+        int max = 0;
+        try {
+            while (r.next()) {
+                    max = Integer.parseInt(r.getString(1));
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return max;
+    }
+
     public ResultSet getResultset() {
-        return myRe;    }
+        return myRe;
+    }
 }

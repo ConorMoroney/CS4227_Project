@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Dispacher {
 
-
+    Context context;
     ArrayList<I_Interceptor> listofInterceptors;
 
     public Dispacher (){
@@ -19,6 +19,7 @@ public class Dispacher {
 
     public void register(I_Interceptor interceptor){
         listofInterceptors.add(interceptor);
+        System.out.println("Registered Interceptor");
     }
 
     public void remove(I_Interceptor interceptor){
@@ -32,10 +33,15 @@ public class Dispacher {
     public void iteratelist(){
 
         for(int i = 0;i < listofInterceptors.size();i++){
-            //listofInterceptors.get(i).InterceptorMethod1();
+            listofInterceptors.get(i).InterceptorMethod1(context);
         }
 
     }
 
+    public void callBack(Context context) {
+
+        this.context = context;
+        iteratelist();
+    }
     //public Context getContext(){}
 }

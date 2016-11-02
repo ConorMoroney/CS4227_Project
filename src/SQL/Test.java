@@ -15,17 +15,22 @@ public class Test {
 
 
 
+        //i.CreateUserInsert("mike",2,"pass","email","address",i.getConnection());
+        //i.CreateProductInsert(6,"pen","pencil","pencil",1,1,20,i.getConnection());
+        Insert i =new Insert();
+        i.CreateLogInsert("Test Log Entry", i.getConnection());
 
-        /*Insert i =new Insert();
-        i.CreateUserInsert(57,"mike",2,"pass","email","address",i.getConnection());
+        Select s = new Select("*","LogTable");
+        ResultSet r = s.getResultset();
+        s.printSQL(r);
 
-        i.CreateProductInsert(6,"pen","pencil","pencil",1,1,20,i.getConnection());
-*/
+        SelectMax m = new SelectMax("idusers", "users");
+        r = m.getResultset();
+        s.printSQL(r);
 
 
-
-        Update u = new Update();
-        u.UpdateItems(50,15);
+        // Update u = new Update();
+       // u.UpdateItems(50,15);
     }
 
 

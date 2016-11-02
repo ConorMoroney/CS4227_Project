@@ -3,14 +3,14 @@ package GUI;
 /**
  * Created by colmm on 29/10/2016.
  */
-public interface I_ButtonPlan {
-    public void setButtonTitle(String title);
+interface I_ButtonPlan {
+    void setButtonTitle(String title);
 
-    public void setButtonXLocation(int xLoc);
-    public void setButtonYLocation(int yLoc);
+    void setButtonXLocation(int xLoc);
+    void setButtonYLocation(int yLoc);
 
-    public void setButtonXSize(int xSize);
-    public void setButtonYSize(int ySize);
+    void setButtonXSize(int xSize);
+    void setButtonYSize(int ySize);
 
 
 

@@ -13,23 +13,26 @@ import java.sql.*;
 public class ViewItems implements  ActionListener
 {
 	
-	static QtyGrabber G = new QtyGrabber();
-	static String username = "";
-	JPanel buttonPanel;
-	JButton exitButton, purchaseButton;
+	private static final QtyGrabber G = new QtyGrabber();
+	private static String username = "";
+	private JPanel buttonPanel;
+	private JButton exitButton;
+	private JButton purchaseButton;
 	
-	JLabel quantityLabel, nameLabel;
+	private JLabel quantityLabel;
+	private JLabel nameLabel;
 
-	JPanel totalGUI = new JPanel();
+	private final JPanel totalGUI = new JPanel();
 	
-	JTextField itemNameTextField, quantityTextField;
-	static JFrame frame = new JFrame("View items");
+	private JTextField itemNameTextField;
+	private JTextField quantityTextField;
+	private static final JFrame frame = new JFrame("View items");
 
 	public static QtyGrabber  getQtyGrabber(){
 		return G;
 	}
 	
-	public JPanel createContentPane()
+	private JPanel createContentPane()
 	{
 		//Make bottom JPanel to place buttonPanel on
 		//JPanel totalGUI = new JPanel();
@@ -227,8 +230,8 @@ public class ViewItems implements  ActionListener
 					String newCustAddress = myRe1.getString(6) ;
 					
 					
-					c.setName(newCustName);;
-		    		c.setPassword(newCustPassword);
+					c.setName(newCustName);
+                    c.setPassword(newCustPassword);
 		    		c.setEmail(newCustEmail);
 		    		c.setAddress(newCustAddress);
 		    		c.setID(newCustId);

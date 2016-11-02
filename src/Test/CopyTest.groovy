@@ -2,7 +2,7 @@ package Test
 /**
  * Created by shane on 11-Oct-16.
  */
-class CopyTest extends groovy.util.GroovyTestCase {
+class CopyTest extends GroovyTestCase {
     void testSetID() {
 
     }

@@ -5,7 +5,7 @@ package GUI;
  */
 public class LogInButtonBuilder implements I_ButtonBuilder {
 
-    private Button button;
+    private final Button button;
 
     public LogInButtonBuilder()
     {

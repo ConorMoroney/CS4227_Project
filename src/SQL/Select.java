@@ -9,11 +9,11 @@ import java.sql.*;
  */
 public class Select implements  SQLInterface{
 
-    Connect con;
-    Connection mycon;
-    Statement mystat;
-    ResultSet myRe;
-    ResultSetMetaData rsmd;
+    private Connect con;
+    private Connection mycon;
+    private Statement mystat;
+    private ResultSet myRe;
+    private ResultSetMetaData rsmd;
 
     public Select(String table, String From , String Where , String Variable) {
         // Get Connection to database when created

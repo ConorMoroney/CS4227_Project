@@ -9,14 +9,14 @@ import java.sql.*;
 public class ViewStaffDetails implements  ActionListener
 {
 
-	JPanel buttonPanel;
-	JButton exitButton;	
+	private JPanel buttonPanel;
+	private JButton exitButton;
 	JLabel quantityLabel, nameLabel;
-	JPanel totalGUI = new JPanel();
+	private final JPanel totalGUI = new JPanel();
 	JTextField itemNameTextField, quantityTextField;
-	static JFrame frame = new JFrame("View Staff Details");
+	private static final JFrame frame = new JFrame("View Staff Details");
 
-	public JPanel createContentPane()
+	private JPanel createContentPane()
 	{
 		//Make bottom JPanel to place buttonPanel on
 		//JPanel totalGUI = new JPanel();

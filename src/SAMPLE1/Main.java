@@ -25,7 +25,7 @@ public class Main {
 			//log out 
 		
 	}
-	public static void attach(ConcreteInterceptor i){
+	private static void attach(ConcreteInterceptor i){
 		 c.getDispacher().register(i);
 
 	}

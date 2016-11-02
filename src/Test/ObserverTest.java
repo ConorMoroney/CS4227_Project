@@ -3,7 +3,7 @@ package Test;
 import Java.QtyGrabber;
 import User.ConcreteCustomer;
 
-public class ObserverTest {
+class ObserverTest {
 	public static void main(String [] args){
 		QtyGrabber G = new QtyGrabber();
 

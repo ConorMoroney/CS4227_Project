@@ -1,14 +1,13 @@
 package SQL;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 /**
  * Created by Conor on 12-Oct-16.
  */
 public class Insert {
 
-    Connection con;
+    private Connection con;
 
     public Insert() throws ClassNotFoundException
     {
@@ -125,7 +124,6 @@ public class Insert {
             column = "EntryId";
         SelectMax s = new SelectMax(column,table);
         ResultSet r = s.getResultset();
-        int i = s.getMax(r)+ 1;
-        return i;
+        return s.getMax(r)+ 1;
     }
 }

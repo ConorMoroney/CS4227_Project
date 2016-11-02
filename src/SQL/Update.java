@@ -5,9 +5,9 @@ import java.sql.*;
 /**
  * Created by Conor on 12-Oct-16.
  */
-public class Update {
+class Update {
 
-    Connection con;
+    private Connection con;
 
     public Update() throws ClassNotFoundException {
         Connect c = new Connect();

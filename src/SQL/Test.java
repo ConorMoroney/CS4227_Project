@@ -1,15 +1,12 @@
 package SQL;
 
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
 import java.sql.*;
-import java.sql.Connection;
 
 
 /**
  * Created by Conor on 12-Oct-16.
  */
-public class Test {
+class Test {
 
     public static void main (String [] args) throws ClassNotFoundException {
 

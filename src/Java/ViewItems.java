@@ -66,6 +66,7 @@ public class ViewItems implements  ActionListener
 		Object[] listData = new Object[i];
 		int[] quantities = new int[i];
 		i = 0;
+		/*
 		try
 		{
 			//get array of names/quantities
@@ -172,7 +173,7 @@ public class ViewItems implements  ActionListener
 		{
 			System.out.println("Error");
 		}
-
+*/
 		return totalGUI;
 	}
 	

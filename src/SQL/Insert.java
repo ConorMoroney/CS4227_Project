@@ -10,9 +10,9 @@ public class Insert {
 
     Connection con;
 
-    public Insert() throws ClassNotFoundException {
-        Connect c = new Connect();
-        con = c.getconnection();
+    public Insert() {
+        //Connect c = new Connect();
+        //con = c.getconnection();
     }
 
 
@@ -21,12 +21,14 @@ public class Insert {
      *
      * *************/
 
-    public void CreateUserInsert( String username , int accesslvl , String password , String email , String address , Connection con)
+    public boolean CreateUserInsert( String username , int accesslvl , String password , String email , String address , Connection con)
     {
         String table = "users";
+        this.con = con;
         int id = getMaxId(table);
         if (id > 0) {
             try {
+                id++;
 
 
                 String SQL = "INSERT INTO [dbo].[users]([idusers],[username],[accesslvl],[password],[email],[address])VALUES"
@@ -40,6 +42,7 @@ public class Insert {
                 preparedStmt.setString(6, address);
                 System.out.print(SQL);
                 preparedStmt.executeUpdate();
+                return true;
 
 
             } catch (SQLException e) {
@@ -48,6 +51,7 @@ public class Insert {
                 System.out.println(e.getMessage());
             }
         }
+        return false;
     }
 
     public void CreateProductInsert( String type , String name , String description, float price, float weight,int quanitiy , Connection con)
@@ -56,6 +60,7 @@ public class Insert {
         int id = getMaxId(table);
         if (id > 0) {
         try {
+
 
 
             String SQL ="INSERT INTO [dbo].[items]([iditems],[type],[name],[description],[price],[weight],[quantity])VALUES"
@@ -95,10 +100,12 @@ public class Insert {
         else
             coloumn = "iditems";
 
-      SelectMax s = new SelectMax(coloumn,table);
+      SelectMax s = new SelectMax(coloumn,table, con);
       ResultSet r = s.getResultset();
         try {
-            return r.getInt(1);
+            while (r.next()){
+                return r.getInt(1);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

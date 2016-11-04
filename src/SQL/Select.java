@@ -15,20 +15,25 @@ public class Select implements  SQLInterface{
     ResultSet myRe;
     ResultSetMetaData rsmd;
 
-    public Select(String table, String From , String Where , String Variable) {
+    public Select(String table, String From , String Where , String Variable, Connection co) {
         // Get Connection to database when created
+            mycon = co;
             String sql = "select "+ table +" from " + From + " WHERE " + Where + " = '" + Variable + "'";
             executeStatement(sql);
     }
-    public Select(String table, String From ) {
+    public Select(String table, String From ,  Connection co) {
         // Get Connection to database when created
+        mycon = co;
         String sql = "select "+ table +" from " + From ;
         executeStatement(sql);
     }
 
+    public Select(String statement, Connection co){
+        mycon = co;
+        executeStatement(statement);
+    }
+
     public void executeStatement(String SQL){try {
-        con = new Connect();
-        mycon =  con.getconnection();
         mystat = mycon.createStatement();
     }
     catch (Exception exc) {
@@ -39,6 +44,7 @@ public class Select implements  SQLInterface{
             myRe = mystat.executeQuery(SQL);
         }
         catch (Exception exc) {
+            System.out.println(exc.fillInStackTrace());
             System.out.println("Select Statement Failed");
             System.exit(0);
         }

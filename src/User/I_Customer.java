@@ -10,6 +10,7 @@ public interface I_Customer {
     void setEmail(String email);
     void setAddress(String address);
     int getaccesslvl();
+    int getID();
     String getName();
     String getEmail();
     String getAddress();

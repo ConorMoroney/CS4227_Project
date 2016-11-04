@@ -10,8 +10,15 @@ public class ConcreteCustomer implements Observer, I_Customer {
     private String email;
     private String address;
     private int accesslvl =1;
+    private UserState state;
 
-    public ConcreteCustomer(int i, String string, int i1, String string1, String string2, String string3) {
+    public ConcreteCustomer(int ID, String user, int access, String pass, String mail, String add){
+        id = ID;
+        name = user;
+        accesslvl = access;
+        password = pass;
+        email = mail;
+        address = add;
     }
 
     public ConcreteCustomer() {

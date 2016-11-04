@@ -98,7 +98,7 @@ public class RegisterEmployeeGUI extends  ActionListenerSuper
             //ConcreteEmployee emp1 = empFactory.
     		
 
-    		
+    		/*
     		int id = 1;
     		int accesslvl = emp1.getaccesslvl();
     		
@@ -119,7 +119,7 @@ public class RegisterEmployeeGUI extends  ActionListenerSuper
             try {
 
                 Insert i =new Insert();
-                i.CreateUserInsert(/*id,*/userName,accesslvl,pass,email,address,i.getConnection());
+                i.CreateUserInsert(id,userName,accesslvl,pass,email,address,i.getConnection());
                 /*
                 Connect con = new Connect();
                 Connection mycon = con.getconnection();
@@ -130,7 +130,7 @@ public class RegisterEmployeeGUI extends  ActionListenerSuper
                         + "');";
 
                 mystat.executeUpdate(sql);
-                System.out.println("object added to database");*/
+                System.out.println("object added to database");
                 //ResultSet myRe = mystat.executeQuery("select * from creationary.users");
             }
             catch(Exception exc){
@@ -142,7 +142,7 @@ public class RegisterEmployeeGUI extends  ActionListenerSuper
             emp1.setEmail(email);
             emp1.setAddress(address);
             emp1.setID(id);
-    		
+    		*/
         }
         
     }

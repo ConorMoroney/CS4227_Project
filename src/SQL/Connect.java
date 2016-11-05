@@ -8,7 +8,7 @@ public class Connect{
 
 private Connection con;
 	
-public Connect() throws ClassNotFoundException {
+public Connect() {
 
 		try {
 
@@ -18,7 +18,7 @@ public Connect() throws ClassNotFoundException {
 			//con.setAutoCommit(false);
 			System.out.println("you are Connected : Connect Class ");
 		 
-		} catch (SQLException e) {
+		} catch (Exception e) {
 
 			System.out.println("Connection failed");
 			System.out.println(e.getMessage());

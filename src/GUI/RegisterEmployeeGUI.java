@@ -101,7 +101,7 @@ class RegisterEmployeeGUI implements  ActionListener
         	String pass = passField.getText();
         	String email = emailField.getText();
         	String address = addressField.getText();
-
+            /*
             AbstractUserFactory empFactory = FactoryProducer.getFactory("Employee");
             assert empFactory != null;
             I_Employee emp1 = (I_Employee) empFactory.createUser("Warehouse");
@@ -140,6 +140,7 @@ class RegisterEmployeeGUI implements  ActionListener
             emp1.setEmail(email);
             emp1.setAddress(address);
             emp1.setID(id);
+            */
 
         }
 

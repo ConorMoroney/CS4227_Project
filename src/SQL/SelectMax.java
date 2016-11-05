@@ -3,11 +3,12 @@ package SQL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.SQLException;
 
 /**
  * Created by Conor on 28-Oct-16.
  */
-class SelectMax implements SQLInterface {
+public class SelectMax implements SQLInterface {
     private ResultSet myRe;
     private Connection mycon;
 

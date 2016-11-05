@@ -1,36 +1,34 @@
 package SQL;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 /**
  * Created by Conor on 12-Oct-16.
  */
 public class Insert {
 
-    Connection con;
+    private Connection con;
 
-    public Insert() {
-        //Connect c = new Connect();
-        //con = c.getconnection();
+    public Insert() throws ClassNotFoundException
+    {
+        Connect c = new Connect();
+        con = c.getconnection();
     }
-
 
     /**************
      * Adding Creation methods for insert
      *
      * *************/
 
-    public boolean CreateUserInsert( String username , int accesslvl , String password , String email , String address , Connection con)
+    public void CreateUserInsert( String username , int accesslvl , String password , String email , String address , Connection con)
     {
         String table = "users";
-        this.con = con;
-        int id = getMaxId(table);
-        if (id > 0) {
-            try {
-                id++;
+        int id = getMaxId(table);                           //THIS IS RETURNING 0
 
-
+        if (id > 0)
+        {
+            try
+            {
                 String SQL = "INSERT INTO [dbo].[users]([idusers],[username],[accesslvl],[password],[email],[address])VALUES"
                         + "(?,?,?,?,?,?)";
                 PreparedStatement preparedStmt = con.prepareStatement(SQL);
@@ -42,27 +40,51 @@ public class Insert {
                 preparedStmt.setString(6, address);
                 System.out.print(SQL);
                 preparedStmt.executeUpdate();
-                return true;
-
-
-            } catch (SQLException e) {
+            }
+            catch (SQLException e)
+            {
                 // TODO Auto-generated catch block
                 System.out.println("Connection failed");
                 System.out.println(e.getMessage());
             }
         }
-        return false;
+        else
+            System.out.println("Error : Max Id returned 0 ");
     }
+
+    public void CreateLogInsert( String entryLog , Connection con)
+    {
+        String table = "LogTable";
+        int id = getMaxId(table);
+        if (id > 0) {
+            try
+            {
+                String SQL = "INSERT INTO [dbo].[LogTable]([EntryId],[LogString],[DateTime]) VALUES" +
+                        "(?,?,?)";
+                PreparedStatement preparedStmt = con.prepareStatement(SQL);
+                preparedStmt.setInt(1, id);
+                preparedStmt.setString(2, entryLog);
+                preparedStmt.setTimestamp(3,new Timestamp(System.currentTimeMillis()));
+                System.out.print(SQL);
+                preparedStmt.executeUpdate();
+            }
+            catch (SQLException e) {
+                // TODO Auto-generated catch block
+                System.out.println("Connection failed");
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+
 
     public void CreateProductInsert( String type , String name , String description, float price, float weight,int quanitiy , Connection con)
     {
         String table = "items";
         int id = getMaxId(table);
         if (id > 0) {
-        try {
-
-
-
+        try
+        {
             String SQL ="INSERT INTO [dbo].[items]([iditems],[type],[name],[description],[price],[weight],[quantity])VALUES"
                     + "(?,?,?,?,?,?,?)";
             PreparedStatement preparedStmt = con.prepareStatement(SQL);
@@ -86,7 +108,6 @@ public class Insert {
         }
     }
 
-
     public Connection getConnection()
     {
         return con;
@@ -94,22 +115,15 @@ public class Insert {
 
     private int getMaxId(String table)
     {
-        String coloumn;
+        String column = "";
         if( table.equalsIgnoreCase("users"))
-        coloumn = "idusers";
-        else
-            coloumn = "iditems";
-
-      SelectMax s = new SelectMax(coloumn,table, con);
-      ResultSet r = s.getResultset();
-        try {
-            while (r.next()){
-                return r.getInt(1);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
+            column = "idusers";
+        else if( table.equalsIgnoreCase("items"))
+            column = "iditems";
+        else if ( table.equalsIgnoreCase("LogTable"))
+            column = "EntryId";
+        SelectMax s = new SelectMax(column,table);
+        ResultSet r = s.getResultset();
+        return s.getMax(r)+ 1;
     }
-
 }

@@ -3,8 +3,8 @@ package GUI;
 /**
  * Created by colmm on 29/10/2016.
  */
-public class ButtonEngineer {
-    private I_ButtonBuilder i_buttonBuilder;
+class ButtonEngineer {
+    private final I_ButtonBuilder i_buttonBuilder;
 
     public ButtonEngineer (I_ButtonBuilder i_buttonBuilder)
     {

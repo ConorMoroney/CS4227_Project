@@ -7,7 +7,13 @@ import java.awt.event.ActionEvent;
  */
 public class ConcreteFramework implements I_Framework {
 
-    Context context;
+    private Context context;
+    private String user;
+    private final Dispacher d;
+
+    public ConcreteFramework(){
+        d = new Dispacher();
+    }
 
     @Override
     public void service() {
@@ -15,17 +21,20 @@ public class ConcreteFramework implements I_Framework {
     }
 
     @Override
-    public void event(ActionEvent event) {
+    public void event(ActionEvent event , String username) {
         // Create  Context Object here once event happens
+        user = username;
         context = new Context(event);
-        Dispacher d = new Dispacher();
-        //d.callBack();
+        d.callBack(context);
     }
 
     @Override
-    public void access_internals() {
-
+    public String access_internals() {
+        return user;
     }
 
-    public  Context callBack(){return context;}
+    //May not be Required
+    public Context callBack(){return context;}
+
+    public Dispacher getDispacher(){return d;}
 }

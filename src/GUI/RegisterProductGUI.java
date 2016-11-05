@@ -11,14 +11,25 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class RegisterProductGUI implements ActionListener {
-    JPanel buttonPanel;
-    JButton cancelButton, registerProductButton;
-    JLabel TypeLabel,  nameLabel, weightLabel, priceLabel, quantityLabel, descriptionLabel;
-    JTextField typeField, nameField, weightField, priceField, quantityField, descriptionField;
-    static JFrame frame = new JFrame("Register Product Screen");
+class RegisterProductGUI implements ActionListener {
+    private JPanel buttonPanel;
+    private JButton cancelButton;
+    private JButton registerProductButton;
+    private JLabel TypeLabel;
+    private JLabel nameLabel;
+    private JLabel weightLabel;
+    private JLabel priceLabel;
+    private JLabel quantityLabel;
+    private JLabel descriptionLabel;
+    private JTextField typeField;
+    private JTextField nameField;
+    private JTextField weightField;
+    private JTextField priceField;
+    private JTextField quantityField;
+    private JTextField descriptionField;
+    private static JFrame frame = new JFrame("Register Product Screen");
 
-    public JPanel createContentPane() {
+    private JPanel createContentPane() {
         //Make bottom JPanel to place buttonPanel on
         JPanel totalGUI = new JPanel();
         totalGUI.setLayout(null);
@@ -98,11 +109,9 @@ public class RegisterProductGUI implements ActionListener {
             String description = descriptionField.getText();
 
 
-            String productType = type;
-
             ProductFactory productFactory = new ProductFactory();
 
-            I_Product product = productFactory.createProduct(productType);
+            I_Product product = productFactory.createProduct(type);
 
             try {
 

@@ -52,7 +52,7 @@ public class Product implements Subject {
 	}
 	public void setAvailable(boolean available) {
 		this.available = available;
-		if(available == true){
+		if(available){
 			notifyObservers();
 		}
 	}

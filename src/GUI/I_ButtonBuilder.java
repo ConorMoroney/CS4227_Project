@@ -3,17 +3,17 @@ package GUI;
 /**
  * Created by colmm on 29/10/2016.
  */
-public interface I_ButtonBuilder {
+interface I_ButtonBuilder {
 
-    public void buildButtonTitle();
+    void buildButtonTitle();
 
-    public void buildButtonXLoc();
+    void buildButtonXLoc();
 
-    public void buildButtonYLoc();
+    void buildButtonYLoc();
 
-    public void buildButtonXSize();
+    void buildButtonXSize();
 
-    public void buildButtonYSize();
+    void buildButtonYSize();
 
-    public Button getButton();
+    Button getButton();
 }

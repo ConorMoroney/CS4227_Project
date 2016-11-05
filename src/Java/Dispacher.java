@@ -1,6 +1,5 @@
 package Java;
 
-import java.security.PublicKey;
 import java.util.ArrayList;
 
 /**
@@ -8,8 +7,8 @@ import java.util.ArrayList;
  */
 public class Dispacher {
 
-
-    ArrayList<I_Interceptor> listofInterceptors;
+    private Context context;
+    private final ArrayList<I_Interceptor> listofInterceptors;
 
     public Dispacher (){
         listofInterceptors  = new ArrayList<I_Interceptor>();
@@ -19,6 +18,7 @@ public class Dispacher {
 
     public void register(I_Interceptor interceptor){
         listofInterceptors.add(interceptor);
+        System.out.println("Registered Interceptor");
     }
 
     public void remove(I_Interceptor interceptor){
@@ -29,13 +29,18 @@ public class Dispacher {
 
     }
 
-    public void iteratelist(){
+    private void iteratelist(){
 
-        for(int i = 0;i < listofInterceptors.size();i++){
-            //listofInterceptors.get(i).InterceptorMethod1();
+        for (I_Interceptor listofInterceptor : listofInterceptors) {
+            listofInterceptor.InterceptorMethod1(context);
         }
 
     }
 
+    public void callBack(Context context) {
+
+        this.context = context;
+        iteratelist();
+    }
     //public Context getContext(){}
 }

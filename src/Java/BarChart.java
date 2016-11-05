@@ -17,9 +17,9 @@ import org.jfree.ui.RefineryUtilities;
 public class BarChart extends ApplicationFrame
 {
 
-	public BarChart( String applicationTitle , String chartTitle )
+	private BarChart(String applicationTitle, String chartTitle)
 	{
-		super( applicationTitle );        
+		super( applicationTitle );
 		JFreeChart barChart = ChartFactory.createBarChart(
 				chartTitle,           
 				"Category",            

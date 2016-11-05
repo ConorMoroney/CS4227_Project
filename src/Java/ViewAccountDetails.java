@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 
-public class ViewOrders implements  ActionListener
+public class ViewAccountDetails implements  ActionListener
 {
 	
 	private JPanel buttonPanel;
@@ -18,7 +18,8 @@ public class ViewOrders implements  ActionListener
 	private final JPanel totalGUI = new JPanel();
 	
 	JTextField itemNameTextField, quantityTextField;
-	private static final JFrame frame = new JFrame("View Order Queue");
+	private static final JFrame frame = new JFrame("View Account Details");
+	private static int id;
 
 
 	
@@ -40,14 +41,11 @@ public class ViewOrders implements  ActionListener
 		try
 		{
 			//Java.Connect to database
-			   Connect con = new Connect(); 
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
+			 Connect con = new Connect();
+  		   Connection mycon =  con.getconnection();
+  		   Statement mystat = mycon.createStatement();
 			ResultSet myRe = mystat.executeQuery("select * from items");
-
-
-
-
+				
 			//get db data
 			while (myRe.next())
 				i++;
@@ -59,7 +57,8 @@ public class ViewOrders implements  ActionListener
 		
 		
 		//Assign values to listData based on DB values.
-		Object[] listData = new Object[i];
+		String[] listData = new String[i];
+		String[] userData = new String[i];
 		
 		i = 0;
 		try
@@ -69,22 +68,28 @@ public class ViewOrders implements  ActionListener
 			 Connect con = new Connect(); 
   		   Connection mycon =  con.getconnection();
   		   Statement mystat = mycon.createStatement();		
-			String sql = "select * from orderqueue";
+			//"select LastModified from CacheTable where url = '" + url +"'"
+			String sql = "select * from users WHERE idusers= '" + id +"'";
 			System.out.println(sql);
 			ResultSet myRe = mystat.executeQuery(sql);
 			
 			String name = "";
-			String qty = "";
-			String customer = "";
-				
+			String email = "";
+			String address = "";
+			String password = "";
+		
 			//get db data
 			while (myRe.next())
-			{							
-				name = "Product Name: " + myRe.getString(1) + ", ";
-				qty = "Quantity:  " +  myRe.getInt(2) + ", ";
-				customer = "Customer:  " +  myRe.getString(3) + ", ";
-													
-				listData[i] =name + qty + customer;
+			{
+				
+				
+				name = "\nUserName: " + myRe.getString(2) + ", ";
+				address = "\nAddress:  " +  myRe.getString(6) + ", ";
+				email = "Email: " + myRe.getString(5) + ", " ;	
+				email = "Password: " + myRe.getString(4) ;	
+				listData[i] =  name + password + address  + email;
+				userData[i] =  name ;
+				
 				
 				i++;
 			}
@@ -98,6 +103,7 @@ public class ViewOrders implements  ActionListener
 		
 		//Make List and scroll pane for items
 		JList items = new JList(listData);
+		
 		
 	    JScrollPane scrollPane = new JScrollPane();
 	    scrollPane.setViewportView(items);
@@ -126,9 +132,9 @@ public class ViewOrders implements  ActionListener
 		try
 		{	
 			//Java.Connect to database
-			   Connect con = new Connect();
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
+			 Connect con = new Connect(); 
+  		   Connection mycon =  con.getconnection();
+  		   Statement mystat = mycon.createStatement();
 			
 			String sql = "select * from users";
 			ResultSet myRe = mystat.executeQuery(sql);
@@ -162,7 +168,7 @@ public class ViewOrders implements  ActionListener
 	private static void createAndShowGUI()
 	{
 		//Create and set up the content pane.
-		ViewOrders window = new ViewOrders();
+		ViewAccountDetails window = new ViewAccountDetails();
 		frame.setContentPane(window.createContentPane());
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -171,8 +177,11 @@ public class ViewOrders implements  ActionListener
 		frame.setVisible(true);
 	}
 
-	public static void view()
+	public static void display(String []line)
 	{		
+		
+		id = Integer.parseInt(line[1]);
+		System.out.println(id);
 		
 		SwingUtilities.invokeLater(new Runnable() 
 		{

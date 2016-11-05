@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class QtyGrabber implements Subject {
 	private int Qty;
 	private String item;
-	private ArrayList<Observer> observers;
+	private final ArrayList<Observer> observers;
 	public QtyGrabber(){
 		observers = new ArrayList<Observer>();
 	}
@@ -76,7 +76,7 @@ public class QtyGrabber implements Subject {
 			}
 			
 		}
-		catch(Exception ex){
+		catch(Exception ignored){
 			
 		}
 		

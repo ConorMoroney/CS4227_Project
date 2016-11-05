@@ -5,7 +5,7 @@ import javax.swing.*;
 /**
  * Created by colmm on 28/10/2016.
  */
-public class GUIFactory
+class GUIFactory
 {
     public static JButton addButtonFromBuilder(Button button)
     {

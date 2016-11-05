@@ -7,7 +7,7 @@ import java.sql.Statement;
 /**
  * Created by Conor on 28-Oct-16.
  */
-public class SelectMax implements SQLInterface {
+class SelectMax implements SQLInterface {
     private ResultSet myRe;
     private Connection mycon;
 
@@ -23,11 +23,10 @@ public class SelectMax implements SQLInterface {
     @Override
     public void executeStatement(String SQL) {
         try{
-            System.out.println("a");
+            Connect con = new Connect();
+            Connection mycon =  con.getconnection();
             Statement mystat = mycon.createStatement();
-            System.out.println("b");
             myRe = mystat.executeQuery(SQL);
-            System.out.println("c");
         }
         catch (Exception exc) {
             System.out.println(exc.fillInStackTrace());
@@ -35,7 +34,19 @@ public class SelectMax implements SQLInterface {
         }
     }
 
-   
+
+    public int getMax(ResultSet r) {
+        int max = 0;
+        try {
+            while (r.next()) {
+                    max = Integer.parseInt(r.getString(1));
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return max;
+    }
+
     public ResultSet getResultset() {
         return myRe;    }
 }

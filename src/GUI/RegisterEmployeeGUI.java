@@ -2,26 +2,35 @@ package GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import SQL.Select;
+
+import SAMPLE1.Main;
+
 import java.sql.*;
 import SQL.*;
 import User.*;
 
 import javax.swing.*;
 
-public class RegisterEmployeeGUI extends  ActionListenerSuper
+class RegisterEmployeeGUI implements  ActionListener
 {
-	String [] employeeTypes = {"manager", "logistics" , "warehouse"};
-    
-	JPanel buttonPanel;
-    JButton cancelButton, registerUserButton;
-	JLabel TypeLabel,userLabel,passLabel, emailLabel, addressLabel;
-	JComboBox userType = new JComboBox(employeeTypes);
-	JTextField userField,passField, emailField, addressField;
-	static JFrame frame = new JFrame("Register Employee Screen");
+	private final String [] employeeTypes = {"manager", "logistics" , "warehouse"};
+	private JPanel buttonPanel;
+    private JButton cancelButton;
+    private JButton registerUserButton;
+	private JLabel TypeLabel;
+    private JLabel userLabel;
+    private JLabel passLabel;
+    private JLabel emailLabel;
+    private JLabel addressLabel;
+	private final JComboBox userType = new JComboBox(employeeTypes);
+	private JTextField userField;
+    private JTextField passField;
+    private JTextField emailField;
+    private JTextField addressField;
+	private static JFrame frame = new JFrame("Register Employee Screen");
 	
 
-    public JPanel createContentPane()
+    private JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
         JPanel totalGUI = new JPanel();
@@ -74,7 +83,7 @@ public class RegisterEmployeeGUI extends  ActionListenerSuper
 
     public void actionPerformed(ActionEvent e)
 	{
-        super.actionPerformed(e);
+        Main.actionListener.actionPerformed(e);
         if(e.getSource() == cancelButton)
         {
         	frame.dispose();
@@ -94,17 +103,18 @@ public class RegisterEmployeeGUI extends  ActionListenerSuper
         	String address = addressField.getText();
 
             AbstractUserFactory empFactory = FactoryProducer.getFactory("Employee");
+            assert empFactory != null;
             I_Employee emp1 = (I_Employee) empFactory.createUser("Warehouse");
             //ConcreteEmployee emp1 = empFactory.
     		
 
-    		/*
+    		
     		int id = 1;
     		int accesslvl = emp1.getaccesslvl();
     		
     		try {
 
-
+                //Connect c = new Connect();
                 Select s = new Select("*", "users");
                 ResultSet myRe = s.getResultset();
 
@@ -119,51 +129,33 @@ public class RegisterEmployeeGUI extends  ActionListenerSuper
             try {
 
                 Insert i =new Insert();
-                i.CreateUserInsert(id,userName,accesslvl,pass,email,address,i.getConnection());
-                /*
-                Connect con = new Connect();
-                Connection mycon = con.getconnection();
-                Statement mystat = mycon.createStatement();
-                //Insert into table
-                String sql = "INSERT into users (idusers ,username,accesslvl ,password,email,address) VALUES('"
-                        + id + "','" + userName + "','" + accesslvl + "','" + pass + "','" + email + "','" + address
-                        + "');";
-
-                mystat.executeUpdate(sql);
-                System.out.println("object added to database");
-                //ResultSet myRe = mystat.executeQuery("select * from creationary.users");
+                i.CreateUserInsert(userName,accesslvl,pass,email,address,i.getConnection());
             }
             catch(Exception exc){
                 System.out.println("Error Insert Failed ??? ");
             }
 
-    		emp1.setName(userName);;
+            emp1.setName(userName);
             emp1.setPassword(pass);
             emp1.setEmail(email);
             emp1.setAddress(address);
             emp1.setID(id);
-    		*/
+
         }
-        
+
     }
 
     private static void createAndShowGUI()
 	{
         //Create and set up the content pane.
-    	RegisterEmployeeGUI window = new RegisterEmployeeGUI();
+        RegisterEmployeeGUI window = new RegisterEmployeeGUI();
         frame = GUIFactory.makeFrame("Register Employee", 345, 290);
         frame.setContentPane(window.createContentPane());
     }
 
     public static void main(String[] args)
 	{
-        SwingUtilities.invokeLater(new Runnable()
-		{
-            public void run()
-			{
-                createAndShowGUI();
-            }
-        });
+        SwingUtilities.invokeLater(() -> createAndShowGUI());
     }
     
    

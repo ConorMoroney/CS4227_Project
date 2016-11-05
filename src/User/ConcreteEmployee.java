@@ -3,15 +3,14 @@ package User;
 /**
  * Created by shane on 21-Oct-16.
  */
-public class ConcreteEmployee implements I_Employee{
+class ConcreteEmployee implements I_Employee{
 
     private String name;
     private int id;
-    private int customer = 1;
-    private int warehouse = 2;
-    private int logistics = 3;
-    private int manager = 4;
-
+    private String [] concreteTypes = {"Warehouse", "Logistics", "Manager"};
+    //Customer access level will always be the lowest
+    //The higher the index in the concreteTypesArray the higher the access level
+    private int accesslvl= 0;
     public void setName(String name) {
         // TODO Auto-generated method stub
         this.name = name;
@@ -20,7 +19,12 @@ public class ConcreteEmployee implements I_Employee{
 
     @Override
     public void setType(String type) {
-        int accesslvl = 1;
+        for(int i = 0; i<concreteTypes.length;i++){
+            if (type.equalsIgnoreCase(concreteTypes[i])){
+                accesslvl = i+2;
+            }
+        }
+
         //Make this a dropdown pls
         //Set of variable - each variable sets access lvl
 
@@ -52,7 +56,7 @@ public class ConcreteEmployee implements I_Employee{
 
     @Override
     public int getaccesslvl() {
-        return 0;
+        return accesslvl;
     }
 
 

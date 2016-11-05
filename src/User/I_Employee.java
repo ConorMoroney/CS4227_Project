@@ -2,7 +2,6 @@ package User;
 
 public interface I_Employee{
 
-
     void setName(String name);
     void setType(String type);
     void setID(int id);

@@ -135,6 +135,7 @@ class RegisterUserGUI implements  ActionListener
         
     }
 
+
     private static void createAndShowGUI()
 	{
         //Create and set up the content pane.
@@ -146,14 +147,7 @@ class RegisterUserGUI implements  ActionListener
 
     public static void start()
 	{
-        SwingUtilities.invokeLater(new Runnable() 
-		{
-            public void run() 
-			{
-                createAndShowGUI();
-            }
-        });
+        SwingUtilities.invokeLater(RegisterUserGUI::createAndShowGUI);
     }
-    
-   
+
 }

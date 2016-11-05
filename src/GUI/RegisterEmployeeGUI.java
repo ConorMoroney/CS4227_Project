@@ -13,7 +13,7 @@ import javax.swing.*;
 
 class RegisterEmployeeGUI implements  ActionListener
 {
-	private final String [] employeeTypes = {"manager", "logistics" , "warehouse"};
+	private final String [] employeeTypes = {"Manager", "Logistics" , "Warehouse"};
 	private JPanel buttonPanel;
     private JButton cancelButton;
     private JButton registerUserButton;
@@ -104,13 +104,28 @@ class RegisterEmployeeGUI implements  ActionListener
 
             AbstractUserFactory empFactory = FactoryProducer.getFactory("Employee");
             assert empFactory != null;
-            I_Employee emp1 = (I_Employee) empFactory.createUser("Warehouse");
+
+
+
+            int count = userType.getItemCount();
+            String selectedType = (String) userType.getSelectedItem();
+            System.out.println(selectedType + "==============");
+
+
+
+
+
+
+            I_Employee emp1 = (I_Employee) empFactory.createUser(selectedType);
+            emp1.setType(selectedType);
             //ConcreteEmployee emp1 = empFactory.
     		
 
     		
     		int id = 1;
     		int accesslvl = emp1.getaccesslvl();
+
+            System.out.println(accesslvl + "==============");
     		
     		try {
 
@@ -155,7 +170,7 @@ class RegisterEmployeeGUI implements  ActionListener
 
     public static void main(String[] args)
 	{
-        SwingUtilities.invokeLater(() -> createAndShowGUI());
+        SwingUtilities.invokeLater(RegisterEmployeeGUI::createAndShowGUI);
     }
     
    

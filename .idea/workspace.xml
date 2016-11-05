@@ -4,63 +4,18 @@
     <bookmark url="file://$PROJECT_DIR$/src/Java/BarChart.java" line="10" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ad9ac67-4d6f-436c-9cfa-90edc9e0b980" name="Default" comment="Shane: so I did alot of code analysis I de">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/sqljdbc4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/sqljdbc4.xml" />
+    <list default="true" id="4ad9ac67-4d6f-436c-9cfa-90edc9e0b980" name="Default" comment="Shane: Employee &amp; Customer Abstract Factory Completely done, access types now working fully. Specifying the employee types in an array places an access level on each associated with the array index, the higher the index the higher the access type and thus the more permissions.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Test/FactoryTests/CustomerFactoryTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Test/FactoryTests/EmployeeFactoryTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Test/FactoryTests/GUIFactoryTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Test/ProductFactoryTest.java" afterPath="$PROJECT_DIR$/src/Test/FactoryTests/ProductFactoryTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CS4227_Project.iml" afterPath="$PROJECT_DIR$/CS4227_Project.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/ActionListenerSuper.java" afterPath="$PROJECT_DIR$/src/GUI/ActionListenerSuper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/ButtonEngineer.java" afterPath="$PROJECT_DIR$/src/GUI/ButtonEngineer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/DisplayGUI.java" afterPath="$PROJECT_DIR$/src/GUI/DisplayGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/EmptyButtonBuilder.java" afterPath="$PROJECT_DIR$/src/GUI/EmptyButtonBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/GUIFactory.java" afterPath="$PROJECT_DIR$/src/GUI/GUIFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/I_ButtonBuilder.java" afterPath="$PROJECT_DIR$/src/GUI/I_ButtonBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/I_ButtonPlan.java" afterPath="$PROJECT_DIR$/src/GUI/I_ButtonPlan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/LogInButtonBuilder.java" afterPath="$PROJECT_DIR$/src/GUI/LogInButtonBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/LogInScreenGUI.java" afterPath="$PROJECT_DIR$/src/GUI/LogInScreenGUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/RegisterEmployeeGUI.java" afterPath="$PROJECT_DIR$/src/GUI/RegisterEmployeeGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/RegisterProductGUI.java" afterPath="$PROJECT_DIR$/src/GUI/RegisterProductGUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/RegisterUserGUI.java" afterPath="$PROJECT_DIR$/src/GUI/RegisterUserGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/TestButtonBuilder.java" afterPath="$PROJECT_DIR$/src/GUI/TestButtonBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/BarChart.java" afterPath="$PROJECT_DIR$/src/Java/BarChart.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/ConcreteFramework.java" afterPath="$PROJECT_DIR$/src/Java/ConcreteFramework.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/ConcreteInterceptor.java" afterPath="$PROJECT_DIR$/src/Java/ConcreteInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/ConcreteProduct.java" afterPath="$PROJECT_DIR$/src/Java/ConcreteProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/Context.java" afterPath="$PROJECT_DIR$/src/Java/Context.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/Dispacher.java" afterPath="$PROJECT_DIR$/src/Java/Dispacher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/I_Framework.java" afterPath="$PROJECT_DIR$/src/Java/I_Framework.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/I_Interceptor.java" afterPath="$PROJECT_DIR$/src/Java/I_Interceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/Product.java" afterPath="$PROJECT_DIR$/src/Java/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/QtyGrabber.java" afterPath="$PROJECT_DIR$/src/Java/QtyGrabber.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/Subject.java" afterPath="$PROJECT_DIR$/src/Java/Subject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/ViewAccountDetails.java" afterPath="$PROJECT_DIR$/src/Java/ViewAccountDetails.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/ViewItems.java" afterPath="$PROJECT_DIR$/src/Java/ViewItems.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/ViewOrders.java" afterPath="$PROJECT_DIR$/src/Java/ViewOrders.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/ViewStaffDetails.java" afterPath="$PROJECT_DIR$/src/Java/ViewStaffDetails.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java/updateDatabase.java" afterPath="$PROJECT_DIR$/src/Java/updateDatabase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SAMPLE1/Main.java" afterPath="$PROJECT_DIR$/src/SAMPLE1/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SAMPLE1/SAMPLE_registeruser.java" afterPath="$PROJECT_DIR$/src/SAMPLE1/SAMPLE_registeruser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SAMPLE1/Sample1_Implementation.java" afterPath="$PROJECT_DIR$/src/SAMPLE1/Sample1_Implementation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SAMPLE1/Sample1_mainmenu.java" afterPath="$PROJECT_DIR$/src/SAMPLE1/Sample1_mainmenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SAMPLE1/Sample1_registerproduct_.java" afterPath="$PROJECT_DIR$/src/SAMPLE1/Sample1_registerproduct_.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQL/Connect.java" afterPath="$PROJECT_DIR$/src/SQL/Connect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQL/Insert.java" afterPath="$PROJECT_DIR$/src/SQL/Insert.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQL/SQLInterface.java" afterPath="$PROJECT_DIR$/src/SQL/SQLInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQL/Select.java" afterPath="$PROJECT_DIR$/src/SQL/Select.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQL/Test.java" afterPath="$PROJECT_DIR$/src/SQL/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SQL/Update.java" afterPath="$PROJECT_DIR$/src/SQL/Update.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/ConnectTest.java" afterPath="$PROJECT_DIR$/src/Test/ConnectTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/CopyTest.groovy" afterPath="$PROJECT_DIR$/src/Test/CopyTest.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/LogInScreenGUITest.java" afterPath="$PROJECT_DIR$/src/Test/LogInScreenGUITest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/ObserverTest.java" afterPath="$PROJECT_DIR$/src/Test/ObserverTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/ProductFactoryTest.java" afterPath="$PROJECT_DIR$/src/Test/ProductFactoryTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/ProductTest.java" afterPath="$PROJECT_DIR$/src/Test/ProductTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/QtyGrabberTest.java" afterPath="$PROJECT_DIR$/src/Test/QtyGrabberTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/RegisterEmployeeGUITest.java" afterPath="$PROJECT_DIR$/src/Test/RegisterEmployeeGUITest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/RegisterProductGUITest.java" afterPath="$PROJECT_DIR$/src/Test/RegisterProductGUITest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/RegisterUserGUITest.java" afterPath="$PROJECT_DIR$/src/Test/RegisterUserGUITest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/User/ConcreteCustomer.java" afterPath="$PROJECT_DIR$/src/User/ConcreteCustomer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/User/ConcreteEmployee.java" afterPath="$PROJECT_DIR$/src/User/ConcreteEmployee.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/User/I_Customer.java" afterPath="$PROJECT_DIR$/src/User/I_Customer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/User/I_Employee.java" afterPath="$PROJECT_DIR$/src/User/I_Employee.java" />
     </list>
     <ignored path="CS4227_Project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,108 +50,111 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="I_Framework.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Java/I_Framework.java">
+      <file leaf-file-name="ConcreteEmployee.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/User/ConcreteEmployee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogInScreenGUI.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GUI/LogInScreenGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="I_Interceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Java/I_Interceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConcreteFramework.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Java/ConcreteFramework.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="183">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
               <folding>
-                <element signature="e#266#267#0" expanded="false" />
-                <element signature="e#301#302#0" expanded="false" />
-                <element signature="e#637#638#0" expanded="false" />
-                <element signature="e#664#665#0" expanded="false" />
+                <element signature="e#1419#1420#0" expanded="true" />
+                <element signature="e#1451#1452#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConcreteInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Java/ConcreteInterceptor.java">
+      <file leaf-file-name="ProductFactoryTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Test/FactoryTests/ProductFactoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dispacher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Java/Dispacher.java">
+      <file leaf-file-name="EmployeeFactoryTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Test/FactoryTests/EmployeeFactoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            <state relative-caret-position="68">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Java/Product.java">
+      <file leaf-file-name="ConcreteCustomer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/User/ConcreteCustomer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BarChart.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Java/BarChart.java">
+      <file leaf-file-name="RegisterUserGUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/RegisterUserGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="673">
+              <caret line="149" column="37" selection-start-line="149" selection-start-column="37" selection-end-line="149" selection-end-column="37" />
+              <folding>
+                <element signature="e#4703#4704#0" expanded="true" />
+                <element signature="e#4780#4781#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Context.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Java/Context.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="21" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActionListenerSuper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/ActionListenerSuper.java">
+      <file leaf-file-name="ObserverTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Test/ObserverTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="I_Customer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/User/I_Customer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmployeeFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/User/EmployeeFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="9" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterEmployeeGUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/RegisterEmployeeGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="175" column="3" selection-start-line="175" selection-start-column="3" selection-end-line="175" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5185#5186#0" expanded="true" />
+                <element signature="e#5266#5267#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -207,8 +165,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
         <option value="Singleton" />
+        <option value="JUnit4 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -237,18 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Test/ProductFactoryTest.java" />
-        <option value="$PROJECT_DIR$/src/Java/RegisterEmployeeGUITest.java" />
-        <option value="$PROJECT_DIR$/src/Java/RegisterUserGUITest.java" />
-        <option value="$PROJECT_DIR$/src/Test/RegisterUserGUITest.java" />
-        <option value="$PROJECT_DIR$/src/Test/RegisterEmployeeGUITest.java" />
-        <option value="$PROJECT_DIR$/src/Java/QtyGrabberTest.java" />
-        <option value="$PROJECT_DIR$/src/Test/QtyGrabberTest.java" />
-        <option value="$PROJECT_DIR$/src/Test/ObserverTest.java" />
-        <option value="$PROJECT_DIR$/src/Java/Pen.java" />
-        <option value="$PROJECT_DIR$/src/Java/ConcreteObject.java" />
-        <option value="$PROJECT_DIR$/src/Java/ProductFactory.java" />
-        <option value="$PROJECT_DIR$/src/Java/user.java" />
         <option value="$PROJECT_DIR$/src/Java/Staff.java" />
         <option value="$PROJECT_DIR$/src/Java/ConcreteProduct.java" />
         <option value="$PROJECT_DIR$/src/Java/Observer.java" />
@@ -278,8 +224,6 @@
         <option value="$PROJECT_DIR$/src/GUI/buttonFactory.java" />
         <option value="$PROJECT_DIR$/src/GUI/ButtonFactory.java" />
         <option value="$PROJECT_DIR$/src/GUI/GUIFactory.java" />
-        <option value="$PROJECT_DIR$/src/GUI/RegisterUserGUI.java" />
-        <option value="$PROJECT_DIR$/src/GUI/RegisterEmployeeGUI.java" />
         <option value="$PROJECT_DIR$/src/GUI/ActionListenerSuper.java" />
         <option value="$PROJECT_DIR$/src/Java/I_Framework.java" />
         <option value="$PROJECT_DIR$/src/Java/Context.java" />
@@ -288,6 +232,20 @@
         <option value="$PROJECT_DIR$/src/Java/BarChart.java" />
         <option value="$PROJECT_DIR$/src/Java/Dispacher.java" />
         <option value="$PROJECT_DIR$/src/GUI/LogInScreenGUI.java" />
+        <option value="$PROJECT_DIR$/src/Test/CustomerFactoryTest.java" />
+        <option value="$PROJECT_DIR$/src/Test/FactoryTests/CustomerFactoryTest.java" />
+        <option value="$PROJECT_DIR$/src/Test/EmployeeFactoryTest.java" />
+        <option value="$PROJECT_DIR$/src/Test/FactoryTests/EmployeeFactoryTest.java" />
+        <option value="$PROJECT_DIR$/src/GUI/GUIFactoryTest.java" />
+        <option value="$PROJECT_DIR$/src/Test/FactoryTests/GUIFactoryTest.java" />
+        <option value="$PROJECT_DIR$/src/User/I_Employee.java" />
+        <option value="$PROJECT_DIR$/src/User/I_Customer.java" />
+        <option value="$PROJECT_DIR$/src/User/ConcreteCustomer.java" />
+        <option value="$PROJECT_DIR$/src/GUI/testUserGui.java" />
+        <option value="$PROJECT_DIR$/src/User/ConcreteEmployee.java" />
+        <option value="$PROJECT_DIR$/src/Test/FactoryTests/ProductFactoryTest.java" />
+        <option value="$PROJECT_DIR$/src/GUI/RegisterEmployeeGUI.java" />
+        <option value="$PROJECT_DIR$/src/GUI/RegisterUserGUI.java" />
       </list>
     </option>
   </component>
@@ -341,7 +299,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -377,6 +336,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="User" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -393,6 +356,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS4227_Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS4227_Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FactoryTests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -498,8 +483,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -520,8 +504,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="Java" />
+      <recent name="GUI" />
       <recent name="Test" />
+      <recent name="Java" />
       <recent name="" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -529,27 +514,7 @@
       <recent name="groovy.util.GroovyTestCase" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LogInScreenGUI">
-    <configuration default="false" name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="GUI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="SQL.Test" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="CS4227_Project" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="LogInScreenGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -570,14 +535,92 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="RegisterEmployeeGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="ProductFactoryTest.createProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Test.FactoryTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CS4227_Project" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Test.FactoryTests" />
+      <option name="MAIN_CLASS_NAME" value="Test.FactoryTests.ProductFactoryTest" />
+      <option name="METHOD_NAME" value="createProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ProductFactoryTest.testInvalidProductNotCreated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Test.FactoryTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CS4227_Project" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Test.FactoryTests" />
+      <option name="MAIN_CLASS_NAME" value="Test.FactoryTests.ProductFactoryTest" />
+      <option name="METHOD_NAME" value="testInvalidProductNotCreated" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ProductFactoryTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Test.FactoryTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="CS4227_Project" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Test.FactoryTests" />
+      <option name="MAIN_CLASS_NAME" value="Test.FactoryTests.ProductFactoryTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="RegisterUserGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="GUI.RegisterEmployeeGUI" />
+      <option name="MAIN_CLASS_NAME" value="GUI.RegisterUserGUI" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -588,58 +631,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="CS4227_Project" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="RegisterEmployeeGUITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="CS4227_Project" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.RegisterEmployeeGUITest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="Test in CS4227_Project" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="CS4227_Project" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -830,6 +821,36 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -886,6 +907,36 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="SAMPLE1.Main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CS4227_Project" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="false" name="All in CS4227_Project" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -907,21 +958,22 @@
       <patterns />
       <method />
     </configuration>
-    <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.All in CS4227_Project" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Test" />
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.All in CS4227_Project" />
       <item index="2" class="java.lang.String" itemvalue="Application.LogInScreenGUI" />
-      <item index="3" class="java.lang.String" itemvalue="Application.RegisterEmployeeGUI" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.RegisterEmployeeGUITest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.Test in CS4227_Project" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ProductFactoryTest.createProduct" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ProductFactoryTest.testInvalidProductNotCreated" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ProductFactoryTest" />
+      <item index="6" class="java.lang.String" itemvalue="Application.RegisterUserGUI" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.LogInScreenGUI" />
-        <item index="1" class="java.lang.String" itemvalue="Application.RegisterEmployeeGUI" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Test" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.Test in CS4227_Project" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.RegisterEmployeeGUITest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.RegisterUserGUI" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ProductFactoryTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ProductFactoryTest.testInvalidProductNotCreated" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ProductFactoryTest.createProduct" />
+        <item index="4" class="java.lang.String" itemvalue="Application.LogInScreenGUI" />
       </list>
     </recent_temporary>
   </component>
@@ -1003,29 +1055,29 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ConnectTest - 2016.10.11 at 22h 27m 39s.xml">
-      <configuration name="ConnectTest" configurationId="JUnit" />
+    <history-entry file="ProductFactoryTest - 2016.11.04 at 22h 10m 18s.xml">
+      <configuration name="ProductFactoryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConnectTest - 2016.10.11 at 22h 29m 38s.xml">
-      <configuration name="ConnectTest" configurationId="JUnit" />
+    <history-entry file="ProductFactoryTest - 2016.11.04 at 22h 10m 44s.xml">
+      <configuration name="ProductFactoryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConnectTest - 2016.10.11 at 22h 31m 05s.xml">
-      <configuration name="ConnectTest" configurationId="JUnit" />
+    <history-entry file="ProductFactoryTest - 2016.11.04 at 22h 10m 52s.xml">
+      <configuration name="ProductFactoryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConnectTest - 2016.10.11 at 22h 32m 16s.xml">
-      <configuration name="ConnectTest" configurationId="JUnit" />
+    <history-entry file="ProductFactoryTest - 2016.11.04 at 22h 11m 51s.xml">
+      <configuration name="ProductFactoryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConnectTest - 2016.10.11 at 22h 34m 04s.xml">
-      <configuration name="ConnectTest" configurationId="JUnit" />
+    <history-entry file="ProductFactoryTest - 2016.11.04 at 22h 12m 21s.xml">
+      <configuration name="ProductFactoryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConnectTest - 2016.10.11 at 22h 36m 52s.xml">
-      <configuration name="ConnectTest" configurationId="JUnit" />
+    <history-entry file="ProductFactoryTest - 2016.11.04 at 22h 13m 16s.xml">
+      <configuration name="ProductFactoryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ConnectTest_getconnection - 2016.10.11 at 22h 27m 26s.xml">
-      <configuration name="ConnectTest.getconnection" configurationId="JUnit" />
+    <history-entry file="ProductFactoryTest_createProduct - 2016.11.04 at 22h 06m 32s.xml">
+      <configuration name="ProductFactoryTest.createProduct" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RegisterEmployeeGUITest - 2016.10.24 at 21h 50m 44s.xml">
-      <configuration name="RegisterEmployeeGUITest" configurationId="JUnit" />
+    <history-entry file="ProductFactoryTest_testInvalidProductNotCreated - 2016.11.04 at 22h 07m 56s.xml">
+      <configuration name="ProductFactoryTest.testInvalidProductNotCreated" configurationId="JUnit" />
     </history-entry>
     <history-entry file="Test_in_CS4227_Project - 2016.10.24 at 21h 52m 38s.xml">
       <configuration name="Test in CS4227_Project" configurationId="JUnit" />
@@ -1048,28 +1100,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.49570817" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32552955" sideWeight="0.4576" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32998884" sideWeight="0.50186664" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32441473" sideWeight="0.53386664" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5092091" sideWeight="0.4914712" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32441473" sideWeight="0.46826667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32441473" sideWeight="0.46613333" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.352" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.352" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32998884" sideWeight="0.49813333" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40628386" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4960981" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910814" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.64724916" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1077,11 +1128,12 @@
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="DBHelper" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32998884" sideWeight="0.49813333" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3219616" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32552955" sideWeight="0.45948827" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5039019" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40628386" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="DBOutput" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1121,7 +1173,8 @@
     <MESSAGE value="Shane: Did a lot of refactoring. Deleted all the product class files (Copy.java, Envelope.java, Folder.java, Paper.java, PaperClip.java, Pen.java, Pencil.java and Ruler.java) and replaced them with one concrete product class as they were all doing the exact same thing. Refactored productFactory also to cut code in half using the new concrete product and an enhanced for loop." />
     <MESSAGE value="Shane: Deleted user.java &amp; staff.java  due to the fact they were completely useless and did nothing. I created a concrete user class but I have not yet implemented it as there seems to be a problem registering users to the database" />
     <MESSAGE value="Shane: Deleted Logistics , Warehouse and Manager class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shane: Deleted Logistics , Warehouse and Manager class" />
+    <MESSAGE value="Shane: Employee &amp; Customer Abstract Factory Completely done, access types now working fully. Specifying the employee types in an array places an access level on each associated with the array index, the higher the index the higher the access type and thus the more permissions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Shane: Employee &amp; Customer Abstract Factory Completely done, access types now working fully. Specifying the employee types in an array places an access level on each associated with the array index, the higher the index the higher the access type and thus the more permissions." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1134,102 +1187,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bin/GUI/DisplayGUI.class" />
-    <entry file="file://$PROJECT_DIR$/src/Java/Manager.java" />
-    <entry file="file://$PROJECT_DIR$/src/Java/Observer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Java/Subject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="43" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Java/I_User.java" />
-    <entry file="file://$PROJECT_DIR$/src/Java/ConcreteUser.java" />
-    <entry file="file://$PROJECT_DIR$/src/Java/UserFactory.java" />
-    <entry file="file://$PROJECT_DIR$/src/Java/Connect.java" />
-    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterProductGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#createContentPane#0;class#RegisterProductGUI#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Java/updateDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="57" column="18" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Java/QtyGrabber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Java/ViewAccountDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Java/ViewItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3094">
-          <caret line="191" column="21" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Java/ViewOrders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="128" column="19" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Java/ViewStaffDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/ObserverTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/ConnectTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/singleton.java" />
-    <entry file="file://$PROJECT_DIR$/src/Test/test.java" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SQL/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1251,18 +1208,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Java/Main.java" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Java/wareHouseStaff.java" />
     <entry file="file://$PROJECT_DIR$/src/Java/customer.java" />
     <entry file="file://$PROJECT_DIR$/src/Java/logisticsStaff.java" />
@@ -1294,7 +1243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1302,7 +1250,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1310,14 +1257,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/DisplayGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1334,52 +1273,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/GUIFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterUserGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_91/src.zip!/javax/swing/JOptionPane.java" />
-    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterEmployeeGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Java/I_Framework.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ActionListenerSuper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1399,31 +1301,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Java/ConcreteInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Java/ConcreteFramework.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#266#267#0" expanded="false" />
-            <element signature="e#301#302#0" expanded="false" />
-            <element signature="e#637#638#0" expanded="false" />
-            <element signature="e#664#665#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Java/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1438,16 +1319,255 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Java/Dispacher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
+        <state relative-caret-position="527">
           <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-          <folding />
+          <folding>
+            <element signature="e#228#229#0" expanded="false" />
+            <element signature="e#296#297#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/LogInScreenGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="26" />
+        <state relative-caret-position="195">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User/CustomerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/ProductTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Java/ConcreteProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Java/ConcreteInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Button.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ButtonEngineer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/DisplayGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/GUIFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/FactoryTests/GUIFactoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ActionListenerSuper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SQL/SelectMax.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SQL/Select.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/FactoryTests/CustomerFactoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Java/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Java/ProductFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User/I_Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User/EmployeeFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="9" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User/I_Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User/ConcreteCustomer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/testUserGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/FactoryTests/EmployeeFactoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/User/ConcreteEmployee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding>
+            <element signature="e#1419#1420#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/FactoryTests/ProductFactoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterEmployeeGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="175" column="3" selection-start-line="175" selection-start-column="3" selection-end-line="175" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5185#5186#0" expanded="true" />
+            <element signature="e#5266#5267#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/RegisterUserGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="673">
+          <caret line="149" column="37" selection-start-line="149" selection-start-column="37" selection-end-line="149" selection-end-column="37" />
+          <folding>
+            <element signature="e#4703#4704#0" expanded="true" />
+            <element signature="e#4780#4781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/ObserverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
           <folding />
         </state>
       </provider>

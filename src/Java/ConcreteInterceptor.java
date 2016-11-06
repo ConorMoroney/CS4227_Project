@@ -1,5 +1,7 @@
 package Java;
 
+import SQL.Insert;
+
 import java.awt.event.ActionEvent;
 
 import java.io.FileWriter;
@@ -65,7 +67,15 @@ public class ConcreteInterceptor  implements I_Interceptor{
 
     private void addLogToDB(String action) throws IOException
     {
+        String LogText = "["+user+"] "+action+ " button was pressed;";
         //SQL.Insert();
+        Insert i = null;
+        try {
+            i = new Insert();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        i.CreateLogInsert(LogText,i.getConnection());
 
     }
     private boolean compareFileToDB()

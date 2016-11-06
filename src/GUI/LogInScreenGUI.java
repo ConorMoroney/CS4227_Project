@@ -77,6 +77,7 @@ public class LogInScreenGUI implements ActionListener
         
         totalGUI.setVisible(true);
         return totalGUI;
+
     }
 
     public void actionPerformed(ActionEvent e)
@@ -89,8 +90,8 @@ public class LogInScreenGUI implements ActionListener
         
         else if(e.getSource() == registerButton)
         {
-			//RegisterUserGUI.start();
-            RegisterEmployeeGUI.main(null);
+
+            RegisterUserGUI.main(null);
         }
 		
         else if(e.getSource() == logInButton)

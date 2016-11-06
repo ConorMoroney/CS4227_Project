@@ -10,7 +10,7 @@ public class ConcreteCustomer implements Observer, I_Customer {
     private String email;
     private String address;
     //Customer access level will always be lowest (1)
-    private int accessLevel=1;
+    private int accessLevel;
 
 
     public ConcreteCustomer() {
@@ -52,7 +52,7 @@ public class ConcreteCustomer implements Observer, I_Customer {
     @Override
     public int getaccesslvl() {
         // TODO Auto-generated method stub
-        return accessLevel;
+        return 1;
     }
     public String getName() {
         // TODO Auto-generated method stub

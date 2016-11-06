@@ -14,7 +14,7 @@ public class ActionListenerSuper implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //System.out.print(e.getActionCommand());
+        System.out.println(e.getActionCommand());
         Main.c.event(e, userName);
     }
 

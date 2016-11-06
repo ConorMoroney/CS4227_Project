@@ -1,5 +1,6 @@
-package Java;
+package SAMPLE1;
 
+import Java.QtyGrabber;
 import SQL.Connect;
 import SQL.Select;
 import User.ConcreteCustomer;
@@ -181,6 +182,7 @@ public class ViewItems implements  ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
+		Main.actionListener.actionPerformed(e);
 		if(e.getSource() == exitButton)
 		{
 			frame.dispose();

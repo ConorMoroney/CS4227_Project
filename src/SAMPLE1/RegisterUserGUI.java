@@ -1,9 +1,9 @@
-package GUI;
+package SAMPLE1;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import SAMPLE1.Main;
+import GUI.GUIFactory;
 
 import java.sql.*;
 import SQL.*;
@@ -11,7 +11,7 @@ import User.*;
 
 import javax.swing.*;
 
-class RegisterUserGUI implements  ActionListener
+public class RegisterUserGUI implements  ActionListener
 {
 	private final String [] userTypes = {"Manager", "Logistics" , "Warehouse" , "Customer"};
 	private JPanel buttonPanel;

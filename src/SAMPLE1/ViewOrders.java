@@ -1,4 +1,4 @@
-package Java;
+package SAMPLE1;
 
 import SQL.Connect;
 
@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 
-public class ViewAccountDetails implements  ActionListener
+public class ViewOrders implements  ActionListener
 {
 	
 	private JPanel buttonPanel;
@@ -18,8 +18,7 @@ public class ViewAccountDetails implements  ActionListener
 	private final JPanel totalGUI = new JPanel();
 	
 	JTextField itemNameTextField, quantityTextField;
-	private static final JFrame frame = new JFrame("View Account Details");
-	private static int id;
+	private static final JFrame frame = new JFrame("View Order Queue");
 
 
 	
@@ -41,11 +40,14 @@ public class ViewAccountDetails implements  ActionListener
 		try
 		{
 			//Java.Connect to database
-			 Connect con = new Connect();
-  		   Connection mycon =  con.getconnection();
-  		   Statement mystat = mycon.createStatement();
+			   Connect con = new Connect(); 
+    		   Connection mycon =  con.getconnection();
+    		   Statement mystat = mycon.createStatement();
 			ResultSet myRe = mystat.executeQuery("select * from items");
-				
+
+
+
+
 			//get db data
 			while (myRe.next())
 				i++;
@@ -57,8 +59,7 @@ public class ViewAccountDetails implements  ActionListener
 		
 		
 		//Assign values to listData based on DB values.
-		String[] listData = new String[i];
-		String[] userData = new String[i];
+		Object[] listData = new Object[i];
 		
 		i = 0;
 		try
@@ -68,28 +69,22 @@ public class ViewAccountDetails implements  ActionListener
 			 Connect con = new Connect(); 
   		   Connection mycon =  con.getconnection();
   		   Statement mystat = mycon.createStatement();		
-			//"select LastModified from CacheTable where url = '" + url +"'"
-			String sql = "select * from users WHERE idusers= '" + id +"'";
+			String sql = "select * from orderqueue";
 			System.out.println(sql);
 			ResultSet myRe = mystat.executeQuery(sql);
 			
 			String name = "";
-			String email = "";
-			String address = "";
-			String password = "";
-		
+			String qty = "";
+			String customer = "";
+				
 			//get db data
 			while (myRe.next())
-			{
-				
-				
-				name = "\nUserName: " + myRe.getString(2) + ", ";
-				address = "\nAddress:  " +  myRe.getString(6) + ", ";
-				email = "Email: " + myRe.getString(5) + ", " ;	
-				email = "Password: " + myRe.getString(4) ;	
-				listData[i] =  name + password + address  + email;
-				userData[i] =  name ;
-				
+			{							
+				name = "Product Name: " + myRe.getString(1) + ", ";
+				qty = "Quantity:  " +  myRe.getInt(2) + ", ";
+				customer = "Customer:  " +  myRe.getString(3) + ", ";
+													
+				listData[i] =name + qty + customer;
 				
 				i++;
 			}
@@ -103,7 +98,6 @@ public class ViewAccountDetails implements  ActionListener
 		
 		//Make List and scroll pane for items
 		JList items = new JList(listData);
-		
 		
 	    JScrollPane scrollPane = new JScrollPane();
 	    scrollPane.setViewportView(items);
@@ -132,9 +126,9 @@ public class ViewAccountDetails implements  ActionListener
 		try
 		{	
 			//Java.Connect to database
-			 Connect con = new Connect(); 
-  		   Connection mycon =  con.getconnection();
-  		   Statement mystat = mycon.createStatement();
+			   Connect con = new Connect();
+    		   Connection mycon =  con.getconnection();
+    		   Statement mystat = mycon.createStatement();
 			
 			String sql = "select * from users";
 			ResultSet myRe = mystat.executeQuery(sql);
@@ -158,6 +152,7 @@ public class ViewAccountDetails implements  ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
+		Main.actionListener.actionPerformed(e);
 		if(e.getSource() == exitButton)
 		{
 			frame.dispose();
@@ -168,7 +163,7 @@ public class ViewAccountDetails implements  ActionListener
 	private static void createAndShowGUI()
 	{
 		//Create and set up the content pane.
-		ViewAccountDetails window = new ViewAccountDetails();
+		ViewOrders window = new ViewOrders();
 		frame.setContentPane(window.createContentPane());
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -177,11 +172,8 @@ public class ViewAccountDetails implements  ActionListener
 		frame.setVisible(true);
 	}
 
-	public static void display(String []line)
+	public static void view()
 	{		
-		
-		id = Integer.parseInt(line[1]);
-		System.out.println(id);
 		
 		SwingUtilities.invokeLater(new Runnable() 
 		{

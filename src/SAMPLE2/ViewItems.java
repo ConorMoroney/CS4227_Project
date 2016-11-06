@@ -1,46 +1,39 @@
-package Java;
+package SAMPLE2;
 
-import SAMPLE1.ViewItems;
+import Java.QtyGrabber;
 import SQL.Connect;
+import SQL.Select;
+import User.ConcreteCustomer;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
-
-public class updateDatabase implements  ActionListener{ 
+public class ViewItems implements  ActionListener
+{
 	
-	static String username = "";
+	private static final QtyGrabber G = new QtyGrabber();
+	private static String username = "";
 	private JPanel buttonPanel;
 	private JButton exitButton;
-    private JButton updateButton;
+	private JButton purchaseButton;
 	
 	private JLabel quantityLabel;
-    private JLabel nameLabel;
+	private JLabel nameLabel;
 
 	private final JPanel totalGUI = new JPanel();
 	
 	private JTextField itemNameTextField;
-    private JTextField quantityTextField;
-	private static final JFrame frame = new JFrame("Update Stock");
-	
-	
-	private void updateProducts(String itemName, int quantity){
-		QtyGrabber G = ViewItems.getQtyGrabber();
-		G.setQty(itemName , quantity);
-	}
+	private JTextField quantityTextField;
+	private static final JFrame frame = new JFrame("View items");
 
+	public static QtyGrabber  getQtyGrabber(){
+		return G;
+	}
+	
 	private JPanel createContentPane()
 	{
 		//Make bottom JPanel to place buttonPanel on
@@ -59,10 +52,10 @@ public class updateDatabase implements  ActionListener{
 		try
 		{
 			//Java.Connect to database
-			   Connect con = new Connect();
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
-			ResultSet myRe = mystat.executeQuery("select * from creationary.items");
+			  Connect con = new Connect(); 
+   		   Connection mycon =  con.getconnection();
+   		   Statement mystat = mycon.createStatement();
+			ResultSet myRe = mystat.executeQuery("select * from items");
 				
 			//get db data
 			while (myRe.next())
@@ -82,14 +75,17 @@ public class updateDatabase implements  ActionListener{
 		{
 			//get array of names/quantities
 			//Java.Connect to database
-			   Connect con = new Connect(); 
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
-    		   
-			String sql = "select * from creationary.items";
+			  Connect con = new Connect(); 
+   		   Connection mycon =  con.getconnection();
+   		   Statement mystat = mycon.createStatement();
+
+			String sql = "select * from items";
 			System.out.println(sql);
-			ResultSet myRe = mystat.executeQuery(sql);
-			
+
+
+			Select s = new Select("*","items");
+			ResultSet myRe = s.getResultset();
+
 			String name = "";
 			int quantity = 0;
 				
@@ -129,11 +125,11 @@ public class updateDatabase implements  ActionListener{
 		exitButton.addActionListener(this);
 		buttonPanel.add(exitButton);
 		
-		updateButton = new JButton("Update");
-		updateButton.setLocation(130, 150);
-		updateButton.setSize(120, 30);
-		updateButton.addActionListener(this);
-		buttonPanel.add(updateButton);
+		purchaseButton = new JButton("Purchase");
+		purchaseButton.setLocation(130, 150);
+		purchaseButton.setSize(120, 30);
+		purchaseButton.addActionListener(this);
+		buttonPanel.add(purchaseButton);
 		
 		//make Labels
 		nameLabel = new JLabel("Product Name:");
@@ -141,7 +137,7 @@ public class updateDatabase implements  ActionListener{
 		nameLabel.setSize(120, 30);
 		buttonPanel.add(nameLabel);
 		
-		quantityLabel = new JLabel("Add Quantity:");
+		quantityLabel = new JLabel("Purchase Quantity:");
 		quantityLabel.setLocation(130, 60);
 		quantityLabel.setSize(120, 30);
 		buttonPanel.add(quantityLabel);
@@ -164,9 +160,9 @@ public class updateDatabase implements  ActionListener{
 		try
 		{	
 			//Java.Connect to database
-			   Connect con = new Connect(); 
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
+			  Connect con = new Connect(); 
+   		   Connection mycon =  con.getconnection();
+   		   Statement mystat = mycon.createStatement();
 			String sql = "select * from items";
 			ResultSet myRe = mystat.executeQuery(sql);
 
@@ -187,11 +183,12 @@ public class updateDatabase implements  ActionListener{
 	
 	public void actionPerformed(ActionEvent e)
 	{
+		Main.actionListener.actionPerformed(e);
 		if(e.getSource() == exitButton)
 		{
 			frame.dispose();
 		}
-		if (e.getSource() == updateButton)
+		if (e.getSource() == purchaseButton)
 		{
 			String itemName = itemNameTextField.getText();
 			int orderQuantity = Integer.parseInt(quantityTextField.getText());
@@ -199,27 +196,57 @@ public class updateDatabase implements  ActionListener{
 			try
 			{
 				//Java.Connect to database
-				   Connect con = new Connect(); 
+				  Connect con = new Connect();
 	    		   Connection mycon =  con.getconnection();
 	    		   Statement mystat = mycon.createStatement();
-	    		   
 				String sql = "select * from items WHERE name = '" + itemName + "'";
 				ResultSet myRe = mystat.executeQuery(sql);
 				
 				myRe.next();
 				System.out.println(myRe.getInt(7));
-				int newQuantity = myRe.getInt(7) + orderQuantity;
-				//update table to have less quantity
-				sql = "UPDATE items SET quantity = " + newQuantity + " WHERE name = '" + itemName + "'";
-				mystat.executeUpdate(sql);
+				if(orderQuantity <= myRe.getInt(7))
+				{
+					int newQuantity = myRe.getInt(7) - orderQuantity;
+					//update table to have less quantity
+					sql = "UPDATE items SET quantity = " + newQuantity + " WHERE name = '" + itemName + "'";
+					mystat.executeUpdate(sql);
+					
+					//add order to table
+					sql = "INSERT INTO orderqueue VALUES('" + itemName + "', " + orderQuantity + ", '" + username + "')";
+					System.out.println(sql);
+					mystat.executeUpdate(sql);
+					
+					frame.dispose();
+					JOptionPane.showMessageDialog(null, "Order Confirmed");
+				}
+				else
+				{
+					String sql1 = "select * from users WHERE username = '" + username + "'";
+					System.out.println(sql1);
+					ResultSet myRe1 = mystat.executeQuery(sql1);
+					myRe1.next();
+					ConcreteCustomer c = new ConcreteCustomer();
+					int newCustId = myRe1.getInt(1) ;
+					String newCustName = myRe1.getString(2) ;
+					String newCustPassword = myRe1.getString(4) ;
+					String newCustEmail = myRe1.getString(5) ;
+					String newCustAddress = myRe1.getString(6) ;
+					
+					
+					c.setName(newCustName);
+                    c.setPassword(newCustPassword);
+		    		c.setEmail(newCustEmail);
+		    		c.setAddress(newCustAddress);
+		    		c.setID(newCustId);
+					//Not enough quantity notification
+					JOptionPane.showMessageDialog(null, "There is not enough quantity in stock, you have been added to a notification list");
+					 
+					G.registerObserver(c);
+					
 				
-				updateProducts(itemName, newQuantity);
+				}
 				
-				frame.dispose();
-				JOptionPane.showMessageDialog(null, "Stock Update Confirmed");
-
-				//do stuff here
-				
+			
 				
 
 			}
@@ -230,11 +257,11 @@ public class updateDatabase implements  ActionListener{
 		}
 
 	}
-	
+
 	private static void createAndShowGUI()
 	{
 		//Create and set up the content pane.
-		updateDatabase window = new updateDatabase();
+		ViewItems window = new ViewItems();
 		frame.setContentPane(window.createContentPane());
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -242,10 +269,11 @@ public class updateDatabase implements  ActionListener{
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}
-	
-	public static void main2(){
-		//System.out.println(args[0] + "    " + args[1]);
-		//username = args[0];
+
+	public static void main(String[] args)
+	{
+		System.out.println(args[0] + "    "+ args[1]);
+		username = args[0];
 		SwingUtilities.invokeLater(new Runnable() 
 		{
 			public void run() 
@@ -254,4 +282,6 @@ public class updateDatabase implements  ActionListener{
 			}
 		});
 	}
+
+
 }

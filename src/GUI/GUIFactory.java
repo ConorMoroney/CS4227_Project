@@ -5,7 +5,7 @@ import javax.swing.*;
 /**
  * Created by colmm on 28/10/2016.
  */
-class GUIFactory
+public class GUIFactory
 {
     public static JButton addButtonFromBuilder(Button button)
     {
@@ -32,7 +32,7 @@ class GUIFactory
         JFrame frame = new JFrame(title);
 
         //Create and set up the content pane.
-        DisplayGUI window = new DisplayGUI();
+        //DisplayGUI window = new DisplayGUI();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);

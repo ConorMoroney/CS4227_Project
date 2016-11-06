@@ -1,12 +1,12 @@
-package GUI;
+package SAMPLE2;
 
-import SAMPLE1.Main;
+import GUI.*;
 import SQL.Select;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.sql.*;
+import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
 public class LogInScreenGUI implements ActionListener
 {
@@ -18,7 +18,7 @@ public class LogInScreenGUI implements ActionListener
 	private final JPanel totalGUI = new JPanel();
 	private static JFrame frame = new JFrame("Log In Screen");
 
-    private JPanel createContentPane()
+    public JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
         totalGUI.setLayout(null);
@@ -74,7 +74,7 @@ public class LogInScreenGUI implements ActionListener
         registerButton = GUIFactory.addButton("Register",185,80,90,30);
         registerButton.addActionListener(this);
         buttonPanel.add(registerButton);
-        
+
         totalGUI.setVisible(true);
         return totalGUI;
 
@@ -146,7 +146,7 @@ public class LogInScreenGUI implements ActionListener
 	{
         //Create and set up the content pane.
         LogInScreenGUI window = new LogInScreenGUI();
-        frame = GUIFactory.makeFrame("Log In Screen", 305, 165);
+        frame = GUIFactory.makeFrame("SAMPLE 2: Log In Screen", 305, 165);
         frame.setContentPane(window.createContentPane());
     }
 

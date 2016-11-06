@@ -1,5 +1,6 @@
-package GUI;
+package SAMPLE2;
 
+import GUI.GUIFactory;
 import Java.I_Product;
 import Java.ProductFactory;
 import SQL.Connect;

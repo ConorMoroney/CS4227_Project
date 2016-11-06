@@ -1,6 +1,8 @@
 package Java;
 
 import SAMPLE1.Main;
+//import SAMPLE2.Main;
+
 
 import java.awt.event.ActionEvent;
 
@@ -19,6 +21,6 @@ public class Context {
 
     public String consumeService()
     {
-        return Main.c.access_internals();
+        return SAMPLE1.Main.c.access_internals();
     }
 }

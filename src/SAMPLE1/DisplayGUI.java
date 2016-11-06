@@ -1,5 +1,6 @@
-package GUI;
+package SAMPLE1;
 
+import GUI.GUIFactory;
 import Java.*;
 
 import java.awt.event.*;
@@ -7,7 +8,7 @@ import javax.swing.*;
 
 /*  No SQL Connection in here */
 
-class DisplayGUI implements ActionListener// extends JFrame implements ActionListener
+public class DisplayGUI implements ActionListener// extends JFrame implements ActionListener
 {
 
 	private JPanel buttonPanel;
@@ -92,6 +93,7 @@ class DisplayGUI implements ActionListener// extends JFrame implements ActionLis
 
 	public void actionPerformed(ActionEvent e) {
 		// this makes sure the button you are pressing is the button variable
+		Main.actionListener.actionPerformed(e);
 		if(e.getSource() == remaingModulesButton) {
 			System.out.println("Button clicked");
 			String command = ((JButton) e.getSource()).getActionCommand();
@@ -127,7 +129,7 @@ class DisplayGUI implements ActionListener// extends JFrame implements ActionLis
 				ViewItems.main(line2);
 				break;
 			case "Register a product":
-				RegisterProductGUI.registerItem();				
+				RegisterProductGUI.registerItem();
 				break;
 			case "View Orders":
 				ViewOrders.view();

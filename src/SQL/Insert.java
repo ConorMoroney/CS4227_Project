@@ -11,8 +11,6 @@ public class Insert {
 
     public Insert()
     {
-        Connect c = new Connect();
-        con = c.getconnection();
     }
 
     /**************
@@ -20,7 +18,7 @@ public class Insert {
      *
      * *************/
 
-    public boolean CreateUserInsert( String username , int accesslvl , String password , String email , String address , Connection con)
+    public int CreateUserInsert( String username , int accesslvl , String password , String email , String address , Connection con)
     {
         String table = "users";
         this.con = con;
@@ -41,16 +39,16 @@ public class Insert {
                 preparedStmt.setString(6, address);
                 System.out.print(SQL);
                 preparedStmt.executeUpdate();
-                return true;
+                return id; // return id of new user if successful
 
 
             } catch (SQLException e) {
                 // TODO Auto-generated catch block
                 System.out.println("Connection failed");
-                System.out.println(e.getMessage());
+                System.out.println(e.fillInStackTrace());
             }
         }
-        return false;
+        return -1; //return -1 if unsuccessful
     }
 
     public void CreateLogInsert( String entryLog , Connection con)

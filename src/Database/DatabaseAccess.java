@@ -62,7 +62,7 @@ public class DatabaseAccess implements I_Database {
     }
 
     @Override
-    public boolean registerUser(String userName, int accesslvl, String pass, String email, String address){
+    public int registerUser(String userName, int accesslvl, String pass, String email, String address){
         return dbconn.registerUser(userName, accesslvl, pass, email, address);
     }
 

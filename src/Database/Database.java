@@ -115,7 +115,7 @@ public class Database implements I_Database {
         return null;
     }
 
-    public boolean registerUser(String userName, int accesslvl, String pass, String email, String address){
+    public int registerUser(String userName, int accesslvl, String pass, String email, String address){
             Insert i = new Insert();
             return i.CreateUserInsert(userName, accesslvl, pass, email, address, con);
     }

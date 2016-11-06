@@ -17,7 +17,7 @@ public interface I_Database {
     public boolean canUserLogin(String user, String password);
     public I_Customer getCustomerDetails(String username);
     public I_Employee getEmployeeDetails(String username);
-    public boolean registerUser(String userName, int accesslvl, String pass, String email, String address);
+    public int registerUser(String userName, int accesslvl, String pass, String email, String address);
     public int getLastID();
     public Object[] getOrders();
     public int getAccessLevel(String user);

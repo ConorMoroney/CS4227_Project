@@ -24,8 +24,6 @@ public class SelectMax implements SQLInterface {
     @Override
     public void executeStatement(String SQL) {
         try{
-            Connect con = new Connect();
-            Connection mycon =  con.getconnection();
             Statement mystat = mycon.createStatement();
             myRe = mystat.executeQuery(SQL);
         }

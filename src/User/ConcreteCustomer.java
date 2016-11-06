@@ -98,4 +98,9 @@ public class ConcreteCustomer implements Observer, I_Customer {
     public String getname() {
         return name;
     }
+
+    @Override
+    public void setaccesslvl(int a){
+        accesslvl = a;
+    }
 }

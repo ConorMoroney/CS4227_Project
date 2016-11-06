@@ -77,8 +77,8 @@ public class Helper {
         return dba.getLastID();
     }
 
-    public void registerUser(String userName, int accesslvl, String pass, String email, String address){
-        dba.registerUser(userName, accesslvl, pass, email, address);
+    public int registerUser(String userName, int accesslvl, String pass, String email, String address){
+        return dba.registerUser(userName, accesslvl, pass, email, address);
     }
 
     public Object[] getOrders(){
@@ -91,5 +91,11 @@ public class Helper {
 
     public ArrayList<String> getStaffDetails(){
         return dba.getStaffDetails();
+    }
+
+    public void setCustomer(I_Customer c){
+        c.setaccesslvl(getAccessLevel(c.getName()));
+        cust = c;
+        setUserState(cust.getaccesslvl());
     }
 }

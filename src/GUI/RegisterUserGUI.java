@@ -1,12 +1,7 @@
 package GUI;
 
-import SQL.Connect;
-import User.ConcreteCustomer;
 import User.I_Customer;
-//import User.UserFactory;
-import SQL.Select;
-import SQL.Insert;
-import SQL.Connect;
+import User.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -102,16 +97,25 @@ public class RegisterUserGUI extends Panel implements  ActionListener
 
 
             //UserFactory userFactory = new UserFactory();
-
+            AbstractUserFactory custFactory = FactoryProducer.getFactory("Customer");
+            assert custFactory != null;
+            I_Customer cust1 = (I_Customer) custFactory.createUser("ConcreteCustomer");
 
             int accesslvl =1;
 
             try{
-                help.registerUser(userName, accesslvl, pass, email, address);
-
+                int id = help.registerUser(userName, accesslvl, pass, email, address);
+                cust1.setName(userName);
+                cust1.setPassword(pass);
+                cust1.setEmail(email);
+                cust1.setAddress(address);
+                cust1.setID(id);
+                help.setCustomer(cust1);
+                frame.dispose();
+                panelMgr.getPanelFromFactory(2);
             }
             catch(Exception exc){
-                System.out.println("Error cant connect to database");
+                System.out.println(exc.fillInStackTrace());
             }
 
 

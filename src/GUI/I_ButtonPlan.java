@@ -11,7 +11,4 @@ interface I_ButtonPlan {
 
     void setButtonXSize(int xSize);
     void setButtonYSize(int ySize);
-
-
-
 }

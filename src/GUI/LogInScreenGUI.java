@@ -11,11 +11,8 @@ import java.sql.*;
 public class LogInScreenGUI implements ActionListener
 {
     private JPanel buttonPanel;
-    private JButton exitButton;
-    private JButton logInButton;
-    private JButton registerButton;
-	private JLabel userNameLabel;
-    private JLabel passwordLabel;
+    private JButton exitButton, logInButton, registerButton;
+	private JLabel userNameLabel, passwordLabel;
 	private JTextField userNameTextField;
 	private JPasswordField passwordTextField;
 	private final JPanel totalGUI = new JPanel();
@@ -24,7 +21,6 @@ public class LogInScreenGUI implements ActionListener
     private JPanel createContentPane()
 	{
         //Make bottom JPanel to place buttonPanel on
-        //JPanel totalGUI = new JPanel();
         totalGUI.setLayout(null);
 
         buttonPanel = GUIFactory.addButtonPanel(10,10,295,185);
@@ -85,8 +81,6 @@ public class LogInScreenGUI implements ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
-
-
         if(e.getSource() == exitButton)
         {
 			System.exit(0);
@@ -107,28 +101,9 @@ public class LogInScreenGUI implements ActionListener
             //noinspection deprecation
             String password = passwordTextField.getText();
 
-            /*
-                TODO
-                Change code below to not have any SQL, use function calls.
-             */
-
-			//Random JOptionPane that shows username and password.
-			//JOptionPane.showMessageDialog(null, userName + " " + password);
-
 			//check if username and password exist
 			try
 			{
-                /*
-    		   Connect con = new Connect();
-    		   Connection mycon =  con.getconnection();
-    		   Statement mystat = mycon.createStatement();
-
-
-    			//Get ID for Java.user
-    			String sql = "select * from creationary..users WHERE username = '" + userName + "'";
-    			ResultSet myRe = mystat.executeQuery(sql);
-                */
-
     			String dbUser = "";
     			String dbPass = "";
                 //uncomment after testing
@@ -136,8 +111,6 @@ public class LogInScreenGUI implements ActionListener
                 Select s = new Select("*","users","username",userName);
                 ResultSet myRe = s.getResultset();
                 System.out.print(myRe);
-
-
 
     			String[] line = new String [2];
 
@@ -155,9 +128,7 @@ public class LogInScreenGUI implements ActionListener
                     Main.actionListener.setUserName(dbUser);
     				frame.setVisible(false);
     				DisplayGUI.main(line);
-
     			}
-
             }
 
 			catch(Exception exc)

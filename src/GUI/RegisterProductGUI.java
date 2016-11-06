@@ -13,20 +13,9 @@ import java.sql.Statement;
 
 class RegisterProductGUI implements ActionListener {
     private JPanel buttonPanel;
-    private JButton cancelButton;
-    private JButton registerProductButton;
-    private JLabel TypeLabel;
-    private JLabel nameLabel;
-    private JLabel weightLabel;
-    private JLabel priceLabel;
-    private JLabel quantityLabel;
-    private JLabel descriptionLabel;
-    private JTextField typeField;
-    private JTextField nameField;
-    private JTextField weightField;
-    private JTextField priceField;
-    private JTextField quantityField;
-    private JTextField descriptionField;
+    private JButton cancelButton, registerProductButton;
+    private JLabel TypeLabel, nameLabel, weightLabel, priceLabel, quantityLabel, descriptionLabel;
+    private JTextField typeField, nameField, weightField, priceField, quantityField, descriptionField;
     private static JFrame frame = new JFrame("Register Product Screen");
 
     private JPanel createContentPane() {
@@ -108,20 +97,17 @@ class RegisterProductGUI implements ActionListener {
             int quantity = Integer.parseInt(quantityField.getText());
             String description = descriptionField.getText();
 
-
             ProductFactory productFactory = new ProductFactory();
 
             I_Product product = productFactory.createProduct(type);
 
-            try {
-
-
+            try
+            {
                 Connect con = new Connect();
                 Connection mycon = con.getconnection();
                 Statement mystat = mycon.createStatement();
 
                 //Java.Connect to database
-
 
                 //Get ID for Java.user
                 ResultSet myRe = mystat.executeQuery("select * from dbo.items");
@@ -140,9 +126,10 @@ class RegisterProductGUI implements ActionListener {
 
                 //ResultSet myRe = mystat.executeQuery("select * from creationary.items");
 
-            } catch (Exception exc) {
+            }
+            catch (Exception exc)
+            {
                 System.out.println(exc.getMessage());
-                //System.out.println("Error cant connect to database");
             }
 
             product.setName(name);
@@ -169,6 +156,4 @@ class RegisterProductGUI implements ActionListener {
             }
         });
     }
-
-
 }

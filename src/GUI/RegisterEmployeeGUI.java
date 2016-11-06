@@ -15,20 +15,11 @@ class RegisterEmployeeGUI implements  ActionListener
 {
 	private final String [] employeeTypes = {"Manager", "Logistics" , "Warehouse"};
 	private JPanel buttonPanel;
-    private JButton cancelButton;
-    private JButton registerUserButton;
-	private JLabel TypeLabel;
-    private JLabel userLabel;
-    private JLabel passLabel;
-    private JLabel emailLabel;
-    private JLabel addressLabel;
+    private JButton cancelButton, registerUserButton;
+	private JLabel TypeLabel, userLabel, passLabel, emailLabel, addressLabel;
 	private final JComboBox userType = new JComboBox(employeeTypes);
-	private JTextField userField;
-    private JTextField passField;
-    private JTextField emailField;
-    private JTextField addressField;
+	private JTextField userField, passField, emailField, addressField;
 	private static JFrame frame = new JFrame("Register Employee Screen");
-	
 
     private JPanel createContentPane()
 	{
@@ -105,30 +96,21 @@ class RegisterEmployeeGUI implements  ActionListener
             AbstractUserFactory empFactory = FactoryProducer.getFactory("Employee");
             assert empFactory != null;
 
-
-
             int count = userType.getItemCount();
             String selectedType = (String) userType.getSelectedItem();
             System.out.println(selectedType + "==============");
 
-
-
-
-
-
             I_Employee emp1 = (I_Employee) empFactory.createUser(selectedType);
             emp1.setType(selectedType);
             //ConcreteEmployee emp1 = empFactory.
-    		
-
     		
     		int id = 1;
     		int accesslvl = emp1.getaccesslvl();
 
             System.out.println(accesslvl + "==============");
     		
-    		try {
-
+    		try
+            {
                 //Connect c = new Connect();
                 Select s = new Select("*", "users");
                 ResultSet myRe = s.getResultset();
@@ -137,16 +119,20 @@ class RegisterEmployeeGUI implements  ActionListener
                     id++;
                 }
             }
-            catch(Exception exc){
+
+            catch(Exception exc)
+            {
                 System.out.println("Error cant connect to database");
             }
 
-            try {
+            try
+            {
 
                 Insert i =new Insert();
                 i.CreateUserInsert(userName,accesslvl,pass,email,address,i.getConnection());
             }
-            catch(Exception exc){
+            catch(Exception exc)
+            {
                 System.out.println("Error Insert Failed ??? ");
             }
 
@@ -155,9 +141,7 @@ class RegisterEmployeeGUI implements  ActionListener
             emp1.setEmail(email);
             emp1.setAddress(address);
             emp1.setID(id);
-
         }
-
     }
 
     private static void createAndShowGUI()
@@ -172,6 +156,4 @@ class RegisterEmployeeGUI implements  ActionListener
 	{
         SwingUtilities.invokeLater(RegisterEmployeeGUI::createAndShowGUI);
     }
-    
-   
 }

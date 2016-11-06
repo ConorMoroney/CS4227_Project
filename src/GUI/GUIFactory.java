@@ -47,10 +47,10 @@ class GUIFactory
         JLabel label = new JLabel(labelText);
         label.setLocation(xLocation, yLocation);
         label.setSize(xSize, ySize);
-        //buttonPanel.add(label);
 
         return label;
     }
+
     public static JPanel addButtonPanel(int xLocation, int yLocation, int xSize, int ySize)
     {
         JPanel buttonPanel;
@@ -58,11 +58,9 @@ class GUIFactory
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(xLocation, yLocation);
         buttonPanel.setSize(xSize, ySize);
-        //totalGUI.add(buttonPanel);
 
         return buttonPanel;
     }
-
 
     public static JTextField addTextField(int xLocation, int yLocation,int xSize, int ySize)
     {
@@ -70,7 +68,6 @@ class GUIFactory
         textField = new JTextField();
         textField.setLocation(xLocation, yLocation);
         textField.setSize(xSize, ySize);
-        //buttonPanel.add(textField);
 
         return textField;
     }
@@ -81,7 +78,6 @@ class GUIFactory
         passwordField = new JPasswordField();
         passwordField.setLocation(xLocation, yLocation);
         passwordField.setSize(xSize, ySize);
-        //buttonPanel.add(passwordField);
 
         return passwordField;
     }

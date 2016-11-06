@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 /**
  * Created by colmm on 01/11/2016.
  */
-public class ActionListenerSuper implements ActionListener{
-
+public class ActionListenerSuper implements ActionListener
+{
     private String userName = "No User";
 
     @Override
@@ -21,8 +21,8 @@ public class ActionListenerSuper implements ActionListener{
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
     public String getUserName() {
         return userName;
     }
-
 }

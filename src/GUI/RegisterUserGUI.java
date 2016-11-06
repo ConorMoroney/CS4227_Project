@@ -13,16 +13,9 @@ import java.sql.Statement;
 class RegisterUserGUI implements  ActionListener
 {
     private JPanel buttonPanel;
-    private JButton cancelButton;
-    private JButton registerUserButton;
-	private JLabel userLabel;
-    private JLabel passLabel;
-    private JLabel emailLabel;
-    private JLabel addressLabel;
-	private JTextField userField;
-    private JTextField passField;
-    private JTextField emailField;
-    private JTextField addressField;
+    private JButton cancelButton, registerUserButton;
+	private JLabel userLabel, passLabel, emailLabel, addressLabel;
+	private JTextField userField, passField,emailField, addressField;
 	private static JFrame frame = new JFrame("Register new User Screen");
 
     private JPanel createContentPane()
@@ -83,7 +76,8 @@ class RegisterUserGUI implements  ActionListener
         else if(e.getSource() == registerUserButton)
         {
 			//do shit in here
-        	if(userField.getText().equals("") ||passField.getText().equals("") ||emailField.getText().equals("") ||addressField.getText().equals("") ){
+        	if(userField.getText().equals("") ||passField.getText().equals("") ||emailField.getText().equals("") ||addressField.getText().equals("") )
+        	{
         		JOptionPane.showMessageDialog(null,"There is a null field" );
         		return;
         	}
@@ -117,11 +111,10 @@ class RegisterUserGUI implements  ActionListener
     					 + id  + "','" + userName + "','" + accesslvl+ "','" + pass + "','" + email + "','" + address 
     						+ "');" ;
     			mystat.executeUpdate(sql);
-    			
-    			//ResultSet myRe = mystat.executeQuery("select * from creationary.users");
-    			
     		}
-    		catch(Exception exc){
+
+    		catch(Exception exc)
+            {
     			System.out.println("Error cant connect to database");
     		}
 
@@ -132,9 +125,7 @@ class RegisterUserGUI implements  ActionListener
             cust1.setID(id);
     		
         }
-        
     }
-
 
     private static void createAndShowGUI()
 	{
@@ -142,7 +133,6 @@ class RegisterUserGUI implements  ActionListener
     	RegisterUserGUI window = new RegisterUserGUI();
         frame = GUIFactory.makeFrame("Register User", 325, 250);
         frame.setContentPane(window.createContentPane());
-
     }
 
     public static void start()

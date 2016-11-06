@@ -11,9 +11,7 @@ class DisplayGUI implements ActionListener// extends JFrame implements ActionLis
 {
 
 	private JPanel buttonPanel;
-	private JButton remaingModulesButton;
-	private JButton viewResultsButton;
-	private JButton exitButton;
+	private JButton remaingModulesButton, viewResultsButton, exitButton;
 
 	private static final String[] line2 = new String[2];
 	
@@ -91,6 +89,7 @@ class DisplayGUI implements ActionListener// extends JFrame implements ActionLis
 		totalGUI.setVisible(true);
 		return totalGUI;
 	}
+
 	public void actionPerformed(ActionEvent e) {
 		// this makes sure the button you are pressing is the button variable
 		if(e.getSource() == remaingModulesButton) {
@@ -114,6 +113,7 @@ class DisplayGUI implements ActionListener// extends JFrame implements ActionLis
 			}
 
 		}
+
 		else if(e.getSource() == viewResultsButton) {
 			System.out.println("Button clicked");
 			String command = ((JButton) e.getSource()).getActionCommand();
@@ -137,6 +137,7 @@ class DisplayGUI implements ActionListener// extends JFrame implements ActionLis
 
 			}
 		}
+
 		else if(e.getSource() == exitButton) {
 			System.exit(0);
 		}
@@ -145,7 +146,6 @@ class DisplayGUI implements ActionListener// extends JFrame implements ActionLis
 	private String[] getTitles(int accesslvl) {
 		String button1 = null;
 		String button2 = null;
-
 
 		switch(accesslvl){
 		case 1:// User.customer
@@ -170,7 +170,4 @@ class DisplayGUI implements ActionListener// extends JFrame implements ActionLis
 		}
 		return new String[]{button1,button2};
 	}
-
-
-
 }

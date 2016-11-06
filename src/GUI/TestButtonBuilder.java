@@ -10,11 +10,9 @@ class TestButtonBuilder
         I_ButtonBuilder exitButton = new EmptyButtonBuilder();
 
         ButtonEngineer buttonEngineer = new ButtonEngineer(exitButton);
-
         buttonEngineer.makeButton();
 
         Button firstButton = buttonEngineer.getButton();
-
         firstButton.setButtonXLocation(15);
 
         System.out.println("Button Built.");
@@ -23,6 +21,5 @@ class TestButtonBuilder
         System.out.println("Button yLoc: " + firstButton.getButtonYLocation());
         System.out.println("Button xSize: " + firstButton.getButtonXSize());
         System.out.println("Button ySize: " + firstButton.getButtonYSize());
-
     }
 }

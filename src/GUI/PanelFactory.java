@@ -1,6 +1,6 @@
 package GUI;
 
-import javax.swing.*;
+import SAMPLE1.*;
 
 public class PanelFactory {
 

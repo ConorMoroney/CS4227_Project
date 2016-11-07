@@ -1,7 +1,7 @@
-package Java;
+package SAMPLE1;
 
+import Java.QtyGrabber;
 import SQL.Connect;
-import SQL.Select;
 import User.ConcreteCustomer;
 
 import javax.swing.*;

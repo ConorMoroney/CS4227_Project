@@ -1,5 +1,6 @@
-package GUI;
+package SAMPLE1;
 
+import GUI.GUIFactory;
 import Java.I_Product;
 import Java.ProductFactory;
 import SQL.Connect;
@@ -13,20 +14,9 @@ import java.sql.Statement;
 
 class RegisterProductGUI implements ActionListener {
     private JPanel buttonPanel;
-    private JButton cancelButton;
-    private JButton registerProductButton;
-    private JLabel TypeLabel;
-    private JLabel nameLabel;
-    private JLabel weightLabel;
-    private JLabel priceLabel;
-    private JLabel quantityLabel;
-    private JLabel descriptionLabel;
-    private JTextField typeField;
-    private JTextField nameField;
-    private JTextField weightField;
-    private JTextField priceField;
-    private JTextField quantityField;
-    private JTextField descriptionField;
+    private JButton cancelButton, registerProductButton;
+    private JLabel TypeLabel, nameLabel, weightLabel, priceLabel, quantityLabel, descriptionLabel;
+    private JTextField typeField, nameField, weightField, priceField, quantityField, descriptionField;
     private static JFrame frame = new JFrame("Register Product Screen");
 
     private JPanel createContentPane() {

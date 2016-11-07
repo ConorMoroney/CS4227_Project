@@ -1,12 +1,15 @@
-package GUI;
+package SAMPLE1;
 
+import GUI.GUIFactory;
+import GUI.Panel;
+import GUI.PanelManager;
 import User.I_Customer;
 import User.*;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
-import java.util.ArrayList;
+import javax.swing.*;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,7 +23,9 @@ public class RegisterUserGUI extends Panel implements  ActionListener
 {
     JPanel buttonPanel;
     JButton cancelButton, registerUserButton;
-    JLabel userLabel,passLabel, emailLabel, addressLabel;
+    private final String [] userTypes = {"Manager", "Logistics" , "Warehouse" , "Customer"};
+    JLabel userLabel,TypeLabel, passLabel, emailLabel, addressLabel;
+    private final JComboBox userType = new JComboBox(userTypes);
     JTextField userField,passField, emailField, addressField;
     static JFrame frame = new JFrame("Register new User Screen");
 
@@ -31,13 +36,15 @@ public class RegisterUserGUI extends Panel implements  ActionListener
     public JPanel createContentPane()
     {
         //Make bottom JPanel to place buttonPanel on
-        this.panel.setLayout(null);
+        //this.panel.setLayout(null);
+        this.panel.setLayout(new BoxLayout(this.panel, BoxLayout.X_AXIS));
 
         //Make Button Panel
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(10, 10);
         buttonPanel.setSize(295, 485);
+
         this.panel.add(buttonPanel);
 
         //Make Labels
@@ -45,11 +52,17 @@ public class RegisterUserGUI extends Panel implements  ActionListener
         passLabel = GUIFactory.addLabel("Password:",0,40,80,30);
         emailLabel = GUIFactory.addLabel("email:",0,80,80,30);
         addressLabel = GUIFactory.addLabel("Address:",0,120,80,30);
+        TypeLabel = GUIFactory.addLabel("Employee Type:",0,160,80,30);
 
         buttonPanel.add(userLabel);
         buttonPanel.add(passLabel);
         buttonPanel.add(emailLabel);
         buttonPanel.add(addressLabel);
+        buttonPanel.add(TypeLabel);
+
+        userType.setLocation(110, 160);
+        userType.setSize(180, 30);
+        buttonPanel.add(userType);
 
         //Make texts fields
         userField = GUIFactory.addTextField(110,0,180,30);
@@ -63,11 +76,11 @@ public class RegisterUserGUI extends Panel implements  ActionListener
         buttonPanel.add(addressField);
 
         //Make Buttons
-        cancelButton = GUIFactory.addButton("Cancel",0,160,135,30);
+        cancelButton = GUIFactory.addButton("Cancel",145,190,135,30);
         cancelButton.addActionListener(this);
         buttonPanel.add(cancelButton);
 
-        registerUserButton = GUIFactory.addButton("Register", 140,160,135,30);
+        registerUserButton = GUIFactory.addButton("Register", 0,190,135,30);
         registerUserButton.addActionListener(this);
         buttonPanel.add(registerUserButton);
 
@@ -95,27 +108,50 @@ public class RegisterUserGUI extends Panel implements  ActionListener
             String email = emailField.getText();
             String address = addressField.getText();
 
+            int count = userType.getItemCount();
+            String selectedType = (String) userType.getSelectedItem();
+            int accesslvl = 1;
+
 
             //UserFactory userFactory = new UserFactory();
-            AbstractUserFactory custFactory = FactoryProducer.getFactory("Customer");
-            assert custFactory != null;
-            I_Customer cust1 = (I_Customer) custFactory.createUser("ConcreteCustomer");
+            if(selectedType.equalsIgnoreCase("Customer")) {
+                AbstractUserFactory custFactory = FactoryProducer.getFactory("Customer");
+                I_Customer cust1 = (I_Customer) custFactory.createUser("Customer");
 
-            int accesslvl =1;
 
-            try{
-                int id = help.registerUser(userName, accesslvl, pass, email, address);
-                cust1.setName(userName);
-                cust1.setPassword(pass);
-                cust1.setEmail(email);
-                cust1.setAddress(address);
-                cust1.setID(id);
-                help.setCustomer(cust1);
-                frame.dispose();
-                panelMgr.getPanelFromFactory(2);
+                try {
+                    int id = help.registerUser(userName, accesslvl, pass, email, address);
+                    cust1.setName(userName);
+                    cust1.setPassword(pass);
+                    cust1.setEmail(email);
+                    cust1.setAddress(address);
+                    cust1.setID(id);
+                    help.setCustomer(cust1);
+                    frame.dispose();
+                    panelMgr.getPanelFromFactory(2);
+                } catch (Exception exc) {
+                    System.out.println(exc.fillInStackTrace());
+                }
             }
-            catch(Exception exc){
-                System.out.println(exc.fillInStackTrace());
+            else{
+                AbstractUserFactory empFactory = FactoryProducer.getFactory("Employee");
+                I_Employee emp1 = (I_Employee) empFactory.createUser(selectedType);
+                emp1.setType(selectedType);
+                //ConcreteEmployee emp1 = empFactory.
+                accesslvl = emp1.getaccesslvl();
+                try {
+                    int id = help.registerUser(userName, accesslvl, pass, email, address);
+                    emp1.setName(userName);
+                    emp1.setPassword(pass);
+                    emp1.setEmail(email);
+                    emp1.setAddress(address);
+                    emp1.setID(id);
+                    help.setEmployee(emp1);
+                    frame.dispose();
+                    panelMgr.getPanelFromFactory(2);
+                } catch (Exception exc) {
+                    System.out.println(exc.fillInStackTrace());
+                }
             }
 
 

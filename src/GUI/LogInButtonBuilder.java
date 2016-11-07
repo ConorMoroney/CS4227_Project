@@ -3,8 +3,8 @@ package GUI;
 /**
  * Created by colmm on 29/10/2016.
  */
-public class LogInButtonBuilder implements I_ButtonBuilder {
-
+public class LogInButtonBuilder implements I_ButtonBuilder
+{
     private final Button button;
 
     public LogInButtonBuilder()
@@ -16,27 +16,22 @@ public class LogInButtonBuilder implements I_ButtonBuilder {
     {
         button.setButtonTitle("Log In");
     }
-
     public void buildButtonXLoc()
     {
         button.setButtonXLocation(93);
     }
-
     public void buildButtonYLoc()
     {
         button.setButtonYLocation(80);
     }
-
     public void buildButtonXSize()
     {
         button.setButtonXSize(85);
     }
-
     public void buildButtonYSize()
     {
         button.setButtonYSize(30);
     }
-
     public Button getButton()
     {
         return this.button;

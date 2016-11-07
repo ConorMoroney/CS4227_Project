@@ -3,7 +3,7 @@ package User;
 /**
  * Created by Paul on 02/11/2016.
  */
-public class ManagerState implements UserState {
+public class ManagerState implements I_UserState {
     public String[] getButtonTitles(){
         return new String[] {"Generate Reports", "View Staff Details"};
     }

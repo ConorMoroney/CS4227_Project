@@ -1,5 +1,6 @@
-package GUI;
+package SAMPLE1;
 
+import GUI.*;
 import SQL.Select;
 
 import javax.swing.*;
@@ -139,8 +140,9 @@ public class LogInScreenGUI extends Panel implements  ActionListener
     public void createAndShowGUI()
     {
         //Create and set up the content pane.
-        frame = GUIFactory.makeFrame("Log In Screen", 305, 165);
-        frame.setContentPane(this.createContentPane());
+        //frame = GUIFactory.makeFrame("Log In Screen", 305, 165);
+        //frame.setContentPane(this.createContentPane());
+        this.createContentPane();
     }
 
     private void register(){}//Decorator Pattern to be implemented here

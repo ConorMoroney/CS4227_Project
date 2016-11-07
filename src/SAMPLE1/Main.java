@@ -1,7 +1,6 @@
 package SAMPLE1;
 
 import GUI.ActionListenerSuper;
-import GUI.LogInScreenGUI;
 import Java.ConcreteFramework;
 import Java.ConcreteInterceptor;
 import Database.*;

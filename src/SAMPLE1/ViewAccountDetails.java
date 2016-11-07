@@ -1,5 +1,7 @@
-package GUI;
+package SAMPLE1;
 
+import GUI.Panel;
+import GUI.PanelManager;
 import SQL.Connect;
 
 import javax.swing.*;

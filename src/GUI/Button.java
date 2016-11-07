@@ -3,15 +3,13 @@ package GUI;
 /**
  * Created by colmm on 29/10/2016.
  */
-public class Button implements I_ButtonPlan {
-
+public class Button implements I_ButtonPlan
+{
     private String buttonTitle;
     private int buttonXLoc;
     private int buttonYLoc;
     private int buttonXSize;
     private int buttonYSize;
-
-
 
     @Override
     public void setButtonTitle(String title) {

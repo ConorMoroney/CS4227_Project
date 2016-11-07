@@ -6,9 +6,9 @@ package User;
 public class CustomerFactory extends AbstractUserFactory {
     @Override
     public ConcreteCustomer createUser(String userType) {
-        String[] concreteUserTypes = {"customer"};
+        String[] concreteUserTypes = {"Customer"};
         for (String s : concreteUserTypes) {
-            if ("ConcreteCustomer".equalsIgnoreCase(userType)) {
+            if ("Customer".equalsIgnoreCase(userType)) {
                 return new ConcreteCustomer();
             }
         }

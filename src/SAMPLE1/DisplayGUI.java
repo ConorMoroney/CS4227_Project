@@ -1,6 +1,10 @@
-package GUI;
+package SAMPLE1;
 
+import GUI.GUIFactory;
+import GUI.Panel;
+import GUI.PanelManager;
 import Java.*;
+import SAMPLE1.RegisterProductGUI;
 
 import java.awt.event.*;
 import javax.swing.*;

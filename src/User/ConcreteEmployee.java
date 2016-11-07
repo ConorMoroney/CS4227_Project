@@ -11,11 +11,8 @@ public class ConcreteEmployee implements I_Employee{
     private String email;
     private String address;
     private int accesslvl;
-    private int customer = 1;
-    private int warehouse = 2;
-    private int logistics = 3;
-    private int manager = 4;
-    private UserState state;
+    private String [] concreteTypes = {"Warehouse", "Logistics", "Manager"};
+    private I_UserState state;
 
     public ConcreteEmployee(int ID, String user, int access, String pass, String mail, String add){
         id = ID;
@@ -30,17 +27,18 @@ public class ConcreteEmployee implements I_Employee{
 
     }
 
+    @Override
+    public void setType(String type) {
+        for (int i = 0; i < concreteTypes.length; i++) {
+            if (type.equalsIgnoreCase(concreteTypes[i])) {
+                accesslvl = i + 2;
+            }
+        }
+    }
+
     public void setName(String name) {
         // TODO Auto-generated method stub
         this.name = name;
-
-    }
-
-    @Override
-    public void setType(String type) {
-        accesslvl=1;
-        //Make this a dropdown pls
-        //Set of variable - each variable sets access lvl
 
     }
 

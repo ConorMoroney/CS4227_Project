@@ -10,13 +10,13 @@ public class Helper {
     private static Helper help = new Helper();
     private I_Customer cust;
     private I_Employee emp;
-    private UserState state;
+    private I_UserState state;
 
     private Helper(){
 
     }
 
-    public UserState getUserState(){
+    public I_UserState getUserState(){
         return state;
     }
 
@@ -97,5 +97,10 @@ public class Helper {
         c.setaccesslvl(getAccessLevel(c.getName()));
         cust = c;
         setUserState(cust.getaccesslvl());
+    }
+
+    public void setEmployee(I_Employee em){
+        emp = em;
+        setUserState(emp.getaccesslvl());
     }
 }

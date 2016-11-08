@@ -1,37 +1,53 @@
 package SAMPLE1;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import GUI.GUIFactory;
-
-import java.sql.*;
-import SQL.*;
+import GUI.Panel;
+import GUI.PanelManager;
+import User.I_Customer;
 import User.*;
 
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class RegisterUserGUI implements  ActionListener
-{
-	private final String [] userTypes = {"Manager", "Logistics" , "Warehouse" , "Customer"};
-	private JPanel buttonPanel;
-    private JButton cancelButton, registerUserButton;
-	private JLabel TypeLabel, userLabel, passLabel, emailLabel, addressLabel;
-	private final JComboBox userType = new JComboBox(userTypes);
-	private JTextField userField, passField, emailField, addressField;
-	private static JFrame frame = new JFrame("Register Employee Screen");
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
-    private JPanel createContentPane()
-	{
+public class RegisterUserGUI extends Panel implements  ActionListener
+{
+    JPanel buttonPanel;
+    JButton cancelButton, registerUserButton;
+    private final String [] userTypes = {"Manager", "Logistics" , "Warehouse" , "Customer"};
+    JLabel userLabel,TypeLabel, passLabel, emailLabel, addressLabel;
+    private final JComboBox userType = new JComboBox(userTypes);
+    JTextField userField,passField, emailField, addressField;
+    static JFrame frame = new JFrame("Register new User Screen");
+
+    public RegisterUserGUI(){
+        this.panel = new JPanel();
+        createAndShowGUI();
+    }
+    public JPanel createContentPane()
+    {
         //Make bottom JPanel to place buttonPanel on
-        JPanel totalGUI = new JPanel();
-        totalGUI.setLayout(null);
+        //this.panel.setLayout(null);
+        this.panel.setLayout(new BoxLayout(this.panel, BoxLayout.X_AXIS));
 
         //Make Button Panel
-        buttonPanel = GUIFactory.addButtonPanel(10,10,295,485);
-        totalGUI.add(buttonPanel);
+        buttonPanel = new JPanel();
+        buttonPanel.setLayout(null);
+        buttonPanel.setLocation(10, 10);
+        buttonPanel.setSize(295, 485);
 
-		//Make Labels
+        this.panel.add(buttonPanel);
+
+        //Make Labels
         userLabel = GUIFactory.addLabel("Username:",0,0,80,30);
         passLabel = GUIFactory.addLabel("Password:",0,40,80,30);
         emailLabel = GUIFactory.addLabel("email:",0,80,80,30);
@@ -44,7 +60,11 @@ public class RegisterUserGUI implements  ActionListener
         buttonPanel.add(addressLabel);
         buttonPanel.add(TypeLabel);
 
-		//Make texts fields
+        userType.setLocation(110, 160);
+        userType.setSize(180, 30);
+        buttonPanel.add(userType);
+
+        //Make texts fields
         userField = GUIFactory.addTextField(110,0,180,30);
         passField = GUIFactory.addPasswordField(110,40,180,30);
         emailField = GUIFactory.addTextField(110,80,180,30);
@@ -54,121 +74,110 @@ public class RegisterUserGUI implements  ActionListener
         buttonPanel.add(passField);
         buttonPanel.add(emailField);
         buttonPanel.add(addressField);
-        
-        userType.setLocation(110, 160);
-        userType.setSize(180, 30);
-        buttonPanel.add(userType);
 
-		//Make Buttons
-        cancelButton = GUIFactory.addButton("Cancel",0,200,135,30);
+        //Make Buttons
+        cancelButton = GUIFactory.addButton("Cancel",145,190,135,30);
         cancelButton.addActionListener(this);
         buttonPanel.add(cancelButton);
 
-        registerUserButton = GUIFactory.addButton("Register",160,200,135,30);
+        registerUserButton = GUIFactory.addButton("Register", 0,190,135,30);
         registerUserButton.addActionListener(this);
         buttonPanel.add(registerUserButton);
-        
-        totalGUI.setVisible(true);
-        return totalGUI;
+
+        this.panel.setVisible(true);
+        return this.panel;
     }
 
     public void actionPerformed(ActionEvent e)
-	{
-        Main.actionListener.actionPerformed(e);
+    {
         if(e.getSource() == cancelButton)
         {
-        	frame.dispose();
+            panelMgr.getPanelFromFactory(1);
         }
-        
+
         else if(e.getSource() == registerUserButton)
         {
-			//do shit in here
-        	if(userField.getText().equals("") ||passField.getText().equals("") ||emailField.getText().equals("") ||addressField.getText().equals("") ){
-        		JOptionPane.showMessageDialog(null,"There is a null field" );
-        		return;
-        	}
-            int id = 1;
-        	int accesslvl=1;
-        	String userName = userField.getText();
-        	String pass = passField.getText();
-        	String email = emailField.getText();
-        	String address = addressField.getText();
+            //do shit in here
+            if(userField.getText().equals("") ||passField.getText().equals("") ||emailField.getText().equals("") ||addressField.getText().equals("") ){
+                JOptionPane.showMessageDialog(null,"There is a null field" );
+                return;
+            }
 
-
-
+            String userName = userField.getText();
+            String pass = passField.getText();
+            String email = emailField.getText();
+            String address = addressField.getText();
 
             int count = userType.getItemCount();
             String selectedType = (String) userType.getSelectedItem();
+            int accesslvl = 1;
 
-            if(selectedType.equalsIgnoreCase("Customer")){
+
+            //UserFactory userFactory = new UserFactory();
+            if(selectedType.equalsIgnoreCase("Customer")) {
                 AbstractUserFactory custFactory = FactoryProducer.getFactory("Customer");
                 I_Customer cust1 = (I_Customer) custFactory.createUser("Customer");
 
 
-                cust1.setName(userName);
-                cust1.setPassword(pass);
-                cust1.setEmail(email);
-                cust1.setAddress(address);
-                cust1.setID(id);
+                try {
+                    int id = help.registerUser(userName, accesslvl, pass, email, address);
+                    cust1.setName(userName);
+                    cust1.setPassword(pass);
+                    cust1.setEmail(email);
+                    cust1.setAddress(address);
+                    cust1.setID(id);
+                    help.setCustomer(cust1);
+                    frame.dispose();
+                    panelMgr.getPanelFromFactory(2);
+                } catch (Exception exc) {
+                    System.out.println(exc.fillInStackTrace());
+                }
             }
-            else {
+            else{
                 AbstractUserFactory empFactory = FactoryProducer.getFactory("Employee");
                 I_Employee emp1 = (I_Employee) empFactory.createUser(selectedType);
                 emp1.setType(selectedType);
                 //ConcreteEmployee emp1 = empFactory.
                 accesslvl = emp1.getaccesslvl();
-                emp1.setName(userName);
-                emp1.setPassword(pass);
-                emp1.setEmail(email);
-                emp1.setAddress(address);
-                emp1.setID(id);
-
-            }
-
-
-
-    		
-    		try
-            {
-                //Connect c = new Connect();
-                Select s = new Select("*", "users");
-                ResultSet myRe = s.getResultset();
-
-                while (myRe.next()) {
-                    id++;
+                try {
+                    int id = help.registerUser(userName, accesslvl, pass, email, address);
+                    emp1.setName(userName);
+                    emp1.setPassword(pass);
+                    emp1.setEmail(email);
+                    emp1.setAddress(address);
+                    emp1.setID(id);
+                    help.setEmployee(emp1);
+                    frame.dispose();
+                    panelMgr.getPanelFromFactory(2);
+                } catch (Exception exc) {
+                    System.out.println(exc.fillInStackTrace());
                 }
-            }
-
-            catch(Exception exc)
-            {
-                System.out.println("Error cant connect to database");
-            }
-
-            try
-            {
-
-                Insert i =new Insert();
-                i.CreateUserInsert(userName,accesslvl,pass,email,address,i.getConnection());
-            }
-            catch(Exception exc)
-            {
-                System.out.println("Error Insert Failed ??? ");
             }
 
 
         }
+
     }
 
-    private static void createAndShowGUI()
-	{
+    private void createAndShowGUI()
+    {
         //Create and set up the content pane.
-        RegisterUserGUI window = new RegisterUserGUI();
-        frame = GUIFactory.makeFrame("Register Employee", 345, 290);
-        frame.setContentPane(window.createContentPane());
+        frame = GUIFactory.makeFrame("Register User", 325, 250);
+        frame.setContentPane(this.createContentPane());
+
     }
 
-    public static void main(String[] args)
-	{
-        SwingUtilities.invokeLater(RegisterUserGUI::createAndShowGUI);
+    @Override
+    public JPanel sendToWindow()
+    {
+        return this.panel;
     }
+
+    @Override
+    public void setPanelManager(PanelManager pm)
+    {
+        this.panelMgr = pm;
+    }
+
+
 }

@@ -8,20 +8,24 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
 
-public class LogInScreenGUI implements ActionListener
+public class LogInScreenGUI extends Panel implements  ActionListener
 {
-    private JPanel buttonPanel;
-    private JButton exitButton, logInButton, registerButton;
-	private JLabel userNameLabel, passwordLabel;
-	private JTextField userNameTextField;
-	private JPasswordField passwordTextField;
-	private final JPanel totalGUI = new JPanel();
-	private static JFrame frame = new JFrame("Log In Screen");
+    JPanel buttonPanel;
+    JButton exitButton, logInButton, registerButton;
+    JLabel userNameLabel, passwordLabel;
+    JTextField userNameTextField;
+    JPasswordField passwordTextField;
+    static JFrame frame = new JFrame("Log In Screen");
 
+    public LogInScreenGUI(){
+        this.panel = new JPanel();
+        createAndShowGUI();
+    }
     public JPanel createContentPane()
-	{
+    {
         //Make bottom JPanel to place buttonPanel on
-        totalGUI.setLayout(null);
+        //JPanel totalGUI = new JPanel();
+        this.panel.setLayout(null);
 
         buttonPanel = GUIFactory.addButtonPanel(10,10,295,185);
         userNameLabel = GUIFactory.addLabel("Username:",0,0,80,30);
@@ -29,17 +33,17 @@ public class LogInScreenGUI implements ActionListener
         userNameTextField = GUIFactory.addTextField(90,0,180,30);
         passwordTextField = GUIFactory.addPasswordField(90,40,180,30);
 
-        totalGUI.add(buttonPanel);
+        this.panel.add(buttonPanel);
         buttonPanel.add(userNameLabel);
         buttonPanel.add(passwordLabel);
         buttonPanel.add(userNameTextField);
         buttonPanel.add(passwordTextField);
 
-        /***
-         Below shows the 3 different ways of making buttons.
-         The exit button uses a builder to create a blank button and fills in the details.
-         The LogInButton creates the button from the LogInButtonBuilder
-         and the Register Button uses a regular Creation Method.
+        /****
+         *  Below shows the 3 different ways of making buttons.
+         *  The exit button uses a builder to create a blank button and fills in the details.
+         *  The LogInButton creates the button from the LogInButtonBuilder
+         *  and the Register Button uses a regular Creation Method.
          */
         //Builder for LogInButton
         I_ButtonBuilder button = new LogInButtonBuilder();
@@ -75,91 +79,83 @@ public class LogInScreenGUI implements ActionListener
         registerButton.addActionListener(this);
         buttonPanel.add(registerButton);
 
-        totalGUI.setVisible(true);
-        return totalGUI;
-
+        this.panel.setVisible(true);
+        return this.panel;
     }
 
     public void actionPerformed(ActionEvent e)
     {
         if(e.getSource() == exitButton)
         {
-			System.exit(0);
-			JOptionPane.showMessageDialog(null, "Register Course Director Window");
+            System.exit(0);
+            JOptionPane.showMessageDialog(null, "Register Course Director Window");
         }
-        
+
         else if(e.getSource() == registerButton)
         {
-
-            RegisterUserGUI.main(null);
+            frame.dispose();
+            panelMgr.getPanelFromFactory(3);
         }
-		
+
         else if(e.getSource() == logInButton)
         {
 
-			//declare variables for username and password
-			String userName = userNameTextField.getText();
-            //noinspection deprecation
+            //declare variables for username and password
+            String userName = userNameTextField.getText();
             String password = passwordTextField.getText();
 
-			//check if username and password exist
-			try
-			{
-    			String dbUser = "";
-    			String dbPass = "";
-                //uncomment after testing
+            /*
+                TODO
+                Change code below to not have any SQL, use function calls.
+             */
 
-                Select s = new Select("*","users","username",userName);
-                ResultSet myRe = s.getResultset();
-                System.out.print(myRe);
+            //Random JOptionPane that shows username and password.
+            //JOptionPane.showMessageDialog(null, userName + " " + password);
 
-    			String[] line = new String [2];
-
-    			//get db data
-    			while (myRe.next()){
-    			    dbUser = myRe.getString(2);
-    				dbPass = myRe.getString(4);
-
-    				line[0] = myRe.getString(2);
-    				line[1] = myRe.getString(3);
-    			}
-
-    			//If Java.user/pass match, log in.
-    			if (dbPass.equals(password)){
-                    Main.actionListener.setUserName(dbUser);
-    				frame.setVisible(false);
-    				DisplayGUI.main(line);
-    			}
+            //check if username and password exist
+            try
+            {
+                if(help.canUserLogin(userName, password)){
+                    if(help.getAccessLevel(userName) == 1){
+                        help.getCustomerDetails(userName);
+                    }
+                    else{
+                        help.getEmployeeDetails(userName);
+                    }
+                    frame.setVisible(false);
+                    frame.dispose();
+                    panelMgr.getPanelFromFactory(2);
+                }
             }
 
-			catch(Exception exc)
-			{
-                System.out.println("Exception");
+            catch(Exception exc)
+            {
+                System.out.println(exc.fillInStackTrace());
                 System.exit(0);
             }
         }
-        Main.actionListener.actionPerformed(e);
 
     }
 
-    private static void createAndShowGUI()
-	{
+    public void createAndShowGUI()
+    {
         //Create and set up the content pane.
-        LogInScreenGUI window = new LogInScreenGUI();
-        frame = GUIFactory.makeFrame("Log In Screen", 305, 165);
-        frame.setContentPane(window.createContentPane());
+        //frame = GUIFactory.makeFrame("Log In Screen", 305, 165);
+        //frame.setContentPane(this.createContentPane());
+        this.createContentPane();
     }
 
-    public static void main(String[] args)
-	{
-        SwingUtilities.invokeLater(new Runnable() 
-		{
-            public void run() 
-			{
-                createAndShowGUI();
-            }
-        });
-    }
-    
     private void register(){}//Decorator Pattern to be implemented here
+
+    @Override
+    public JPanel sendToWindow()
+    {
+        return this.panel;
+    }
+
+    @Override
+    public void setPanelManager(PanelManager pm)
+    {
+        this.panelMgr = pm;
+    }
 }

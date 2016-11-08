@@ -7,26 +7,38 @@ public class ConcreteEmployee implements I_Employee{
 
     private String name;
     private int id;
+    private String password;
+    private String email;
+    private String address;
+    private int accesslvl;
     private String [] concreteTypes = {"Warehouse", "Logistics", "Manager"};
-    //Customer access level will always be the lowest
-    //The higher the index in the concreteTypesArray the higher the access level
-    private int accesslvl= 0;
-    public void setName(String name) {
-        // TODO Auto-generated method stub
-        this.name = name;
+    private I_UserState state;
+
+    public ConcreteEmployee(int ID, String user, int access, String pass, String mail, String add){
+        id = ID;
+        name = user;
+        accesslvl = access;
+        password = pass;
+        email = mail;
+        address = add;
+    }
+
+    public ConcreteEmployee(){
 
     }
 
     @Override
     public void setType(String type) {
-        for(int i = 0; i<concreteTypes.length;i++){
-            if (type.equalsIgnoreCase(concreteTypes[i])){
-                accesslvl = i+2;
+        for (int i = 0; i < concreteTypes.length; i++) {
+            if (type.equalsIgnoreCase(concreteTypes[i])) {
+                accesslvl = i + 2;
             }
         }
+    }
 
-        //Make this a dropdown pls
-        //Set of variable - each variable sets access lvl
+    public void setName(String name) {
+        // TODO Auto-generated method stub
+        this.name = name;
 
     }
 
@@ -78,3 +90,6 @@ public class ConcreteEmployee implements I_Employee{
     public String getAddress() {
         return address;
     }
+
+
+}

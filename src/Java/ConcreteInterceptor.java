@@ -1,6 +1,13 @@
 package Java;
 
 import java.awt.event.ActionEvent;
+import SQL.Insert;
+
+import java.awt.event.ActionEvent;
+
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 /**
  * Created by Conor on 28-Oct-16.
@@ -65,7 +72,7 @@ public class ConcreteInterceptor  implements I_Interceptor{
         Insert i = null;
         try {
             i = new Insert();
-        } catch (ClassNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         i.CreateLogInsert(LogText,i.getConnection());

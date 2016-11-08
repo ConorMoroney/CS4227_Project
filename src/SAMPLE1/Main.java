@@ -16,7 +16,7 @@ public class Main {
 		DatabaseAccess dba = DatabaseAccess.getInstance();
 		dba.setDbConn(dbConn);
 		try {
-			dba.connect("jdbc:sqlserver://localhost:49799;database=creationary;integratedSecurity=true;");
+			dba.connect("jdbc:sqlserver://localhost;database=Creationary;integratedSecurity=true;");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

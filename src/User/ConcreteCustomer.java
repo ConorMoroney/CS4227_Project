@@ -9,8 +9,8 @@ public class ConcreteCustomer implements Observer, I_Customer {
     private String password;
     private String email;
     private String address;
-    //Customer access level will always be lowest (1)
-    private int accessLevel;
+    private int accesslvl =1;
+    private I_UserState state;
 
     public ConcreteCustomer(int ID, String user, int access, String pass, String mail, String add){
         id = ID;
@@ -22,7 +22,7 @@ public class ConcreteCustomer implements Observer, I_Customer {
     }
 
     public ConcreteCustomer() {
-
+        accesslvl = 1;
     }
 
 

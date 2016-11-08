@@ -1,0 +1,85 @@
+[No User] Register;1478458642702
+[No User] Cancel;1478458646067
+[Customer] Log In;1478459080657
+[No User] Register;1478459317237
+[No User] Register;1478459328402
+[No User] Cancel;1478459332394
+[No User] Register;1478459825660
+[No User] Register;1478460135420
+[No User] Register;1478460725563
+[No User] Register;1478460737680
+[No User] Register;1478460739896
+[No User] Cancel;1478460745720
+[No User] Register;1478460757828
+[No User] Register;1478460771992
+[No User] Register;1478460835092
+[No User] Register;1478460845355
+[No User] Register;1478460853880
+[No User] Register;1478460856480
+[No User] Cancel;1478460901897
+[No User] Register;1478460993483
+[No User] Register;1478460999841
+[No User] Cancel;1478461002712
+[No User] Register;1478461068211
+[No User] Register;1478461075327
+[No User] Cancel;1478461077928
+[No User] Register;1478461183522
+[No User] Register;1478461194328
+[No User] Cancel;1478461205928
+[No User] Register;1478461322650
+[No User] Register;1478461331824
+[No User] Register;1478461386011
+[No User] Register;1478461393167
+[No User] Register;1478461500330
+[No User] Register;1478461505919
+[No User] Register;1478461617858
+[No User] Register;1478461637402
+[No User] Register;1478461643575
+[No User] Register;1478461651847
+[No User] Register;1478461654367
+[Customer] Log In;1478462015458
+[Customer] View Account Details;1478462017807
+[Customer] Exit;1478462088367
+[Customer] Log In;1478462184908
+[Customer] View Account Details;1478462234318
+[Customer] View Account Details;1478462251118
+[Customer] Buy Product;1478462257950
+[Customer] Log In;1478462738167
+[Customer] Buy Product;1478462739286
+[Customer] Purchase;1478462742389
+[Customer] Purchase;1478462767821
+[Customer] Exit;1478462795517
+[No User] Log In;1478463244541
+[Customer] Log In;1478463249315
+[Customer] Exit;1478463250476
+[Customer] Log In;1478463339931
+[Customer] Exit;1478463340724
+[No User] Exit;1478463832798
+[No User] Exit;1478463835236
+[No User] Exit;1478463836956
+[No User] Exit;1478463837173
+[No User] Exit;1478463837405
+[No User] Exit;1478464157302
+[No User] Exit;1478464204278
+[No User] Log In;1478464246693
+[No User] Register;1478464273061
+[No User] Register;1478464422895
+[No User] Register;1478464442307
+[No User] Cancel;1478464461171
+[Customer] Log In;1478464708872
+[Customer] View Account Details;1478464715083
+[Customer] Buy Product;1478464717243
+[Customer] Purchase;1478464730115
+[Customer] Exit;1478464732403
+[Customer] Log In;1478465224968
+[Customer] View Account Details;1478465225762
+[Customer] Exit;1478465231186
+[Customer] Log In;1478465761888
+[Customer] View Account Details;1478465763313
+[Customer] Exit;1478465766713
+[Manager] Log In;1478466804989
+[Manager] Generate Reports;1478466805807
+[Manager] Log In;1478466842329
+[Manager] Exit;1478466851416
+[Manager] Log In;1478466936333
+[Customer] Log In;1478467019147

@@ -9,10 +9,8 @@ public class Insert {
 
     private Connection con;
 
-    public Insert() throws ClassNotFoundException
+    public Insert()
     {
-        Connect c = new Connect();
-        con = c.getconnection();
     }
 
     /**************
@@ -20,15 +18,16 @@ public class Insert {
      *
      * *************/
 
-    public void CreateUserInsert( String username , int accesslvl , String password , String email , String address , Connection con)
+    public int CreateUserInsert( String username , int accesslvl , String password , String email , String address , Connection con)
     {
         String table = "users";
-        int id = getMaxId(table);                           //THIS IS RETURNING 0
+        this.con = con;
+        int id = getMaxId(table);
+        if (id > 0) {
+            try {
+                id++;
 
-        if (id > 0)
-        {
-            try
-            {
+
                 String SQL = "INSERT INTO [dbo].[users]([idusers],[username],[accesslvl],[password],[email],[address])VALUES"
                         + "(?,?,?,?,?,?)";
                 PreparedStatement preparedStmt = con.prepareStatement(SQL);
@@ -40,16 +39,16 @@ public class Insert {
                 preparedStmt.setString(6, address);
                 System.out.print(SQL);
                 preparedStmt.executeUpdate();
-            }
-            catch (SQLException e)
-            {
+                return id; // return id of new user if successful
+
+
+            } catch (SQLException e) {
                 // TODO Auto-generated catch block
                 System.out.println("Connection failed");
-                System.out.println(e.getMessage());
+                System.out.println(e.fillInStackTrace());
             }
         }
-        else
-            System.out.println("Error : Max Id returned 0 ");
+        return -1; //return -1 if unsuccessful
     }
 
     public void CreateLogInsert( String entryLog , Connection con)
@@ -122,7 +121,7 @@ public class Insert {
             column = "iditems";
         else if ( table.equalsIgnoreCase("LogTable"))
             column = "EntryId";
-        SelectMax s = new SelectMax(column,table);
+        SelectMax s = new SelectMax(column,table, con);
         ResultSet r = s.getResultset();
         return s.getMax(r)+ 1;
     }

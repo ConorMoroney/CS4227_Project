@@ -17,11 +17,11 @@ class Test {
         Insert i =new Insert();
         i.CreateLogInsert("Test Log Entry", i.getConnection());
 
-        Select s = new Select("*","LogTable");
+        Select s = new Select("*","LogTable",i.getConnection());
         ResultSet r = s.getResultset();
         s.printSQL(r);
 
-        SelectMax m = new SelectMax("idusers", "users");
+        SelectMax m = new SelectMax("idusers", "users", i.getConnection());
         r = m.getResultset();
         s.printSQL(r);
 

@@ -1,13 +1,6 @@
 package Java;
 
-import SQL.Insert;
-
 import java.awt.event.ActionEvent;
-
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.io.IOException;
-
 
 /**
  * Created by Conor on 28-Oct-16.
@@ -18,7 +11,7 @@ public class ConcreteInterceptor  implements I_Interceptor{
     @Override
     public void InterceptorMethod1(Context context) {
         /* Put implementation here */
-        ActionEvent event = context.getValue();
+      ActionEvent event = context.getValue();
 
         String output = "The " + event.getActionCommand() + " Button was pressed";
         //System.out.println(output);

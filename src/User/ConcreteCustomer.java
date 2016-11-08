@@ -12,6 +12,14 @@ public class ConcreteCustomer implements Observer, I_Customer {
     //Customer access level will always be lowest (1)
     private int accessLevel;
 
+    public ConcreteCustomer(int ID, String user, int access, String pass, String mail, String add){
+        id = ID;
+        name = user;
+        accesslvl = access;
+        password = pass;
+        email = mail;
+        address = add;
+    }
 
     public ConcreteCustomer() {
 
@@ -22,6 +30,11 @@ public class ConcreteCustomer implements Observer, I_Customer {
     public void setName(String name) {
         // TODO Auto-generated method stub
         this.name = name;
+    }
+
+    @Override
+    public void setType(String type) {
+
     }
 
     @Override
@@ -52,7 +65,7 @@ public class ConcreteCustomer implements Observer, I_Customer {
     @Override
     public int getaccesslvl() {
         // TODO Auto-generated method stub
-        return 1;
+        return accesslvl;
     }
     public String getName() {
         // TODO Auto-generated method stub
@@ -84,5 +97,10 @@ public class ConcreteCustomer implements Observer, I_Customer {
 
     public String getname() {
         return name;
+    }
+
+    @Override
+    public void setaccesslvl(int a){
+        accesslvl = a;
     }
 }

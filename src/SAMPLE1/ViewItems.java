@@ -2,7 +2,6 @@ package SAMPLE1;
 
 import Java.QtyGrabber;
 import SQL.Connect;
-import SQL.Select;
 import User.ConcreteCustomer;
 
 import javax.swing.*;
@@ -70,6 +69,7 @@ public class ViewItems implements  ActionListener
 		Object[] listData = new Object[i];
 		int[] quantities = new int[i];
 		i = 0;
+		/*
 		try
 		{
 			//get array of names/quantities
@@ -176,7 +176,7 @@ public class ViewItems implements  ActionListener
 		{
 			System.out.println("Error");
 		}
-
+*/
 		return totalGUI;
 	}
 	

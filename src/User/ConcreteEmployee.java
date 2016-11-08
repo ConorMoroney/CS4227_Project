@@ -3,7 +3,7 @@ package User;
 /**
  * Created by shane on 21-Oct-16.
  */
-class ConcreteEmployee implements I_Employee{
+public class ConcreteEmployee implements I_Employee{
 
     private String name;
     private int id;
@@ -39,19 +39,19 @@ class ConcreteEmployee implements I_Employee{
     @Override
     public void setPassword(String password) {
         // TODO Auto-generated method stub
-        String password1 = password;
+        this.password = password;
     }
 
     @Override
     public void setEmail(String email) {
         // TODO Auto-generated method stub
-        String email1 = email;
+        this.email = email;
     }
 
     @Override
     public void setAddress(String address) {
         // TODO Auto-generated method stub
-        String address1 = address;
+        this.address = address;
     }
 
     @Override
@@ -59,14 +59,22 @@ class ConcreteEmployee implements I_Employee{
         return accesslvl;
     }
 
-
-    public int getId() {
+    @Override
+    public int getID() {
         return id;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
+    public String getEmail() {
+        return email;
+    }
 
-}
+    @Override
+    public String getAddress() {
+        return address;
+    }

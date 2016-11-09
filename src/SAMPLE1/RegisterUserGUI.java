@@ -89,6 +89,7 @@ public class RegisterUserGUI extends Panel implements  ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
+        Main.actionListener.actionPerformed(e);
         if(e.getSource() == cancelButton)
         {
             panelMgr.getPanelFromFactory(1);
@@ -96,7 +97,7 @@ public class RegisterUserGUI extends Panel implements  ActionListener
 
         else if(e.getSource() == registerUserButton)
         {
-            //do shit in here
+
             if(userField.getText().equals("") ||passField.getText().equals("") ||emailField.getText().equals("") ||addressField.getText().equals("") ){
                 JOptionPane.showMessageDialog(null,"There is a null field" );
                 return;

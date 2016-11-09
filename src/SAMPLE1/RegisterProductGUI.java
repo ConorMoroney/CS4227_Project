@@ -72,6 +72,7 @@ class RegisterProductGUI implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        Main.actionListener.actionPerformed(e);
         if (e.getSource() == cancelButton) {
             //frame.setVisible(false);
             frame.dispose();

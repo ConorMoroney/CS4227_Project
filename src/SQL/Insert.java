@@ -95,6 +95,7 @@ public class Insert {
                 System.out.println(e.getMessage());
             }
         }
+        return -1; //return -1 if unsuccessful
     }
 
 

@@ -18,6 +18,7 @@ public interface I_Database {
     public I_Customer getCustomerDetails(String username);
     public I_Employee getEmployeeDetails(String username);
     public int registerUser(String userName, int accesslvl, String pass, String email, String address);
+    public int addLog(String logText);
     public int getLastID();
     public int getAccessLevel(String user);
     public ArrayList<String> getStaffDetails();

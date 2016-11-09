@@ -83,3 +83,19 @@
 [Manager] Exit;1478466851416
 [Manager] Log In;1478466936333
 [Customer] Log In;1478467019147
+[No User] Exit;1478705158665
+[Customer] Log In;1478711131628
+[Customer] Log In;1478711195361
+[Customer] Exit;1478711203584
+[Customer] Exit;1478711245312
+[Customer] Exit;1478711262009
+[Customer] Log In;1478711313983
+[Customer] Log In;1478711320341
+[Customer] View Account Details;1478711326297
+[Customer] Exit;1478711329690
+[Customer] Exit;1478711331240
+[Logistics] Log In;1478711391875
+[Logistics] View Orders;1478711397648
+[Logistics] Exit;1478711402384
+[Logistics] Update Product Stock;1478711406560
+[Logistics] Exit;1478711419224

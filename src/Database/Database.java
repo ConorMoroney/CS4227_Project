@@ -121,6 +121,12 @@ public class Database implements I_Database {
             return i.CreateUserInsert(userName, accesslvl, pass, email, address, con);
     }
 
+    public int addLog(String LogText){
+        Insert i = new Insert();
+        return i.CreateLogInsert(LogText,con);
+    }
+
+
     @Override
     public int getLastID(){
         try{

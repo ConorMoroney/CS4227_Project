@@ -1,6 +1,8 @@
 package Java;
 
 import java.awt.event.ActionEvent;
+
+import SQL.Connect;
 import SQL.Insert;
 
 import java.awt.event.ActionEvent;
@@ -8,6 +10,9 @@ import java.awt.event.ActionEvent;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+
+import static Database.DatabaseAccess.dba;
+import static GUI.Helper.help;
 
 /**
  * Created by Conor on 28-Oct-16.
@@ -68,14 +73,12 @@ public class ConcreteInterceptor  implements I_Interceptor{
     private void addLogToDB(String action) throws IOException
     {
         String LogText = "["+user+"] "+action+ " button was pressed;";
-        //SQL.Insert();
-        Insert i = null;
         try {
-            i = new Insert();
+            dba.addLog(LogText);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        i.CreateLogInsert(LogText,i.getConnection());
+
 
     }
     private boolean compareFileToDB()

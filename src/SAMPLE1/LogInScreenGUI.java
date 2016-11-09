@@ -122,6 +122,7 @@ public class LogInScreenGUI extends Panel implements  ActionListener
                     }
                     panelMgr.getPanelFromFactory(2);
                 }
+                Main.actionListener.setUserName(userName);
             }
 
             catch(Exception exc)
@@ -130,6 +131,8 @@ public class LogInScreenGUI extends Panel implements  ActionListener
                 System.exit(0);
             }
         }
+        Main.actionListener.actionPerformed(e);
+
     }
 
     public void createAndShowGUI()

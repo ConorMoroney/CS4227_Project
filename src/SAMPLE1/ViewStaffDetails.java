@@ -60,6 +60,7 @@ public class ViewStaffDetails extends Panel implements  ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
+        Main.actionListener.actionPerformed(e);
         if(e.getSource() == exitButton)
         {
             panelMgr.getPanelFromFactory(2);

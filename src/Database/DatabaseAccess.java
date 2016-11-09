@@ -12,7 +12,7 @@ import Java.I_Product;
 
 public class DatabaseAccess implements I_Database {
     private I_Database dbconn;
-    private static DatabaseAccess dba = new DatabaseAccess();
+    public static DatabaseAccess dba = new DatabaseAccess();
 
     private DatabaseAccess(){
 
@@ -95,5 +95,10 @@ public class DatabaseAccess implements I_Database {
     @Override
     public ArrayList<String> getOrders(){
         return dbconn.getOrders();
+    }
+
+    @Override
+    public int addLog(String Logtable) {
+        return dbconn.addLog(Logtable);
     }
 }

@@ -7,7 +7,7 @@ import Database.DatabaseAccess;
  */
 public class Helper {
     private static DatabaseAccess dba = DatabaseAccess.getInstance();
-    private static Helper help = new Helper();
+    public static Helper help = new Helper();
     private I_Customer cust;
     private I_Employee emp;
     private I_UserState state;

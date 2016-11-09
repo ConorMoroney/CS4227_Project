@@ -65,6 +65,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		Main.actionListener.actionPerformed(e);
 		// this makes sure the button you are pressing is the button variable
 		if(e.getSource() == remaingModulesButton) {
 			System.out.println("Button clicked");

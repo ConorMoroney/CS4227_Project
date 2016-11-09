@@ -53,6 +53,7 @@ public class Insert {
 
     public boolean CreateOrderInsert(String name,  int quantity, String customer, Connection con){
         String table = "orderqueue";
+        this.con = con;
         try
             {
                 String SQL = "INSERT INTO [dbo].[orderqueue]([name],[quantity],[customer]) VALUES" +
@@ -73,9 +74,10 @@ public class Insert {
         return false;
     }
 
-    public void CreateLogInsert( String entryLog , Connection con)
+    public int CreateLogInsert( String entryLog , Connection con)
     {
         String table = "LogTable";
+        this.con = con;
         int id = getMaxId(table);
         if (id > 0) {
             try
@@ -103,6 +105,7 @@ public class Insert {
     public void CreateProductInsert( String type , String name , String description, float price, float weight,int quanitiy , Connection con)
     {
         String table = "items";
+        this.con = con;
         int id = getMaxId(table);
         if (id > 0) {
         try

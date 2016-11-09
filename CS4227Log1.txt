@@ -99,3 +99,15 @@
 [Logistics] Exit;1478711402384
 [Logistics] Update Product Stock;1478711406560
 [Logistics] Exit;1478711419224
+[Customer] Log In;1478712876596
+[Customer] Log In;1478713374375
+[Customer] Log In;1478713428003
+[Customer] Log In;1478713468103
+[Customer] Log In;1478713495206
+[Customer] Log In;1478713592371
+[Customer] Log In;1478713646287
+[Customer] Log In;1478713768459
+[Customer] Log In;1478713889540
+[Customer] Buy Product;1478713891677
+[Customer] Buy Product;1478713907245
+[Customer] Exit;1478713915285

@@ -19,7 +19,9 @@ public interface I_Database {
     public I_Employee getEmployeeDetails(String username);
     public int registerUser(String userName, int accesslvl, String pass, String email, String address);
     public int getLastID();
-    public Object[] getOrders();
     public int getAccessLevel(String user);
     public ArrayList<String> getStaffDetails();
+    public boolean addOrder(String name,  int quantity, String customer);
+    public boolean updateItemQuantity(int quantity, String name);
+    public ArrayList<String> getOrders();
 }

@@ -29,7 +29,7 @@ public class Database implements I_Database {
             ResultSet myRe = mystat.executeQuery("select * from items");
             while (myRe.next())
             {
-                items.add(myRe.getString(3) + ": " + myRe.getString(5));
+                items.add(myRe.getString(3) + ": " + myRe.getString(7));
 
             }
         }
@@ -115,11 +115,13 @@ public class Database implements I_Database {
         return null;
     }
 
+    @Override
     public int registerUser(String userName, int accesslvl, String pass, String email, String address){
             Insert i = new Insert();
             return i.CreateUserInsert(userName, accesslvl, pass, email, address, con);
     }
 
+    @Override
     public int getLastID(){
         try{
             SelectMax s = new SelectMax("idusers", "users", con);
@@ -135,54 +137,7 @@ public class Database implements I_Database {
         return -1;
     }
 
-    public Object[] getOrders(){
-        Object[] listData;
-        int i = 0;
-        try
-        {
-            Statement mystat = con.createStatement();
-            ResultSet myRe = mystat.executeQuery("select * from items");
-            //get db data
-            while (myRe.next()){
-                i++;
-            }
-
-        }
-        catch(Exception exc)
-        {
-            System.out.println("Database error");
-        }
-        listData = new Object[i];
-
-        i = 0;
-        try
-        {
-            Statement mystat = con.createStatement();
-            ResultSet myRe = mystat.executeQuery("select * from orderqueue");
-
-            String name = "";
-            String qty = "";
-            String customer = "";
-
-            //get db data
-            while (myRe.next())
-            {
-                name = "Product Name: " + myRe.getString(1) + ", ";
-                qty = "Quantity:  " +  myRe.getInt(2) + ", ";
-                customer = "Customer:  " +  myRe.getString(3) + ", ";
-
-                listData[i] =name + qty + customer;
-
-                i++;
-            }
-        }
-        catch(Exception exc)
-        {
-            System.out.println("Database error");
-        }
-        return listData;
-    }
-
+    @Override
     public int getAccessLevel(String user) {
         try {
             Select s = new Select("*","users","username",user, con);
@@ -196,6 +151,7 @@ public class Database implements I_Database {
         return -1;
     }
 
+    @Override
     public ArrayList<String> getStaffDetails(){
         ArrayList<String> staff = new ArrayList<String>();
         try{
@@ -216,6 +172,40 @@ public class Database implements I_Database {
             System.out.println(e.fillInStackTrace());
         }
         return staff;
+    }
+
+    @Override
+    public boolean addOrder(String name,  int quantity, String customer) {
+        Insert i = new Insert();
+        return i.CreateOrderInsert(name, quantity, customer, con);
+    }
+
+    @Override
+    public boolean updateItemQuantity(int quantity, String name) {
+        Update u = new Update(con);
+        return u.UpdateItems(quantity, name);
+    }
+
+    @Override
+    public ArrayList<String> getOrders(){
+        ArrayList<String> orders = new ArrayList<String>();
+        Select s = new Select("*", "orderqueue", con);
+        ResultSet myRe = s.getResultset();
+        try {
+            while (myRe.next()) {
+                String tmp;
+                tmp = "Product Name: " + myRe.getString(1) + ", ";
+                tmp += "Quantity:  " + myRe.getInt(2) + ", ";
+                tmp += "Customer:  " + myRe.getString(3) + ", ";
+                orders.add(tmp);
+            }
+        } catch(SQLException e){
+            System.out.println(e.fillInStackTrace());
+        }
+        for(String si : orders){
+            System.out.println(si);
+        }
+        return orders;
     }
 
 }

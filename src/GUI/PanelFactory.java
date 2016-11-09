@@ -39,11 +39,19 @@ public class PanelFactory {
                 panel = new ViewStaffDetails();
                 panel.setPanelManager(pm);
                 break;
-            /*case 6:
+            case 7:
                 panel = new ViewItems();
                 panel.setPanelManager(pm);
                 break;
-                */
+            case 8:
+                panel = new ViewOrders();
+                panel.setPanelManager(pm);
+                break;
+            case 9:
+                panel = new UpdateProductStock();
+                panel.setPanelManager(pm);
+                break;
+
         }
         return panel;
     }

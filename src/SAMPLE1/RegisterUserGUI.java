@@ -27,16 +27,15 @@ public class RegisterUserGUI extends Panel implements  ActionListener
     JLabel userLabel,TypeLabel, passLabel, emailLabel, addressLabel;
     private final JComboBox userType = new JComboBox(userTypes);
     JTextField userField,passField, emailField, addressField;
-    static JFrame frame = new JFrame("Register new User Screen");
 
     public RegisterUserGUI(){
         this.panel = new JPanel();
         createAndShowGUI();
     }
+
     public JPanel createContentPane()
     {
         //Make bottom JPanel to place buttonPanel on
-        //this.panel.setLayout(null);
         this.panel.setLayout(new BoxLayout(this.panel, BoxLayout.X_AXIS));
 
         //Make Button Panel
@@ -127,7 +126,6 @@ public class RegisterUserGUI extends Panel implements  ActionListener
                     cust1.setAddress(address);
                     cust1.setID(id);
                     help.setCustomer(cust1);
-                    frame.dispose();
                     panelMgr.getPanelFromFactory(2);
                 } catch (Exception exc) {
                     System.out.println(exc.fillInStackTrace());
@@ -147,7 +145,6 @@ public class RegisterUserGUI extends Panel implements  ActionListener
                     emp1.setAddress(address);
                     emp1.setID(id);
                     help.setEmployee(emp1);
-                    frame.dispose();
                     panelMgr.getPanelFromFactory(2);
                 } catch (Exception exc) {
                     System.out.println(exc.fillInStackTrace());
@@ -162,8 +159,7 @@ public class RegisterUserGUI extends Panel implements  ActionListener
     private void createAndShowGUI()
     {
         //Create and set up the content pane.
-        frame = GUIFactory.makeFrame("Register User", 325, 250);
-        frame.setContentPane(this.createContentPane());
+        this.createContentPane();
 
     }
 

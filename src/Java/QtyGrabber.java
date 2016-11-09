@@ -24,7 +24,7 @@ public class QtyGrabber implements Subject {
 		// TODO Auto-generated method stub
 	
 		int id = newObserver.getID();
-		String name = newObserver.getname();
+		String name = newObserver.getName();
 		int accesslvl = newObserver.getaccesslvl();
 		String password = newObserver.getPassword();
 		String email = newObserver.getEmail();

@@ -67,22 +67,27 @@ public class ConcreteCustomer implements Observer, I_Customer {
         // TODO Auto-generated method stub
         return accesslvl;
     }
+    @Override
     public String getName() {
         // TODO Auto-generated method stub
         return name;
     }
+    @Override
     public int getID() {
         // TODO Auto-generated method stub
         return id;
     }
+    @Override
     public String getPassword() {
         // TODO Auto-generated method stub
         return password;
     }
+    @Override
     public String getEmail() {
         // TODO Auto-generated method stub
         return email;
     }
+    @Override
     public String getAddress() {
         // TODO Auto-generated method stub
         return address;
@@ -95,9 +100,6 @@ public class ConcreteCustomer implements Observer, I_Customer {
         System.out.println(item +  " is now back in stock \n We now have " + qty + "in stock");
     }
 
-    public String getname() {
-        return name;
-    }
 
     @Override
     public void setaccesslvl(int a){

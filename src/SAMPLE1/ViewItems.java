@@ -1,16 +1,19 @@
 package SAMPLE1;
 
+import GUI.PanelManager;
 import Java.QtyGrabber;
 import SQL.Connect;
-import User.ConcreteCustomer;
-
+import GUI.Panel;
 import javax.swing.*;
+import User.ConcreteCustomer;
+import User.ConcreteEmployee;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.*;
+import java.util.ArrayList;
 
-public class ViewItems implements  ActionListener
+public class ViewItems extends Panel implements  ActionListener
 {
 	
 	private static final QtyGrabber G = new QtyGrabber();
@@ -18,97 +21,39 @@ public class ViewItems implements  ActionListener
 	private JPanel buttonPanel;
 	private JButton exitButton;
 	private JButton purchaseButton;
+	private ArrayList<String> items = new  ArrayList<String>();
 	
 	private JLabel quantityLabel;
 	private JLabel nameLabel;
-
-	private final JPanel totalGUI = new JPanel();
 	
 	private JTextField itemNameTextField;
 	private JTextField quantityTextField;
-	private static final JFrame frame = new JFrame("View items");
 
 	public static QtyGrabber  getQtyGrabber(){
 		return G;
 	}
-	
+
+	public ViewItems(){
+		this.panel = new JPanel();
+		createAndShowGUI();
+	}
 	private JPanel createContentPane()
 	{
 		//Make bottom JPanel to place buttonPanel on
 		//JPanel totalGUI = new JPanel();
-		totalGUI.setLayout(null);
+		this.panel.setLayout(null);
 
 		//Make Button Panel
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setLocation(10, 10);
 		buttonPanel.setSize(295, 185);
-		totalGUI.add(buttonPanel);
-		int i = 0;
-		
-		//get number of rows returned
-		try
-		{
-			//Java.Connect to database
-			  Connect con = new Connect(); 
-   		   Connection mycon =  con.getconnection();
-   		   Statement mystat = mycon.createStatement();
-			ResultSet myRe = mystat.executeQuery("select * from items");
-				
-			//get db data
-			while (myRe.next())
-				i++;
-		}
-		catch(Exception exc)
-		{
-			System.out.println("Database error");
-		}
-		
-		
-		//Assign values to listData based on DB values.
-		Object[] listData = new Object[i];
-		int[] quantities = new int[i];
-		i = 0;
-		/*
-		try
-		{
-			//get array of names/quantities
-			//Java.Connect to database
-			  Connect con = new Connect(); 
-   		   Connection mycon =  con.getconnection();
-   		   Statement mystat = mycon.createStatement();
+		this.panel.add(buttonPanel);
 
-			String sql = "select * from items";
-			System.out.println(sql);
-
-
-			Select s = new Select("*","items");
-			ResultSet myRe = s.getResultset();
-
-			String name = "";
-			int quantity = 0;
-				
-			//get db data
-			while (myRe.next())
-			{
-				name = myRe.getString(3);
-				quantity = myRe.getInt(7);
-				
-				listData[i] = name;
-				quantities[i] = quantity;
-				i++;
-			}
-		}
-		catch(Exception exc)
-		{
-			System.out.println("Database error");
-		}
-		
-
-		
 		//Make List and scroll pane for items
-		JList items = new JList(listData);
-		
+		this.items = help.getItems();
+		JList items = new JList(this.items.toArray());
+
 	    JScrollPane scrollPane = new JScrollPane();
 	    scrollPane.setViewportView(items);
 	    scrollPane.setLocation(0,0);
@@ -116,7 +61,6 @@ public class ViewItems implements  ActionListener
 	    
 	    buttonPanel.add(scrollPane);
 
-		
 	    //Make buttons
 		exitButton = new JButton("Exit");
 		exitButton.setLocation(0, 150);
@@ -151,135 +95,80 @@ public class ViewItems implements  ActionListener
         quantityTextField.setLocation(130, 85);
         quantityTextField.setSize(120, 30);
         buttonPanel.add(quantityTextField);
-		
 
-		totalGUI.setVisible(true);
+		this.panel.setVisible(true);
 
-
-		try
-		{	
-			//Java.Connect to database
-			  Connect con = new Connect(); 
-   		   Connection mycon =  con.getconnection();
-   		   Statement mystat = mycon.createStatement();
-			String sql = "select * from items";
-			ResultSet myRe = mystat.executeQuery(sql);
-
-			//get db data
-			while (myRe.next())
-			{
-				System.out.println(myRe.getString(3));
-			}
-		}
-
-		catch(Exception exc)
-		{
-			System.out.println("Error");
-		}
-*/
-		return totalGUI;
+		return this.panel;
 	}
 	
 	public void actionPerformed(ActionEvent e)
 	{
-		Main.actionListener.actionPerformed(e);
+		//Main.actionListener.actionPerformed(e);
 		if(e.getSource() == exitButton)
 		{
-			frame.dispose();
+			panelMgr.getPanelFromFactory(2);
 		}
 		if (e.getSource() == purchaseButton)
 		{
+			String name = "";
+			int quant = 0;
 			String itemName = itemNameTextField.getText();
 			int orderQuantity = Integer.parseInt(quantityTextField.getText());
-			
+			for(String s : items){
+				String tmp[] = s.split(":");
+				if(tmp[0].equals(itemName)) {
+					name = tmp[0].trim();
+					quant = Integer.parseInt(tmp[1].trim());
+				}
+			}
 			try
 			{
-				//Java.Connect to database
-				  Connect con = new Connect();
-	    		   Connection mycon =  con.getconnection();
-	    		   Statement mystat = mycon.createStatement();
-				String sql = "select * from items WHERE name = '" + itemName + "'";
-				ResultSet myRe = mystat.executeQuery(sql);
-				
-				myRe.next();
-				System.out.println(myRe.getInt(7));
-				if(orderQuantity <= myRe.getInt(7))
+				if(orderQuantity <= quant)
 				{
-					int newQuantity = myRe.getInt(7) - orderQuantity;
-					//update table to have less quantity
-					sql = "UPDATE items SET quantity = " + newQuantity + " WHERE name = '" + itemName + "'";
-					mystat.executeUpdate(sql);
-					
-					//add order to table
-					sql = "INSERT INTO orderqueue VALUES('" + itemName + "', " + orderQuantity + ", '" + username + "')";
-					System.out.println(sql);
-					mystat.executeUpdate(sql);
-					
-					frame.dispose();
+					help.addOrder(itemName, orderQuantity, help.getCustomer().getName());
+					help.updateItemQuantity(quant - orderQuantity, name);
+
 					JOptionPane.showMessageDialog(null, "Order Confirmed");
 				}
 				else
 				{
-					String sql1 = "select * from users WHERE username = '" + username + "'";
-					System.out.println(sql1);
-					ResultSet myRe1 = mystat.executeQuery(sql1);
-					myRe1.next();
 					ConcreteCustomer c = new ConcreteCustomer();
-					int newCustId = myRe1.getInt(1) ;
-					String newCustName = myRe1.getString(2) ;
-					String newCustPassword = myRe1.getString(4) ;
-					String newCustEmail = myRe1.getString(5) ;
-					String newCustAddress = myRe1.getString(6) ;
-					
-					
-					c.setName(newCustName);
-                    c.setPassword(newCustPassword);
-		    		c.setEmail(newCustEmail);
-		    		c.setAddress(newCustAddress);
-		    		c.setID(newCustId);
+					c.setName(help.getCustomer().getName());
+		    		c.setEmail(help.getCustomer().getEmail());
+		    		c.setAddress(help.getCustomer().getAddress());
+		    		c.setID(help.getCustomer().getID());
 					//Not enough quantity notification
 					JOptionPane.showMessageDialog(null, "There is not enough quantity in stock, you have been added to a notification list");
 					 
 					G.registerObserver(c);
-					
-				
 				}
-				
-			
-				
-
 			}
+
 			catch(Exception exc)
 			{
+				System.out.println(exc.fillInStackTrace());
 				System.out.println(" couldnt connect to DB 1234 ");
 			}
 		}
 
 	}
 
-	private static void createAndShowGUI()
+	private void createAndShowGUI()
 	{
 		//Create and set up the content pane.
-		ViewItems window = new ViewItems();
-		frame.setContentPane(window.createContentPane());
-
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(305, 240);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
+		this.createContentPane();
 	}
 
-	public static void main(String[] args)
+	@Override
+	public JPanel sendToWindow()
 	{
-		System.out.println(args[0] + "    "+ args[1]);
-		username = args[0];
-		SwingUtilities.invokeLater(new Runnable() 
-		{
-			public void run() 
-			{
-				createAndShowGUI();
-			}
-		});
+		return this.panel;
+	}
+
+	@Override
+	public void setPanelManager(PanelManager pm)
+	{
+		this.panelMgr = pm;
 	}
 
 

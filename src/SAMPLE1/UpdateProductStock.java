@@ -1,6 +1,10 @@
-package Java;
+package SAMPLE1;
 
-import SAMPLE1.ViewItems;
+import GUI.GUIFactory;
+import GUI.Panel;
+import GUI.PanelManager;
+
+import Java.QtyGrabber;
 import SQL.Connect;
 
 import java.awt.event.ActionEvent;
@@ -9,32 +13,22 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
-public class updateDatabase implements  ActionListener{
-
+public class UpdateProductStock extends Panel implements  ActionListener
+{
 	static String username = "";
+
 	private JPanel buttonPanel;
-	private JButton exitButton;
-	private JButton updateButton;
-
-	private JLabel quantityLabel;
-	private JLabel nameLabel;
-
-	private final JPanel totalGUI = new JPanel();
-
-	private JTextField itemNameTextField;
-	private JTextField quantityTextField;
+	private JButton exitButton, updateButton;
+	private JLabel quantityLabel, nameLabel;
+	private JTextField itemNameTextField, quantityTextField;
 	private static final JFrame frame = new JFrame("Update Stock");
 
+	public UpdateProductStock(){
+		this.panel = new JPanel();
+		createAndShowGUI();
+	}
 
 	private void updateProducts(String itemName, int quantity){
 		QtyGrabber G = ViewItems.getQtyGrabber();
@@ -44,18 +38,22 @@ public class updateDatabase implements  ActionListener{
 	private JPanel createContentPane()
 	{
 		//Make bottom JPanel to place buttonPanel on
-		//JPanel totalGUI = new JPanel();
-		totalGUI.setLayout(null);
+		this.panel.setLayout(new BoxLayout(this.panel, BoxLayout.X_AXIS));
 
 		//Make Button Panel
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setLocation(10, 10);
-		buttonPanel.setSize(295, 185);
-		totalGUI.add(buttonPanel);
+		buttonPanel.setSize(295, 485);
+
+		this.panel.add(buttonPanel);
+
 		int i = 0;
 
-		//get number of rows returned
+		/**
+		 * TODO
+		 * Change SQL code in this to match what Paul has in the other methods
+		 */
 		try
 		{
 			//Java.Connect to database
@@ -68,11 +66,11 @@ public class updateDatabase implements  ActionListener{
 			while (myRe.next())
 				i++;
 		}
+
 		catch(Exception exc)
 		{
 			System.out.println("Database error");
 		}
-
 
 		//Assign values to listData based on DB values.
 		Object[] listData = new Object[i];
@@ -104,62 +102,46 @@ public class updateDatabase implements  ActionListener{
 				i++;
 			}
 		}
+
 		catch(Exception exc)
 		{
 			System.out.println("Database error");
 		}
-
-
 
 		//Make List and scroll pane for items
 		JList items = new JList(listData);
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setViewportView(items);
-		scrollPane.setLocation(0,0);
-		scrollPane.setSize(120, 120);
+		scrollPane.setLocation(5,5);
+		scrollPane.setSize(115, 115);
 
 		buttonPanel.add(scrollPane);
 
-
 		//Make buttons
-		exitButton = new JButton("Exit");
-		exitButton.setLocation(0, 150);
-		exitButton.setSize(85, 30);
+		exitButton = GUIFactory.addButton("Cancel",5,150,115,30);
 		exitButton.addActionListener(this);
 		buttonPanel.add(exitButton);
 
-		updateButton = new JButton("Update");
-		updateButton.setLocation(130, 150);
-		updateButton.setSize(120, 30);
+		updateButton = GUIFactory.addButton("Update",130,150,180,30);
 		updateButton.addActionListener(this);
 		buttonPanel.add(updateButton);
 
 		//make Labels
-		nameLabel = new JLabel("Product Name:");
-		nameLabel.setLocation(130, 0);
-		nameLabel.setSize(120, 30);
-		buttonPanel.add(nameLabel);
+		nameLabel = GUIFactory.addLabel("Product Name:",130,0,120,30);
+		quantityLabel = GUIFactory.addLabel("Add Quantity:",130,60,120,30);
 
-		quantityLabel = new JLabel("Add Quantity:");
-		quantityLabel.setLocation(130, 60);
-		quantityLabel.setSize(120, 30);
+		buttonPanel.add(nameLabel);
 		buttonPanel.add(quantityLabel);
 
 		//Make Text fields
-		itemNameTextField = new JTextField();
-		itemNameTextField.setLocation(130, 25);
-		itemNameTextField.setSize(120, 30);
-		buttonPanel.add(itemNameTextField);
+		itemNameTextField = GUIFactory.addTextField(130,30,180,30);
+		quantityTextField = GUIFactory.addTextField(130,90,180,30);
 
-		quantityTextField = new JTextField();
-		quantityTextField.setLocation(130, 85);
-		quantityTextField.setSize(120, 30);
+		buttonPanel.add(itemNameTextField);
 		buttonPanel.add(quantityTextField);
 
-
-		totalGUI.setVisible(true);
-
+		this.panel.setVisible(true);
 
 		try
 		{
@@ -182,15 +164,17 @@ public class updateDatabase implements  ActionListener{
 			System.out.println("Error");
 		}
 
-		return totalGUI;
+		return this.panel;
 	}
 
 	public void actionPerformed(ActionEvent e)
 	{
 		if(e.getSource() == exitButton)
 		{
-			frame.dispose();
+			help.logoutUser();
+			panelMgr.getPanelFromFactory(1);
 		}
+
 		if (e.getSource() == updateButton)
 		{
 			String itemName = itemNameTextField.getText();
@@ -217,11 +201,6 @@ public class updateDatabase implements  ActionListener{
 
 				frame.dispose();
 				JOptionPane.showMessageDialog(null, "Stock Update Confirmed");
-
-				//do stuff here
-
-
-
 			}
 			catch(Exception exc)
 			{
@@ -231,27 +210,20 @@ public class updateDatabase implements  ActionListener{
 
 	}
 
-	private static void createAndShowGUI()
+	private void createAndShowGUI()
 	{
-		//Create and set up the content pane.
-		updateDatabase window = new updateDatabase();
-		frame.setContentPane(window.createContentPane());
-
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(305, 240);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
+		this.createContentPane();
 	}
 
-	public static void main2(){
-		//System.out.println(args[0] + "    " + args[1]);
-		//username = args[0];
-		SwingUtilities.invokeLater(new Runnable()
-		{
-			public void run()
-			{
-				createAndShowGUI();
-			}
-		});
+	@Override
+	public JPanel sendToWindow()
+	{
+		return this.panel;
+	}
+
+	@Override
+	public void setPanelManager(PanelManager pm)
+	{
+		this.panelMgr = pm;
 	}
 }

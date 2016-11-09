@@ -15,7 +15,6 @@ public class LogInScreenGUI extends Panel implements  ActionListener
     JLabel userNameLabel, passwordLabel;
     JTextField userNameTextField;
     JPasswordField passwordTextField;
-    static JFrame frame = new JFrame("Log In Screen");
 
     public LogInScreenGUI(){
         this.panel = new JPanel();
@@ -93,7 +92,6 @@ public class LogInScreenGUI extends Panel implements  ActionListener
 
         else if(e.getSource() == registerButton)
         {
-            frame.dispose();
             panelMgr.getPanelFromFactory(3);
         }
 
@@ -122,8 +120,6 @@ public class LogInScreenGUI extends Panel implements  ActionListener
                     else{
                         help.getEmployeeDetails(userName);
                     }
-                    frame.setVisible(false);
-                    frame.dispose();
                     panelMgr.getPanelFromFactory(2);
                 }
             }
@@ -134,7 +130,6 @@ public class LogInScreenGUI extends Panel implements  ActionListener
                 System.exit(0);
             }
         }
-
     }
 
     public void createAndShowGUI()

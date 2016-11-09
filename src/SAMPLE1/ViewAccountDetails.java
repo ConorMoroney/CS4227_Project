@@ -17,7 +17,6 @@ public class ViewAccountDetails extends Panel implements  ActionListener
 
     JLabel quantityLabel, nameLabel;
 
-
     JTextField itemNameTextField, quantityTextField;
     static JFrame frame = new JFrame("View Account Details");
     static int id;
@@ -54,12 +53,8 @@ public class ViewAccountDetails extends Panel implements  ActionListener
             listData[2] = "Email: " + help.getCustomer().getEmail();
         }
 
-
-
-
         //Make List and scroll pane for items
         JList items = new JList(listData);
-
 
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportView(items);
@@ -67,7 +62,6 @@ public class ViewAccountDetails extends Panel implements  ActionListener
         scrollPane.setSize(270, 150);
 
         buttonPanel.add(scrollPane);
-
 
         //Make buttons
         exitButton = new JButton("Exit");
@@ -91,15 +85,8 @@ public class ViewAccountDetails extends Panel implements  ActionListener
 
     private void createAndShowGUI()
     {
-        //Create and set up the content pane.
-        frame.setContentPane(this.createContentPane());
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(305, 240);
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        this.createContentPane();
     }
-
 
     @Override
     public JPanel sendToWindow()
@@ -112,6 +99,4 @@ public class ViewAccountDetails extends Panel implements  ActionListener
     {
         this.panelMgr = pm;
     }
-
-
 }

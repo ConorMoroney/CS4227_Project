@@ -51,6 +51,28 @@ public class Insert {
         return -1; //return -1 if unsuccessful
     }
 
+    public boolean CreateOrderInsert(String name,  int quantity, String customer, Connection con){
+        String table = "orderqueue";
+        try
+            {
+                String SQL = "INSERT INTO [dbo].[orderqueue]([name],[quantity],[customer]) VALUES" +
+                        "(?,?,?)";
+                PreparedStatement preparedStmt = con.prepareStatement(SQL);
+                preparedStmt.setString(1, name);
+                preparedStmt.setInt(2, quantity);
+                preparedStmt.setString(3, customer);
+                System.out.print(SQL);
+                preparedStmt.executeUpdate();
+                return true;
+            }
+            catch (SQLException e) {
+                // TODO Auto-generated catch block
+                System.out.println("Connection failed");
+                System.out.println(e.getMessage());
+            }
+        return false;
+    }
+
     public void CreateLogInsert( String entryLog , Connection con)
     {
         String table = "LogTable";

@@ -81,10 +81,6 @@ public class Helper {
         return dba.registerUser(userName, accesslvl, pass, email, address);
     }
 
-    public Object[] getOrders(){
-        return dba.getOrders();
-    }
-
     public int getAccessLevel(String user){
         return dba.getAccessLevel(user);
     }
@@ -102,5 +98,17 @@ public class Helper {
     public void setEmployee(I_Employee em){
         emp = em;
         setUserState(emp.getaccesslvl());
+    }
+
+    public boolean addOrder(String name,  int quantity, String customer){
+        return dba.addOrder(name, quantity, customer);
+    }
+
+    public boolean updateItemQuantity(int quantity, String name){
+        return dba.updateItemQuantity(quantity, name);
+    }
+
+    public ArrayList<String> getOrders(){
+        return dba.getOrders();
     }
 }

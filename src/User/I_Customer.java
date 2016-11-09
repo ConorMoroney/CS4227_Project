@@ -13,5 +13,6 @@ public interface I_Customer {
     String getName();
     String getEmail();
     String getAddress();
+    String getPassword();
 
 }

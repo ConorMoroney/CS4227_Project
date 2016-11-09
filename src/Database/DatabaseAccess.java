@@ -71,10 +71,6 @@ public class DatabaseAccess implements I_Database {
         return dbconn.getLastID();
     }
 
-    @Override
-    public Object[] getOrders(){
-        return dbconn.getOrders();
-    }
 
     @Override
     public int getAccessLevel(String user){
@@ -84,5 +80,20 @@ public class DatabaseAccess implements I_Database {
     @Override
     public ArrayList<String> getStaffDetails(){
         return dbconn.getStaffDetails();
+    }
+
+    @Override
+    public boolean addOrder(String name,  int quantity, String customer){
+        return dbconn.addOrder(name, quantity, customer);
+    }
+
+    @Override
+    public boolean updateItemQuantity(int quantity, String name){
+        return dbconn.updateItemQuantity(quantity, name);
+    }
+
+    @Override
+    public ArrayList<String> getOrders(){
+        return dbconn.getOrders();
     }
 }

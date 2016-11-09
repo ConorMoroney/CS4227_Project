@@ -17,7 +17,7 @@ public class EmployeeState implements I_UserState {
             } else if ("Logistics".equalsIgnoreCase(employeeTitle)) {
                 return new String[]{"Update Product Stock", "View Orders"};
             } else if ("Manager".equalsIgnoreCase(employeeTitle)) {
-                return new String[]{"Generate duh Reports", "View Staff Details"};
+                return new String[]{"Generate Reports", "View Staff Details"};
             }
         }
         return null;

@@ -21,21 +21,14 @@ public class Helper {
     }
 
     public void setUserState(int access) {
-        switch (access) {
-            case 1:
-                state = new CustomerState();
-                break;
-            case 2:
-                state = new WarehouseState();
-                break;
-            case 3:
-                state = new LogisticsState();
-                break;
-            case 4:
-                state = new ManagerState();
-                break;
+        if(access==1) {
+            state = new CustomerState();
+        }
+        else if (access>1){
+            state = new EmployeeState(emp.getName());
         }
     }
+
 
     public static Helper getInstance(){
         return help;

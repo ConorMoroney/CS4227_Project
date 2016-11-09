@@ -10,7 +10,7 @@ public class EmployeeFactory extends AbstractUserFactory {
             if (s.equalsIgnoreCase(userType)) {
                 return new ConcreteEmployee();
             }
-            if ("ConcreteCustomer".equalsIgnoreCase(userType)) {
+            if ("ConcreteEmployee".equalsIgnoreCase(userType)) {
                 return new ConcreteEmployee();
             }
 

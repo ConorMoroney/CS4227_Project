@@ -130,3 +130,11 @@
 [Customer] Buy Product;1478715628450
 [Customer] Buy Product;1478715645138
 [Customer] Exit;1478715648954
+[Warehouse] Log In;1478723193673
+[Warehouse] Update Product Stock;1478723195041
+[Warehouse] Log In;1478723284398
+[Warehouse] Update Product Stock;1478723285610
+[Warehouse] Log In;1478723316645
+[Warehouse] Update Product Stock;1478723317454
+[Customer] Log In;1478723779156
+[Customer] Exit;1478723783558

@@ -88,27 +88,6 @@ public class UpdateProductStock extends Panel implements  ActionListener
 
 		this.panel.setVisible(true);
 
-		try
-		{
-			//Java.Connect to database
-			Connect con = new Connect();
-			Connection mycon =  con.getconnection();
-			Statement mystat = mycon.createStatement();
-			String sql = "select * from items";
-			ResultSet myRe = mystat.executeQuery(sql);
-
-			//get db data
-			while (myRe.next())
-			{
-				System.out.println(myRe.getString(3));
-			}
-		}
-
-		catch(Exception exc)
-		{
-			System.out.println("Error");
-		}
-
 		return this.panel;
 	}
 

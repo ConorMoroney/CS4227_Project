@@ -2,20 +2,19 @@ package SAMPLE1;
 
 import GUI.PanelManager;
 import Java.QtyGrabber;
-import SQL.Connect;
+
 import GUI.Panel;
 import javax.swing.*;
 import User.ConcreteCustomer;
-import User.ConcreteEmployee;
+
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.sql.*;
+
 import java.util.ArrayList;
 
 public class ViewItems extends Panel implements  ActionListener
 {
-	
 	private static final QtyGrabber G = new QtyGrabber();
 	private static String username = "";
 	private JPanel buttonPanel;
@@ -40,7 +39,6 @@ public class ViewItems extends Panel implements  ActionListener
 	private JPanel createContentPane()
 	{
 		//Make bottom JPanel to place buttonPanel on
-		//JPanel totalGUI = new JPanel();
 		this.panel.setLayout(null);
 
 		//Make Button Panel

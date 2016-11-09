@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.swing.*;
 
@@ -24,6 +25,7 @@ public class UpdateProductStock extends Panel implements  ActionListener
 	private JLabel quantityLabel, nameLabel;
 	private JTextField itemNameTextField, quantityTextField;
 	private static final JFrame frame = new JFrame("Update Stock");
+	private ArrayList<String> items = new  ArrayList<String>();
 
 	public UpdateProductStock(){
 		this.panel = new JPanel();
@@ -50,66 +52,9 @@ public class UpdateProductStock extends Panel implements  ActionListener
 
 		int i = 0;
 
-		/**
-		 * TODO
-		 * Change SQL code in this to match what Paul has in the other methods
-		 */
-		try
-		{
-			//Java.Connect to database
-			Connect con = new Connect();
-			Connection mycon =  con.getconnection();
-			Statement mystat = mycon.createStatement();
-			ResultSet myRe = mystat.executeQuery("select * from creationary.items");
-
-			//get db data
-			while (myRe.next())
-				i++;
-		}
-
-		catch(Exception exc)
-		{
-			System.out.println("Database error");
-		}
-
-		//Assign values to listData based on DB values.
-		Object[] listData = new Object[i];
-		int[] quantities = new int[i];
-		i = 0;
-		try
-		{
-			//get array of names/quantities
-			//Java.Connect to database
-			Connect con = new Connect();
-			Connection mycon =  con.getconnection();
-			Statement mystat = mycon.createStatement();
-
-			String sql = "select * from creationary.items";
-			System.out.println(sql);
-			ResultSet myRe = mystat.executeQuery(sql);
-
-			String name = "";
-			int quantity = 0;
-
-			//get db data
-			while (myRe.next())
-			{
-				name = myRe.getString(3);
-				quantity = myRe.getInt(7);
-
-				listData[i] = name;
-				quantities[i] = quantity;
-				i++;
-			}
-		}
-
-		catch(Exception exc)
-		{
-			System.out.println("Database error");
-		}
-
 		//Make List and scroll pane for items
-		JList items = new JList(listData);
+		this.items = help.getItems();
+		JList items = new JList(this.items.toArray());
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setViewportView(items);
@@ -129,7 +74,7 @@ public class UpdateProductStock extends Panel implements  ActionListener
 
 		//make Labels
 		nameLabel = GUIFactory.addLabel("Product Name:",130,0,120,30);
-		quantityLabel = GUIFactory.addLabel("Add Quantity:",130,60,120,30);
+		quantityLabel = GUIFactory.addLabel("New Quantity:",130,60,120,30);
 
 		buttonPanel.add(nameLabel);
 		buttonPanel.add(quantityLabel);
@@ -178,36 +123,19 @@ public class UpdateProductStock extends Panel implements  ActionListener
 		if (e.getSource() == updateButton)
 		{
 			String itemName = itemNameTextField.getText();
-			int orderQuantity = Integer.parseInt(quantityTextField.getText());
+			int newQuantity = Integer.parseInt(quantityTextField.getText());
 
 			try
 			{
-				//Java.Connect to database
-				Connect con = new Connect();
-				Connection mycon =  con.getconnection();
-				Statement mystat = mycon.createStatement();
-
-				String sql = "select * from items WHERE name = '" + itemName + "'";
-				ResultSet myRe = mystat.executeQuery(sql);
-
-				myRe.next();
-				System.out.println(myRe.getInt(7));
-				int newQuantity = myRe.getInt(7) + orderQuantity;
-				//update table to have less quantity
-				sql = "UPDATE items SET quantity = " + newQuantity + " WHERE name = '" + itemName + "'";
-				mystat.executeUpdate(sql);
-
-				updateProducts(itemName, newQuantity);
-
-				frame.dispose();
-				JOptionPane.showMessageDialog(null, "Stock Update Confirmed");
+				help.updateItemQuantity(newQuantity, itemName);
+				JOptionPane.showMessageDialog(null, "Product Stock Update Confirmed.");
 			}
+
 			catch(Exception exc)
 			{
 				System.out.println(" couldnt connect to DB 1234 ");
 			}
 		}
-
 	}
 
 	private void createAndShowGUI()

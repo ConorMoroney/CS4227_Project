@@ -18,11 +18,11 @@ public class LogInButtonBuilder implements I_ButtonBuilder
     }
     public void buildButtonXLoc()
     {
-        button.setButtonXLocation(93);
+        button.setButtonXLocation(183);
     }
     public void buildButtonYLoc()
     {
-        button.setButtonYLocation(80);
+        button.setButtonYLocation(230);
     }
     public void buildButtonXSize()
     {

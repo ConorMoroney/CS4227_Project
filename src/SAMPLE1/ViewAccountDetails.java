@@ -1,5 +1,6 @@
 package SAMPLE1;
 
+import GUI.GUIFactory;
 import GUI.Panel;
 import GUI.PanelManager;
 import SQL.Connect;
@@ -37,7 +38,7 @@ public class ViewAccountDetails extends Panel implements  ActionListener
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(10, 10);
-        buttonPanel.setSize(295, 185);
+        buttonPanel.setSize(500, 500);
         this.panel.add(buttonPanel);
 
         //Assign values to listData based on DB values.
@@ -55,21 +56,20 @@ public class ViewAccountDetails extends Panel implements  ActionListener
 
         //Make List and scroll pane for items
         JList items = new JList(listData);
-
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportView(items);
         scrollPane.setLocation(0,0);
-        scrollPane.setSize(270, 150);
-
+        scrollPane.setSize(270, 440);
         buttonPanel.add(scrollPane);
 
+        //Add Label
+        JLabel actionsLabel = GUIFactory.addLabel("Actions:",280,0,80,30);
+        buttonPanel.add(actionsLabel);
+
         //Make buttons
-        exitButton = new JButton("Exit");
-        exitButton.setLocation(0, 150);
-        exitButton.setSize(85, 30);
+        exitButton = GUIFactory.addButton("Exit",280,410,180,30);
         exitButton.addActionListener(this);
         buttonPanel.add(exitButton);
-        this.panel.setVisible(true);
 
         return this.panel;
     }

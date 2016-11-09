@@ -1,5 +1,6 @@
 package SAMPLE1;
 
+import GUI.GUIFactory;
 import GUI.Panel;
 import GUI.PanelManager;
 import javax.swing.*;
@@ -29,7 +30,7 @@ public class ViewStaffDetails extends Panel implements  ActionListener
         buttonPanel = new JPanel();
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(10, 10);
-        buttonPanel.setSize(295, 185);
+        buttonPanel.setSize(500, 500);
         this.panel.add(buttonPanel);
 
         //Make List and scroll pane for items
@@ -38,23 +39,17 @@ public class ViewStaffDetails extends Panel implements  ActionListener
         JScrollPane scrollPane = new JScrollPane();
         scrollPane.setViewportView(items);
         scrollPane.setLocation(0,0);
-        scrollPane.setSize(270, 150);
-
-        JLabel text = new JLabel();
-        text.setLocation(0,0);
-        text.setSize(270, 150);
+        scrollPane.setSize(465, 400);
 
         buttonPanel.add(scrollPane);
 
         //Make buttons
-        exitButton = new JButton("Exit");
-        exitButton.setLocation(0, 150);
-        exitButton.setSize(85, 30);
+        exitButton = GUIFactory.addButton("Exit",0,410,465,30);
         exitButton.addActionListener(this);
         buttonPanel.add(exitButton);
 
+        //set visible and return
         this.panel.setVisible(true);
-
         return this.panel;
     }
 

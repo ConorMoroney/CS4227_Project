@@ -30,10 +30,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 
 	private void createAndShowGUI()
 	{
-		//frame = GUIFactory.makeFrame(help.getUserState().getFrameTitle(), 405, 130);
-		//frame.setContentPane(this.createContentPane());
 		this.createContentPane();
-
 	}
 
 	public JPanel createContentPane ()
@@ -45,19 +42,23 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 		this.panel.setLayout(null);
 
 		//Make Button Panel
-		buttonPanel = GUIFactory.addButtonPanel(10,10,380,190);
+		buttonPanel = GUIFactory.addButtonPanel(10,10,500,485);
 		this.panel.add(buttonPanel);
 
+		//Add Label
+		JLabel actionsLabel = GUIFactory.addLabel("Actions:",0,0,80,30);
+		buttonPanel.add(actionsLabel);
+
 		//Make Buttons
-		remaingModulesButton = GUIFactory.addButton(titles[0],0,0,180,30);
+		remaingModulesButton = GUIFactory.addButton(titles[0],0,30,465,30);
 		remaingModulesButton.addActionListener(this);
 		buttonPanel.add(remaingModulesButton);
 
-		viewResultsButton = GUIFactory.addButton(titles[1],190,0,180,30);
+		viewResultsButton = GUIFactory.addButton(titles[1],0,70,465,30);
 		viewResultsButton.addActionListener(this);
 		buttonPanel.add(viewResultsButton);
 
-		exitButton = GUIFactory.addButton("Exit",0,40,370,30);
+		exitButton = GUIFactory.addButton("Exit",0,400,465,30);
 		exitButton.addActionListener(this);
 		buttonPanel.add(exitButton);
 		this.panel.setVisible(true);

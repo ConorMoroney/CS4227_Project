@@ -59,29 +59,29 @@ public class UpdateProductStock extends Panel implements  ActionListener
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setViewportView(items);
 		scrollPane.setLocation(5,5);
-		scrollPane.setSize(115, 115);
+		scrollPane.setSize(270, 440);
 
 		buttonPanel.add(scrollPane);
 
 		//Make buttons
-		exitButton = GUIFactory.addButton("Cancel",5,150,115,30);
+		exitButton = GUIFactory.addButton("Exit",280,410,180,30);
 		exitButton.addActionListener(this);
 		buttonPanel.add(exitButton);
 
-		updateButton = GUIFactory.addButton("Update",130,150,180,30);
+		updateButton = GUIFactory.addButton("Purchase",280,150,180,30);
 		updateButton.addActionListener(this);
 		buttonPanel.add(updateButton);
 
 		//make Labels
-		nameLabel = GUIFactory.addLabel("Product Name:",130,0,120,30);
-		quantityLabel = GUIFactory.addLabel("New Quantity:",130,60,120,30);
+		nameLabel = GUIFactory.addLabel("Product Name:",280,0,120,30);
+		quantityLabel = GUIFactory.addLabel("New Quantity:",280,60,120,30);
 
 		buttonPanel.add(nameLabel);
 		buttonPanel.add(quantityLabel);
 
 		//Make Text fields
-		itemNameTextField = GUIFactory.addTextField(130,30,180,30);
-		quantityTextField = GUIFactory.addTextField(130,90,180,30);
+		itemNameTextField = GUIFactory.addTextField(280,30,180,30);
+		quantityTextField = GUIFactory.addTextField(280,90,180,30);
 
 		buttonPanel.add(itemNameTextField);
 		buttonPanel.add(quantityTextField);

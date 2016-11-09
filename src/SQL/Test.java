@@ -2,7 +2,6 @@ package SQL;
 
 import java.sql.*;
 
-
 /**
  * Created by Conor on 12-Oct-16.
  */

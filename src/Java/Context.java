@@ -1,9 +1,5 @@
 package Java;
 
-import SAMPLE1.Main;
-//import SAMPLE2.Main;
-
-
 import java.awt.event.ActionEvent;
 
 /**

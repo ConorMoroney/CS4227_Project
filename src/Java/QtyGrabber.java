@@ -8,9 +8,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 //Uses subject interface to update all observers
-
-
 public class QtyGrabber implements Subject {
 	private int Qty;
 	private String item;

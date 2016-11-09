@@ -3,12 +3,10 @@ package SAMPLE1;
 import GUI.GUIFactory;
 import GUI.Panel;
 import GUI.PanelManager;
-import SQL.Connect;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.sql.*;
 
 public class ViewAccountDetails extends Panel implements  ActionListener
 {

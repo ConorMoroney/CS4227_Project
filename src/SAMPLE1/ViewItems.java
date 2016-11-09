@@ -136,7 +136,6 @@ public class ViewItems extends Panel implements  ActionListener
 				System.out.println(" couldnt connect to DB 1234 ");
 			}
 		}
-
 	}
 
 	private void createAndShowGUI()

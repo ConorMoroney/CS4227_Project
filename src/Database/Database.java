@@ -188,8 +188,8 @@ public class Database implements I_Database {
 
     @Override
     public boolean updateItemQuantity(int quantity, String name) {
-        Update u = new Update(con);
-        return u.UpdateItems(quantity, name);
+        Update u = new Update();
+        return u.UpdateItems(quantity, name,con);
     }
 
     @Override

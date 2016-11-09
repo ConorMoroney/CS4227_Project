@@ -111,3 +111,22 @@
 [Customer] Buy Product;1478713891677
 [Customer] Buy Product;1478713907245
 [Customer] Exit;1478713915285
+[Customer] Log In;1478714124035
+[Customer] Log In;1478714131924
+[Customer] Buy Product;1478714134948
+[Customer] Exit;1478714361708
+[Customer] Log In;1478715172024
+[Customer] Buy Product;1478715172964
+[Customer] Buy Product;1478715185907
+[Customer] Exit;1478715190467
+[Customer] Log In;1478715385371
+[Customer] Buy Product;1478715385947
+[Customer] Log In;1478715550297
+[Customer] Buy Product;1478715550955
+[Customer] Buy Product;1478715560178
+[Customer] Log In;1478715619882
+[Customer] Log In;1478715623539
+[Customer] Log In;1478715627552
+[Customer] Buy Product;1478715628450
+[Customer] Buy Product;1478715645138
+[Customer] Exit;1478715648954

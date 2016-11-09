@@ -1,5 +1,6 @@
 package SAMPLE1;
 
+import GUI.GUIFactory;
 import GUI.PanelManager;
 import Java.QtyGrabber;
 
@@ -45,7 +46,7 @@ public class ViewItems extends Panel implements  ActionListener
 		buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setLocation(10, 10);
-		buttonPanel.setSize(295, 185);
+		buttonPanel.setSize(500, 500);
 		this.panel.add(buttonPanel);
 
 		//Make List and scroll pane for items
@@ -55,47 +56,35 @@ public class ViewItems extends Panel implements  ActionListener
 	    JScrollPane scrollPane = new JScrollPane();
 	    scrollPane.setViewportView(items);
 	    scrollPane.setLocation(0,0);
-	    scrollPane.setSize(120, 120);
+		scrollPane.setSize(270, 440);
 	    
 	    buttonPanel.add(scrollPane);
 
 	    //Make buttons
-		exitButton = new JButton("Exit");
-		exitButton.setLocation(0, 150);
-		exitButton.setSize(85, 30);
+		exitButton = GUIFactory.addButton("Exit",280,410,180,30);
 		exitButton.addActionListener(this);
 		buttonPanel.add(exitButton);
-		
-		purchaseButton = new JButton("Purchase");
-		purchaseButton.setLocation(130, 150);
-		purchaseButton.setSize(120, 30);
+
+		purchaseButton = GUIFactory.addButton("Purchase",280,150,180,30);
 		purchaseButton.addActionListener(this);
 		buttonPanel.add(purchaseButton);
-		
-		//make Labels
-		nameLabel = new JLabel("Product Name:");
-		nameLabel.setLocation(130, 0);
-		nameLabel.setSize(120, 30);
+
+		//Add Labels
+		nameLabel = GUIFactory.addLabel("Product Name:",280,0,120,30);
 		buttonPanel.add(nameLabel);
-		
-		quantityLabel = new JLabel("Purchase Quantity:");
-		quantityLabel.setLocation(130, 60);
-		quantityLabel.setSize(120, 30);
+
+		quantityLabel = GUIFactory.addLabel("Purchase Quantity:",280,60,120,30);
 		buttonPanel.add(quantityLabel);
 		
 		//Make Text fields
-		itemNameTextField = new JTextField();
-		itemNameTextField.setLocation(130, 25);
-		itemNameTextField.setSize(120, 30);
-        buttonPanel.add(itemNameTextField);
-        
-        quantityTextField = new JTextField();
-        quantityTextField.setLocation(130, 85);
-        quantityTextField.setSize(120, 30);
+		itemNameTextField = GUIFactory.addTextField(280,25,180,30);
+		buttonPanel.add(itemNameTextField);
+
+		quantityTextField = GUIFactory.addTextField(280,85,180,30);
         buttonPanel.add(quantityTextField);
 
+		//set visible and return
 		this.panel.setVisible(true);
-
 		return this.panel;
 	}
 	

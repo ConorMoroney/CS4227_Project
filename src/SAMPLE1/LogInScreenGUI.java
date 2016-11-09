@@ -26,11 +26,11 @@ public class LogInScreenGUI extends Panel implements  ActionListener
         //JPanel totalGUI = new JPanel();
         this.panel.setLayout(null);
 
-        buttonPanel = GUIFactory.addButtonPanel(10,10,295,185);
-        userNameLabel = GUIFactory.addLabel("Username:",0,0,80,30);
-        passwordLabel = GUIFactory.addLabel("Password:",0,40,80,30);
-        userNameTextField = GUIFactory.addTextField(90,0,180,30);
-        passwordTextField = GUIFactory.addPasswordField(90,40,180,30);
+        buttonPanel = GUIFactory.addButtonPanel(10,10,500,485);
+        userNameLabel = GUIFactory.addLabel("Username:",90,150,80,30);
+        passwordLabel = GUIFactory.addLabel("Password:",90,190,80,30);
+        userNameTextField = GUIFactory.addTextField(180,150,180,30);
+        passwordTextField = GUIFactory.addPasswordField(180,190,180,30);
 
         this.panel.add(buttonPanel);
         buttonPanel.add(userNameLabel);
@@ -60,8 +60,8 @@ public class LogInScreenGUI extends Panel implements  ActionListener
         Button bExitButton = buttonEngineer2.getButton();
 
         bExitButton.setButtonTitle("Exit");
-        bExitButton.setButtonXLocation(0);
-        bExitButton.setButtonYLocation(80);
+        bExitButton.setButtonXLocation(90);
+        bExitButton.setButtonYLocation(230);
         bExitButton.setButtonXSize(85);
         bExitButton.setButtonYSize(30);
 
@@ -74,7 +74,7 @@ public class LogInScreenGUI extends Panel implements  ActionListener
         logInButton.addActionListener(this);
         buttonPanel.add(logInButton);
 
-        registerButton = GUIFactory.addButton("Register",185,80,90,30);
+        registerButton = GUIFactory.addButton("Register",275,230,90,30);
         registerButton.addActionListener(this);
         buttonPanel.add(registerButton);
 

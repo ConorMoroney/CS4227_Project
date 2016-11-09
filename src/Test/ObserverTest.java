@@ -10,8 +10,7 @@ class ObserverTest {
 		ConcreteCustomer c = new ConcreteCustomer();
 		
 		G.registerObserver(c);
-		
-		
+
 		G.setQty("bic", 45);
 		
 		G.removeObserver(c);

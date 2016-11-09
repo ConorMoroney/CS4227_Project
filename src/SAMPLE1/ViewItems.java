@@ -17,11 +17,10 @@ import java.util.ArrayList;
 public class ViewItems extends Panel implements  ActionListener
 {
 	private static final QtyGrabber G = new QtyGrabber();
-	private static String username = "";
 	private JPanel buttonPanel;
 	private JButton exitButton;
 	private JButton purchaseButton;
-	private ArrayList<String> items = new  ArrayList<String>();
+	private ArrayList<String> items = new ArrayList<String>();
 	
 	private JLabel quantityLabel;
 	private JLabel nameLabel;
@@ -157,6 +156,4 @@ public class ViewItems extends Panel implements  ActionListener
 	{
 		this.panelMgr = pm;
 	}
-
-
 }

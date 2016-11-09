@@ -6,18 +6,15 @@ import GUI.PanelManager;
 import User.I_Customer;
 import User.*;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 
 public class RegisterUserGUI extends Panel implements  ActionListener
 {
@@ -98,7 +95,8 @@ public class RegisterUserGUI extends Panel implements  ActionListener
         else if(e.getSource() == registerUserButton)
         {
 
-            if(userField.getText().equals("") ||passField.getText().equals("") ||emailField.getText().equals("") ||addressField.getText().equals("") ){
+            if(userField.getText().equals("") ||passField.getText().equals("") ||emailField.getText().equals("")
+                                                ||addressField.getText().equals("") ){
                 JOptionPane.showMessageDialog(null,"There is a null field" );
                 return;
             }
@@ -151,10 +149,7 @@ public class RegisterUserGUI extends Panel implements  ActionListener
                     System.out.println(exc.fillInStackTrace());
                 }
             }
-
-
         }
-
     }
 
     private void createAndShowGUI()

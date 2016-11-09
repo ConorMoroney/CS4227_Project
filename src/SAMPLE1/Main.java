@@ -30,6 +30,7 @@ public class Main {
 		PanelManager panelMgr = new PanelManager(panelFac);
 		panelMgr.registerObserver(window);
 	}
+
 	private static void attach(ConcreteInterceptor i) {
 		c.getDispacher().register(i);
 	}

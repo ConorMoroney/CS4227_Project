@@ -44,8 +44,6 @@ public class ConcreteInterceptor  implements I_Interceptor{
         {
             System.out.println("An IO error occurred in Concrete Interceptor");
         }
-
-
     }
     /**TODO
      * Instead of Printing to the command line
@@ -78,11 +76,9 @@ public class ConcreteInterceptor  implements I_Interceptor{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
-    private boolean compareFileToDB()
-    {
+
+    private boolean compareFileToDB() {
         return false;
     }
 }

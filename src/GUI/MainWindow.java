@@ -39,7 +39,6 @@ public class MainWindow extends JFrame implements Observer
         this.setVisible(true);
     }
 
-
     public void removeCurrentPanelFromWindow()
     {
         if(viewCurrentPanel != null)

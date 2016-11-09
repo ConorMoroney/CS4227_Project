@@ -31,13 +31,13 @@ public class QtyGrabber implements Subject {
 		String address = newObserver.getAddress();
 		observers.add(newObserver);
 		
-		
 		try{
 			   Connect con = new Connect();
     		   Connection mycon =  con.getconnection();
     		   Statement mystat = mycon.createStatement();
     		   
-			String sql = "INSERT INTO arrayList VALUES('" + id + "',' " + name + "' , '" + accesslvl + "', '" + password + "', '" + email + "', '"  + address  +"')";
+			String sql = "INSERT INTO arrayList VALUES('" + id + "',' " + name + "' , '" + accesslvl + "', '"
+					+ password + "', '" + email + "', '"  + address  +"')";
 			System.out.println(sql);
 			mystat.executeUpdate(sql);	
 		
@@ -80,8 +80,6 @@ public class QtyGrabber implements Subject {
 			
 		}
 		
-		
-		
 		for(Observer observer: observers){
 			observer.update(Qty,item);
 		}
@@ -94,8 +92,5 @@ public class QtyGrabber implements Subject {
 		
 		notifyObservers();
 	}
-	
-		
+
 }
-
-

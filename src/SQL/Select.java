@@ -66,6 +66,7 @@ public class Select implements  SQLInterface{
             e1.printStackTrace();
         }
     }
-    public ResultSet getResultset(){return myRe;}
-
+    public ResultSet getResultset(){
+        return myRe;
+    }
 }

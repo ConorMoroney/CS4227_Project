@@ -24,5 +24,4 @@ public class ActionListenerSuper implements ActionListener{
     public String getUserName() {
         return userName;
     }
-
 }

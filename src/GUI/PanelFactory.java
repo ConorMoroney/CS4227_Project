@@ -7,7 +7,6 @@ public class PanelFactory {
     public PanelFactory() {
     }
 
-
     public Panel getPanel(int panelID, PanelManager pm) {
         Panel panel = null;
         switch (panelID) {
@@ -51,9 +50,7 @@ public class PanelFactory {
                 panel = new UpdateProductStock();
                 panel.setPanelManager(pm);
                 break;
-
         }
         return panel;
     }
-
 }

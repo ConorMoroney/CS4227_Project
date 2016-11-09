@@ -9,6 +9,7 @@ public class ProductFactory {
 				return new ConcreteProduct();
 			}
 		}
+
 		if(productType == null){
 			return null;
 		}
@@ -18,5 +19,4 @@ public class ProductFactory {
 			return null;
 		}
 	}
-
 }

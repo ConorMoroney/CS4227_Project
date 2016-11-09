@@ -62,5 +62,4 @@ public class ProductTest {
     public void removeObserver() throws Exception {
 
     }
-
 }

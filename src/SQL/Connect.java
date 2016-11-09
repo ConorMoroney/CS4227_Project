@@ -6,29 +6,24 @@ import java.sql.SQLException;
 
 public class Connect{
 
-private Connection con;
-	
-public Connect() {
+	private Connection con;
+
+	public Connect() {
 
 		try {
-
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			String connectionUrl = "jdbc:sqlserver://localhost;database=Creationary;integratedSecurity=true;"  ;
 			con = DriverManager.getConnection(connectionUrl);
 			//con.setAutoCommit(false);
 			System.out.println("you are Connected : Connect Class ");
-		 
-		} catch (Exception e) {
 
+		} catch (Exception e) {
 			System.out.println("Connection failed");
 			System.out.println(e.getMessage());
-		
 		}
 	}
-
- public Connection getconnection()
- {
-	return con; 
- }
-
+	public Connection getconnection()
+	{
+		return con;
+	}
 }

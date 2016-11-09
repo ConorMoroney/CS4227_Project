@@ -31,9 +31,6 @@ public class GUIFactory
     {
         JFrame frame = new JFrame(title);
 
-        //Create and set up the content pane.
-        //DisplayGUI window = new DisplayGUI();
-
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setSize(xSize, ySize);

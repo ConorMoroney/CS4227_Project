@@ -12,16 +12,8 @@ import java.sql.*;
 
 public class ViewAccountDetails extends Panel implements  ActionListener
 {
-
     JPanel buttonPanel;
     JButton exitButton;
-
-    JLabel quantityLabel, nameLabel;
-
-    JTextField itemNameTextField, quantityTextField;
-    static JFrame frame = new JFrame("View Account Details");
-    static int id;
-
 
     public ViewAccountDetails(){
         this.panel = new JPanel();

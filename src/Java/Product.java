@@ -10,7 +10,6 @@ public class Product implements Subject {
 	
 	private ArrayList<Observer> listOfObservers = new ArrayList<Observer>();
 	
-	
 	/*
 	@Override
 	public void registerObserver(Java.Observer observer) {
@@ -25,7 +24,6 @@ public class Product implements Subject {
 		
 	}*/
 	
-	
 	@Override
 	public void notifyObservers() {
 		// TODO Auto-generated method stub
@@ -34,6 +32,7 @@ public class Product implements Subject {
 			observer.update(listOfObservers.size(),productName);
 		}
 	}
+
 	public ArrayList<Observer> getListOfObservers() {
 		return listOfObservers;
 	}
@@ -56,17 +55,16 @@ public class Product implements Subject {
 			notifyObservers();
 		}
 	}
+
 	@Override
 	public void registerObserver(ConcreteCustomer Customer) {
 		// TODO Auto-generated method stub
 		listOfObservers.add(Customer);
 	}
+
 	@Override
 	public void removeObserver(ConcreteCustomer Customer) {
 		// TODO Auto-generated method stub
 		listOfObservers.remove(Customer);
-		
 	}
-
-
 }

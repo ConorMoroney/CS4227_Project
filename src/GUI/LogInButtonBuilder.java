@@ -16,22 +16,27 @@ public class LogInButtonBuilder implements I_ButtonBuilder
     {
         button.setButtonTitle("Log In");
     }
+
     public void buildButtonXLoc()
     {
         button.setButtonXLocation(183);
     }
+
     public void buildButtonYLoc()
     {
         button.setButtonYLocation(230);
     }
+
     public void buildButtonXSize()
     {
         button.setButtonXSize(85);
     }
+
     public void buildButtonYSize()
     {
         button.setButtonYSize(30);
     }
+
     public Button getButton()
     {
         return this.button;

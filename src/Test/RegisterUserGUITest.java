@@ -32,5 +32,4 @@ public class RegisterUserGUITest {
     public void start() throws Exception {
 
     }
-
 }

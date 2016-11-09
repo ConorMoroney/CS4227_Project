@@ -39,7 +39,6 @@ public class ConcreteEmployee implements I_Employee{
     public void setName(String name) {
         // TODO Auto-generated method stub
         this.name = name;
-
     }
 
     @Override
@@ -90,6 +89,4 @@ public class ConcreteEmployee implements I_Employee{
     public String getAddress() {
         return address;
     }
-
-
 }

@@ -13,11 +13,17 @@ public class Context {
 
     private ActionEvent event;
 
-    public Context(ActionEvent event){ this.event = event;}
+    public Context(ActionEvent event){
+        this.event = event;
+    }
 
-    public ActionEvent getValue(){return event;}
+    public ActionEvent getValue(){
+        return event;
+    }
 
-    public void setValue(ActionEvent event){ this.event = event;}
+    public void setValue(ActionEvent event){
+        this.event = event;
+    }
 
     public String consumeService()
     {

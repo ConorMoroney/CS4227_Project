@@ -88,8 +88,8 @@ public class DatabaseAccess implements I_Database {
     }
 
     @Override
-    public boolean updateItemQuantity(int quantity, String name){
-        return dbconn.updateItemQuantity(quantity, name);
+    public boolean updateItemQuantity( int decider, int quantity, String name){
+        return dbconn.updateItemQuantity(decider, quantity, name);
     }
 
     @Override

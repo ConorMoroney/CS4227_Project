@@ -21,6 +21,7 @@ public class ViewItems extends Panel implements  ActionListener
 	private JPanel buttonPanel;
 	private JButton exitButton;
 	private JButton purchaseButton;
+	private JButton undoButton;
 	private ArrayList<String> items = new  ArrayList<String>();
 	
 	private JLabel quantityLabel;
@@ -29,9 +30,17 @@ public class ViewItems extends Panel implements  ActionListener
 	private JTextField itemNameTextField;
 	private JTextField quantityTextField;
 
+
+	public int getDecider() {
+		return decider;
+	}
+
+	private int decider = 0;
+
 	public static QtyGrabber  getQtyGrabber(){
 		return G;
 	}
+
 
 	public ViewItems(){
 		this.panel = new JPanel();
@@ -69,6 +78,10 @@ public class ViewItems extends Panel implements  ActionListener
 		purchaseButton.addActionListener(this);
 		buttonPanel.add(purchaseButton);
 
+		undoButton = GUIFactory.addButton("Undo",280,250,180,30);
+		undoButton .addActionListener(this);
+		buttonPanel.add(undoButton);
+
 		//Add Labels
 		nameLabel = GUIFactory.addLabel("Product Name:",280,0,120,30);
 		buttonPanel.add(nameLabel);
@@ -94,9 +107,35 @@ public class ViewItems extends Panel implements  ActionListener
 		if(e.getSource() == exitButton)
 		{
 			panelMgr.getPanelFromFactory(2);
+
+		}
+
+		if(e.getSource() == undoButton)
+		{
+			help.setDecider(1);
+			System.out.println("click");
+			String name = "";
+			int quant = 0;
+			String itemName = itemNameTextField.getText();
+			int orderQuantity = Integer.parseInt(quantityTextField.getText());
+			for(String s : items){
+				String tmp[] = s.split(":");
+				if(tmp[0].equals(itemName)) {
+					name = tmp[0].trim();
+					quant = Integer.parseInt(tmp[1].trim());
+				}
+			}
+			if(orderQuantity <= quant)
+			{
+				help.addOrder(itemName, orderQuantity, help.getCustomer().getName());
+				help.updateItemQuantity(decider, quant , name);
+
+				JOptionPane.showMessageDialog(null, "Undo Successful");
+			}
 		}
 		if (e.getSource() == purchaseButton)
 		{
+			help.setDecider(2);
 			String name = "";
 			int quant = 0;
 			String itemName = itemNameTextField.getText();
@@ -113,7 +152,7 @@ public class ViewItems extends Panel implements  ActionListener
 				if(orderQuantity <= quant)
 				{
 					help.addOrder(itemName, orderQuantity, help.getCustomer().getName());
-					help.updateItemQuantity(quant - orderQuantity, name);
+					help.updateItemQuantity(decider, quant - orderQuantity, name);
 
 					JOptionPane.showMessageDialog(null, "Order Confirmed");
 				}

@@ -1,5 +1,9 @@
 package SQL;
 
+import GUI.Helper;
+import Momento.CareTaker;
+import Momento.Originator;
+
 import java.sql.*;
 
 /**
@@ -8,6 +12,8 @@ import java.sql.*;
 public class Update {
 
     private Connection con;
+    Originator originator = new Originator();
+    CareTaker careTaker = new CareTaker();
 
     public Update() {}
 
@@ -30,21 +36,63 @@ public class Update {
         return false;
     }
 */
-    public boolean UpdateItems(int newAmount , String name , Connection con ) {
+    public boolean UpdateItems(int decider, int newAmount , String name , Connection con ) {
         this.con = con;
 
         try
         {
             //Java.Connect to database
-
+            int plswork = Helper.getInstance().getDecider();
+            System.out.println("------------------" + plswork + "------------------");
             Statement mystat = this.con.createStatement();
-            String sql = "select * from items WHERE name = '" + name + "'";
-            ResultSet myRe = mystat.executeQuery(sql);
+            String sqlCurrent = "select * from items WHERE name = '" + name + "'";
+            String sqlToExecuteOnUndo = "";
+            String sqlToExecuteOnPurchase= "";
+            ResultSet myRe = mystat.executeQuery(sqlCurrent);
             myRe.next();
             int newQuantity = newAmount;
             //update table to have less quantity
-            sql = "UPDATE items SET quantity = " + newQuantity + " WHERE name = '" + name + "'";
-            mystat.executeUpdate(sql);
+            sqlCurrent = "UPDATE items SET quantity = " + newQuantity + " WHERE name = '" + name + "'";
+            System.out.println(newQuantity + "---------" );
+            System.out.println(name + "++++++++++++" );
+            int prevAmount = myRe.getInt(7);
+            System.out.println("///////////////////////////" + prevAmount);
+
+
+
+
+
+            sqlToExecuteOnPurchase = "UPDATE items SET quantity = " + newQuantity+ " WHERE name = '" + name + "'";
+
+            sqlToExecuteOnUndo = "UPDATE items SET quantity = " + prevAmount+ " WHERE name = '" + name + "'";
+
+            originator.setState(sqlToExecuteOnUndo);
+
+            originator.setState(sqlToExecuteOnPurchase);
+
+            careTaker.add(originator.saveStateToMemento());
+
+            if (plswork==1){
+
+                originator.getStateFromMemento(careTaker.get(0));
+                System.out.println("Second saved State: " + originator.getState());
+
+                System.out.println("------------------" + plswork + "------------------");
+                mystat.executeUpdate(sqlToExecuteOnPurchase);
+            }
+            else if (plswork==2){
+
+                originator.getStateFromMemento(careTaker.get(0));
+
+                System.out.println("First saved State: " + originator.getState());
+
+
+                System.out.println("------------------" + plswork + "------------------");
+                mystat.executeUpdate(sqlToExecuteOnPurchase);
+            }
+
+
+            mystat.executeUpdate(sqlCurrent);
             return true;
     }
         catch(Exception exc)

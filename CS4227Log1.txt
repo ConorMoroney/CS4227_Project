@@ -138,3 +138,276 @@
 [Warehouse] Update Product Stock;1478723317454
 [Customer] Log In;1478723779156
 [Customer] Exit;1478723783558
+[Manager] Log In;1478726851119
+[Manager] View Staff Details;1478726885831
+[Manager] Exit;1478726887152
+[Manager] Generate duh Reports;1478726888767
+[Manager] Generate duh Reports;1478726890263
+[Manager] Generate duh Reports;1478726890444
+[Manager] Generate duh Reports;1478726890609
+[Manager] Generate duh Reports;1478726890773
+[Manager] Exit;1478726894086
+[Manager] Log In;1478726901308
+[Manager] Exit;1478726905079
+[Manager] Log In;1478726924395
+[Manager] Generate Reports;1478726925950
+[Warehouse] Log In;1478726983108
+[Warehouse] Update Product Stock;1478726987956
+[Logistics] Log In;1478727002798
+[Logistics] Update Product Stock;1478727006549
+[Customer] Log In;1478727035528
+[Customer] Buy Product;1478727038878
+[Customer] Exit;1478727056128
+[Manager] Log In;1478727419278
+[Manager] View Staff Details;1478727421783
+[Manager] Exit;1478727423172
+[Manager] Generate Reports;1478727424404
+[Manager] Exit;1478727431772
+[Warehouse] Log In;1478727441757
+[Warehouse] Update Product Stock;1478727443489
+[Logistics] Log In;1478727462935
+[Logistics] Update Product Stock;1478727465575
+[Warehouse] Log In;1478727481835
+[Warehouse] Register a product;1478727483098
+[Warehouse] Register;1478727524336
+[Warehouse] Cancel;1478727526335
+[Warehouse] Register a product;1478727527887
+[Warehouse] Register;1478727569010
+[Warehouse] Cancel;1478727570408
+[Warehouse] Register a product;1478727571541
+[Warehouse] Register;1478727605036
+[Warehouse] Register;1478727606915
+[Warehouse] Cancel;1478727607709
+[Warehouse] Register a product;1478727609222
+[Warehouse] Register;1478727642268
+[Warehouse] Cancel;1478727643713
+[Warehouse] Exit;1478727645372
+[Manager] Log In;1478727652603
+[Manager] Generate Reports;1478727653625
+[Customer] Log In;1478728865384
+[Customer] Buy Product;1478728867314
+[Customer] Exit;1478728907573
+[No User] Register;1478728944345
+[No User] Register;1478728962728
+[No User] Cancel;1478728965664
+[No User] Register;1478729030512
+[No User] Register;1478729037857
+[No User] Cancel;1478729039904
+[No User] Register;1478729113742
+[No User] Register;1478729127358
+[Customer] Log In;1478729269953
+[Customer] Buy Product;1478729271218
+[Customer] Log In;1478729325107
+[Customer] Buy Product;1478729326760
+[Customer] Log In;1478729658653
+[Customer] Buy Product;1478729660863
+[Customer] Exit;1478729677948
+[Customer] Log In;1478730054734
+[Customer] Buy Product;1478730057511
+[Customer] Exit;1478730067781
+[Customer] Log In;1478730109845
+[Customer] Buy Product;1478730111245
+[Customer] Exit;1478730119589
+[Customer] Log In;1478730171783
+[Customer] Buy Product;1478730173610
+[Customer] Exit;1478730184514
+[Customer] Log In;1478730364501
+[Customer] Buy Product;1478730365800
+[Customer] Log In;1478730698891
+[Customer] Buy Product;1478730701958
+[Customer] Exit;1478730758089
+[Customer] Log In;1478730799594
+[Customer] Buy Product;1478730800909
+[Customer] Exit;1478730841413
+[Customer] Log In;1478730859822
+[Customer] Buy Product;1478730861027
+[Customer] Exit;1478730897331
+[Customer] Log In;1478730915680
+[Customer] Buy Product;1478730918810
+[Customer] Exit;1478730922901
+[Customer] Log In;1478731119240
+[Customer] Log In;1478731127792
+[Customer] Buy Product;1478731129412
+[Customer] Log In;1478731202582
+[Customer] Buy Product;1478731205863
+[Customer] Log In;1478731262577
+[Customer] Buy Product;1478731263657
+[Customer] Exit;1478731267954
+[Customer] Log In;1478731812336
+[Customer] Log In;1478731824979
+[Customer] Buy Product;1478731826135
+[Customer] Log In;1478731939308
+[Customer] Buy Product;1478731940340
+[Customer] Log In;1478731997500
+[Customer] Buy Product;1478732003896
+[Customer] Exit;1478732040444
+[Customer] Log In;1478732058712
+[Customer] Buy Product;1478732059792
+[Customer] Log In;1478732868116
+[Customer] Buy Product;1478732869827
+[Customer] Log In;1478733022907
+[Customer] Buy Product;1478733024235
+[Customer] Exit;1478734373447
+[No User] Register;1478734698817
+[No User] Cancel;1478734700037
+[Customer] Log In;1478734706023
+[Customer] Buy Product;1478734707627
+[Customer] Log In;1478734854097
+[Customer] Buy Product;1478734855513
+[Customer] Log In;1478735105725
+[Customer] Buy Product;1478735107121
+[Customer] Exit;1478735131253
+[Customer] Log In;1478735137630
+[Customer] Buy Product;1478735139181
+[Customer] Log In;1478735224361
+[Customer] Buy Product;1478735226132
+[Customer] Exit;1478735564260
+[Customer] Log In;1478735589000
+[Customer] Buy Product;1478735590214
+[Customer] Exit;1478735628414
+[Customer] Log In;1478735637901
+[Customer] Buy Product;1478735641448
+[Customer] Exit;1478735656249
+[Manager] Log In;1478735670614
+[Manager] Exit;1478735672251
+[Customer] Log In;1478735678681
+[Customer] Buy Product;1478735679975
+[Customer] Log In;1478736328356
+[Customer] Buy Product;1478736341613
+[Customer] Exit;1478736352436
+[Customer] Log In;1478736405025
+[Customer] Buy Product;1478736406761
+[Customer] Exit;1478736444958
+[Customer] Log In;1478736452524
+[Customer] Log In;1478736473815
+[Customer] Log In;1478736540456
+[Customer] Buy Product;1478736541971
+[Customer] Log In;1478736978926
+[Customer] Buy Product;1478736980188
+[Customer] Buy Product;1478737024176
+[Customer] Buy Product;1478737039009
+[Customer] Exit;1478737064685
+[Customer] Log In;1478737085953
+[Customer] Buy Product;1478737087452
+[Customer] Exit;1478737119439
+[Customer] Log In;1478737138488
+[Customer] Buy Product;1478737139898
+[Customer] Exit;1478737155824
+[Customer] Log In;1478737178020
+[Customer] Buy Product;1478737179089
+[Customer] Exit;1478737200181
+[Customer] Log In;1478737215407
+[Customer] Buy Product;1478737216594
+[Customer] Exit;1478737270186
+[Customer] Log In;1478737279739
+[Customer] Buy Product;1478737281260
+[Customer] Exit;1478737314994
+[Customer] Log In;1478737343441
+[Customer] Buy Product;1478737344204
+[Customer] Log In;1478737450854
+[Customer] Buy Product;1478737452744
+[Customer] Log In;1478737522589
+[Customer] Buy Product;1478737523603
+[Customer] Log In;1478737750481
+[Customer] Buy Product;1478737751513
+[Customer] Exit;1478737772559
+[Customer] Log In;1478737803905
+[Customer] Buy Product;1478737805070
+[Customer] Log In;1478737838757
+[Customer] Buy Product;1478737841483
+[Customer] Buy Product;1478737898488
+[Customer] Log In;1478738164265
+[Customer] Buy Product;1478738165423
+[Customer] Log In;1478738253765
+[Customer] Buy Product;1478738254806
+[Customer] Exit;1478738389268
+[Customer] Log In;1478738461540
+[Customer] Buy Product;1478738462570
+[Customer] Exit;1478738500737
+[Customer] Log In;1478738531394
+[Customer] Buy Product;1478738532466
+[Customer] Buy Product;1478738564082
+[Customer] Buy Product;1478738619589
+[Customer] Log In;1478738691709
+[Customer] Buy Product;1478738692802
+[Customer] Buy Product;1478738716478
+[Customer] Log In;1478738816978
+[Customer] Buy Product;1478738818075
+[Customer] Buy Product;1478738837562
+[Customer] Buy Product;1478738890608
+[Customer] Buy Product;1478738905623
+[Customer] Log In;1478739081899
+[Customer] Buy Product;1478739083009
+[Customer] Buy Product;1478739100597
+[Customer] Buy Product;1478739129862
+[Customer] Log In;1478739342883
+[Customer] Buy Product;1478739344295
+[Customer] Buy Product;1478739370699
+[Customer] Log In;1478739447148
+[Customer] Buy Product;1478739448282
+[Customer] Log In;1478739633406
+[Customer] Log In;1478739638317
+[Customer] Buy Product;1478739639432
+[Customer] Log In;1478739714098
+[Customer] Log In;1478739720643
+[Customer] Buy Product;1478739721478
+[Customer] Log In;1478739787555
+[Customer] Buy Product;1478739788733
+[Customer] Buy Product;1478739951101
+[Customer] Exit;1478739957561
+[Customer] Log In;1478739981398
+[Customer] Buy Product;1478739982796
+[Customer] Buy Product;1478740000239
+[Customer] Exit;1478740021268
+[Customer] Log In;1478740046505
+[Customer] Buy Product;1478740047625
+[Customer] Buy Product;1478740062570
+[Customer] Buy Product;1478740081477
+[Customer] Buy Product;1478740084887
+[Customer] Log In;1478740191039
+[Customer] Buy Product;1478740192468
+[Customer] Buy Product;1478740204692
+[Customer] Log In;1478740312066
+[Customer] Buy Product;1478740312950
+[Customer] Buy Product;1478740320957
+[Customer] Log In;1478740656489
+[Customer] Buy Product;1478740657649
+[Customer] Buy Product;1478740669432
+[Customer] Log In;1478740725544
+[Customer] Buy Product;1478740726372
+[Customer] Buy Product;1478740736065
+[Customer] Exit;1478740756921
+[Customer] Log In;1478740841530
+[Customer] Buy Product;1478740843192
+[Customer] Log In;1478740935816
+[Customer] Buy Product;1478740936793
+[Customer] Log In;1478740998458
+[Customer] Buy Product;1478740999464
+[Customer] Log In;1478741059996
+[Customer] Buy Product;1478741063824
+[Customer] Log In;1478741172452
+[Customer] Buy Product;1478741173417
+[Customer] Exit;1478741205862
+[Customer] Log In;1478741237202
+[Customer] Buy Product;1478741238160
+[Customer] Buy Product;1478741248010
+[Customer] Buy Product;1478741272772
+[Customer] Buy Product;1478741283968
+[Customer] Log In;1478741452759
+[Customer] Buy Product;1478741454793
+[Customer] Buy Product;1478741468183
+[Customer] Buy Product;1478741477749
+[Customer] Buy Product;1478741492334
+[Customer] Buy Product;1478741509702
+[Customer] View Account Details;1478741598229
+[Customer] Exit;1478741600000
+[Customer] Exit;1478741632333
+[Warehouse] Log In;1478741643475
+[Warehouse] Update Product Stock;1478741645107
+[Customer] Log In;1478741662429
+[Customer] Buy Product;1478741663339
+[Customer] Exit;1478741674975
+[Logistics] Log In;1478741684610
+[Logistics] Update Product Stock;1478741685872
+[Warehouse] Log In;1478741698133
+[Warehouse] Exit;1478741702660

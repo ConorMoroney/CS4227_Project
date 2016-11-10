@@ -6,6 +6,8 @@ import Momento.Originator;
 
 import java.sql.*;
 
+import static javax.swing.text.html.HTML.Tag.HEAD;
+
 /**
  * Created by Conor on 12-Oct-16.
  */
@@ -38,20 +40,19 @@ public class Update {
 <<<<<<< HEAD
 */
     public boolean UpdateItems(int decider, int newAmount , String name , Connection con ) {
-=======
-    */
-    public boolean UpdateItems(int newAmount , String name , Connection con ) {
->>>>>>> 2f14c5fec1dd893251fc39d1ae2598ef1a3f4e18
+
+
+
         this.con = con;
 
         try
         {
             //Java.Connect to database
-<<<<<<< HEAD
+
             int plswork = Helper.getInstance().getDecider();
             System.out.println("------------------" + plswork + "------------------");
-=======
->>>>>>> 2f14c5fec1dd893251fc39d1ae2598ef1a3f4e18
+
+
             Statement mystat = this.con.createStatement();
             String sqlCurrent = "select * from items WHERE name = '" + name + "'";
             String sqlToExecuteOnUndo = "";

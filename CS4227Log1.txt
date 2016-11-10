@@ -411,3 +411,7 @@
 [Logistics] Update Product Stock;1478741685872
 [Warehouse] Log In;1478741698133
 [Warehouse] Exit;1478741702660
+[Customer] Log In;1478773550412
+[Customer] Buy Product;1478773551590
+[Customer] Buy Product;1478773561725
+[Customer] Buy Product;1478773568915

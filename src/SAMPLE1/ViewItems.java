@@ -20,12 +20,12 @@ public class ViewItems extends Panel implements  ActionListener
 	private JPanel buttonPanel;
 	private JButton exitButton;
 	private JButton purchaseButton;
-<<<<<<< HEAD
+
 	private JButton undoButton;
-	private ArrayList<String> items = new  ArrayList<String>();
-=======
+
+
 	private ArrayList<String> items = new ArrayList<String>();
->>>>>>> 2f14c5fec1dd893251fc39d1ae2598ef1a3f4e18
+
 	
 	private JLabel quantityLabel;
 	private JLabel nameLabel;

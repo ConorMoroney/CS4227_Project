@@ -86,9 +86,11 @@ class RegisterProductGUI implements ActionListener {
 
             String type = typeField.getText();
             if (!(type.equalsIgnoreCase("pen") || type.equalsIgnoreCase("pencil") || type.equalsIgnoreCase("folder")
-                    || type.equalsIgnoreCase("paperclip") || type.equalsIgnoreCase("copy") || type.equalsIgnoreCase("envelope")
-                    || type.equalsIgnoreCase("ruler") || type.equalsIgnoreCase("paper"))) {
-                JOptionPane.showMessageDialog(null, "this is not a product type \n product types include: \n pen \n pencil \n folder \n copy \n paperclip \n ruler \n envelope \n paper");
+                                                || type.equalsIgnoreCase("paperclip") || type.equalsIgnoreCase("copy")
+                                                || type.equalsIgnoreCase("envelope") || type.equalsIgnoreCase("ruler")
+                                                || type.equalsIgnoreCase("paper"))) {
+                JOptionPane.showMessageDialog(null, "This is not a product type \n product types include: \n pen " +
+                                        "\n pencil \n folder \n copy \n paperclip \n ruler \n envelope \n paper");
                 return;
             }
 

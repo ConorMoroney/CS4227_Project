@@ -1,9 +1,5 @@
 package Java;
 
-import SAMPLE1.Main;
-//import SAMPLE2.Main;
-
-
 import java.awt.event.ActionEvent;
 
 /**
@@ -13,11 +9,17 @@ public class Context {
 
     private ActionEvent event;
 
-    public Context(ActionEvent event){ this.event = event;}
+    public Context(ActionEvent event){
+        this.event = event;
+    }
 
-    public ActionEvent getValue(){return event;}
+    public ActionEvent getValue(){
+        return event;
+    }
 
-    public void setValue(ActionEvent event){ this.event = event;}
+    public void setValue(ActionEvent event){
+        this.event = event;
+    }
 
     public String consumeService()
     {

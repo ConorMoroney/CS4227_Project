@@ -12,8 +12,6 @@ public class ViewStaffDetails extends Panel implements  ActionListener
 
     JPanel buttonPanel;
     JButton exitButton;
-    JLabel quantityLabel, nameLabel;
-    JTextField itemNameTextField, quantityTextField;
 
     public ViewStaffDetails(){
         this.panel = new JPanel();
@@ -23,7 +21,6 @@ public class ViewStaffDetails extends Panel implements  ActionListener
     public JPanel createContentPane()
     {
         //Make bottom JPanel to place buttonPanel on
-        //JPanel totalGUI = new JPanel();
         this.panel.setLayout(null);
 
         //Make Button Panel
@@ -60,7 +57,6 @@ public class ViewStaffDetails extends Panel implements  ActionListener
         {
             panelMgr.getPanelFromFactory(2);
         }
-
     }
 
     private void createAndShowGUI()
@@ -80,5 +76,4 @@ public class ViewStaffDetails extends Panel implements  ActionListener
     {
         this.panelMgr = pm;
     }
-
 }

@@ -17,12 +17,15 @@ import java.util.ArrayList;
 public class ViewItems extends Panel implements  ActionListener
 {
 	private static final QtyGrabber G = new QtyGrabber();
-	private static String username = "";
 	private JPanel buttonPanel;
 	private JButton exitButton;
 	private JButton purchaseButton;
+<<<<<<< HEAD
 	private JButton undoButton;
 	private ArrayList<String> items = new  ArrayList<String>();
+=======
+	private ArrayList<String> items = new ArrayList<String>();
+>>>>>>> 2f14c5fec1dd893251fc39d1ae2598ef1a3f4e18
 	
 	private JLabel quantityLabel;
 	private JLabel nameLabel;
@@ -176,7 +179,6 @@ public class ViewItems extends Panel implements  ActionListener
 				System.out.println(" couldnt connect to DB 1234 ");
 			}
 		}
-
 	}
 
 	private void createAndShowGUI()
@@ -196,6 +198,4 @@ public class ViewItems extends Panel implements  ActionListener
 	{
 		this.panelMgr = pm;
 	}
-
-
 }

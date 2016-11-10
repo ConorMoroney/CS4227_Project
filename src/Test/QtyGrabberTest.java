@@ -37,5 +37,4 @@ public class QtyGrabberTest {
     public void setQty() throws Exception {
 
     }
-
 }

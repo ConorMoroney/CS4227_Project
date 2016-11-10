@@ -3,7 +3,6 @@ package User;
 
 public class EmployeeFactory extends AbstractUserFactory {
 
-
     public ConcreteEmployee createUser(String userType){
         String [] concreteUserTypes = {"warehouse","logistics","manager"};
         for(String s:concreteUserTypes){
@@ -13,8 +12,6 @@ public class EmployeeFactory extends AbstractUserFactory {
             if ("ConcreteEmployee".equalsIgnoreCase(userType)) {
                 return new ConcreteEmployee();
             }
-
-
         }
         if(userType==null){
             return null;
@@ -25,6 +22,3 @@ public class EmployeeFactory extends AbstractUserFactory {
         }
     }
 }
-
-
-

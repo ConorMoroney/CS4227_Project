@@ -1,12 +1,10 @@
 package SAMPLE1;
 
 import GUI.*;
-import SQL.Select;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.sql.*;
 
 public class LogInScreenGUI extends Panel implements  ActionListener
 {
@@ -23,7 +21,6 @@ public class LogInScreenGUI extends Panel implements  ActionListener
     public JPanel createContentPane()
     {
         //Make bottom JPanel to place buttonPanel on
-        //JPanel totalGUI = new JPanel();
         this.panel.setLayout(null);
 
         buttonPanel = GUIFactory.addButtonPanel(10,10,500,485);
@@ -97,18 +94,9 @@ public class LogInScreenGUI extends Panel implements  ActionListener
 
         else if(e.getSource() == logInButton)
         {
-
             //declare variables for username and password
             String userName = userNameTextField.getText();
             String password = passwordTextField.getText();
-
-            /*
-                TODO
-                Change code below to not have any SQL, use function calls.
-             */
-
-            //Random JOptionPane that shows username and password.
-            //JOptionPane.showMessageDialog(null, userName + " " + password);
 
             //check if username and password exist
             try
@@ -137,9 +125,6 @@ public class LogInScreenGUI extends Panel implements  ActionListener
 
     public void createAndShowGUI()
     {
-        //Create and set up the content pane.
-        //frame = GUIFactory.makeFrame("Log In Screen", 305, 165);
-        //frame.setContentPane(this.createContentPane());
         this.createContentPane();
     }
 

@@ -34,7 +34,9 @@ public class ConcreteFramework implements I_Framework {
     }
 
     //May not be Required
-    public Context callBack(){return context;}
+    public Context callBack(){
+        return context;
+    }
 
     public Dispacher getDispacher(){return d;}
 }

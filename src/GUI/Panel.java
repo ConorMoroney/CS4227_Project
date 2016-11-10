@@ -10,7 +10,6 @@ public abstract class Panel
 
     public Panel()
     {
-
     }
 
     public abstract JPanel sendToWindow();

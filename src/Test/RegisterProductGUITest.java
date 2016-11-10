@@ -32,5 +32,4 @@ public class RegisterProductGUITest {
     public void registerItem() throws Exception {
 
     }
-
 }

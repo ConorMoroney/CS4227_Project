@@ -10,7 +10,6 @@ import GUI.Panel;
 
 public class ViewOrders extends Panel implements  ActionListener
 {
-	
 	private JPanel buttonPanel;
 	private JButton exitButton;
 
@@ -21,7 +20,6 @@ public class ViewOrders extends Panel implements  ActionListener
 	private JPanel createContentPane()
 	{
 		//Make bottom JPanel to place buttonPanel on
-		//JPanel totalGUI = new JPanel();
 		this.panel.setLayout(null);
 
 		//Make Button Panel
@@ -77,6 +75,4 @@ public class ViewOrders extends Panel implements  ActionListener
 	{
 		this.panelMgr = pm;
 	}
-
-
 }

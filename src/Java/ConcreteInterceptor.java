@@ -2,17 +2,11 @@ package Java;
 
 import java.awt.event.ActionEvent;
 
-import SQL.Connect;
-import SQL.Insert;
-
-import java.awt.event.ActionEvent;
-
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 
 import static Database.DatabaseAccess.dba;
-import static GUI.Helper.help;
 
 /**
  * Created by Conor on 28-Oct-16.
@@ -44,8 +38,6 @@ public class ConcreteInterceptor  implements I_Interceptor{
         {
             System.out.println("An IO error occurred in Concrete Interceptor");
         }
-
-
     }
     /**TODO
      * Instead of Printing to the command line
@@ -78,11 +70,9 @@ public class ConcreteInterceptor  implements I_Interceptor{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
-    private boolean compareFileToDB()
-    {
+
+    private boolean compareFileToDB() {
         return false;
     }
 }

@@ -12,7 +12,6 @@ public class SelectMax implements SQLInterface {
     private ResultSet myRe;
     private Connection mycon;
 
-
     public SelectMax(String column ,String table, Connection mycon){
 
         String SQL = "select Max("+column+") from "+table;
@@ -32,7 +31,6 @@ public class SelectMax implements SQLInterface {
             System.exit(0);
         }
     }
-
 
     public int getMax(ResultSet r) {
         int max = 0;

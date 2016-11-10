@@ -32,5 +32,4 @@ public class LogInScreenGUITest {
     public void main() throws Exception {
 
     }
-
 }

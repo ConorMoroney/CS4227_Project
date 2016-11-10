@@ -10,15 +10,15 @@ import java.sql.*;
  * Created by Conor on 12-Oct-16.
  */
 public class Update {
-
     private Connection con;
     Originator originator = new Originator();
     CareTaker careTaker = new CareTaker();
 
-    public Update() {}
+    public Update() {
 
-
-   /* public boolean UpdateItems(int newAmount , String name , Connection con ) {
+    }
+   /*
+   public boolean UpdateItems(int newAmount , String name , Connection con ) {
         this.con = con;
         try {
 
@@ -35,15 +35,23 @@ public class Update {
         }
         return false;
     }
+<<<<<<< HEAD
 */
     public boolean UpdateItems(int decider, int newAmount , String name , Connection con ) {
+=======
+    */
+    public boolean UpdateItems(int newAmount , String name , Connection con ) {
+>>>>>>> 2f14c5fec1dd893251fc39d1ae2598ef1a3f4e18
         this.con = con;
 
         try
         {
             //Java.Connect to database
+<<<<<<< HEAD
             int plswork = Helper.getInstance().getDecider();
             System.out.println("------------------" + plswork + "------------------");
+=======
+>>>>>>> 2f14c5fec1dd893251fc39d1ae2598ef1a3f4e18
             Statement mystat = this.con.createStatement();
             String sqlCurrent = "select * from items WHERE name = '" + name + "'";
             String sqlToExecuteOnUndo = "";
@@ -94,15 +102,11 @@ public class Update {
 
             mystat.executeUpdate(sqlCurrent);
             return true;
-    }
+        }
         catch(Exception exc)
         {
             System.out.println(" couldnt connect to DB 1234 ");
         }
         return false;
     }
-
-
 }
-
-

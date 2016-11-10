@@ -1,7 +1,6 @@
 package Database;
 import User.*;
 import java.util.ArrayList;
-import java.util.List;
 import Java.I_Product;
 /**
  * Created by Paul on 02/11/2016.

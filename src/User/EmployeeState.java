@@ -22,6 +22,7 @@ public class EmployeeState implements I_UserState {
         }
         return null;
     }
+
     public String getFrameTitle(){
         for (String s : concreteEmployeeTypes) {
             if ("Warehouse".equalsIgnoreCase(employeeTitle)) {
@@ -36,7 +37,4 @@ public class EmployeeState implements I_UserState {
         }
         return null;
     }
-
-
-
 }

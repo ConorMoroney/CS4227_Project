@@ -3,25 +3,15 @@ package SAMPLE1;
 import GUI.GUIFactory;
 import GUI.Panel;
 import GUI.PanelManager;
-import SQL.Connect;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.sql.*;
 
 public class ViewAccountDetails extends Panel implements  ActionListener
 {
-
     JPanel buttonPanel;
     JButton exitButton;
-
-    JLabel quantityLabel, nameLabel;
-
-    JTextField itemNameTextField, quantityTextField;
-    static JFrame frame = new JFrame("View Account Details");
-    static int id;
-
 
     public ViewAccountDetails(){
         this.panel = new JPanel();

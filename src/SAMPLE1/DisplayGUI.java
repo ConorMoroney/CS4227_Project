@@ -4,7 +4,6 @@ import GUI.GUIFactory;
 import GUI.Panel;
 import GUI.PanelManager;
 import Java.*;
-import SAMPLE1.RegisterProductGUI;
 
 import java.awt.event.*;
 import javax.swing.*;
@@ -13,10 +12,8 @@ import javax.swing.*;
 
 public class DisplayGUI extends Panel implements ActionListener// extends JFrame implements ActionListener
 {
-
 	JPanel buttonPanel;
 	JButton remaingModulesButton, viewResultsButton, exitButton;
-
 
 	/*TODO :
 	 * make method to create a button and have it increment the location of the buttons
@@ -91,6 +88,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 			}
 
 		}
+
 		else if(e.getSource() == viewResultsButton) {
 			System.out.println("Button clicked");
 			String command = ((JButton) e.getSource()).getActionCommand();
@@ -111,6 +109,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 
 			}
 		}
+
 		else if(e.getSource() == exitButton) {
 			help.logoutUser();
 			panelMgr.getPanelFromFactory(1);
@@ -128,5 +127,4 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 	{
 		this.panelMgr = pm;
 	}
-
 }

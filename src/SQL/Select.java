@@ -1,8 +1,6 @@
 package SQL;
 
-
 import java.sql.*;
-
 
 /**
  * Created by Conor on 12-Oct-16.
@@ -66,6 +64,7 @@ public class Select implements  SQLInterface{
             e1.printStackTrace();
         }
     }
-    public ResultSet getResultset(){return myRe;}
-
+    public ResultSet getResultset(){
+        return myRe;
+    }
 }

@@ -9,7 +9,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 import SQL.*;
 import User.*;
 
@@ -37,7 +36,6 @@ public class Database implements I_Database {
             System.out.println("Error retrieving items from database");
         }
         return items;
-
     }
 
     @Override
@@ -81,7 +79,6 @@ public class Database implements I_Database {
             // TODO Auto-generated catch block
             System.out.println(e.getMessage());
             return false;
-
         }
     }
 
@@ -91,7 +88,8 @@ public class Database implements I_Database {
             Select s = new Select("*","users","username",username, con);
             ResultSet myRe = s.getResultset();
             if(myRe.next()){
-                return new ConcreteCustomer(Integer.parseInt(myRe.getString(1)),myRe.getString(2), Integer.parseInt(myRe.getString(3)), myRe.getString(4), myRe.getString(5), myRe.getString(6));
+                return new ConcreteCustomer(Integer.parseInt(myRe.getString(1)),myRe.getString(2),
+                        Integer.parseInt(myRe.getString(3)), myRe.getString(4), myRe.getString(5), myRe.getString(6));
             }
         }
         catch(SQLException e){
@@ -106,7 +104,8 @@ public class Database implements I_Database {
             Select s = new Select("*","users","username",username, con);
             ResultSet myRe = s.getResultset();
             if(myRe.next()){
-                return new ConcreteEmployee(Integer.parseInt(myRe.getString(1)),myRe.getString(2), Integer.parseInt(myRe.getString(3)), myRe.getString(4), myRe.getString(5), myRe.getString(6));
+                return new ConcreteEmployee(Integer.parseInt(myRe.getString(1)),myRe.getString(2),
+                        Integer.parseInt(myRe.getString(3)), myRe.getString(4), myRe.getString(5), myRe.getString(6));
             }
         }
         catch(SQLException e){
@@ -117,8 +116,8 @@ public class Database implements I_Database {
 
     @Override
     public int registerUser(String userName, int accesslvl, String pass, String email, String address){
-            Insert i = new Insert();
-            return i.CreateUserInsert(userName, accesslvl, pass, email, address, con);
+        Insert i = new Insert();
+        return i.CreateUserInsert(userName, accesslvl, pass, email, address, con);
     }
 
     public int addLog(String LogText){
@@ -172,7 +171,8 @@ public class Database implements I_Database {
                 occupancy = "Employee Type: Logistics Staff, \n";
 
 
-            staff.add(" UserName: " + myRe.getString(2) + ", \n" + "Occupancy: " + occupancy + "\n" +  " Address:  " + myRe.getString(6) + ", \n" + " Email: " + myRe.getString(5) + ", \n\n");
+            staff.add(" UserName: " + myRe.getString(2) + ", \n" + "Occupancy: " + occupancy + "\n" +  " Address:  "
+                    + myRe.getString(6) + ", \n" + " Email: " + myRe.getString(5) + ", \n\n");
         }
         }catch(SQLException e){
             System.out.println(e.fillInStackTrace());
@@ -213,5 +213,4 @@ public class Database implements I_Database {
         }
         return orders;
     }
-
 }

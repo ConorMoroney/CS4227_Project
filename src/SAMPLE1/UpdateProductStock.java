@@ -1,6 +1,7 @@
 package SAMPLE1;
 
 import GUI.GUIFactory;
+import GUI.Helper;
 import GUI.Panel;
 import GUI.PanelManager;
 
@@ -127,7 +128,7 @@ public class UpdateProductStock extends Panel implements  ActionListener
 
 			try
 			{
-				help.updateItemQuantity(newQuantity, itemName);
+				help.updateItemQuantity(Helper.getInstance().getDecider(), newQuantity, itemName);
 				JOptionPane.showMessageDialog(null, "Product Stock Update Confirmed.");
 			}
 

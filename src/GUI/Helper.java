@@ -12,6 +12,16 @@ public class Helper {
     private I_Employee emp;
     private I_UserState state;
 
+    public int getDecider() {
+        return decider;
+    }
+
+    public void setDecider(int decider) {
+        this.decider = decider;
+    }
+
+    private int decider = 0;
+
     private Helper(){
 
     }
@@ -48,6 +58,7 @@ public class Helper {
         emp = dba.getEmployeeDetails(username);
         setUserState(emp.getaccesslvl());
     }
+
 
     public I_Customer getCustomer(){
         return cust;
@@ -97,8 +108,8 @@ public class Helper {
         return dba.addOrder(name, quantity, customer);
     }
 
-    public boolean updateItemQuantity(int quantity, String name){
-        return dba.updateItemQuantity(quantity, name);
+    public boolean updateItemQuantity(int decider,  int quantity, String name){
+        return dba.updateItemQuantity(decider, quantity, name);
     }
 
     public ArrayList<String> getOrders(){

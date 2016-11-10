@@ -29,9 +29,12 @@ public class Main {
 		PanelFactory panelFac = new PanelFactory();
 		PanelManager panelMgr = new PanelManager(panelFac);
 		panelMgr.registerObserver(window);
+
 	}
 	private static void attach(ConcreteInterceptor i) {
 		c.getDispacher().register(i);
 	}
+
+
 
 }

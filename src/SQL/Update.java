@@ -1,9 +1,8 @@
 package SQL;
 
 import GUI.Helper;
-import SAMPLE1.ViewItems;
-import TestMom.CareTaker;
-import TestMom.Originator;
+import Momento.CareTaker;
+import Momento.Originator;
 
 import java.sql.*;
 

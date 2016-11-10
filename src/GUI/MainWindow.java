@@ -22,7 +22,11 @@ public class MainWindow extends JFrame implements Observer
         Toolkit toolKit = Toolkit.getDefaultToolkit();
         SCREEN_WIDTH = toolKit.getScreenSize().width;
         SCREEN_HEIGHT = toolKit.getScreenSize().height;
+
+
         this.setSize(500, 500);
+        this.setLocationRelativeTo(null);
+
         this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

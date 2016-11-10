@@ -1,10 +1,16 @@
 package SAMPLE1;
 
-import GUI.ActionListenerSuper;
+import Database.Database;
+import Database.DatabaseAccess;
+import Database.I_Database;
+import GUI.*;
 import Java.ConcreteFramework;
 import Java.ConcreteInterceptor;
-import Database.*;
-import GUI.*;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 public class Main {
 	public static ConcreteFramework c;
@@ -25,6 +31,9 @@ public class Main {
 		actionListener = new ActionListenerSuper();
 		ConcreteInterceptor Int1 = new ConcreteInterceptor();
 		attach(Int1);
+
+
+        SplashWindow splashWindow = new SplashWindow();
 		MainWindow window = new MainWindow();
 		PanelFactory panelFac = new PanelFactory();
 		PanelManager panelMgr = new PanelManager(panelFac);

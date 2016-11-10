@@ -65,7 +65,7 @@ public class UpdateProductStock extends Panel implements  ActionListener
 		exitButton.addActionListener(this);
 		buttonPanel.add(exitButton);
 
-		updateButton = GUIFactory.addButton("Purchase",280,150,180,30);
+		updateButton = GUIFactory.addButton("Update Stock",280,150,180,30);
 		updateButton.addActionListener(this);
 		buttonPanel.add(updateButton);
 

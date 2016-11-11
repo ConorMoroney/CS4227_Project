@@ -12,8 +12,10 @@ import javax.swing.*;
 
 public class DisplayGUI extends Panel implements ActionListener// extends JFrame implements ActionListener
 {
-	JPanel buttonPanel;
-	JButton remaingModulesButton, viewResultsButton, exitButton;
+	private JPanel buttonPanel;
+	private JButton remaingModulesButton;
+	private JButton viewResultsButton;
+	private JButton exitButton;
 
 	/*TODO :
 	 * make method to create a button and have it increment the location of the buttons
@@ -30,7 +32,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 		this.createContentPane();
 	}
 
-	public JPanel createContentPane ()
+	private JPanel createContentPane()
 	{
 		// get the title strings
 		String[] titles =  help.getUserState().getButtonTitles();

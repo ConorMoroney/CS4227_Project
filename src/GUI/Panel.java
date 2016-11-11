@@ -4,11 +4,11 @@ import javax.swing.JPanel;
 
 public abstract class Panel
 {
-    protected Helper help = Helper.getInstance();
+    protected final Helper help = Helper.getInstance();
     protected PanelManager panelMgr;
     protected JPanel panel;
 
-    public Panel()
+    protected Panel()
     {
     }
 

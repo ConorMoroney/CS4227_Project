@@ -7,11 +7,6 @@ import GUI.*;
 import Java.ConcreteFramework;
 import Java.ConcreteInterceptor;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-
 public class Main {
 	public static ConcreteFramework c;
 	public static GUI.ActionListenerSuper actionListener;

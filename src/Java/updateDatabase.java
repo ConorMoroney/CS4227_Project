@@ -19,15 +19,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-public class updateDatabase implements  ActionListener{
+class updateDatabase implements  ActionListener{
 
 	static String username = "";
-	private JPanel buttonPanel;
 	private JButton exitButton;
 	private JButton updateButton;
-
-	private JLabel quantityLabel;
-	private JLabel nameLabel;
 
 	private final JPanel totalGUI = new JPanel();
 
@@ -48,7 +44,7 @@ public class updateDatabase implements  ActionListener{
 		totalGUI.setLayout(null);
 
 		//Make Button Panel
-		buttonPanel = new JPanel();
+		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setLocation(10, 10);
 		buttonPanel.setSize(295, 185);
@@ -136,12 +132,12 @@ public class updateDatabase implements  ActionListener{
 		buttonPanel.add(updateButton);
 
 		//make Labels
-		nameLabel = new JLabel("Product Name:");
+		JLabel nameLabel = new JLabel("Product Name:");
 		nameLabel.setLocation(130, 0);
 		nameLabel.setSize(120, 30);
 		buttonPanel.add(nameLabel);
 
-		quantityLabel = new JLabel("Add Quantity:");
+		JLabel quantityLabel = new JLabel("Add Quantity:");
 		quantityLabel.setLocation(130, 60);
 		quantityLabel.setSize(120, 30);
 		buttonPanel.add(quantityLabel);

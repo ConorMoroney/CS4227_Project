@@ -1,8 +1,6 @@
 package GUI;
 
-import javax.swing.JPanel;
-
-public interface Subject {
+interface Subject {
 
     void registerObserver(MainWindow window);
     void removeObserver();

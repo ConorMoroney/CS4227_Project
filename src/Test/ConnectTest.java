@@ -11,8 +11,6 @@ import static org.junit.Assert.*;
  * Created by shane on 11-Oct-16.
  */
 public class ConnectTest {
-    //public Java.Connect conTest;
-    private final Boolean name = true;
     @Before
     public void setUp() throws Exception {
       //  Java.Connect conTest = new Java.Connect();
@@ -24,6 +22,7 @@ public class ConnectTest {
 
     @Test
     public void test(){
+        Boolean name = true;
         assertTrue(name);
     }
 }

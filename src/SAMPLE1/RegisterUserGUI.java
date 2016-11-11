@@ -3,34 +3,35 @@ package SAMPLE1;
 import GUI.GUIFactory;
 import GUI.Panel;
 import GUI.PanelManager;
-import User.I_Customer;
 import User.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
 public class RegisterUserGUI extends Panel implements  ActionListener
 {
-    JPanel buttonPanel;
-    JButton cancelButton, registerUserButton;
+    private JPanel buttonPanel;
+    private JButton cancelButton;
+    private JButton registerUserButton;
     private final String [] userTypes = {"Manager", "Logistics" , "Warehouse" , "Customer"};
-    JLabel userLabel,TypeLabel, passLabel, emailLabel, addressLabel;
+    private JLabel userLabel;
+    private JLabel TypeLabel;
+    private JLabel passLabel;
+    private JLabel emailLabel;
+    private JLabel addressLabel;
     private final JComboBox userType = new JComboBox(userTypes);
-    JTextField userField,passField, emailField, addressField;
+    private JTextField userField;
+    private JTextField passField;
+    private JTextField emailField;
+    private JTextField addressField;
 
     public RegisterUserGUI(){
         this.panel = new JPanel();
         createAndShowGUI();
     }
 
-    public JPanel createContentPane()
+    private JPanel createContentPane()
     {
         //Make bottom JPanel to place buttonPanel on
         this.panel.setLayout(new BoxLayout(this.panel, BoxLayout.X_AXIS));

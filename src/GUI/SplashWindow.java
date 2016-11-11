@@ -22,7 +22,7 @@ public class SplashWindow {
         splashWindow.setLocationRelativeTo(null);
         splashWindow.setVisible(true);
         try {
-            Thread.sleep(8200);
+            Thread.sleep(1800);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

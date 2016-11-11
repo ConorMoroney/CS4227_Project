@@ -6,8 +6,8 @@ import Database.DatabaseAccess;
  * Created by Paul on 02/11/2016.
  */
 public class Helper {
-    private static DatabaseAccess dba = DatabaseAccess.getInstance();
-    public static Helper help = new Helper();
+    private static final DatabaseAccess dba = DatabaseAccess.getInstance();
+    private static final Helper help = new Helper();
     private I_Customer cust;
     private I_Employee emp;
     private I_UserState state;
@@ -30,7 +30,7 @@ public class Helper {
         return state;
     }
 
-    public void setUserState(int access) {
+    private void setUserState(int access) {
         if(access==1) {
             state = new CustomerState();
         }

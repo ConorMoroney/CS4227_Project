@@ -8,17 +8,20 @@ import java.awt.event.ActionEvent;
 
 public class LogInScreenGUI extends Panel implements  ActionListener
 {
-    JPanel buttonPanel;
-    JButton exitButton, logInButton, registerButton;
-    JLabel userNameLabel, passwordLabel;
-    JTextField userNameTextField;
-    JPasswordField passwordTextField;
+    private JPanel buttonPanel;
+    private JButton exitButton;
+    private JButton logInButton;
+    private JButton registerButton;
+    private JLabel userNameLabel;
+    private JLabel passwordLabel;
+    private JTextField userNameTextField;
+    private JPasswordField passwordTextField;
 
     public LogInScreenGUI(){
         this.panel = new JPanel();
         createAndShowGUI();
     }
-    public JPanel createContentPane()
+    private JPanel createContentPane()
     {
         //Make bottom JPanel to place buttonPanel on
         this.panel.setLayout(null);
@@ -123,7 +126,7 @@ public class LogInScreenGUI extends Panel implements  ActionListener
 
     }
 
-    public void createAndShowGUI()
+    private void createAndShowGUI()
     {
         this.createContentPane();
     }

@@ -12,8 +12,8 @@ import org.junit.Test;
  */
 public class ProductFactoryTest {
 
-    ProductFactory prodF = new ProductFactory();
-    String [] productTypes = {"pen","pencil","paper","envelope","paperclip","folder", "ruler", "copy"};
+    private final ProductFactory prodF = new ProductFactory();
+    private final String [] productTypes = {"pen","pencil","paper","envelope","paperclip","folder", "ruler", "copy"};
 
 
     @Before

@@ -17,7 +17,6 @@ import java.util.ArrayList;
 public class ViewItems extends Panel implements  ActionListener
 {
 	private static final QtyGrabber G = new QtyGrabber();
-	private JPanel buttonPanel;
 	private JButton exitButton;
 	private JButton purchaseButton;
 
@@ -26,10 +25,7 @@ public class ViewItems extends Panel implements  ActionListener
 
 	private ArrayList<String> items = new ArrayList<String>();
 
-	
-	private JLabel quantityLabel;
-	private JLabel nameLabel;
-	
+
 	private JTextField itemNameTextField;
 	private JTextField quantityTextField;
 
@@ -38,7 +34,7 @@ public class ViewItems extends Panel implements  ActionListener
 		return decider;
 	}
 
-	private int decider = 0;
+	private final int decider = 0;
 
 	public static QtyGrabber  getQtyGrabber(){
 		return G;
@@ -55,7 +51,7 @@ public class ViewItems extends Panel implements  ActionListener
 		this.panel.setLayout(null);
 
 		//Make Button Panel
-		buttonPanel = new JPanel();
+		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setLocation(10, 10);
 		buttonPanel.setSize(500, 500);
@@ -86,10 +82,10 @@ public class ViewItems extends Panel implements  ActionListener
 		buttonPanel.add(undoButton);
 
 		//Add Labels
-		nameLabel = GUIFactory.addLabel("Product Name:",280,0,120,30);
+		JLabel nameLabel = GUIFactory.addLabel("Product Name:", 280, 0, 120, 30);
 		buttonPanel.add(nameLabel);
 
-		quantityLabel = GUIFactory.addLabel("Purchase Quantity:",280,60,120,30);
+		JLabel quantityLabel = GUIFactory.addLabel("Purchase Quantity:", 280, 60, 120, 30);
 		buttonPanel.add(quantityLabel);
 		
 		//Make Text fields
@@ -106,7 +102,7 @@ public class ViewItems extends Panel implements  ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
-		//Main.actionListener.actionPerformed(e);
+		Main.actionListener.actionPerformed(e);
 		if(e.getSource() == exitButton)
 		{
 			panelMgr.getPanelFromFactory(2);

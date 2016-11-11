@@ -11,7 +11,7 @@ public class ConcreteEmployee implements I_Employee{
     private String email;
     private String address;
     private int accesslvl;
-    private String [] concreteTypes = {"Warehouse", "Logistics", "Manager"};
+    private final String [] concreteTypes = {"Warehouse", "Logistics", "Manager"};
     private I_UserState state;
 
     public ConcreteEmployee(int ID, String user, int access, String pass, String mail, String add){

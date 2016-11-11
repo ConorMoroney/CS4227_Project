@@ -6,7 +6,7 @@ package GUI;
  */
 public class PanelManager implements Subject
 {
-    private PanelFactory panelFac;
+    private final PanelFactory panelFac;
     private MainWindow window;
     private Panel currentPanel;
 

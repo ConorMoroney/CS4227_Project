@@ -5,7 +5,7 @@ import java.util.List;
  * Created by shane on 09-Nov-16.
  */
 public class CareTaker {
-    private List<Memento> mementoList = new ArrayList<Memento>();
+    private final List<Memento> mementoList = new ArrayList<Memento>();
 
     public void add(Memento state){
         mementoList.add(state);

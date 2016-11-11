@@ -17,14 +17,11 @@ public class UpdateProductStock extends Panel implements  ActionListener
 {
 	static String username = "";
 
-	private JPanel buttonPanel;
-	private JButton exitButton, updateButton;
-	private JLabel quantityLabel, nameLabel;
-	private JTextField itemNameTextField, quantityTextField;
+    private JButton exitButton, updateButton;
+    private JTextField itemNameTextField, quantityTextField;
 	private static final JFrame frame = new JFrame("Update Stock");
-	private ArrayList<String> items = new  ArrayList<String>();
 
-	public UpdateProductStock(){
+    public UpdateProductStock(){
 		this.panel = new JPanel();
 		createAndShowGUI();
 	}
@@ -40,7 +37,7 @@ public class UpdateProductStock extends Panel implements  ActionListener
 		this.panel.setLayout(new BoxLayout(this.panel, BoxLayout.X_AXIS));
 
 		//Make Button Panel
-		buttonPanel = new JPanel();
+        JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setLocation(10, 10);
 		buttonPanel.setSize(295, 485);
@@ -50,8 +47,8 @@ public class UpdateProductStock extends Panel implements  ActionListener
 		int i = 0;
 
 		//Make List and scroll pane for items
-		this.items = help.getItems();
-		JList items = new JList(this.items.toArray());
+        ArrayList<String> items1 = help.getItems();
+		JList items = new JList(items1.toArray());
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setViewportView(items);
@@ -70,8 +67,8 @@ public class UpdateProductStock extends Panel implements  ActionListener
 		buttonPanel.add(updateButton);
 
 		//make Labels
-		nameLabel = GUIFactory.addLabel("Product Name:",280,0,120,30);
-		quantityLabel = GUIFactory.addLabel("New Quantity:",280,60,120,30);
+        JLabel nameLabel = GUIFactory.addLabel("Product Name:", 280, 0, 120, 30);
+        JLabel quantityLabel = GUIFactory.addLabel("New Quantity:", 280, 60, 120, 30);
 
 		buttonPanel.add(nameLabel);
 		buttonPanel.add(quantityLabel);

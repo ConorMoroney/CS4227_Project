@@ -8,10 +8,9 @@ import java.sql.*;
 public class Select implements  SQLInterface{
 
     private Connect con;
-    private Connection mycon;
+    private final Connection mycon;
     private Statement mystat;
     private ResultSet myRe;
-    private ResultSetMetaData rsmd;
 
     public Select(String table, String From , String Where , String Variable, Connection co) {
         // Get Connection to database when created
@@ -50,7 +49,7 @@ public class Select implements  SQLInterface{
 
     public void printSQL(ResultSet r){
         try {
-            rsmd = r.getMetaData();
+            ResultSetMetaData rsmd = r.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
             while (r.next()) {
                 for (int i = 1; i <= columnsNumber; i++) {

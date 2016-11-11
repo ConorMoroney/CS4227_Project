@@ -3,7 +3,7 @@ package Momento;
 /**
  * Created by shane on 09-Nov-16.
  */
-public class MomentoPatternDemo {
+class MomentoPatternDemo {
     public static void main(String[] args) {
 
         Originator originator = new Originator();

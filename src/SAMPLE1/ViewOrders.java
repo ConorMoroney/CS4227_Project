@@ -10,8 +10,7 @@ import GUI.Panel;
 
 public class ViewOrders extends Panel implements  ActionListener
 {
-	private JPanel buttonPanel;
-	private JButton exitButton;
+    private JButton exitButton;
 
 	public ViewOrders(){
 		this.panel = new JPanel();
@@ -23,7 +22,7 @@ public class ViewOrders extends Panel implements  ActionListener
 		this.panel.setLayout(null);
 
 		//Make Button Panel
-		buttonPanel = new JPanel();
+        JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(null);
 		buttonPanel.setLocation(10, 10);
 		buttonPanel.setSize(500, 500);

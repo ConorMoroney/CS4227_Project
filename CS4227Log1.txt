@@ -415,3 +415,34 @@
 [Customer] Buy Product;1478773551590
 [Customer] Buy Product;1478773561725
 [Customer] Buy Product;1478773568915
+[Manager] Log In;1478866870760
+[Manager] View Staff Details;1478866872135
+[Manager] Exit;1478866873303
+[Manager] Exit;1478866874469
+[Customer] Log In;1478866938036
+[Customer] View Account Details;1478866946445
+[Customer] Exit;1478866947874
+[Customer] Exit;1478866948756
+[Warehouse] Log In;1478866957858
+[Warehouse] Update Product Stock;1478866958908
+[Customer] Log In;1478866976799
+[Customer] View Account Details;1478866983461
+[Customer] Exit;1478866984786
+[Customer] Buy Product;1478866985644
+[Customer] Buy Product;1478866989677
+[Customer] Buy Product;1478867003026
+[Customer] Exit;1478867007386
+[Customer] Log In;1478867062313
+[Customer] Exit;1478867199056
+[Manager] Log In;1478877535708
+[Manager] View Staff Details;1478877541582
+[Manager] Exit;1478877545608
+[Manager] View Staff Details;1478877546943
+[Manager] Exit;1478877547950
+[Manager] Generate Reports;1478877548646
+[Manager] View Staff Details;1478877561724
+[Manager] Exit;1478877562697
+[Manager] Log In;1478877956783
+[Manager] View Staff Details;1478877958577
+[Manager] Exit;1478877959694
+[Manager] Exit;1478877960803

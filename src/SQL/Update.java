@@ -6,15 +6,12 @@ import Momento.Originator;
 
 import java.sql.*;
 
-import static javax.swing.text.html.HTML.Tag.HEAD;
-
 /**
  * Created by Conor on 12-Oct-16.
  */
 public class Update {
-    private Connection con;
-    Originator originator = new Originator();
-    CareTaker careTaker = new CareTaker();
+    private final Originator originator = new Originator();
+    private final CareTaker careTaker = new CareTaker();
 
     public Update() {
 
@@ -42,8 +39,7 @@ public class Update {
     public boolean UpdateItems(int decider, int newAmount , String name , Connection con ) {
 
 
-
-        this.con = con;
+        Connection con1 = con;
 
         try
         {
@@ -53,7 +49,7 @@ public class Update {
             System.out.println("------------------" + plswork + "------------------");
 
 
-            Statement mystat = this.con.createStatement();
+            Statement mystat = con1.createStatement();
             String sqlCurrent = "select * from items WHERE name = '" + name + "'";
             String sqlToExecuteOnUndo = "";
             String sqlToExecuteOnPurchase= "";

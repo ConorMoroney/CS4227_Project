@@ -11,7 +11,7 @@ import Java.I_Product;
 
 public class DatabaseAccess implements I_Database {
     private I_Database dbconn;
-    public static DatabaseAccess dba = new DatabaseAccess();
+    public static final DatabaseAccess dba = new DatabaseAccess();
 
     private DatabaseAccess(){
 

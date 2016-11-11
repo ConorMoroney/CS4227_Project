@@ -8,8 +8,6 @@ public class MainWindow extends JFrame implements Observer
 {
     private static final long serialVersionUID = 1L;
     private JPanel viewCurrentPanel = null;
-    private int SCREEN_WIDTH;
-    private int SCREEN_HEIGHT;
 
     public MainWindow()
     {
@@ -20,8 +18,8 @@ public class MainWindow extends JFrame implements Observer
     private void initialiseWindow()
     {
         Toolkit toolKit = Toolkit.getDefaultToolkit();
-        SCREEN_WIDTH = toolKit.getScreenSize().width;
-        SCREEN_HEIGHT = toolKit.getScreenSize().height;
+        int SCREEN_WIDTH = toolKit.getScreenSize().width;
+        int SCREEN_HEIGHT = toolKit.getScreenSize().height;
 
 
         this.setSize(500, 500);
@@ -43,7 +41,7 @@ public class MainWindow extends JFrame implements Observer
         this.setVisible(true);
     }
 
-    public void removeCurrentPanelFromWindow()
+    private void removeCurrentPanelFromWindow()
     {
         if(viewCurrentPanel != null)
         {

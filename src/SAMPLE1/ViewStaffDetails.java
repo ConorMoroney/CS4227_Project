@@ -10,15 +10,15 @@ import java.awt.event.ActionEvent;
 public class ViewStaffDetails extends Panel implements  ActionListener
 {
 
-    JPanel buttonPanel;
-    JButton exitButton;
+    private JPanel buttonPanel;
+    private JButton exitButton;
 
     public ViewStaffDetails(){
         this.panel = new JPanel();
         createAndShowGUI();
 
     }
-    public JPanel createContentPane()
+    private JPanel createContentPane()
     {
         //Make bottom JPanel to place buttonPanel on
         this.panel.setLayout(null);

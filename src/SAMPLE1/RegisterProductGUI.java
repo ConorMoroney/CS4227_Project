@@ -13,9 +13,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 class RegisterProductGUI implements ActionListener {
-    private JPanel buttonPanel;
     private JButton cancelButton, registerProductButton;
-    private JLabel TypeLabel, nameLabel, weightLabel, priceLabel, quantityLabel, descriptionLabel;
     private JTextField typeField, nameField, weightField, priceField, quantityField, descriptionField;
     private static JFrame frame = new JFrame("Register Product Screen");
 
@@ -25,18 +23,18 @@ class RegisterProductGUI implements ActionListener {
         totalGUI.setLayout(null);
 
         //Make Button Panel
-        buttonPanel = GUIFactory.addButtonPanel(10,10,295,485);
+        JPanel buttonPanel = GUIFactory.addButtonPanel(10, 10, 295, 485);
         totalGUI.add(buttonPanel);
 
         //Make Labels
-        TypeLabel = GUIFactory.addLabel("Type",0,0,80,30);
-        nameLabel = GUIFactory.addLabel("Name:",0,40,80,30);
-        weightLabel = GUIFactory.addLabel("Weight:", 0,80,80,30);
-        priceLabel = GUIFactory.addLabel("Price:", 0,120,80,30);
-        quantityLabel = GUIFactory.addLabel("Quantity:",0,160,80,30);
-        descriptionLabel = GUIFactory.addLabel("Description",0,200,80,30);
+        JLabel typeLabel = GUIFactory.addLabel("Type", 0, 0, 80, 30);
+        JLabel nameLabel = GUIFactory.addLabel("Name:", 0, 40, 80, 30);
+        JLabel weightLabel = GUIFactory.addLabel("Weight:", 0, 80, 80, 30);
+        JLabel priceLabel = GUIFactory.addLabel("Price:", 0, 120, 80, 30);
+        JLabel quantityLabel = GUIFactory.addLabel("Quantity:", 0, 160, 80, 30);
+        JLabel descriptionLabel = GUIFactory.addLabel("Description", 0, 200, 80, 30);
 
-        buttonPanel.add(TypeLabel);
+        buttonPanel.add(typeLabel);
         buttonPanel.add(nameLabel);
         buttonPanel.add(weightLabel);
         buttonPanel.add(priceLabel);

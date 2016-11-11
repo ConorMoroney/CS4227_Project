@@ -10,7 +10,7 @@ import java.sql.SQLException;
  */
 public class SelectMax implements SQLInterface {
     private ResultSet myRe;
-    private Connection mycon;
+    private final Connection mycon;
 
     public SelectMax(String column ,String table, Connection mycon){
 

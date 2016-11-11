@@ -4,8 +4,8 @@ package User;
  * Created by shane on 09-Nov-16.
  */
 public class EmployeeState implements I_UserState {
-    String [] concreteEmployeeTypes = {"warehouse","logistics","manager"};
-    String employeeTitle;
+    private final String [] concreteEmployeeTypes = {"warehouse","logistics","manager"};
+    private final String employeeTitle;
 
     public EmployeeState(String name) {
         this.employeeTitle=name;

@@ -18,7 +18,7 @@ import Java.I_Product;
  */
 
 public class Database implements I_Database {
-    Connection con;
+    private Connection con;
 
     @Override
     public ArrayList<String> getItems() {

@@ -2,27 +2,28 @@ package Java;
 
 import java.awt.event.ActionEvent;
 
+import static GUI.MainWindow.c;
+
 /**
  * Created by Conor on 28-Oct-16.
  */
 public class Context {
 
-    private ActionEvent event;
 
-    public Context(ActionEvent event){
-        this.event = event;
-    }
+
+    public Context()
+    {}
 
     public ActionEvent getValue(){
-        return event;
+        return c.access_Event();
     }
-
+/*
     public void setValue(ActionEvent event){
         this.event = event;
     }
-
+*/
     public String consumeService()
     {
-        return SAMPLE1.Main.c.access_internals();
+        return c.access_User();
     }
 }

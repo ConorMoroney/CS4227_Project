@@ -1,6 +1,7 @@
 package SAMPLE1;
 
 import GUI.GUIFactory;
+import GUI.MainWindow;
 import GUI.Panel;
 import GUI.PanelManager;
 import Java.*;
@@ -65,7 +66,7 @@ public class DisplayGUI extends Panel implements ActionListener// extends JFrame
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		Main.actionListener.actionPerformed(e);
+		MainWindow.actionListener.actionPerformed(e);
 		// this makes sure the button you are pressing is the button variable
 		if(e.getSource() == remaingModulesButton) {
 			System.out.println("Button clicked");

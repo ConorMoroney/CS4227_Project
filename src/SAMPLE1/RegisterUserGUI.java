@@ -1,6 +1,7 @@
 package SAMPLE1;
 
 import GUI.GUIFactory;
+import GUI.MainWindow;
 import GUI.Panel;
 import GUI.PanelManager;
 import User.*;
@@ -87,7 +88,7 @@ public class RegisterUserGUI extends Panel implements  ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
-        Main.actionListener.actionPerformed(e);
+        MainWindow.actionListener.actionPerformed(e);
         if(e.getSource() == cancelButton)
         {
             panelMgr.getPanelFromFactory(1);
@@ -150,6 +151,7 @@ public class RegisterUserGUI extends Panel implements  ActionListener
                     System.out.println(exc.fillInStackTrace());
                 }
             }
+            MainWindow.actionListener.setUserName(userName);
         }
     }
 

@@ -1,6 +1,7 @@
 package SAMPLE1;
 
 import GUI.GUIFactory;
+import GUI.MainWindow;
 import GUI.Panel;
 import GUI.PanelManager;
 import javax.swing.*;
@@ -52,7 +53,7 @@ public class ViewStaffDetails extends Panel implements  ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
-        Main.actionListener.actionPerformed(e);
+        MainWindow.actionListener.actionPerformed(e);
         if(e.getSource() == exitButton)
         {
             panelMgr.getPanelFromFactory(2);

@@ -9,5 +9,5 @@ interface I_Framework {
 
     void service();
     void event(ActionEvent event, String user);
-    String access_internals();
+    String access_User();
 }

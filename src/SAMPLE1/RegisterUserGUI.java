@@ -127,7 +127,8 @@ public class RegisterUserGUI extends Panel implements  ActionListener
                     cust1.setAddress(address);
                     cust1.setID(id);
                     help.setCustomer(cust1);
-                    panelMgr.getPanelFromFactory(2);
+                    panelMgr.getPanelFromFactory(1);
+                    JOptionPane.showMessageDialog(null,"Registered Successfully");
                 } catch (Exception exc) {
                     System.out.println(exc.fillInStackTrace());
                 }
@@ -146,7 +147,8 @@ public class RegisterUserGUI extends Panel implements  ActionListener
                     emp1.setAddress(address);
                     emp1.setID(id);
                     help.setEmployee(emp1);
-                    panelMgr.getPanelFromFactory(2);
+                    panelMgr.getPanelFromFactory(1);
+                    JOptionPane.showMessageDialog(null,"Registered Successfully");
                 } catch (Exception exc) {
                     System.out.println(exc.fillInStackTrace());
                 }

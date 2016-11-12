@@ -4,12 +4,13 @@ import Database.Database;
 import Database.DatabaseAccess;
 import Database.I_Database;
 import GUI.*;
-import Java.ConcreteFramework;
 import Java.ConcreteInterceptor;
 
+import static GUI.MainWindow.c;
+
 public class Main {
-	public static ConcreteFramework c;
-	public static GUI.ActionListenerSuper actionListener;
+	//public static ConcreteFramework c;
+	//public static GUI.ActionListenerSuper actionListener;
 	public static void main(String [] args){
 
 		// register || log in
@@ -22,17 +23,17 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		c = new ConcreteFramework();
-		actionListener = new ActionListenerSuper();
-		ConcreteInterceptor Int1 = new ConcreteInterceptor();
-		attach(Int1);
 
+		//c = new ConcreteFramework();
+		//actionListener = new ActionListenerSuper();
 
-        SplashWindow splashWindow = new SplashWindow();
+		SplashWindow splashWindow = new SplashWindow();
 		MainWindow window = new MainWindow();
 		PanelFactory panelFac = new PanelFactory();
 		PanelManager panelMgr = new PanelManager(panelFac);
 		panelMgr.registerObserver(window);
+		ConcreteInterceptor Int1 = new ConcreteInterceptor();
+		attach(Int1);
 
 	}
 

@@ -1,6 +1,7 @@
 package SAMPLE1;
 
 import GUI.GUIFactory;
+import GUI.MainWindow;
 import Java.I_Product;
 import Java.ProductFactory;
 import SQL.Connect;
@@ -70,7 +71,7 @@ class RegisterProductGUI implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        Main.actionListener.actionPerformed(e);
+        MainWindow.actionListener.actionPerformed(e);
         if (e.getSource() == cancelButton) {
             //frame.setVisible(false);
             frame.dispose();

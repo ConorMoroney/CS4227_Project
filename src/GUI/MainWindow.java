@@ -1,5 +1,7 @@
 package GUI;
 
+import Java.ConcreteFramework;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,9 +10,13 @@ public class MainWindow extends JFrame implements Observer
 {
     private static final long serialVersionUID = 1L;
     private JPanel viewCurrentPanel = null;
+    public static ConcreteFramework c;
+    public static GUI.ActionListenerSuper actionListener;
 
     public MainWindow()
     {
+        c = new ConcreteFramework();
+        actionListener = new ActionListenerSuper();
         initialiseWindow();
     }
 

@@ -491,3 +491,22 @@
 [No User] Register;1478950515388
 [No User] Register;1478950523750
 [No User] Exit;1478950524625
+[Customer] Log In;1478955187555
+[Customer] View Account Details;1478955189993
+[Customer] Exit;1478955192227
+[Customer] Exit;1478955193056
+[No User] Register;1478955522123
+[No User] Register;1478955542288
+[No User] View Orders;1478955543647
+[No User] Exit;1478955546070
+[No User] Update Product Stock;1478955547117
+[No User] Exit;1478955549648
+[No User] Register;1478955601521
+[No User] Register;1478955621044
+[No User] Update Product Stock;1478955623982
+[No User] Exit;1478955624810
+[No User] Register;1478955673507
+[No User] Register;1478955685102
+[Bob] Register a product;1478955686243
+[Bob] Cancel;1478955687651
+[Bob] Exit;1478955688483

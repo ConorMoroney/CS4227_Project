@@ -1,9 +1,6 @@
 package SAMPLE1;
 
-import GUI.GUIFactory;
-import GUI.Helper;
-import GUI.Panel;
-import GUI.PanelManager;
+import GUI.*;
 
 import Java.QtyGrabber;
 
@@ -109,6 +106,7 @@ public class UpdateProductStock extends Panel implements  ActionListener
 				System.out.println(" couldnt connect to DB 1234 ");
 			}
 		}
+		MainWindow.actionListener.actionPerformed(e);
 	}
 
 	private void createAndShowGUI()

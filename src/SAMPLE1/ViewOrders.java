@@ -1,6 +1,7 @@
 package SAMPLE1;
 
 import GUI.GUIFactory;
+import GUI.MainWindow;
 import GUI.PanelManager;
 
 import javax.swing.*;
@@ -50,6 +51,7 @@ public class ViewOrders extends Panel implements  ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
+		MainWindow.actionListener.actionPerformed(e);
 		if(e.getSource() == exitButton)
 		{
 			panelMgr.getPanelFromFactory(2);

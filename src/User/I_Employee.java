@@ -13,4 +13,5 @@ public interface I_Employee{
     void setEmail(String email);
     void setAddress(String address);
     int getaccesslvl();
+    String getType();
 }

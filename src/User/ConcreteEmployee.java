@@ -11,6 +11,7 @@ public class ConcreteEmployee implements I_Employee{
     private String email;
     private String address;
     private int accesslvl;
+    private String type;
     private final String [] concreteTypes = {"Warehouse", "Logistics", "Manager"};
     private I_UserState state;
 
@@ -29,6 +30,7 @@ public class ConcreteEmployee implements I_Employee{
 
     @Override
     public void setType(String type) {
+        this.type = type;
         for (int i = 0; i < concreteTypes.length; i++) {
             if (type.equalsIgnoreCase(concreteTypes[i])) {
                 accesslvl = i + 2;
@@ -89,4 +91,7 @@ public class ConcreteEmployee implements I_Employee{
     public String getAddress() {
         return address;
     }
+
+    @Override
+    public String getType(){return type;}
 }

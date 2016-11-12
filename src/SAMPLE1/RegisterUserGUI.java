@@ -46,11 +46,11 @@ public class RegisterUserGUI extends Panel implements  ActionListener
         this.panel.add(buttonPanel);
 
         //Make Labels
-        userLabel = GUIFactory.addLabel("Username:",0,0,80,30);
-        passLabel = GUIFactory.addLabel("Password:",0,40,80,30);
-        emailLabel = GUIFactory.addLabel("email:",0,80,80,30);
-        addressLabel = GUIFactory.addLabel("Address:",0,120,80,30);
-        TypeLabel = GUIFactory.addLabel("Employee Type:",0,160,80,30);
+        userLabel = GUIFactory.addLabel("Username:",100,100,80,30);
+        passLabel = GUIFactory.addLabel("Password:",100,140,80,30);
+        emailLabel = GUIFactory.addLabel("email:",100,180,80,30);
+        addressLabel = GUIFactory.addLabel("Address:",100,220,80,30);
+        TypeLabel = GUIFactory.addLabel("Employee Type:",100,260,80,30);
 
         buttonPanel.add(userLabel);
         buttonPanel.add(passLabel);
@@ -58,15 +58,15 @@ public class RegisterUserGUI extends Panel implements  ActionListener
         buttonPanel.add(addressLabel);
         buttonPanel.add(TypeLabel);
 
-        userType.setLocation(110, 160);
+        userType.setLocation(210, 260);
         userType.setSize(180, 30);
         buttonPanel.add(userType);
 
         //Make texts fields
-        userField = GUIFactory.addTextField(110,0,180,30);
-        passField = GUIFactory.addPasswordField(110,40,180,30);
-        emailField = GUIFactory.addTextField(110,80,180,30);
-        addressField = GUIFactory.addTextField(110,120,180,30);
+        userField = GUIFactory.addTextField(210,100,180,30);
+        passField = GUIFactory.addPasswordField(210,140,180,30);
+        emailField = GUIFactory.addTextField(210,180,180,30);
+        addressField = GUIFactory.addTextField(210,220,180,30);
 
         buttonPanel.add(userField);
         buttonPanel.add(passField);
@@ -74,11 +74,11 @@ public class RegisterUserGUI extends Panel implements  ActionListener
         buttonPanel.add(addressField);
 
         //Make Buttons
-        cancelButton = GUIFactory.addButton("Cancel",145,190,135,30);
+        cancelButton = GUIFactory.addButton("Cancel",245,300,135,30);
         cancelButton.addActionListener(this);
         buttonPanel.add(cancelButton);
 
-        registerUserButton = GUIFactory.addButton("Register", 0,190,135,30);
+        registerUserButton = GUIFactory.addButton("Register", 100,300,135,30);
         registerUserButton.addActionListener(this);
         buttonPanel.add(registerUserButton);
 

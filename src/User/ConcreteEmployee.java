@@ -22,8 +22,8 @@ public class ConcreteEmployee implements I_Employee{
         password = pass;
         email = mail;
         address = add;
+        type = concreteTypes[access-2];
     }
-
     public ConcreteEmployee(){
 
     }
@@ -93,5 +93,6 @@ public class ConcreteEmployee implements I_Employee{
     }
 
     @Override
-    public String getType(){return type;}
+    public String getType(){
+        return type;}
 }

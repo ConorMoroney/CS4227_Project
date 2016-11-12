@@ -510,3 +510,81 @@
 [Bob] Register a product;1478955686243
 [Bob] Cancel;1478955687651
 [Bob] Exit;1478955688483
+[No User] Register;1478968800209
+[No User] Cancel;1478968802470
+[wronweq] Log In;1478968859922
+[] Log In;1478968999596
+[egse] Log In;1478969003050
+[] Log In;1478969044940
+[] Log In;1478969048568
+[Customer] Log In;1478969055723
+[Customer] Log In;1478969062860
+[Customer] View Account Details;1478969064407
+[Customer] Exit;1478969066110
+[Customer] Buy Product;1478969066970
+[Customer] Purchase;1478969078971
+[Customer] Exit;1478969081248
+[Customer] View Account Details;1478969082592
+[Customer] Exit;1478969083748
+[Customer] Buy Product;1478969084217
+[Customer] Purchase;1478969102934
+[Customer] Undo;1478969105150
+[Customer] Exit;1478969107023
+[Customer] Buy Product;1478969107582
+[Customer] Purchase;1478969110854
+[No User] Register;1478969708613
+[No User] Register;1478969716094
+[cam] Exit;1478969717478
+[cam] Log In;1478969722202
+[cam] Register;1478969728261
+[cam] Register;1478969737047
+[Conor] Exit;1478969738215
+[Conor] Log In;1478969743872
+[No User] Register;1478969968104
+[No User] Register;1478969978310
+[New] Exit;1478969979359
+[New] Log In;1478969984114
+[New] Log In;1478969992873
+[No User] Log In;1478970026004
+[No User] Log In;1478970036888
+[No User] Log In;1478970038568
+[No User] Log In;1478970038728
+[No User] Log In;1478970043304
+[No User] Log In;1478970067193
+[No User] Log In;1478970067681
+[No User] Log In;1478970079521
+[No User] Log In;1478970104761
+[No User] Log In;1478970105200
+[No User] Log In;1478970105536
+[No User] Log In;1478970277771
+[No User] Log In;1478970361235
+[No User] Log In;1478970389153
+[No User] Log In;1478970424500
+[No User] Log In;1478970612045
+[New] Log In;1478970625293
+[New] Log In;1478971168659
+[New] Log In;1478971197877
+[New] Log In;1478971201833
+[No User] Log In;1478971470554
+[No User] Log In;1478971545193
+[No User] Log In;1478971557810
+[No User] Log In;1478971559313
+[No User] Log In;1478971565401
+[newManager] Log In;1478972298093
+[newManager] Log In;1478972303316
+[newManager] Log In;1478972308499
+[newManager] Log In;1478972318028
+[newManager] Log In;1478972328947
+[newManager] Log In;1478972330377
+[Manager] Log In;1478972591782
+[Manager] Log In;1478972821866
+[No User] Log In;1478972978883
+[No User] Log In;1478972992794
+[No User] Log In;1478973021187
+[No User] Log In;1478973071370
+[No User] Log In;1478973107601
+[No User] Log In;1478973178284
+[Manager] Log In;1478973207715
+[Manager] Exit;1478973209087
+[newManger] Log In;1478973222124
+[newManger] Exit;1478973223407

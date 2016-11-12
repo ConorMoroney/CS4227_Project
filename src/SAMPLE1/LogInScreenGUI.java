@@ -113,13 +113,14 @@ public class LogInScreenGUI extends Panel implements  ActionListener
                     }
                     panelMgr.getPanelFromFactory(2);
                 }
+                else JOptionPane.showMessageDialog(null,"Error: Incorrect Login Details\n please try again");
                 MainWindow.actionListener.setUserName(userName);
             }
 
             catch(Exception exc)
             {
                 System.out.println(exc.fillInStackTrace());
-                System.exit(0);
+
             }
         }
         MainWindow.actionListener.actionPerformed(e);

@@ -35,7 +35,7 @@ public class Helper {
             state = new CustomerState();
         }
         else if (access>1){
-            state = new EmployeeState(emp.getName());
+            state = new EmployeeState(emp.getType());
         }
     }
 

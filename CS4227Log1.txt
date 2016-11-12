@@ -446,3 +446,48 @@
 [Manager] View Staff Details;1478877958577
 [Manager] Exit;1478877959694
 [Manager] Exit;1478877960803
+[No User] Register;1478949203566
+[No User] Register;1478949225402
+[No User] Exit;1478949229994
+[Conor] Log In;1478949236014
+[Conor] Exit;1478949238330
+[Conor] Log In;1478949247525
+[Conor] View Account Details;1478949251267
+[Conor] Exit;1478949352914
+[Conor] Exit;1478949353730
+[Conor] Register;1478949354855
+[Conor] Register;1478949366730
+[Conor] Register;1478949378682
+[Conor] Register;1478949396882
+[Conor] Register;1478949397778
+[Conor] Register;1478949400074
+[Conor] Register;1478949402402
+[Conor] Register;1478949403602
+[Conor] Register;1478949403810
+[Conor] Cancel;1478949404130
+[No User] Register;1478949421384
+[No User] Register;1478949436306
+[No User] Cancel;1478949440362
+[No User] Register;1478949451879
+[No User] Register;1478949458058
+[No User] Exit;1478949460515
+[No User] Register;1478949462224
+[No User] Register;1478949467778
+[No User] Register;1478949469234
+[No User] Register;1478949469458
+[No User] Register;1478949694187
+[No User] Register;1478949702985
+[No User] Register;1478949843719
+[No User] Register;1478949848423
+[No User] Register;1478950030215
+[No User] Register;1478950038841
+[No User] Exit;1478950040498
+[No User] Register;1478950110029
+[No User] Register;1478950114389
+[No User] Register;1478950140320
+[No User] Register;1478950143898
+[No User] Register;1478950413535
+[No User] Register;1478950417754
+[No User] Register;1478950515388
+[No User] Register;1478950523750
+[No User] Exit;1478950524625

@@ -2,6 +2,8 @@ package User;
 
 import Java.Observer;
 
+import javax.swing.*;
+
 public class ConcreteCustomer implements Observer, I_Customer {
 
     private String name;
@@ -101,6 +103,7 @@ public class ConcreteCustomer implements Observer, I_Customer {
     public void update(int qty , String item) {
         // TODO Auto-generated method stub
         System.out.println(item +  " is now back in stock \n We now have " + qty + "in stock");
+        JOptionPane.showMessageDialog(null, item +  " is now back in stock \n We now have " + qty + "in stock");
     }
 
     @Override

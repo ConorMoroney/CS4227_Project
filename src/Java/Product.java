@@ -9,21 +9,7 @@ public class Product implements Subject {
 	private boolean available;
 	
 	private ArrayList<Observer> listOfObservers = new ArrayList<Observer>();
-	
-	/*
-	@Override
-	public void registerObserver(Java.Observer observer) {
-		// TODO Auto-generated method stub
-		listOfObservers.add(observer);
-		
-	}
-	@Override
-	public void removeObserver(Java.Observer observer) {
-		// TODO Auto-generated method stub
-		listOfObservers.remove(observer);
-		
-	}*/
-	
+
 	@Override
 	public void notifyObservers() {
 		// TODO Auto-generated method stub

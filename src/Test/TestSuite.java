@@ -7,13 +7,11 @@ import Test.FactoryTests.EmployeeFactoryTest;
 import Test.FactoryTests.ProductFactoryTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-
 /**
  * Created by shane on 13-Nov-16.
  */
 
 @RunWith(Suite.class)
-
 @Suite.SuiteClasses({
         CustomerFactoryTest.class,
         EmployeeFactoryTest.class,

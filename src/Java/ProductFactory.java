@@ -1,9 +1,9 @@
 package Java;
 
 public class ProductFactory {
-	
+
+	private String [] concreteTypes = {"pen","pencil","paper","envelope","paperclip","folder", "ruler", "copy"};
 	public I_Product createProduct(String productType){
-		String [] concreteTypes = {"pen","pencil","paper","envelope","paperclip","folder", "ruler", "copy"};
 		for (String s:concreteTypes){
 			if(s.equalsIgnoreCase(productType)){
 				return new ConcreteProduct();
@@ -15,8 +15,15 @@ public class ProductFactory {
 		}
 
 		else{
-			System.out.println("This is not a product type");
 			return null;
 		}
 	}
+	public String[] getConcreteTypes() {
+		return concreteTypes;
+	}
+
+	public void setConcreteTypes(String[] concreteTypes) {
+		this.concreteTypes = concreteTypes;
+	}
+
 }

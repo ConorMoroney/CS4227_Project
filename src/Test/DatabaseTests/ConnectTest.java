@@ -1,4 +1,4 @@
-package Test;
+package Test.DatabaseTests;
 
 import SQL.Connect;
 import org.junit.*;

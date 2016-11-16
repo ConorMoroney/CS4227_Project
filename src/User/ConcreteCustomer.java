@@ -29,7 +29,6 @@ public class ConcreteCustomer implements Observer, I_Customer {
 
     @Override
     public void setName(String name) {
-        // TODO Auto-generated method stub
         this.name = name;
     }
 
@@ -40,68 +39,57 @@ public class ConcreteCustomer implements Observer, I_Customer {
 
     @Override
     public void setID(int id) {
-        // TODO Auto-generated method stub
         this.id = id;
     }
 
     @Override
     public void setPassword(String password) {
-        // TODO Auto-generated method stub
         this.password = password;
     }
 
     @Override
     public void setEmail(String email) {
-        // TODO Auto-generated method stub
         this.email = email;
     }
 
     @Override
     public void setAddress(String address) {
-        // TODO Auto-generated method stub
         this.address = address;
     }
 
 
     @Override
     public int getaccesslvl() {
-        // TODO Auto-generated method stub
         return accesslvl;
     }
 
     @Override
     public String getName() {
-        // TODO Auto-generated method stub
         return name;
     }
 
     @Override
     public int getID() {
-        // TODO Auto-generated method stub
         return id;
     }
 
     @Override
     public String getPassword() {
-        // TODO Auto-generated method stub
         return password;
     }
 
     @Override
     public String getEmail() {
-        // TODO Auto-generated method stub
         return email;
     }
 
     @Override
     public String getAddress() {
-        // TODO Auto-generated method stub
         return address;
     }
 
     @Override
     public void update(int qty , String item) {
-        // TODO Auto-generated method stub
         System.out.println(item +  " is now back in stock \n We now have " + qty + "in stock");
         JOptionPane.showMessageDialog(null, item +  " is now back in stock \n We now have " + qty + "in stock");
     }

@@ -4,9 +4,13 @@ package User;
  * Created by shane on 28-Oct-16.
  */
 public class CustomerFactory extends AbstractUserFactory {
+
+
+    private String[] concreteUserTypes = {"Customer"};
+
+
     @Override
     public ConcreteCustomer createUser(String userType) {
-        String[] concreteUserTypes = {"Customer"};
         for (String s : concreteUserTypes) {
             if ("Customer".equalsIgnoreCase(userType)) {
                 return new ConcreteCustomer();
@@ -15,10 +19,15 @@ public class CustomerFactory extends AbstractUserFactory {
         if (userType == null) {
             return null;
         } else {
-            System.out.println("This is not a valid Customer type.");
-            System.out.println(userType + "B+++++++");
             return null;
         }
+    }
+    public String[] getConcreteUserTypes() {
+        return concreteUserTypes;
+    }
+
+    public void setConcreteUserTypes(String[] concreteUserTypes) {
+        this.concreteUserTypes = concreteUserTypes;
     }
 }
 

@@ -14,8 +14,6 @@ public class Dispacher {
         listofInterceptors  = new ArrayList<I_Interceptor>();
     }
 
-    public void dispatch(){}
-
     public void register(I_Interceptor interceptor){
         listofInterceptors.add(interceptor);
         System.out.println("Registered Interceptor");
@@ -26,21 +24,16 @@ public class Dispacher {
             listofInterceptors.remove(interceptor);
         else
             System.out.print("interceptor Object not in List");
-
     }
 
     private void iteratelist(){
-
         for (I_Interceptor listofInterceptor : listofInterceptors) {
             listofInterceptor.InterceptorMethod1(context);
         }
-
     }
 
     public void callBack(Context context) {
-
         this.context = context;
         iteratelist();
     }
-    //public Context getContext(){}
 }

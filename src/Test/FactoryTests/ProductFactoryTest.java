@@ -1,5 +1,6 @@
 package Test.FactoryTests;
 
+import GUI.MainWindow;
 import Java.I_Product;
 import Java.ProductFactory;
 import junit.framework.Assert;
@@ -59,7 +60,7 @@ public class ProductFactoryTest {
         testMessage = "TEST CASE NAME: " + name.getMethodName() +  "\n\n Testing that new product types can be created which replace the old types";
         prodF.setConcreteTypes(newProd);
         //System.out.println("New Employee Types to be created:  ");
-        testMessage+="\nNew Employee Types created:  ";
+        testMessage+="\nNew Product Types created:  ";
         for (int i=0;i<newProd.length;i++){
             testMessage+=(newProd[i] + ", \t");
         }
@@ -67,13 +68,13 @@ public class ProductFactoryTest {
             I_Product testI = prodF.createProduct(s);
             org.junit.Assert.assertTrue(testI instanceof I_Product);
         }
-        testMessage +="\n\nA valid employee is created when passed a valid employee type from the new  list";
+        testMessage +="\n\nA valid product is created when passed a valid product type from the new  list";
 
         for (String s:productTypes){
             I_Product testI = prodF.createProduct(s);
             org.junit.Assert.assertFalse( testI instanceof I_Product);
         }
-        testMessage +="\n\nAn employee cannot now be created form the old list once the new employee types are implemented";
+        testMessage +="\n\nA product cannot now be created form the old list once the new employee types are implemented";
 
     }
     @AfterClass

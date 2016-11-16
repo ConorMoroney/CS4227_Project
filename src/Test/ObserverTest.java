@@ -1,4 +1,4 @@
-package Test.DatabaseTests;
+package Test;
 
 import Java.QtyGrabber;
 import User.ConcreteCustomer;

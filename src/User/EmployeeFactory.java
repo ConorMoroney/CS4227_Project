@@ -2,9 +2,8 @@
 package User;
 
 public class EmployeeFactory extends AbstractUserFactory {
-
+    private String [] concreteUserTypes = {"warehouse","logistics","manager"};
     public ConcreteEmployee createUser(String userType){
-        String [] concreteUserTypes = {"warehouse","logistics","manager"};
         for(String s:concreteUserTypes){
             if (s.equalsIgnoreCase(userType)) {
                 return new ConcreteEmployee();
@@ -17,8 +16,14 @@ public class EmployeeFactory extends AbstractUserFactory {
             return null;
         }
         else{
-            System.out.println("This is not a valid employee type.");
             return null;
         }
+    }
+    public String[] getConcreteUserTypes() {
+        return concreteUserTypes;
+    }
+
+    public void setConcreteUserTypes(String[] concreteUserTypes) {
+        this.concreteUserTypes = concreteUserTypes;
     }
 }

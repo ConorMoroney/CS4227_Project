@@ -13,8 +13,6 @@ public class Connect{
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			String connectionUrl = "jdbc:sqlserver://localhost;database=Creationary;integratedSecurity=true;"  ;
 			con = DriverManager.getConnection(connectionUrl);
-			//con.setAutoCommit(false);
-			System.out.println("you are Connected : Connect Class ");
 
 		} catch (Exception e) {
 			System.out.println("Connection failed");
@@ -26,3 +24,5 @@ public class Connect{
 		return con;
 	}
 }
+
+

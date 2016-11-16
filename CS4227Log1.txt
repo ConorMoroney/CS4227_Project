@@ -588,3 +588,32 @@
 [Manager] Exit;1478973209087
 [newManger] Log In;1478973222124
 [newManger] Exit;1478973223407
+[No User] Register;1478989501383
+[No User] Register;1478989521019
+[Mark] Exit;1478989525026
+[Mark] Log In;1478989532982
+[Mark] Exit;1478989538518
+[No User] Register;1478989657978
+[No User] Register;1478989666033
+[No User] Exit;1478989668809
+[q] Log In;1478989672350
+[q] Exit;1478989674234
+[No User] Register;1478989747600
+[No User] Cancel;1478989749101
+[No User] Cancel;1478989749996
+[No User] Cancel;1478989750154
+[No User] Cancel;1478989750337
+[No User] Register;1478989800163
+[No User] Register;1478989806409
+[p] Log In;1478989816793
+[p] Exit;1478989818134
+[No User] Register;1478989885769
+[No User] Register;1478989890649
+[Customer] Log In;1479069020861
+[Customer] Exit;1479069023008
+[Logistics] Log In;1479069035842
+[Logistics] Exit;1479069037335
+[Warehouse] Log In;1479069045796
+[Warehouse] Exit;1479069049025
+[Manager] Log In;1479069054740
+[Manager] Exit;1479069055880

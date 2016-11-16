@@ -39,31 +39,26 @@ public class ConcreteEmployee implements I_Employee{
     }
 
     public void setName(String name) {
-        // TODO Auto-generated method stub
         this.name = name;
     }
 
     @Override
     public void setID(int id) {
-        // TODO Auto-generated method stub
         this.id = id;
     }
 
     @Override
     public void setPassword(String password) {
-        // TODO Auto-generated method stub
         this.password = password;
     }
 
     @Override
     public void setEmail(String email) {
-        // TODO Auto-generated method stub
         this.email = email;
     }
 
     @Override
     public void setAddress(String address) {
-        // TODO Auto-generated method stub
         this.address = address;
     }
 
@@ -94,5 +89,6 @@ public class ConcreteEmployee implements I_Employee{
 
     @Override
     public String getType(){
-        return type;}
+        return type;
+    }
 }
